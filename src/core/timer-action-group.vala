@@ -67,6 +67,10 @@ namespace Ft
             start_pause_resume_action.activate.connect (this.activate_start_pause_resume);
             this.add_action (start_pause_resume_action);
 
+            var shorten_action = new GLib.SimpleAction ("shorten", null);
+            shorten_action.activate.connect (this.activate_shorten);
+            this.add_action (shorten_action);
+
             var extend_action = new GLib.SimpleAction ("extend", null);
             extend_action.activate.connect (this.activate_extend);
             this.add_action (extend_action);
@@ -145,6 +149,16 @@ namespace Ft
             }
         }
 
+        private void activate_shorten (GLib.SimpleAction action,
+                                       GLib.Variant?     parameter)
+        {
+            var interval = parameter != null
+                    ? parameter.get_int32 () * Ft.Interval.SECOND
+                    : Ft.Interval.MINUTE;
+
+            this.timer.extend (-interval);
+        }
+
         private void activate_extend (GLib.SimpleAction action,
                                       GLib.Variant?     parameter)
         {
@@ -152,7 +166,7 @@ namespace Ft
                     ? parameter.get_int32 () * Ft.Interval.SECOND
                     : Ft.Interval.MINUTE;
 
-            this.timer.duration += interval;
+            this.timer.extend (interval);
         }
     }
 }

@@ -209,6 +209,11 @@ namespace Ft
          */
         private const int64 TICKING_TOLERANCE = 20 * Ft.Interval.MILLISECOND;
 
+        /**
+         * Constraint for shorten/extend action to have some time remaining.
+         */
+        private const int64 MIN_REMAINING_TIME_TO_SHORTEN = 10 * Ft.Interval.SECOND;
+
         private static Ft.Timer? instance = null;
 
         /**
@@ -291,7 +296,6 @@ namespace Ft
         private bool            resolving_state = false;
         private int             changing_state = 0;
         private Ft.TimerState?  state_to_resolve = null;
-        private int             tick_freeze_count = 0;
         private int64           monotonic_time_offset = 0;
         private Ft.SleepMonitor sleep_monitor;
         private ulong           prepare_for_sleep_id = 0;
@@ -653,6 +657,32 @@ namespace Ft
         }
 
         /**
+         * Extend
+         */
+        public void extend (int64 interval,
+                            int64 timestamp = Ft.Timestamp.UNDEFINED)
+        {
+            if (this.duration <= 0) {
+                return;
+            }
+
+            if (interval == 0) {
+                return;
+            }
+
+            this.ensure_timestamp (ref timestamp);
+
+            var elapsed = this.calculate_elapsed (timestamp);
+            var remaining = this._state.duration - elapsed;
+
+            remaining = remaining + interval >= MIN_REMAINING_TIME_TO_SHORTEN
+                    ? remaining + interval
+                    : MIN_REMAINING_TIME_TO_SHORTEN;
+
+            this.set_duration_full (elapsed + remaining, timestamp);
+        }
+
+        /**
          * Mark state as "finished".
          *
          * Do not use it. It's public only for unit-tests.
@@ -848,20 +878,20 @@ namespace Ft
 
             if (remaining > TICKING_TOLERANCE)
             {
-                var is_ticking = this.tick_freeze_count <= 0;
-                var deviation  = timestamp - timestamp_rounded;
+                var deviation = timestamp - timestamp_rounded;
 
-                if (is_ticking &&
-                    remaining > TICKING_INTERVAL &&
+                if (remaining > TICKING_INTERVAL &&
                     deviation.abs () < TICKING_TOLERANCE)
                 {
-                    this.timeout_id = GLib.Timeout.add (Ft.Timestamp.to_milliseconds_uint (TICKING_INTERVAL),
-                                                        this.on_timeout);
+                    this.timeout_id = GLib.Timeout.add (
+                            Ft.Timestamp.to_milliseconds_uint (TICKING_INTERVAL),
+                            this.on_timeout);
                     GLib.Source.set_name_by_id (this.timeout_id, "Ft.Timer.on_timeout");
                 }
                 else {
-                    this.timeout_id = GLib.Timeout.add (Ft.Timestamp.to_milliseconds_uint (is_ticking ? TICKING_INTERVAL - deviation : remaining),
-                                                        this.on_timeout_once);
+                    this.timeout_id = GLib.Timeout.add (
+                            Ft.Timestamp.to_milliseconds_uint (TICKING_INTERVAL - deviation),
+                            this.on_timeout_once);
                     GLib.Source.set_name_by_id (this.timeout_id, "Ft.Timer.on_timeout_once");
                 }
             }
@@ -903,22 +933,6 @@ namespace Ft
 
             this.monotonic_time_offset = 0;
             this.last_tick_time = Ft.Timestamp.UNDEFINED;
-        }
-
-        /**
-         * Increment freeze counter for tick signal.
-         */
-        public void freeze_tick ()
-        {
-            this.tick_freeze_count++;
-        }
-
-        /**
-         * Decrease freeze counter for tick signal.
-         */
-        public void thaw_tick ()
-        {
-            this.tick_freeze_count--;
         }
 
         /**

@@ -81,6 +81,17 @@ namespace Ft
         static construct
         {
             set_css_name ("timerview");
+
+            // TODO: move these keybindings to window
+            //       currently they work only if view is in focus
+            add_binding_action (Gdk.Key.minus,
+                                Gdk.ModifierType.CONTROL_MASK,
+                                "timer.shorten",
+                                null);
+            add_binding_action (Gdk.Key.equal,
+                                Gdk.ModifierType.CONTROL_MASK,
+                                "timer.extend",
+                                null);
         }
 
         construct

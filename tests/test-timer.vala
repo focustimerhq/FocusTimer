@@ -38,12 +38,12 @@ namespace Tests
 
     private Ft.TimerState create_started_state (int64 duration = 10 * Ft.Interval.MINUTE,
                                                 int64 elapsed = 0 * Ft.Interval.MINUTE,
-                                                int64 timestamp = -1,
+                                                int64 timestamp = Ft.Timestamp.UNDEFINED,
                                                 void* user_data = null)
     {
-        var now = Ft.Timestamp.advance (0);
+        var now = Ft.Timestamp.peek ();
 
-        if (timestamp < 0) {
+        if (Ft.Timestamp.is_undefined (timestamp)) {
             timestamp = now - elapsed;
         }
 
@@ -59,12 +59,12 @@ namespace Tests
 
     private Ft.TimerState create_paused_state (int64 duration = 10 * Ft.Interval.MINUTE,
                                                int64 elapsed = 0 * Ft.Interval.MINUTE,
-                                               int64 timestamp = -1,
+                                               int64 timestamp = Ft.Timestamp.UNDEFINED,
                                                void* user_data = null)
     {
-        var now = Ft.Timestamp.advance (0);
+        var now = Ft.Timestamp.peek ();
 
-        if (timestamp < 0) {
+        if (Ft.Timestamp.is_undefined (timestamp)) {
             timestamp = now - elapsed;
         }
 
@@ -80,12 +80,12 @@ namespace Tests
 
     private Ft.TimerState create_finished_state (int64 duration = 10 * Ft.Interval.MINUTE,
                                                  int64 elapsed = 10 * Ft.Interval.MINUTE,
-                                                 int64 timestamp = -1,
+                                                 int64 timestamp = Ft.Timestamp.UNDEFINED,
                                                  void* user_data = null)
     {
-        var now = Ft.Timestamp.advance (0);
+        var now = Ft.Timestamp.peek ();
 
-        if (timestamp < 0) {
+        if (Ft.Timestamp.is_undefined (timestamp)) {
             timestamp = now - elapsed;
         }
 
@@ -103,7 +103,7 @@ namespace Tests
      * Wait until timer finishes
      */
     private bool run_timer (Ft.Timer timer,
-                            uint           timeout = 0)
+                            uint     timeout = 0)
                             requires (!Ft.Timestamp.is_frozen ())
     {
         var timeout_id = (uint) 0;
@@ -264,6 +264,15 @@ namespace Tests
                            this.test_rewind__finished_state);
             this.add_test ("rewind__align_to_seconds",
                            this.test_rewind__align_to_seconds);
+
+            this.add_test ("extend__started_state",
+                           this.test_extend__started_state);
+            this.add_test ("extend__paused_state",
+                           this.test_extend__paused_state);
+            this.add_test ("extend__shorten",
+                           this.test_extend__shorten);
+            this.add_test ("extend__shorten_to_zero",
+                           this.test_extend__shorten_to_zero);
 
             this.add_test ("resolve_state_signal",
                            this.test_resolve_state_signal);
@@ -1675,6 +1684,103 @@ namespace Tests
             now = Ft.Timestamp.advance (100 * Ft.Interval.MILLISECOND);
             timer.rewind (Ft.Interval.MINUTE, now);
         }
+
+
+        /*
+         * Tests for .extend()
+         */
+
+        public void test_extend__started_state ()
+        {
+            var now = Ft.Timestamp.peek ();
+            var timer = new Ft.Timer.with_state (
+                create_started_state (
+                    5 * Ft.Interval.MINUTE,
+                    3200 * Ft.Interval.MILLISECOND
+                )
+            );
+
+            timer.extend (Ft.Interval.MINUTE, now);
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_remaining (now)),
+                new GLib.Variant.int64 (6 * Ft.Interval.MINUTE - 3200 * Ft.Interval.MILLISECOND)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_elapsed (now)),
+                new GLib.Variant.int64 (3200 * Ft.Interval.MILLISECOND)
+            );
+        }
+
+        public void test_extend__paused_state ()
+        {
+            var now = Ft.Timestamp.peek ();
+            var timer = new Ft.Timer.with_state (
+                create_paused_state (
+                    5 * Ft.Interval.MINUTE,
+                    3200 * Ft.Interval.MILLISECOND,
+                    now
+                )
+            );
+
+            timer.extend (Ft.Interval.MINUTE, now);
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_remaining (now)),
+                new GLib.Variant.int64 (6 * Ft.Interval.MINUTE - 3200 * Ft.Interval.MILLISECOND)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_elapsed (now)),
+                new GLib.Variant.int64 (3200 * Ft.Interval.MILLISECOND)
+            );
+        }
+
+        public void test_extend__shorten ()
+        {
+            var now = Ft.Timestamp.peek ();
+            var timer = new Ft.Timer.with_state (
+                create_started_state (
+                    5 * Ft.Interval.MINUTE,
+                    3200 * Ft.Interval.MILLISECOND,
+                    now
+                )
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_remaining (now)),
+                new GLib.Variant.int64 (5 * Ft.Interval.MINUTE - 3200 * Ft.Interval.MILLISECOND)
+            );
+
+            timer.extend (-Ft.Interval.MINUTE, now);
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_remaining (now)),
+                new GLib.Variant.int64 (4 * Ft.Interval.MINUTE - 3200 * Ft.Interval.MILLISECOND)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_elapsed (now)),
+                new GLib.Variant.int64 (3200 * Ft.Interval.MILLISECOND)
+            );
+        }
+
+        public void test_extend__shorten_to_zero ()
+        {
+            var now = Ft.Timestamp.peek ();
+            var timer = new Ft.Timer.with_state (
+                create_started_state (
+                    5 * Ft.Interval.MINUTE,
+                    3200 * Ft.Interval.MILLISECOND,
+                    now
+                )
+            );
+
+            timer.extend (-10 * Ft.Interval.MINUTE, now);
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_remaining (now)),
+                new GLib.Variant.int64 (10 * Ft.Interval.SECOND)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.calculate_elapsed (now)),
+                new GLib.Variant.int64 (3200 * Ft.Interval.MILLISECOND)
+            );
+        }
+
 
         /*
          * Tests for signals

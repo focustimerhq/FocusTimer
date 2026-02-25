@@ -77,6 +77,14 @@
     <property type="x" name="FinishedTime" access="read"/>
 
     <!--
+        LastChangedTime:
+        Timestamp of last state change
+
+        Unix timestamp (in microseconds).
+    -->
+    <property type="x" name="LastChangedTime" access="read"/>
+
+    <!--
         IsStarted:
         @result: True if the timer has been started
 
@@ -205,10 +213,23 @@
 
         Rewind the timer by the specified interval.
 
-        This method winds back the elapsed time by the given @interval. I places an intteruption in
+        This method winds back the elapsed time by the given @interval. I places an interruption in
         the past without stopping the timer.
     -->
     <method name="Rewind">
+      <arg type="x" name="interval" direction="in"/>
+    </method>
+
+    <!--
+        Extend:
+        @interval: Time to extend/shorten in microseconds
+
+        Extend or shorten the countdown by the specified interval.
+
+        This method modifies timer duration by given @interval. It ensures there's
+        always some remaining time left for undoing the action, ignoring given value.
+    -->
+    <method name="Extend">
       <arg type="x" name="interval" direction="in"/>
     </method>
 
@@ -239,6 +260,19 @@
         when the timer is started, paused, resumed, or its properties are modified.
     -->
     <signal name="Changed"/>
+
+    <!--
+        Tick:
+        @timestamp: Unix timestamp (in milliseconds) of the tick
+
+        Emitted every second while the timer is running.
+
+        @timestamp is aligned to full seconds of elapsed time. It's not real time,
+        but rounded. The signal is intended for displaying elapsed/remaining time.
+    -->
+    <signal name="Tick">
+      <arg type="x" name="timestamp"/>
+    </signal>
 
     <!--
         Finished:

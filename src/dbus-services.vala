@@ -104,7 +104,13 @@ namespace Ft
         {
             get {
                 return this.timer_state.finished_time;
+            }
+        }
 
+        public int64 last_changed_time
+        {
+            get {
+                return this.last_state_changed_time;
             }
         }
 
@@ -114,6 +120,7 @@ namespace Ft
         private string                      object_path;
         private Ft.State                    _state;
         private Ft.TimerState               timer_state;
+        private int64                       last_state_changed_time = Ft.Timestamp.UNDEFINED;
 
         public TimerDBusService (GLib.DBusConnection connection,
                                  string              object_path,
@@ -126,6 +133,7 @@ namespace Ft
             this.session_manager = session_manager;
 
             this.timer.state_changed.connect (this.on_timer_state_changed);
+            this.timer.tick.connect (this.on_timer_tick);
             this.timer.finished.connect (this.on_timer_finished);
             this.session_manager.notify["state"].connect (this.on_session_manager_notify_state);
         }
@@ -139,6 +147,7 @@ namespace Ft
             var changed_properties = new GLib.VariantBuilder (GLib.VariantType.VARDICT);
             var invalidated_properties = new GLib.VariantBuilder (new GLib.VariantType ("as"));
             var timer_state = this.timer.state.copy ();
+            var last_state_changed_time = this.timer.get_last_state_changed_time ();
             var state = this.session_manager.current_state;
 
             if (state != this._state) {
@@ -177,8 +186,15 @@ namespace Ft
                                         new GLib.Variant.int64 (timer_state.finished_time));
             }
 
+            if (last_state_changed_time != this.last_state_changed_time) {
+                changed_properties.add ("{sv}",
+                                        "LastChangedTime",
+                                        new GLib.Variant.int64 (last_state_changed_time));
+            }
+
             this._state = state;
             this.timer_state = timer_state;
+            this.last_state_changed_time = last_state_changed_time;
 
             try {
                 this.connection.emit_signal (
@@ -204,6 +220,11 @@ namespace Ft
         {
             this.update_properties ();
             this.changed ();
+        }
+
+        private void on_timer_tick (int64 timestamp)
+        {
+            this.tick (timestamp);
         }
 
         private void on_timer_finished ()
@@ -280,6 +301,11 @@ namespace Ft
             this.timer.rewind (interval);
         }
 
+        public void extend (int64 interval) throws GLib.DBusError, GLib.IOError
+        {
+            this.timer.extend (interval);
+        }
+
         public void skip () throws GLib.DBusError, GLib.IOError
         {
             this.session_manager.advance ();
@@ -292,11 +318,14 @@ namespace Ft
 
         public signal void changed ();
 
+        public signal void tick (int64 timestamp);
+
         public signal void finished ();
 
         public override void dispose ()
         {
             this.timer.state_changed.disconnect (this.on_timer_state_changed);
+            this.timer.tick.disconnect (this.on_timer_tick);
             this.timer.finished.disconnect (this.on_timer_finished);
             this.session_manager.notify["state"].disconnect (this.on_session_manager_notify_state);
 
