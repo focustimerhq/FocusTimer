@@ -18,6 +18,7 @@ namespace Ft
         IN_OUT
     }
 
+
     private sealed class VolumeAnimation : GLib.Object
     {
         private const uint INTERVAL = 50;
@@ -213,6 +214,7 @@ namespace Ft
         return GLib.Path.build_filename (Config.PACKAGE_DATA_DIR, "sounds", path);
     }
 
+
     private string build_absolute_uri (string uri)
     {
         var scheme = GLib.Uri.parse_scheme (uri);
@@ -233,6 +235,7 @@ namespace Ft
         return uri;
     }
 
+
     private bool transform_uri_to_uri (GLib.Binding   binding,
                                        GLib.Value     source_value,
                                        ref GLib.Value target_value)
@@ -244,43 +247,6 @@ namespace Ft
         return true;
     }
 
-    private bool transform_uri_to_path (GLib.Binding   binding,
-                                        GLib.Value     source_value,
-                                        ref GLib.Value target_value)
-    {
-        var uri = source_value.get_string ();
-
-        if (uri == "" || uri == null) {
-            target_value.set_string ("");
-            return true;
-        }
-
-        var scheme = GLib.Uri.parse_scheme (uri);
-
-        if (scheme == null)
-        {
-            var preset_filename = uri;
-            var preset_path = build_absolute_path (preset_filename);
-
-            target_value.set_string (preset_path);
-        }
-        else {
-            try {
-                target_value.set_string (GLib.Filename.from_uri (uri));
-            }
-            catch (GLib.ConvertError error) {
-                GLib.warning ("Error converting '%s' to filename: %s", uri, error.message);
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    private double amplitude_to_decibels (double amplitude)
-    {
-        return 20.0 * Math.log10 (amplitude);
-    }
 
     private bool is_mime_type (string   content_type,
                                string[] mime_types)

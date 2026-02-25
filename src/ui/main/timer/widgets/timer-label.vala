@@ -11,10 +11,9 @@ namespace Ft
     [GtkTemplate (ui = "/io/github/focustimerhq/FocusTimer/ui/main/timer/widgets/timer-label.ui")]
     public class TimerLabel : Gtk.Widget, Gtk.Buildable
     {
-        private const uint   BLINK_DURATION = 1000;
         private const double BLINK_FADE_VALUE = 0.2;
-        private const uint   FADE_IN_DURATION = 500;
-        private const uint   FADE_OUT_DURATION = 500;
+        private const uint   BLINK_DURATION = 1500;
+        private const uint   TRANSITION_DURATION = 500;
 
         public unowned Ft.Timer timer {
             get {
@@ -217,7 +216,7 @@ namespace Ft
             this.crossfade_animation = new Adw.TimedAnimation (this,
                                                                crossfade_progress,
                                                                1.0,
-                                                               FADE_IN_DURATION,
+                                                               TRANSITION_DURATION,
                                                                animation_target);
             this.crossfade_animation.set_easing (Adw.Easing.EASE_OUT_QUAD);
             this.crossfade_animation.done.connect (this.stop_crossfade_animation);
@@ -257,7 +256,7 @@ namespace Ft
             this.crossfade_animation = new Adw.TimedAnimation (this,
                                                                crossfade_progress,
                                                                0.0,
-                                                               FADE_OUT_DURATION,
+                                                               TRANSITION_DURATION,
                                                                animation_target);
             this.crossfade_animation.set_easing (Adw.Easing.EASE_IN_OUT_CUBIC);
             this.crossfade_animation.done.connect (this.stop_crossfade_animation);
@@ -348,7 +347,7 @@ namespace Ft
                 this.blink_animation = new Adw.TimedAnimation (this.box,
                                                                this.box.opacity,
                                                                1.0,
-                                                               FADE_IN_DURATION,
+                                                               TRANSITION_DURATION,
                                                                animation_target);
                 this.blink_animation.easing = Adw.Easing.EASE_OUT_QUAD;
                 this.blink_animation.follow_enable_animations_setting = false;
