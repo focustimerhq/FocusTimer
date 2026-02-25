@@ -8,3 +8,9 @@ option(
   value: 'default',
   description: 'The build profile for Focus Timer. One of "default" or "development".'
 )
+option(
+  'automation',
+  type: 'feature',
+  value: 'enabled',
+  description: 'Enable Automation panel.'
+)

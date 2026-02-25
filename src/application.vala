@@ -667,9 +667,12 @@ namespace Ft
             this.event_producer     = new Ft.EventProducer ();
             this.event_bus          = this.event_producer.bus;
             this.job_queue          = new Ft.JobQueue ();
-            this.action_manager     = new Ft.ActionManager ();
             this.logger             = new Ft.Logger ();
             this.background_manager = new Ft.BackgroundManager ();
+
+#if ENABLE_AUTOMATION
+            this.action_manager = new Ft.ActionManager ();
+#endif
 
             this.setup_resources ();
             this.setup_database ();
@@ -909,7 +912,7 @@ namespace Ft
             // Stop emitting new events
             this.event_producer.destroy ();
             this.event_bus.destroy ();
-            this.action_manager.destroy ();
+            this.action_manager?.destroy ();
             this.capability_manager.destroy ();
             this.background_manager.destroy ();
             this.session_manager.enter_session.disconnect (this.on_enter_session);

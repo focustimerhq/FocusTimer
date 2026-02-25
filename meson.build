@@ -93,6 +93,10 @@ if gtk_wayland_dep.found()
   add_project_arguments(['-D', 'HAVE_GDK_WAYLAND'], language: 'vala')
 endif
 
+if get_option('automation').enabled()
+  add_project_arguments(['-D', 'ENABLE_AUTOMATION'], language: 'vala')
+endif
+
 application_id = 'io.github.focustimerhq.FocusTimer'
 application_name = 'Focus Timer'
 package_name = meson.project_name()
