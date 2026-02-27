@@ -269,6 +269,41 @@ namespace Ft
             return this.completion_time;
         }
 
+        public bool is_scheduled ()
+        {
+            unowned GLib.List<Ft.TimeBlock> link = this.time_blocks.first ();
+
+            var first_status = link != null
+                    ? link.data.get_status ()
+                    : Ft.TimeBlockStatus.SCHEDULED;
+
+            return first_status == Ft.TimeBlockStatus.SCHEDULED;
+        }
+
+        public Ft.TimeBlockStatus get_status ()
+        {
+            unowned GLib.List<Ft.TimeBlock> link = this.time_blocks.first ();
+
+            if (link == null || link.data.get_status () == Ft.TimeBlockStatus.SCHEDULED) {
+                return Ft.TimeBlockStatus.SCHEDULED;
+            }
+
+            while (link != null)
+            {
+                if (link.data.get_status () == Ft.TimeBlockStatus.IN_PROGRESS ||
+                    link.data.get_status () == Ft.TimeBlockStatus.SCHEDULED)
+                {
+                    return Ft.TimeBlockStatus.IN_PROGRESS;
+                }
+
+                link = link.next;
+            }
+
+            return this.is_visible ()
+                    ? Ft.TimeBlockStatus.COMPLETED
+                    : Ft.TimeBlockStatus.UNCOMPLETED;
+        }
+
         /**
          * Hide cycles that were uncompleted.
          */
@@ -410,17 +445,6 @@ namespace Ft
             this.progress_value = double.NAN;
             this.progress_reference_start_time = Ft.Timestamp.UNDEFINED;
             this.progress_reference_end_time = Ft.Timestamp.UNDEFINED;
-        }
-
-        public bool is_scheduled ()
-        {
-            unowned GLib.List<Ft.TimeBlock> link = this.time_blocks.first ();
-
-            var first_status = link != null
-                ? link.data.get_status ()
-                : Ft.TimeBlockStatus.SCHEDULED;
-
-            return first_status == Ft.TimeBlockStatus.SCHEDULED;
         }
 
         public override void dispose ()

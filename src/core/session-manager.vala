@@ -758,7 +758,7 @@ namespace Ft
             this.thaw_current_session_changed ();
         }
 
-        private unowned Ft.TimeBlock? get_next_time_block ()
+        public unowned Ft.TimeBlock? get_next_time_block ()
         {
             Ft.TimeBlock? next_time_block = null;
 
@@ -2447,6 +2447,17 @@ namespace Ft
 
                 this.set_current_time_block_full (next_session, null, timestamp);
             }
+        }
+
+        public bool can_reset ()
+        {
+            var current_session = this._current_session;
+            var is_waiting_for_activity =
+                    !this._timer.is_started () && this._timer.user_data != null;
+
+            return current_session != null
+                    ? !current_session.is_scheduled () && !is_waiting_for_activity
+                    : false;
         }
 
         /**

@@ -231,25 +231,19 @@ namespace Ft
         private void update_buttons (bool animate = true)
         {
             var current_time_block = this.session_manager.current_time_block;
-            var current_session = this.session_manager.current_session;
-
             var is_started = this.timer.is_started ();
-            var is_stopped = !is_started;
             var is_paused = this.timer.is_paused ();
             var is_finished = this.timer.is_finished ();
             var is_break = current_time_block != null
                     ? current_time_block.state.is_break ()
                     : true;
-            var is_waiting_for_activity = !is_started && this.timer.user_data != null;
-            var can_reset = current_session != null
-                    ? !current_session.is_scheduled () && !is_waiting_for_activity
-                    : false;
+            var can_reset = this.session_manager.can_reset ();
 
             Gtk.StackPage? left_page = null;
             Gtk.StackPage? center_page = null;
             Gtk.StackPage? right_page = null;
 
-            if (is_stopped)
+            if (!is_started)
             {
                 left_page = can_reset
                         ? get_stack_page_by_name (this.left_image_stack, "reset")

@@ -347,6 +347,13 @@ namespace Ft
     {
         private const string DBUS_INTERFACE_NAME = "io.github.focustimerhq.FocusTimer.Session";
 
+        public string current_state
+        {
+            owned get {
+                return this._current_state.to_string ();
+            }
+        }
+
         public int64 start_time
         {
             get {
@@ -368,12 +375,21 @@ namespace Ft
             }
         }
 
+        public bool can_reset
+        {
+            get {
+                return this._can_reset;
+            }
+        }
+
         private Ft.SessionManager?          session_manager;
         private weak GLib.DBusConnection?   connection;
         private string                      object_path;
+        private Ft.State                    _current_state = Ft.State.STOPPED;
         private int64                       _start_time = Ft.Timestamp.UNDEFINED;
         private int64                       _end_time = Ft.Timestamp.UNDEFINED;
         private bool                        _has_uniform_breaks = false;
+        private bool                        _can_reset = false;
 
         public SessionDBusService (GLib.DBusConnection connection,
                                    string              object_path,
@@ -408,6 +424,7 @@ namespace Ft
             var changed_properties = new GLib.VariantBuilder (GLib.VariantType.VARDICT);
             var invalidated_properties = new GLib.VariantBuilder (new GLib.VariantType ("as"));
             var current_session = this.session_manager.current_session;
+            var current_state = this.session_manager.current_state;
 
             var start_time = current_session != null
                     ? current_session.start_time
@@ -416,12 +433,23 @@ namespace Ft
                     ? current_session.end_time
                     : Ft.Timestamp.UNDEFINED;
             var has_uniform_breaks = this.session_manager.has_uniform_breaks;
+            var can_reset = this.session_manager.can_reset ();
+            var changed = false;
+
+            if (this._current_state != current_state) {
+                this._current_state = current_state;
+                changed_properties.add ("{sv}",
+                                        "CurrentState",
+                                        new GLib.Variant.string (current_state.to_string ()));
+                changed = true;
+            }
 
             if (this._start_time != start_time) {
                 this._start_time = start_time;
                 changed_properties.add ("{sv}",
                                         "StartTime",
                                         new GLib.Variant.int64 (start_time));
+                changed = true;
             }
 
             if (this._end_time != end_time) {
@@ -429,6 +457,7 @@ namespace Ft
                 changed_properties.add ("{sv}",
                                         "EndTime",
                                         new GLib.Variant.int64 (end_time));
+                changed = true;
             }
 
             if (this._has_uniform_breaks != has_uniform_breaks) {
@@ -436,24 +465,36 @@ namespace Ft
                 changed_properties.add ("{sv}",
                                         "HasUniformBreaks",
                                         new GLib.Variant.boolean (has_uniform_breaks));
+                changed = true;
             }
 
-            try {
-                this.connection.emit_signal (
-                    null,
-                    this.object_path,
-                    "org.freedesktop.DBus.Properties",
-                    "PropertiesChanged",
-                    new GLib.Variant (
-                        "(sa{sv}as)",
-                        DBUS_INTERFACE_NAME,
-                        changed_properties,
-                        invalidated_properties
-                    )
-                );
+            if (this._can_reset != can_reset) {
+                this._can_reset = can_reset;
+                changed_properties.add ("{sv}",
+                                        "CanReset",
+                                        new GLib.Variant.boolean (can_reset));
+                changed = true;
             }
-            catch (GLib.Error error) {
-                GLib.warning ("Failed to emit PropertiesChanged signal: %s", error.message);
+
+            if (changed)
+            {
+                try {
+                    this.connection.emit_signal (
+                        null,
+                        this.object_path,
+                        "org.freedesktop.DBus.Properties",
+                        "PropertiesChanged",
+                        new GLib.Variant (
+                            "(sa{sv}as)",
+                            DBUS_INTERFACE_NAME,
+                            changed_properties,
+                            invalidated_properties
+                        )
+                    );
+                }
+                catch (GLib.Error error) {
+                    GLib.warning ("Failed to emit PropertiesChanged signal: %s", error.message);
+                }
             }
         }
 
@@ -519,6 +560,9 @@ namespace Ft
                 builder.add ("{sv}",
                              "weight",
                              new GLib.Variant.double (cycle.get_weight ()));
+                builder.add ("{sv}",
+                             "status",
+                             new GLib.Variant.string (cycle.get_status ().to_string ()));
             }
 
             return builder.end ();
@@ -528,6 +572,7 @@ namespace Ft
                                                 GLib.ParamSpec pspec)
         {
             this.update_properties ();
+            this.changed ();
         }
 
         private void on_notify_has_uniform_breaks (GLib.Object    object,
@@ -607,6 +652,12 @@ namespace Ft
         }
 
         [DBus (signature = "a{sv}")]
+        public GLib.Variant GetNextTimeBlock () throws GLib.DBusError, GLib.IOError
+        {
+            return this.serialize_time_block (this.session_manager.get_next_time_block ());
+        }
+
+        [DBus (signature = "aa{sv}")]
         public GLib.Variant list_time_blocks () throws GLib.DBusError, GLib.IOError
         {
             var items = new GLib.Variant[0];
@@ -619,7 +670,7 @@ namespace Ft
             return new GLib.Variant.array (GLib.VariantType.VARDICT, items);
         }
 
-        [DBus (signature = "a{sv}")]
+        [DBus (signature = "aa{sv}")]
         public GLib.Variant list_cycles () throws GLib.DBusError, GLib.IOError
         {
             var items = new GLib.Variant[0];

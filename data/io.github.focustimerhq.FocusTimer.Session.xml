@@ -13,6 +13,47 @@
   <interface name="io.github.focustimerhq.FocusTimer.Session">
 
     <!--
+        CurrentState:
+        State of the current time-block
+
+        It's the same as Timer state. It's useful for Changed signal handlers,
+        as services may not be in sync.
+    -->
+    <property type="s" name="CurrentState" access="read"/>
+
+    <!--
+        StartTime:
+        The session start time
+
+        Unix timestamp (in milliseconds) indicating when the current session started.
+    -->
+    <property type="x" name="StartTime" access="read"/>
+
+    <!--
+        EndTime:
+        The session end time
+
+        Unix timestamp (in milliseconds) indicating when the current session will end.
+    -->
+    <property type="x" name="EndTime" access="read"/>
+
+    <!--
+        HasUniformBreaks:
+        Whether the session uses uniform breaks
+
+        A boolean indicating whether all breaks in the session have the same
+        duration. When true, all short breaks have the same length; when false,
+        break durations may vary.
+    -->
+    <property type="b" name="HasUniformBreaks" access="read"/>
+
+    <!--
+        CanReset:
+        Whether Reset method will have any effect
+    -->
+    <property type="b" name="CanReset" access="read"/>
+
+    <!--
         Advance:
 
         Advance to the next state.
@@ -140,6 +181,19 @@
     </method>
 
     <!--
+        GetNextTimeBlock:
+        @result: A dictionary containing time block information
+
+        Get the next time block.
+
+        Returned data has same structure as GetCurrentTimeBlock. Will return time-block
+        for the next session when there are no scheduled time-blocks left.
+    -->
+    <method name="GetNextTimeBlock">
+      <arg type="a{sv}" name="result" direction="out"/>
+    </method>
+
+    <!--
         ListTimeBlocks:
         @result: An array of time block dictionaries
 
@@ -150,7 +204,7 @@
         time block dictionary.
     -->
     <method name="ListTimeBlocks">
-      <arg type="a{sv}" name="result" direction="out"/>
+      <arg type="aa{sv}" name="result" direction="out"/>
     </method>
 
     <!--
@@ -186,7 +240,7 @@
         </variablelist>
     -->
     <method name="ListCycles">
-      <arg type="a{sv}" name="result" direction="out"/>
+      <arg type="aa{sv}" name="result" direction="out"/>
     </method>
 
     <!--
@@ -242,32 +296,6 @@
         This signal is emitted when session properties or state change.
     -->
     <signal name="Changed"/>
-
-    <!--
-        StartTime:
-        The session start time
-
-        Unix timestamp (in milliseconds) indicating when the current session started.
-    -->
-    <property type="x" name="StartTime" access="read"/>
-
-    <!--
-        EndTime:
-        The session end time
-
-        Unix timestamp (in milliseconds) indicating when the current session will end.
-    -->
-    <property type="x" name="EndTime" access="read"/>
-
-    <!--
-        HasUniformBreaks:
-        Whether the session uses uniform breaks
-
-        A boolean indicating whether all breaks in the session have the same
-        duration. When true, all short breaks have the same length; when false,
-        break durations may vary.
-    -->
-    <property type="b" name="HasUniformBreaks" access="read"/>
 
   </interface>
 </node>
