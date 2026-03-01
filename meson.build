@@ -1,7 +1,7 @@
 project(
   'focus-timer',
   ['vala', 'c'],
-  version: '1.0-beta',
+  version: '1.0',
   meson_version: '>=0.59.0',
   default_options: [
     'warning_level=2',

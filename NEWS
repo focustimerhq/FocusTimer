@@ -1,10 +1,25 @@
+2026-03-01  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 1.0:
+
+	* Fix break overlay scaling on HiDPI displays (thanks @scholzri)
+	* Automatic daily backup
+	* Removed libcanberra backend for playing notification sounds
+	* Updated Lithuanian translation (thanks @psukys)
+	* Updated Russian translation (thanks @ViktorOn)
+
+2026-02-11  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 0.29.0:
+
+	* Support for GNOME Shell 50
+	* Migrated to libpeas-2
+
 2026-01-20  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 1.0-beta:
 
-    * Ported the app to GTK+4 and libadwaita
-    * Updated Swedish translation (thanks @haaninjo)
-    * Updated Georgian translation (thanks @NorwayFun)
-    * Updated Indonesian translation (thanks @atriwidada)
+	* Ported the app to GTK+4 and libadwaita
+	* Updated Swedish translation (thanks @haaninjo)
+	* Updated Georgian translation (thanks @NorwayFun)
+	* Updated Indonesian translation (thanks @atriwidada)
 
 2025-12-18  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 0.28.1:

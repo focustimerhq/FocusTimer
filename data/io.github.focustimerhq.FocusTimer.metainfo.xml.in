@@ -90,14 +90,15 @@
 
   <!-- Releases -->
   <releases>
-    <release version="1.0-beta" date="2026-01-20">
+    <release version="1.0" date="2026-03-01">
       <description translate="no">
-        <p>Overview of changes in focus-timer 1.0-beta</p>
+        <p>Overview of changes in focus-timer 1.0:</p>
         <ul>
-          <li>Ported the app to GTK+4 and libadwaita</li>
-          <li>Updated Swedish translation (thanks @haaninjo)</li>
-          <li>Updated Georgian translation (thanks @NorwayFun)</li>
-          <li>Updated Indonesian translation (thanks @atriwidada)</li>
+          <li>Fix break overlay scaling on HiDPI displays (thanks @scholzri)</li>
+          <li>Automatic daily backup</li>
+          <li>Removed libcanberra backend for playing notification sounds</li>
+          <li>Updated Lithuanian translation (thanks @psukys)</li>
+          <li>Updated Russian translation (thanks @ViktorOn)</li>
         </ul>
       </description>
     </release>
