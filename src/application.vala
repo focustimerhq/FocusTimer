@@ -321,6 +321,10 @@ namespace Ft
             }
 
             window.present ();
+
+            if (!window.is_active) {
+                this.dbus_service.emit_request_focus ();
+            }
         }
 
         public void show_preferences (string panel_name = "")

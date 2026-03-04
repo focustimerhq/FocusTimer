@@ -38,6 +38,14 @@ namespace Ft
             this.application.quit ();
         }
 
+        [DBus (visible = false)]
+        public void emit_request_focus ()
+        {
+            this.request_focus ();
+        }
+
+        public signal void request_focus ();
+
         public override void dispose ()
         {
             this.application = null;

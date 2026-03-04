@@ -68,5 +68,14 @@
     -->
     <method name="Quit"/>
 
+    <!--
+        RequestFocus:
+
+        Emitted when user hits Bring To Focus shortcut
+
+        Intended to be handled by an desktop extension.
+    -->
+    <signal name="RequestFocus"/>
+
   </interface>
 </node>
