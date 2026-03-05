@@ -129,7 +129,7 @@ namespace Ft
         private Ft.StatsManager?            stats_manager;
         private Ft.EventProducer?           event_producer;
         private Ft.EventBus?                event_bus;
-        private Ft.Extension?               extension;
+        private Ft.DesktopExtension?        extension;
         private Ft.JobQueue?                job_queue;
         private Ft.ActionManager?           action_manager;
         private Ft.BackgroundManager?       background_manager;
@@ -631,7 +631,7 @@ namespace Ft
 
         private void setup_extension ()
         {
-            this.extension = new Ft.Extension ();
+            this.extension = new Ft.DesktopExtension ();
 
             // TODO
             // this.capabilities.register_many (this.extension.capabilities);

@@ -21,12 +21,12 @@ namespace Ft
         [GtkChild]
         private unowned Gtk.TextView error_text_view;
 
-        private Ft.Extension? extension = null;
-        private uint          timeout_id = 0U;
+        private Ft.DesktopExtension? extension = null;
+        private uint                 timeout_id = 0U;
 
         construct
         {
-            this.extension = new Ft.Extension ();
+            this.extension = new Ft.DesktopExtension ();
         }
 
         private void close_after_timeout (uint seconds)
@@ -78,21 +78,21 @@ namespace Ft
                             this.close ();
                         }
                     }
-                    catch (Ft.ExtensionError error)
+                    catch (Ft.DesktopExtensionError error)
                     {
                         switch (error.code)
                         {
-                            case Ft.ExtensionError.TIMED_OUT:
+                            case Ft.DesktopExtensionError.TIMED_OUT:
                                 this.error_message_label.label = _("Time-out reached");
                                 this.error_message_label.visible = true;
                                 break;
 
-                            case Ft.ExtensionError.NOT_ALLOWED:
+                            case Ft.DesktopExtensionError.NOT_ALLOWED:
                                 this.error_message_label.label = _("Installing extensions is not allowed");
                                 this.error_message_label.visible = true;
                                 break;
 
-                            case Ft.ExtensionError.DOWNLOAD_FAILED:
+                            case Ft.DesktopExtensionError.DOWNLOAD_FAILED:
                                 this.error_message_label.label = _("Failed to download the extension");
                                 this.error_message_label.visible = true;
                                 break;

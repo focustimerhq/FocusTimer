@@ -6,9 +6,9 @@
 
 namespace Gnome
 {
-    public class ExtensionProvider : Ft.Provider, Ft.ExtensionProvider
+    public class DesktopExtensionProvider : Ft.Provider, Ft.DesktopExtensionProvider
     {
-        private const string EXTENSION_UUID = "focustimer@focustimerhq.github.io";
+        private const string EXTENSION_UUID = "focus-timer@focustimerhq.github.io";
 
         public bool extension_enabled {
             get {
@@ -175,7 +175,7 @@ namespace Gnome
             }
         }
 
-        public async bool install_extension () throws Ft.ExtensionError
+        public async bool install_extension () throws Ft.DesktopExtensionError
         {
             assert (this.shell_extensions_proxy != null);
 
@@ -197,28 +197,28 @@ namespace Gnome
             }
             catch (GLib.IOError error) {
                 if (error.code == GLib.IOError.TIMED_OUT) {
-                    throw new Ft.ExtensionError.TIMED_OUT ("Timed out");
+                    throw new Ft.DesktopExtensionError.TIMED_OUT ("Timed out");
                 }
 
                 if (error.code == GLib.IOError.DBUS_ERROR &&
                     error.message.contains ("Shell.Extensions.Error.NotAllowed"))
                 {
-                    throw new Ft.ExtensionError.NOT_ALLOWED ("Not allowed");
+                    throw new Ft.DesktopExtensionError.NOT_ALLOWED ("Not allowed");
                 }
 
                 if (error.code == GLib.IOError.DBUS_ERROR &&
                     error.message.contains ("Shell.Extensions.Error.InfoDownloadFailed") ||
                     error.message.contains ("Shell.Extensions.Error.DownloadFailed"))
                 {
-                    throw new Ft.ExtensionError.DOWNLOAD_FAILED ("Failed to download the extension");
+                    throw new Ft.DesktopExtensionError.DOWNLOAD_FAILED ("Failed to download the extension");
                 }
 
                 this.log_error ("Error while installing extension", error);
-                throw new Ft.ExtensionError.OTHER (error.message);
+                throw new Ft.DesktopExtensionError.OTHER (error.message);
             }
             catch (GLib.Error error) {
                 this.log_error ("Error while installing extension", error);
-                throw new Ft.ExtensionError.OTHER (error.message);
+                throw new Ft.DesktopExtensionError.OTHER (error.message);
             }
         }
 

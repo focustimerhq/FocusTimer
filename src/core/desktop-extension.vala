@@ -11,7 +11,7 @@ using GLib;
 
 namespace Ft
 {
-    public errordomain ExtensionError
+    public errordomain DesktopExtensionError
     {
         TIMED_OUT,
         NOT_ALLOWED,
@@ -19,7 +19,8 @@ namespace Ft
         OTHER
     }
 
-    public interface ExtensionProvider : Ft.Provider
+
+    public interface DesktopExtensionProvider : Ft.Provider
     {
         public abstract bool extension_enabled { get; }
 
@@ -27,7 +28,7 @@ namespace Ft
 
         public abstract async bool disable_extension ();
 
-        public abstract async bool install_extension () throws Ft.ExtensionError;
+        public abstract async bool install_extension () throws Ft.DesktopExtensionError;
 
         public abstract async bool uninstall_extension ();
 
@@ -36,7 +37,7 @@ namespace Ft
 
 
     [SingleInstance]
-    public class Extension : GLib.Object
+    public class DesktopExtension : GLib.Object
     {
         public bool available {
             get {
@@ -62,15 +63,15 @@ namespace Ft
             }
         }
 
-        private Ft.ProviderSet<Ft.ExtensionProvider> providers = null;
-        private Ft.ExtensionProvider? _provider = null;
-        private Ft.CapabilitySet?     _capabilities = null;
-        private bool                  _available = false;
-        private bool                  _enabled = false;
+        private Ft.ProviderSet<Ft.DesktopExtensionProvider> providers = null;
+        private Ft.DesktopExtensionProvider? _provider = null;
+        private Ft.CapabilitySet?            _capabilities = null;
+        private bool                         _available = false;
+        private bool                         _enabled = false;
 
         construct
         {
-            this.providers = new Ft.ProviderSet<Ft.ExtensionProvider> (Ft.SelectionMode.SINGLE);
+            this.providers = new Ft.ProviderSet<Ft.DesktopExtensionProvider> (Ft.SelectionMode.SINGLE);
             this.providers.provider_selected.connect (this.on_provider_selected);
             this.providers.provider_unselected.connect (this.on_provider_unselected);
             this.providers.provider_enabled.connect (this.on_provider_enabled);
@@ -85,7 +86,7 @@ namespace Ft
 
         private void setup_providers ()
         {
-            this.providers.add (new Gnome.ExtensionProvider (), Ft.Priority.HIGH);
+            this.providers.add (new Gnome.DesktopExtensionProvider (), Ft.Priority.HIGH);
         }
 
         private void update_status ()
@@ -112,7 +113,7 @@ namespace Ft
             this.update_status ();
         }
 
-        private void on_provider_selected (Ft.ExtensionProvider provider)
+        private void on_provider_selected (Ft.DesktopExtensionProvider provider)
         {
             if (this._provider != provider) {
                 this._provider = provider;
@@ -122,7 +123,7 @@ namespace Ft
             this.update_status ();
         }
 
-        private void on_provider_unselected (Ft.ExtensionProvider provider)
+        private void on_provider_unselected (Ft.DesktopExtensionProvider provider)
         {
             if (this._provider == provider) {
                 this._provider = null;
@@ -132,14 +133,14 @@ namespace Ft
             this.update_status ();
         }
 
-        private void on_provider_enabled (Ft.ExtensionProvider provider)
+        private void on_provider_enabled (Ft.DesktopExtensionProvider provider)
         {
             provider.notify["extension-enabled"].connect (this.on_notify_extension_enabled);
 
             this.update_status ();
         }
 
-        private void on_provider_disabled (Ft.ExtensionProvider provider)
+        private void on_provider_disabled (Ft.DesktopExtensionProvider provider)
         {
             provider.notify["extension-enabled"].disconnect (this.on_notify_extension_enabled);
 
@@ -167,7 +168,7 @@ namespace Ft
                     : false;
         }
 
-        public async bool install () throws Ft.ExtensionError
+        public async bool install () throws Ft.DesktopExtensionError
         {
             return this._provider != null
                     ? yield this._provider.install_extension ()

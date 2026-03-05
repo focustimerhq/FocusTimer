@@ -139,7 +139,7 @@ namespace Ft
         private Ft.SessionManager?      session_manager = null;
         private Ft.Timer?               timer = null;
         private Ft.BackgroundManager?   background_manager = null;
-        private Ft.Extension?           extension = null;
+        private Ft.DesktopExtension?    extension = null;
         private Adw.Toast?              install_extension_toast = null;
         private static bool             install_extension_toast_dismissed = false;
         private static uint             background_hold_id = 0U;
@@ -165,7 +165,7 @@ namespace Ft
 
             this.background_manager = new Ft.BackgroundManager ();
 
-            this.extension = new Ft.Extension ();
+            this.extension = new Ft.DesktopExtension ();
             this.extension.notify["available"].connect (this.on_extension_notify_available);
 
             this.notify["is-active"].connect (this.on_notify_is_active);
