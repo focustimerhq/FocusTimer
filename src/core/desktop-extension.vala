@@ -51,12 +51,6 @@ namespace Ft
             }
         }
 
-        public unowned Ft.CapabilitySet capabilities {
-            get {
-                return this._capabilities;
-            }
-        }
-
         public unowned Ft.Provider provider {
             get {
                 return this._provider;
@@ -65,7 +59,6 @@ namespace Ft
 
         private Ft.ProviderSet<Ft.DesktopExtensionProvider> providers = null;
         private Ft.DesktopExtensionProvider? _provider = null;
-        private Ft.CapabilitySet?            _capabilities = null;
         private bool                         _available = false;
         private bool                         _enabled = false;
 
@@ -76,8 +69,6 @@ namespace Ft
             this.providers.provider_unselected.connect (this.on_provider_unselected);
             this.providers.provider_enabled.connect (this.on_provider_enabled);
             this.providers.provider_disabled.connect (this.on_provider_disabled);
-
-            this._capabilities = new Ft.CapabilitySet ();
 
             this.setup_providers ();
 
@@ -189,7 +180,6 @@ namespace Ft
             this.providers.provider_enabled.disconnect (this.on_provider_enabled);
             this.providers.provider_disabled.disconnect (this.on_provider_disabled);
 
-            this._capabilities = null;
             this._provider = null;
             this.providers = null;
 

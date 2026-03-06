@@ -9,9 +9,6 @@ libtests_common = static_library(
 
 # Define tests. Each test is a separate executable.
 test_names = [
-  'capability',
-  'capability-set',
-  'capability-manager',
   'event-bus',
   'event-producer',
   'job-queue',

@@ -123,7 +123,6 @@ namespace Ft
 
         public Ft.Timer?               timer;
         public Ft.SessionManager?      session_manager;
-        public Ft.CapabilityManager?   capability_manager;
 
         private Ft.KeyboardManager?         keyboard_manager;
         private Ft.StatsManager?            stats_manager;
@@ -133,6 +132,7 @@ namespace Ft
         private Ft.JobQueue?                job_queue;
         private Ft.ActionManager?           action_manager;
         private Ft.BackgroundManager?       background_manager;
+        private Ft.SoundManager?            sound_manager;
         private Ft.Logger?                  logger;
         private GLib.Settings?              settings;
         private uint                        save_idle_id = 0;
@@ -443,7 +443,7 @@ namespace Ft
         private void activate_screen_overlay (GLib.SimpleAction action,
                                               GLib.Variant?     parameter)
         {
-            this.capability_manager.activate ("notifications");
+            // TODO
         }
 
         private void activate_visit_website (GLib.SimpleAction action,
@@ -514,30 +514,6 @@ namespace Ft
 
             var icon_theme = Gtk.IconTheme.get_for_display (display);
             icon_theme.add_resource_path ("/io/github/focustimerhq/FocusTimer/icons");
-        }
-
-        private void setup_capabilities ()
-        {
-            this.capability_manager = new Ft.CapabilityManager ();
-            this.capability_manager.register (new Ft.NotificationsCapability ());
-            this.capability_manager.register (new Ft.GlobalShortcutsCapability ());
-            this.capability_manager.register (new Ft.SoundsCapability ());
-
-            this.hold ();
-
-            var idle_id = GLib.Idle.add (() => {
-                this.capability_manager.enable ("notifications");
-                this.capability_manager.enable ("global-shortcuts");
-
-                if (this.settings.get_boolean ("sounds")) {
-                    this.capability_manager.enable ("sounds");
-                }
-
-                this.release ();
-
-                return GLib.Source.REMOVE;
-            });
-            GLib.Source.set_name_by_id (idle_id, "Ft.Application.setup_capabilities");
         }
 
         private void setup_database ()
@@ -632,9 +608,6 @@ namespace Ft
         private void setup_extension ()
         {
             this.extension = new Ft.DesktopExtension ();
-
-            // TODO
-            // this.capabilities.register_many (this.extension.capabilities);
         }
 
         private void update_color_scheme ()
@@ -678,9 +651,12 @@ namespace Ft
             this.action_manager = new Ft.ActionManager ();
 #endif
 
+            this.sound_manager = this.settings.get_boolean ("sounds")
+                    ? new Ft.SoundManager ()
+                    : null;
+
             this.setup_resources ();
             this.setup_database ();
-            this.setup_capabilities ();
             this.setup_extension ();
             this.setup_actions ();
             this.update_color_scheme ();
@@ -917,7 +893,6 @@ namespace Ft
             this.event_producer.destroy ();
             this.event_bus.destroy ();
             this.action_manager?.destroy ();
-            this.capability_manager.destroy ();
             this.background_manager.destroy ();
             this.session_manager.enter_session.disconnect (this.on_enter_session);
             this.session_manager.leave_session.disconnect (this.on_leave_session);
@@ -961,8 +936,8 @@ namespace Ft
             this.action_manager = null;
             this.logger = null;
             this.background_manager = null;
+            this.sound_manager = null;
             this.keyboard_manager = null;
-            this.capability_manager = null;
             this.stats_manager = null;
             this.session_manager = null;
             this.timer = null;
@@ -1035,12 +1010,9 @@ namespace Ft
                     break;
 
                 case "sounds":
-                    if (settings.get_boolean (key)) {
-                        this.capability_manager.enable ("sounds");
-                    }
-                    else {
-                        this.capability_manager.disable ("sounds");
-                    }
+                    this.sound_manager = settings.get_boolean (key)
+                            ? new Ft.SoundManager ()
+                            : null;
                     break;
             }
         }
@@ -1079,6 +1051,12 @@ namespace Ft
         {
             this.activate_prefixed_action (shortcut_name, null);
         }
+
+        // private void on_notify_handles_notifications (GLib.Object    obj,
+        //                                               GLib.ParamSpec pspec)
+        // {
+        //     debug ("### on_notify_handles_notifications = %s", this.extension.handles_notifications.to_string ());
+        // }
 
         public override void dispose ()
         {

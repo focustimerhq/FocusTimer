@@ -29,9 +29,6 @@ libfocus_timer_sources = files(
   'core/action-list-model.vala',
   'core/action-manager.vala',
   'core/background-manager.vala',
-  'core/capability.vala',
-  'core/capability-manager.vala',
-  'core/capability-set.vala',
   'core/command.vala',
   'core/context.vala',
   'core/cycle.vala',
@@ -118,9 +115,6 @@ libfocus_timer_dep = declare_dependency(
 
 # The focus-timer binary
 focus_timer_vala_sources = files(
-  'capabilities/global-shortcuts.vala',
-  'capabilities/notifications.vala',
-  'capabilities/sounds.vala',
   'ui/log/widgets/time-label.vala',
   'ui/log/log-window.vala',
   'ui/main/dialogs/about-dialog.vala',

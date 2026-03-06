@@ -123,7 +123,6 @@ namespace Ft
         private Ft.SessionManager?      _session_manager = null;
         private Ft.NotificationBackend? _backend = null;
         private GLib.Settings?          settings = null;
-        private Ft.CapabilityManager?   capability_manager = null;
         private Ft.IdleMonitor?         idle_monitor = null;
         private Ft.LockScreen?          lock_screen = null;
         private Ft.TimerState           previous_timer_state;
@@ -165,7 +164,6 @@ namespace Ft
             this.settings = Ft.get_settings ();
             this.idle_monitor = new Ft.IdleMonitor ();
             this.lock_screen = new Ft.LockScreen ();
-            this.capability_manager = new Ft.CapabilityManager ();
             this.debug = true;  // Ft.is_test ();
 
             this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
@@ -648,18 +646,18 @@ namespace Ft
                 return 0;
             }
 
-            if (this.capability_manager.is_enabled ("indicator")) {
-                return TIME_BLOCK_ABOUT_TO_END_MIN_DURATION;
-            }
+            // if (this.capability_manager.is_enabled ("indicator")) {
+            //     return TIME_BLOCK_ABOUT_TO_END_MIN_DURATION;
+            // }
 
-            var notifications_capability = this.capability_manager.lookup ("notifications");
-
-            if (notifications_capability != null &&
-                notifications_capability.is_enabled () &&
-                notifications_capability.has_detail ("actions"))
-            {
-                return TIME_BLOCK_ABOUT_TO_END_MIN_DURATION;
-            }
+            // var notifications_capability = this.capability_manager.lookup ("notifications");
+            //
+            // if (notifications_capability != null &&
+            //     notifications_capability.is_enabled () &&
+            //     notifications_capability.has_detail ("actions"))
+            // {
+            //     return TIME_BLOCK_ABOUT_TO_END_MIN_DURATION;
+            // }
 
             return TIME_BLOCK_ABOUT_TO_END_MAX_DURATION;
         }
@@ -947,7 +945,6 @@ namespace Ft
             this.notification_time_block = null;
             this.idle_monitor = null;
             this.lock_screen = null;
-            this.capability_manager = null;
 
             base.dispose ();
         }
