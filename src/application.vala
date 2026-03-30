@@ -131,6 +131,8 @@ namespace Ft
         private Ft.DesktopExtension?        extension;
         private Ft.JobQueue?                job_queue;
         private Ft.ActionManager?           action_manager;
+        private Ft.NotificationManager?     notification_manager;
+        private Ft.ScreenOverlayManager?    screen_overlay_manager;
         private Ft.BackgroundManager?       background_manager;
         private Ft.SoundManager?            sound_manager;
         private Ft.Logger?                  logger;
@@ -356,6 +358,11 @@ namespace Ft
             about_dialog.present (window);
         }
 
+        private void show_screen_overlay ()
+        {
+            this.screen_overlay_manager.open ();
+        }
+
         private void activate_prefixed_action (string        action_name,
                                                GLib.Variant? parameter)
         {
@@ -443,7 +450,7 @@ namespace Ft
         private void activate_screen_overlay (GLib.SimpleAction action,
                                               GLib.Variant?     parameter)
         {
-            // TODO
+            this.show_screen_overlay ();
         }
 
         private void activate_visit_website (GLib.SimpleAction action,
@@ -605,6 +612,12 @@ namespace Ft
             this.keyboard_manager.shortcut_activated.connect (this.on_shortcut_activated);
         }
 
+        private void setup_providers ()
+        {
+            this.screen_overlay_manager.add_provider (
+                    new Ft.DefaultScreenOverlayProvider (), Ft.Priority.DEFAULT);
+        }
+
         private void setup_extension ()
         {
             this.extension = new Ft.DesktopExtension ();
@@ -637,15 +650,17 @@ namespace Ft
 
             base.startup ();
 
-            this.settings           = Ft.get_settings ();
-            this.session_manager    = Ft.SessionManager.get_default ();
-            this.timer              = this.session_manager.timer;
-            this.stats_manager      = new Ft.StatsManager ();
-            this.event_producer     = new Ft.EventProducer ();
-            this.event_bus          = this.event_producer.bus;
-            this.job_queue          = new Ft.JobQueue ();
-            this.logger             = new Ft.Logger ();
-            this.background_manager = new Ft.BackgroundManager ();
+            this.settings               = Ft.get_settings ();
+            this.session_manager        = Ft.SessionManager.get_default ();
+            this.timer                  = this.session_manager.timer;
+            this.stats_manager          = new Ft.StatsManager ();
+            this.notification_manager   = new Ft.NotificationManager ();
+            this.screen_overlay_manager = new Ft.ScreenOverlayManager ();
+            this.background_manager     = new Ft.BackgroundManager ();
+            this.event_producer         = new Ft.EventProducer ();
+            this.event_bus              = this.event_producer.bus;
+            this.job_queue              = new Ft.JobQueue ();
+            this.logger                 = new Ft.Logger ();
 
 #if ENABLE_AUTOMATION
             this.action_manager = new Ft.ActionManager ();
@@ -657,6 +672,7 @@ namespace Ft
 
             this.setup_resources ();
             this.setup_database ();
+            this.setup_providers ();
             this.setup_extension ();
             this.setup_actions ();
             this.update_color_scheme ();
@@ -937,6 +953,8 @@ namespace Ft
             this.logger = null;
             this.background_manager = null;
             this.sound_manager = null;
+            this.notification_manager = null;
+            this.screen_overlay_manager = null;
             this.keyboard_manager = null;
             this.stats_manager = null;
             this.session_manager = null;
@@ -1051,12 +1069,6 @@ namespace Ft
         {
             this.activate_prefixed_action (shortcut_name, null);
         }
-
-        // private void on_notify_handles_notifications (GLib.Object    obj,
-        //                                               GLib.ParamSpec pspec)
-        // {
-        //     debug ("### on_notify_handles_notifications = %s", this.extension.handles_notifications.to_string ());
-        // }
 
         public override void dispose ()
         {

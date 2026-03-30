@@ -82,10 +82,10 @@ namespace Ft
             }
 
             if (index == 0) {
-                display_geometry = monitor.get_geometry ();  // TODO: handle scale?
+                display_geometry = monitor.get_geometry ();
             }
             else {
-                display_geometry.union (monitor.get_geometry (), out display_geometry);  // TODO: handle scale?
+                display_geometry.union (monitor.get_geometry (), out display_geometry);
             }
         }
 

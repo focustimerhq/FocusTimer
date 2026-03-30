@@ -83,8 +83,8 @@ namespace Ft
         private ulong                   timer_tick_id = 0;
         private ulong                   settings_changed_id = 0;
         private ulong                   session_manager_confirm_advancement_id = 0;
+        private int                     inhibit_count = 0;
         private bool                    screen_overlay_active = false;
-        private int                     screen_overlay_inhibit_count = 0;
         private uint                    screen_overlay_open_timeout_id = 0U;
         private uint                    withdraw_timeout_id = 0U;
         private uint                    lock_screen_idle_id = 0U;
@@ -104,7 +104,6 @@ namespace Ft
             this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
             this.schedule_announcements ();
-            this.update (true);
 
             if (this.notification == null) {
                 this._backend.withdraw_notification ("timer");
@@ -165,10 +164,6 @@ namespace Ft
          */
         private bool can_open_screen_overlay ()
         {
-            if (this.screen_overlay_inhibit_count > 0) {
-                return false;
-            }
-
             if (!this.can_open_screen_overlay_later ()) {
                 return false;
             }
@@ -598,9 +593,15 @@ namespace Ft
             return TIME_BLOCK_ABOUT_TO_END_LONGER_TIMEOUT;
         }
 
-        private void on_timer_state_changed (Ft.TimerState current_state,
-                                             Ft.TimerState previous_state)
+        private void update_full (Ft.TimerState current_state,
+                                  Ft.TimerState previous_state,
+                                  bool          allow_screen_overlay)
         {
+            if (this.session_manager.current_session == null) {
+                this.withdraw_notifications ();
+                return;
+            }
+
             var current_time_block = current_state.user_data as Ft.TimeBlock;
             var previous_time_block = previous_state.user_data as Ft.TimeBlock;
             var timestamp = this._timer.get_current_time ();
@@ -643,6 +644,7 @@ namespace Ft
                 {
                     if (remaining >= about_to_end_duration &&
                         !is_rewinding &&
+                        allow_screen_overlay &&
                         this.can_open_screen_overlay ())
                     {
                         this.emit_request_screen_overlay_open ();
@@ -665,6 +667,17 @@ namespace Ft
             else {
                 assert_not_reached ();
             }
+        }
+
+        private void update (bool allow_screen_overlay)
+        {
+            this.update_full (this._timer.state, this.previous_timer_state, allow_screen_overlay);
+        }
+
+        private void on_timer_state_changed (Ft.TimerState current_state,
+                                             Ft.TimerState previous_state)
+        {
+            this.update_full (current_state, previous_state, true);
         }
 
         private void on_timer_tick (int64 timestamp)
@@ -700,6 +713,10 @@ namespace Ft
         private void on_settings_changed (GLib.Settings settings,
                                           string        key)
         {
+            if (this.inhibit_count > 0) {
+                return;
+            }
+
             switch (key)
             {
                 case "announce-about-to-end":
@@ -713,23 +730,6 @@ namespace Ft
                     }
 
                     break;
-            }
-        }
-
-        private void update (bool allow_screen_overlay)
-        {
-            if (this.session_manager.current_session == null) {
-                this.withdraw_notifications ();
-                return;
-            }
-
-            if (allow_screen_overlay) {
-                this.on_timer_state_changed (this._timer.state, this.previous_timer_state);
-            }
-            else {
-                this.screen_overlay_inhibit_count++;
-                this.on_timer_state_changed (this._timer.state, this.previous_timer_state);
-                this.screen_overlay_inhibit_count--;
             }
         }
 
@@ -794,6 +794,40 @@ namespace Ft
 
             if (force_close && this.screen_overlay_active) {
                 this.screen_overlay_closed ();
+            }
+        }
+
+        public void inhibit ()
+        {
+            this.inhibit_count++;
+
+            if (this.inhibit_count == 1)
+            {
+                this.withdraw_notifications ();
+                this.remove_reopen_screen_overlay_idle_watch ();
+                this.remove_lock_screen_idle_watch ();
+
+                GLib.SignalHandler.block (this._timer, this.timer_state_changed_id);
+                GLib.SignalHandler.block (this._session_manager, this.session_manager_confirm_advancement_id);
+
+                if (this.timer_tick_id != 0) {
+                    this._timer.disconnect (this.timer_tick_id);
+                    this.timer_tick_id = 0;
+                }
+            }
+        }
+
+        public void uninhibit ()
+        {
+            this.inhibit_count--;
+
+            if (this.inhibit_count == 0)
+            {
+                GLib.SignalHandler.unblock (this._timer, this.timer_state_changed_id);
+                GLib.SignalHandler.unblock (this._session_manager, this.session_manager_confirm_advancement_id);
+
+                this.schedule_announcements();
+                this.update (false);
             }
         }
 
