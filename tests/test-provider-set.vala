@@ -105,6 +105,7 @@ namespace Tests
             this.add_test ("enable_single__unavailable", this.test_enable_single__unavailable);
             this.add_test ("enable_single__temporarily_unavailable", this.test_enable_single__temporarily_unavailable);
             this.add_test ("enable_single__async_initialize", this.test_enable_single__async_initialize);
+            this.add_test ("enable_single__switch_to_higher_priority", this.test_enable_single__switch_to_higher_priority);
         }
 
         public override void setup ()
@@ -271,6 +272,48 @@ namespace Tests
             assert_false (provider_low.enabled);
             assert_cmpuint (provider_low.initialize_count, GLib.CompareOperator.EQ, 0);
             assert_cmpuint (provider_low.enable_count, GLib.CompareOperator.EQ, 0);
+        }
+
+        public void test_enable_single__switch_to_higher_priority ()
+        {
+            var providers = new Ft.ProviderSet<AntiGravityProvider> (Ft.SelectionMode.SINGLE);
+            providers.provider_enabled.connect (() => { this.quit_main_loop (); });
+
+            var provider_low = new SimpleAntiGravityProvider ();
+            providers.add (provider_low, Ft.Priority.LOW);
+
+            var provider_high = new SimpleAntiGravityProvider (Scenario.UNAVAILABLE);
+            providers.add (provider_high, Ft.Priority.HIGH);
+
+            providers.enable ();
+
+            // Expect low priority provider to be enabled.
+            assert_true (this.run_main_loop ());
+
+            assert_true (provider_low.available);
+            assert_true (provider_low.enabled);
+            assert_cmpuint (provider_low.enable_count, GLib.CompareOperator.EQ, 1);
+            assert_cmpuint (provider_low.disable_count, GLib.CompareOperator.EQ, 0);
+
+            assert_true (provider_high.available_set);
+            assert_false (provider_high.available);
+            assert_false (provider_high.enabled);
+            assert_cmpuint (provider_high.initialize_count, GLib.CompareOperator.EQ, 1);
+            assert_cmpuint (provider_high.enable_count, GLib.CompareOperator.EQ, 0);
+
+            // High priority provider becomes available. Expect to switch providers.
+            provider_high.available = true;
+
+            assert_true (this.run_main_loop ());
+
+            assert_true (provider_high.available);
+            assert_true (provider_high.enabled);
+            assert_cmpuint (provider_high.initialize_count, GLib.CompareOperator.EQ, 1);
+            assert_cmpuint (provider_high.enable_count, GLib.CompareOperator.EQ, 1);
+            assert_cmpuint (provider_high.disable_count, GLib.CompareOperator.EQ, 0);
+
+            assert_false (provider_low.enabled);
+            assert_cmpuint (provider_low.disable_count, GLib.CompareOperator.EQ, 1);
         }
 
         public void test_enable_single__async_initialize ()

@@ -288,8 +288,8 @@ namespace Ft
                                                   out int64                    preferred_provider_timeout)
         {
             unowned Ft.ProviderInfo? tmp_preferred_provider_info = null;
-            int64                          tmp_preferred_provider_timeout = 0;
-            int64                          monotonic_time = Ft.Timestamp.UNDEFINED;
+            int64                    tmp_preferred_provider_timeout = 0;
+            int64                    monotonic_time = Ft.Timestamp.UNDEFINED;
 
             this.providers.@foreach (
                 (provider_info) => {
