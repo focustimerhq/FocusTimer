@@ -67,6 +67,7 @@ add_project_arguments(
     '-Wno-unused-variable',
     '-Wno-unused-function',
     '-Wno-sign-compare',
+    '-Wno-alloc-size',
     '-Wno-address',
     # TODO: Remove this after upgrading to valac 0.57+.
     #       Vala doesn't generate proper headers for construct properties
@@ -99,6 +100,10 @@ endif
 
 if get_option('automation').enabled()
   add_project_arguments(['-D', 'ENABLE_AUTOMATION'], language: 'vala')
+endif
+
+if get_option('profile') == 'development'
+  add_project_arguments(['--enable-checking'], language: 'vala')
 endif
 
 application_id = 'io.github.focustimerhq.FocusTimer'
