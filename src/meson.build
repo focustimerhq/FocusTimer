@@ -72,6 +72,7 @@ libft_ui_sources = files(
   'ui/widgets/gizmo.vala',
   'ui/widgets/monospace-label.vala',
   'ui/widgets/sidebar-row.vala',
+  'ui/interfaces.vala',
   'ui/utils.vala',
   'application.vala',
   'dbus-services.vala',

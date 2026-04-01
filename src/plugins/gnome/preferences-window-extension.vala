@@ -64,7 +64,7 @@ namespace Gnome
         private void setup_appearance_panel ()
                                              requires (this._settings != null)
         {
-            var page = (Adw.PreferencesPage) this.current_page;
+            var page = this.current_panel?.get_preferences_page ();
 
             var indicator_group = new Adw.PreferencesGroup ();
             indicator_group.title = _("Indicator");
@@ -117,9 +117,7 @@ namespace Gnome
                 return;
             }
 
-            var navigation_page = (Adw.NavigationPage) this.current_navigation_page;
-
-            switch (navigation_page.tag)
+            switch (this.current_panel.tag)
             {
                 case "appearance":
                     this.setup_appearance_panel ();

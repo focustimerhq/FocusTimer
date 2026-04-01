@@ -25,11 +25,9 @@ namespace Gnome
 
         private void show_install_extension_toast ()
         {
-            var window = this.window as Ft.Window;
-
             if (Gnome.WindowExtension.install_extension_toast_dismissed ||
                 this.install_extension_toast != null ||
-                window == null)
+                this.window == null)
             {
                 return;
             }
@@ -42,25 +40,23 @@ namespace Gnome
                 () => {
                     var dialog = new Gnome.InstallExtensionDialog ();
 
-                    dialog.present (window);
+                    dialog.present (this.window);
                     this.install_extension_toast = null;
                 });
             toast.dismissed.connect (this.on_install_extension_toast_dismissed);
 
             this.install_extension_toast = toast;
 
-            window.add_toast (toast);
+            this.window.add_toast (toast);
         }
 
         private void update_install_extension_toast ()
         {
-            var window = this.window as Ft.Window;
-
-            if (window == null || !window.get_mapped ()) {
+            if (this.window == null || !this.window.get_mapped ()) {
                 return;
             }
 
-            if (!window.has_css_class ("devel")) {  // TODO: remove once extension is published
+            if (!this.window.has_css_class ("devel")) {  // TODO: remove once extension is published
                 return;
             }
 

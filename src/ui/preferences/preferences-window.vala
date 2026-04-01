@@ -111,7 +111,7 @@ namespace Ft
 
         private Gtk.SingleSelection? _model = null;
         private GLib.Settings?       settings = null;
-        private Peas.ExtensionSet?   extension_set = null;
+        private Peas.ExtensionSet?   extensions = null;
 
         construct
         {
@@ -119,7 +119,7 @@ namespace Ft
             this.sidebar.model = this._model;
             this.split_view.notify["collapsed"].connect (this.on_split_view_collapsed_notify);
 
-            this.extension_set = new Peas.ExtensionSet.with_properties (
+            this.extensions = new Peas.ExtensionSet.with_properties (
                     Peas.Engine.get_default (),
                     typeof (Ft.PreferencesWindowExtension),
                     {}, {});
@@ -166,15 +166,15 @@ namespace Ft
 
         private void foreach_extension (Ft.PreferencesWindowExtensionFunc func)
         {
-            if (this.extension_set == null) {
+            if (this.extensions == null) {
                 return;
             }
 
-            var n_extensions = this.extension_set.get_n_items ();
+            var n_extensions = this.extensions.get_n_items ();
 
             for (var i = 0U; i < n_extensions; i++)
             {
-                var extension = (Ft.PreferencesWindowExtension) this.extension_set.get_item (i);
+                var extension = (Ft.PreferencesWindowExtension) this.extensions.get_item (i);
 
                 func (extension);
             }
@@ -197,8 +197,7 @@ namespace Ft
 
                 this.foreach_extension (
                     (extension) => {
-                        extension.current_navigation_page = panel;
-                        extension.current_page = panel.get_preferences_page ();
+                        extension.current_panel = panel;
                         extension.handle_panel_changed ();
                     });
             }
@@ -253,6 +252,8 @@ namespace Ft
                 this._model.selection_changed.disconnect (this.on_selection_changed);
                 this._model = null;
             }
+
+            this.extensions = null;
 
             base.dispose ();
         }
