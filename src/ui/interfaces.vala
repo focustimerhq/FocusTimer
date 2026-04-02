@@ -26,28 +26,20 @@ namespace Ft
         }
 
         private unowned Ft.Window? _window = null;
-
-        public virtual void window_mapped ()
-        {
-        }
     }
 
 
     public abstract class PreferencesWindowExtension : GLib.Object
     {
-        public Ft.PreferencesPanel? current_panel {
+        public Ft.PreferencesWindow? window {
             get {
-                return this._current_panel;
+                return this._window;
             }
             set {
-                this._current_panel = value;
+                this._window = value;
             }
         }
 
-        private unowned Ft.PreferencesPanel? _current_panel = null;
-
-        public virtual void handle_panel_changed ()
-        {
-        }
+        private unowned Ft.PreferencesWindow? _window = null;
     }
 }

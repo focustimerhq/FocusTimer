@@ -144,8 +144,6 @@ namespace Ft
 
         construct
         {
-            // TODO: this.default_page should be set from application.vala
-            // var application = Ft.Application.get_default ();
             var settings = Ft.get_settings ();
 
             this.session_manager = Ft.SessionManager.get_default ();
@@ -163,23 +161,18 @@ namespace Ft
 
             this.background_manager = new Ft.BackgroundManager ();
 
-            this.extensions = new Peas.ExtensionSet.with_properties (
-                    Peas.Engine.get_default (),
-                    typeof (Ft.WindowExtension), {}, {});
-
-            var n_extensions = this.extensions.get_n_items ();
-            for (var i = 0U; i < n_extensions; i++) {
-                var extension = (Ft.WindowExtension) this.extensions.get_item (i);
-                extension.window = this;
-            }
-
-            this.extensions.extension_added.connect (this.on_window_extension_added);
-
             this.notify["is-active"].connect (this.on_notify_is_active);
             this.notify["maximized"].connect (this.on_notify_maximized);
 
             this.update_title ();
             this.update_timer_indicator ();
+
+            var window_value = GLib.Value (GLib.Type.OBJECT);
+            window_value.set_object (this);
+
+            this.extensions = new Peas.ExtensionSet.with_properties (
+                    Peas.Engine.get_default (),
+                    typeof (Ft.WindowExtension), {"window"}, {window_value});
         }
 
         private void update_title ()
@@ -398,13 +391,6 @@ namespace Ft
             toggle_compact_size_action.set_enabled (can_change_size);
         }
 
-        private void on_window_extension_added (Peas.PluginInfo info,
-                                                GLib.Object     extension)
-        {
-            var window_extension = (Ft.WindowExtension) extension;
-            window_extension.window = this;
-        }
-
         private void on_compact_size_activate (GLib.SimpleAction action,
                                                GLib.Variant?     parameter)
         {
@@ -451,28 +437,9 @@ namespace Ft
             this.setup_actions ();
         }
 
-        public override void map ()
-        {
-            base.map ();
-
-            if (this.extensions != null)
-            {
-                var n_ext = this.extensions.get_n_items ();
-
-                for (var i = 0U; i < n_ext; i++) {
-                    var extension = (Ft.WindowExtension) this.extensions.get_item (i);
-                    extension.window_mapped ();
-                }
-            }
-        }
-
         public override void dispose ()
         {
-            if (this.extensions != null) {
-                this.extensions.extension_added.disconnect (this.on_window_extension_added);
-                this.extensions = null;
-            }
-
+            this.extensions = null;
             this.background_manager = null;
 
             base.dispose ();

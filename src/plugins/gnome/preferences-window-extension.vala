@@ -24,30 +24,8 @@ namespace Gnome
             this.shell_extension = new Gnome.ShellExtension ();
             this.shell_extension.notify["settings"].connect (this.on_notify_settings);
 
-            this.update_settings ();
-        }
+            this.notify["window"].connect (this.on_notify_window);
 
-        private void update_settings ()
-        {
-            var settings = this.shell_extension?.settings;
-
-            if (this._settings == settings) {
-                return;
-            }
-
-            this.cleanup ();
-
-            if (this._settings != settings) {
-                this._settings = settings;
-                this.notify_property ("settings");
-            }
-
-            this.handle_panel_changed ();
-        }
-
-        private void on_notify_settings (GLib.Object    object,
-                                         GLib.ParamSpec pspec)
-        {
             this.update_settings ();
         }
 
@@ -61,10 +39,10 @@ namespace Gnome
             return toggle;
         }
 
-        private void setup_appearance_panel ()
+        private void setup_appearance_panel (Ft.PreferencesPanel panel)
                                              requires (this._settings != null)
         {
-            var page = this.current_panel?.get_preferences_page ();
+            var page = panel.get_preferences_page ();
 
             var indicator_group = new Adw.PreferencesGroup ();
             indicator_group.title = _("Indicator");
@@ -111,20 +89,6 @@ namespace Gnome
             this.screen_overlay_group = screen_overlay_group;
         }
 
-        public override void handle_panel_changed ()
-        {
-            if (this._settings == null) {
-                return;
-            }
-
-            switch (this.current_panel.tag)
-            {
-                case "appearance":
-                    this.setup_appearance_panel ();
-                    break;
-            }
-        }
-
         private void cleanup ()
         {
             this.indicator_group?.unparent ();
@@ -132,6 +96,59 @@ namespace Gnome
 
             this.screen_overlay_group?.unparent ();
             this.screen_overlay_group = null;
+        }
+
+        private void update_visible_panel ()
+        {
+            var panel = this.window?.visible_panel;
+
+            if (this._settings == null || panel == null) {
+                return;
+            }
+
+            switch (panel.tag)
+            {
+                case "appearance":
+                    this.setup_appearance_panel (panel);
+                    break;
+            }
+        }
+
+        private void update_settings ()
+        {
+            var settings = this.shell_extension?.settings;
+
+            if (this._settings == settings) {
+                return;
+            }
+
+            this.cleanup ();
+
+            if (this._settings != settings) {
+                this._settings = settings;
+                this.notify_property ("settings");
+            }
+
+            this.update_visible_panel ();
+        }
+
+        private void on_notify_window (GLib.Object    object,
+                                       GLib.ParamSpec pspec)
+        {
+            if (this.window != null) {
+                this.window.notify["visible-panel"].connect (this.on_notify_visible_panel);
+            }
+        }
+
+        private void on_notify_settings (GLib.Object    object,
+                                         GLib.ParamSpec pspec)
+        {
+            this.update_settings ();
+        }
+
+        public void on_notify_visible_panel ()
+        {
+            this.update_visible_panel ();
         }
 
         public override void dispose ()

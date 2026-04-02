@@ -19,9 +19,6 @@ namespace Ft
     }
 
 
-    private delegate void PreferencesWindowExtensionFunc (Ft.PreferencesWindowExtension extension);
-
-
     private Gtk.SingleSelection create_model ()
     {
         Ft.PreferencesPanelInfo? panel_info;
@@ -102,6 +99,12 @@ namespace Ft
             }
         }
 
+        public Ft.PreferencesPanel? visible_panel {
+            get {
+                return this.split_view.content as Ft.PreferencesPanel;
+            }
+        }
+
         [GtkChild]
         private unowned Adw.ToastOverlay toast_overlay;
         [GtkChild]
@@ -119,13 +122,15 @@ namespace Ft
             this.sidebar.model = this._model;
             this.split_view.notify["collapsed"].connect (this.on_split_view_collapsed_notify);
 
-            this.extensions = new Peas.ExtensionSet.with_properties (
-                    Peas.Engine.get_default (),
-                    typeof (Ft.PreferencesWindowExtension),
-                    {}, {});
-
             this.load_window_state ();
             this.update_split_view_content ();
+
+            var window_value = GLib.Value (GLib.Type.OBJECT);
+            window_value.set_object (this);
+
+            this.extensions = new Peas.ExtensionSet.with_properties (
+                    Peas.Engine.get_default (),
+                    typeof (Ft.PreferencesWindowExtension), {"window"}, {window_value});
         }
 
         private void load_window_state ()
@@ -164,22 +169,6 @@ namespace Ft
                                 maximized);
         }
 
-        private void foreach_extension (Ft.PreferencesWindowExtensionFunc func)
-        {
-            if (this.extensions == null) {
-                return;
-            }
-
-            var n_extensions = this.extensions.get_n_items ();
-
-            for (var i = 0U; i < n_extensions; i++)
-            {
-                var extension = (Ft.PreferencesWindowExtension) this.extensions.get_item (i);
-
-                func (extension);
-            }
-        }
-
         private void update_split_view_content ()
         {
             var panel_info = (Ft.PreferencesPanelInfo?) this._model.selected_item;
@@ -195,11 +184,7 @@ namespace Ft
                 this.split_view.content = panel;
                 this.split_view.show_content = true;
 
-                this.foreach_extension (
-                    (extension) => {
-                        extension.current_panel = panel;
-                        extension.handle_panel_changed ();
-                    });
+                this.notify_property ("visible-panel");
             }
             else {
                 this.split_view.show_content = false;
