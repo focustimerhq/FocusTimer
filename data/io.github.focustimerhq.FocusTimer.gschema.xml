@@ -118,6 +118,10 @@
       <default>false</default>
       <summary>State of global shortcuts</summary>
     </key>
+    <key name="autostart" type="b">
+      <default>false</default>
+      <summary>Automatically launch the app when you log in</summary>
+    </key>
   </schema>
 
   <!-- Actions -->

@@ -35,6 +35,7 @@
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/action/condition-widget.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/action/variable-popover.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/preferences-panel-automation.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/preferences/integrations/preferences-panel-integrations.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/keyboard-shortcuts/accelerator-row.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui</file>

@@ -66,6 +66,13 @@ namespace Ft
                                         "visible",
                                         GLib.BindingFlags.SYNC_CREATE);
 
+        panel_info = new PreferencesPanelInfo ();
+        panel_info.name = "integrations";
+        panel_info.title = _("Integrations");
+        panel_info.icon_name = "plugin-symbolic";
+        panel_info.content_class = typeof (Ft.PreferencesPanelIntegrations);
+        model.append (panel_info);
+
 #if ENABLE_AUTOMATION
         panel_info = new PreferencesPanelInfo ();
         panel_info.name = "automation";

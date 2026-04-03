@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <template class="FtPreferencesPanelIntegrations" parent="FtPreferencesPanel">
+    <property name="child">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="content_headerbar">
+            <property name="show-title">true</property>
+          </object>
+        </child>
+        <property name="content">
+          <object class="AdwPreferencesPage" id="page">
+            <child>
+              <object class="AdwPreferencesGroup">
+                <child>
+                  <object class="AdwSwitchRow" id="autostart_switchrow">
+                    <property name="title" translatable="yes">Autostart</property>
+                    <property name="subtitle" translatable="yes">Automatically launch the app when you log in.</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="autostart_label">
+                    <property name="label" translatable="yes">The app will start in the background. You'll be able to use the indicator and keyboard shortcuts.</property>
+                    <property name="use-markup">false</property>
+                    <property name="wrap">true</property>
+                    <property name="xalign">0.0</property>
+                    <property name="visible">false</property>
+                    <property name="margin-top">18</property>
+                    <property name="margin-bottom">6</property>
+                    <style>
+                      <class name="dim-label"/>
+                      <class name="body"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

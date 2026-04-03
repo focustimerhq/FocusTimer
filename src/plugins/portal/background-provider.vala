@@ -16,11 +16,25 @@ namespace Portal
          */
         private const uint COMAPTIBLE_VERSION = 2U;
 
+        public new bool background_allowed {
+            get {
+                return this._background_allowed;
+            }
+        }
+
+        public new bool autostart_allowed  {
+            get {
+                return this._autostart_allowed;
+            }
+        }
+
         private GLib.DBusConnection?                 connection = null;
         private Portal.Background?                   proxy = null;
         private GLib.Cancellable?                    cancellable = null;
         private GLib.HashTable<uint, Portal.Request> requests = null;
         private uint                                 dbus_watcher_id = 0U;
+        private bool                                 _background_allowed = false;
+        private bool                                 _autostart_allowed = false;
 
         private void on_name_appeared (GLib.DBusConnection connection,
                                        string              name,
@@ -58,8 +72,8 @@ namespace Portal
             }
 
             this.cancellable = cancellable != null
-                ? cancellable
-                : new GLib.Cancellable ();
+                    ? cancellable
+                    : new GLib.Cancellable ();
 
             try {
                 this.proxy = yield GLib.Bus.get_proxy<Portal.Background>
@@ -86,6 +100,17 @@ namespace Portal
                 this.cancellable.cancel ();
             }
 
+            // XXX: the request does not get withdrawn
+            // if (this._autostart_allowed) {
+            //     this._autostart_allowed = false;
+            //     this.notify_property ("autostart-allowed");
+            // }
+            //
+            // if (this._background_allowed) {
+            //     this._background_allowed = false;
+            //     this.notify_property ("background-allowed");
+            // }
+
             this.proxy = null;
             this.requests = null;
         }
@@ -100,11 +125,10 @@ namespace Portal
             this.cancellable = null;
         }
 
-        public async bool request_background (string parent_window)
+        public async void request_background (bool   autostart,
+                                              string parent_window)
         {
             string handle_token;
-
-            var allowed = false;
 
             try {
                 handle_token = yield Portal.create_request (
@@ -113,9 +137,27 @@ namespace Portal
                         if (results != null)
                         {
                             var background_variant = results.lookup ("background");
+                            var autostart_variant = results.lookup ("autostart");
+                            var background_allowed = background_variant != null
+                                    ? background_variant.get_boolean ()
+                                    : this._background_allowed;
+                            var autostart_allowed = autostart_variant != null
+                                    ? autostart_variant.get_boolean ()
+                                    : this._autostart_allowed;
 
-                            if (background_variant != null) {
-                                allowed = background_variant.get_boolean ();
+                            if (autostart_allowed != autostart) {
+                                GLib.warning ("Failed to set `autostart = %s`",
+                                              autostart.to_string ());
+                            }
+
+                            if (this._background_allowed != background_allowed) {
+                                this._background_allowed = background_allowed;
+                                this.notify_property ("background-allowed");
+                            }
+
+                            if (this._autostart_allowed != autostart_allowed) {
+                                this._autostart_allowed = autostart_allowed;
+                                this.notify_property ("autostart-allowed");
                             }
                         }
 
@@ -124,12 +166,13 @@ namespace Portal
             }
             catch (GLib.Error error) {
                 GLib.warning ("Error while requesting background: %s", error.message);
-                return allowed;
+                return;
             }
 
             var options = new GLib.HashTable<string, GLib.Variant> (GLib.str_hash, GLib.str_equal);
             options.insert ("handle_token", new GLib.Variant.string (handle_token));
             options.insert ("dbus-activatable", new GLib.Variant.boolean (true));
+            options.insert ("autostart", new GLib.Variant.boolean (autostart));
 
             this.proxy.request_background.begin (
                 parent_window,
@@ -144,8 +187,6 @@ namespace Portal
                 });
 
             yield;  // wait for response
-
-            return allowed;
         }
     }
 }
