@@ -21,12 +21,12 @@ namespace Gnome
         [GtkChild]
         private unowned Gtk.TextView error_text_view;
 
-        private Gnome.ShellExtension? extension = null;
+        private Gnome.ShellExtension? shell_extension = null;
         private uint                  timeout_id = 0U;
 
         construct
         {
-            this.extension = new Gnome.ShellExtension ();
+            this.shell_extension = new Gnome.ShellExtension ();
         }
 
         private void close_after_timeout (uint seconds)
@@ -62,10 +62,10 @@ namespace Gnome
 
             this.show_spinner ();
 
-            this.extension.install_extension.begin (
+            this.shell_extension.install_extension.begin (
                 (obj, res) => {
                     try {
-                        var success = this.extension.install_extension.end (res);
+                        var success = this.shell_extension.install_extension.end (res);
 
                         this.can_close = true;
 
@@ -147,7 +147,7 @@ namespace Gnome
                 this.timeout_id = 0U;
             }
 
-            this.extension = null;
+            this.shell_extension = null;
 
             base.dispose ();
         }

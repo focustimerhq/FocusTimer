@@ -223,6 +223,7 @@ namespace Gnome
         public abstract string indicator_type { owned get; set; }
         public abstract bool enable_blur_effect { get; set; }
         public abstract bool enable_dismiss_gesture { get; set; }
+        public abstract bool enable_manage_notifications { get; set; }
 
         public abstract async void open_screen_overlay () throws GLib.DBusError, GLib.IOError;
     }

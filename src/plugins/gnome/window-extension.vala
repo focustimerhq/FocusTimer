@@ -49,11 +49,11 @@ namespace Gnome
 
         private void update_install_extension_toast ()
         {
-            if (this.window == null || !this.window.get_mapped ()) {
+            if (!Gnome.ShellExtension.IS_PUBLISHED) {
                 return;
             }
 
-            if (!this.window.has_css_class ("devel")) {  // TODO: remove once extension is published
+            if (this.window == null || !this.window.get_mapped ()) {
                 return;
             }
 

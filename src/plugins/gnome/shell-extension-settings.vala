@@ -7,11 +7,10 @@
 namespace Gnome
 {
     /**
-     * Settings of a `ShellIntegration` may have different lifespan than `DesktopExtensionProvider`,
+     * Settings of a `ShellIntegration` may have different lifespan than `ShellExtension`,
      * therefore settings are represented separately.
      */
-
-    public class DesktopExtensionSettings : GLib.Object
+    public class ShellExtensionSettings : GLib.Object
     {
         public string indicator_type {
             owned get {
@@ -52,9 +51,22 @@ namespace Gnome
             }
         }
 
+        public bool manage_notifications {
+            get {
+                return this.proxy != null
+                        ? this.proxy.enable_manage_notifications
+                        : false;
+            }
+            set {
+                if (this.proxy != null) {
+                    this.proxy.enable_manage_notifications = value;
+                }
+            }
+        }
+
         private Gnome.ShellIntegration? proxy = null;
 
-        public DesktopExtensionSettings (Gnome.ShellIntegration shell_integration_proxy)
+        public ShellExtensionSettings (Gnome.ShellIntegration shell_integration_proxy)
         {
             this.proxy = shell_integration_proxy;
 
@@ -75,6 +87,10 @@ namespace Gnome
 
             if (changed_properties.lookup_value ("EnableDismissGesture", null) != null) {
                 this.notify_property ("dismiss-gesture");
+            }
+
+            if (changed_properties.lookup_value ("EnableManageNotifications", null) != null) {
+                this.notify_property ("manage-notifications");
             }
         }
 

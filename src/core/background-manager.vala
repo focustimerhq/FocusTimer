@@ -103,6 +103,19 @@ namespace Ft
             return hold_id;
         }
 
+        public uint hold_sync (string parent_window = "")
+        {
+            var hold_id = Ft.BackgroundManager.next_hold_id;
+            BackgroundManager.next_hold_id++;
+
+            this.holds.add (hold_id);
+            this.hold_application ();
+
+            this.request_background.begin (parent_window);
+
+            return hold_id;
+        }
+
         public void release (uint hold_id)
         {
             var removed = this.holds.remove (hold_id);

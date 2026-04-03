@@ -18,7 +18,10 @@ namespace Gnome
     [SingleInstance]
     public class ShellExtension : GLib.Object
     {
-        private const string EXTENSION_UUID = "focus-timer@focustimerhq.github.io";
+        public const string EXTENSION_UUID = "focus-timer@focustimerhq.github.io";
+
+        // When published we suggest to install it
+        public const bool IS_PUBLISHED = false;
 
         [CCode (notify = false)]
         public bool available {
@@ -46,20 +49,26 @@ namespace Gnome
             }
         }
 
-        public Gnome.DesktopExtensionSettings? settings {
+        public Gnome.ExtensionState state {
+            get {
+                return this.extension_info.state;
+            }
+        }
+
+        public Gnome.ShellExtensionSettings? settings {
             get {
                 return this._settings;
             }
         }
 
+        private bool                            _available = false;
+        private bool                            _enabled = false;
+        private Gnome.ShellExtensionSettings?   _settings = null;
         private Gnome.ShellExtensions?          shell_extensions_proxy = null;
         private Gnome.ShellIntegration?         shell_integration_proxy = null;
         private Gnome.ExtensionInfo             extension_info;
         private uint                            shell_watcher_id = 0;
         private uint                            shell_integration_watcher_id = 0;
-        private Gnome.DesktopExtensionSettings? _settings = null;
-        private bool                            _available = false;
-        private bool                            _enabled = false;
         private GLib.Cancellable?               cancellable = null;
 
         construct
@@ -79,18 +88,6 @@ namespace Gnome
                     GLib.BusNameWatcherFlags.NONE,
                     this.on_shell_integration_name_appeared,
                     this.on_shell_integration_name_vanished);
-
-            this.notify["enabled"].connect (  // TODO: refactor this
-                (object, pspec) => {
-                    var notification_manager = new Ft.NotificationManager ();
-
-                    if (this._enabled) {
-                        notification_manager.inhibit ();
-                    }
-                    else {
-                        notification_manager.uninhibit ();
-                    }
-                });
         }
 
         internal unowned Gnome.ShellIntegration? get_shell_integration_proxy ()
@@ -153,10 +150,11 @@ namespace Gnome
             this.shell_extensions_proxy.extension_state_changed.disconnect (
                     this.on_extension_state_changed);
 
+            this.extension_info = Gnome.ExtensionInfo (EXTENSION_UUID);
+            this.notify_property ("state");
+
             this.shell_extensions_proxy = null;
             this.available = false;
-
-            this.extension_info = Gnome.ExtensionInfo (EXTENSION_UUID);
             this.enabled = false;
         }
 
@@ -176,7 +174,7 @@ namespace Gnome
                         GLib.DBusProxyFlags.DO_NOT_AUTO_START,
                         this.cancellable);
 
-                this._settings = new Gnome.DesktopExtensionSettings (this.shell_integration_proxy);
+                this._settings = new Gnome.ShellExtensionSettings (this.shell_integration_proxy);
                 this.notify_property ("settings");
             }
             catch (GLib.Error error) {
@@ -198,11 +196,14 @@ namespace Gnome
         private void on_extension_state_changed (string                               uuid,
                                                  GLib.HashTable<string, GLib.Variant> state)
         {
-            if (uuid == EXTENSION_UUID) {
-                this.extension_info = Gnome.ExtensionInfo.deserialize (uuid, state);
-                this.enabled = this.extension_info.enabled;
-                this.update_available ();
+            if (uuid != EXTENSION_UUID) {
+                return;
             }
+
+            this.extension_info = Gnome.ExtensionInfo.deserialize (uuid, state);
+            this.enabled = this.extension_info.enabled;
+            this.update_available ();
+            this.notify_property ("state");
         }
 
         private async void query_extension_state ()
@@ -212,6 +213,7 @@ namespace Gnome
                         EXTENSION_UUID,
                         yield this.shell_extensions_proxy.get_extension_info (EXTENSION_UUID));
                 this.enabled = this.extension_info.enabled;
+                this.notify_property ("state");
             }
             catch (GLib.Error error) {
                 GLib.warning ("Error while querying extension state: %s", error.message);
@@ -220,14 +222,18 @@ namespace Gnome
             this.update_available ();
         }
 
-        /*
-         * Public API
-         */
-
         public bool is_installed ()
         {
-            return this.extension_info.state != Gnome.ExtensionState.UNKNOWN &&
-                   this.extension_info.state != Gnome.ExtensionState.UNINSTALLED;
+            if (this.extension_info.state == Gnome.ExtensionState.UNINSTALLED) {
+                return false;
+            }
+
+            return this.extension_info.path != "";
+        }
+
+        public bool has_update ()
+        {
+            return this.extension_info.has_update;
         }
 
         public async bool enable_extension ()
