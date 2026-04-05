@@ -32,6 +32,9 @@ namespace Ft
 
             this.idle_monitor = new Ft.IdleMonitor ();
 
+            this.screen_overlay_lock_delay_comborow.model = this.create_idle_delay_model ();
+            this.screen_overlay_reopen_delay_comborow.model = this.create_idle_delay_model ();
+
             // Announcements
             this.settings.bind ("announce-about-to-end",
                                 this.announce_about_to_end_switchrow,
@@ -81,6 +84,22 @@ namespace Ft
                                 this.screen_overlay_reopen_delay_comborow,
                                 "sensitive",
                                 GLib.BindingFlags.SYNC_CREATE);
+        }
+
+        private Gtk.StringList create_idle_delay_model ()
+        {
+            var list = new Gtk.StringList (null);
+
+            foreach (var seconds in IDLE_DELAY_CHOICES)
+            {
+                var label = seconds != 0
+                        ? Ft.format_time (seconds)
+                        : _("Never");
+
+                list.append (label);
+            }
+
+            return list;
         }
 
         /**

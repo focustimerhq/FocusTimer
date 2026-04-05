@@ -36,38 +36,12 @@
                   <object class="AdwComboRow" id="screen_overlay_lock_delay_comborow">
                     <property name="title" translatable="yes">Lock Delay</property>
                     <property name="subtitle" translatable="yes">Period of inactivity to lock the screen.</property>
-                    <property name="model">
-                      <object class="GtkStringList">
-                        <items>
-                          <item translatable="yes">15 seconds</item>
-                          <item translatable="yes">30 seconds</item>
-                          <item translatable="yes">1 minute</item>
-                          <item translatable="yes">2 minutes</item>
-                          <item translatable="yes">3 minutes</item>
-                          <item translatable="yes">5 minutes</item>
-                          <item translatable="yes">Never</item>
-                        </items>
-                      </object>
-                    </property>
                   </object>
                 </child>
                 <child>
                   <object class="AdwComboRow" id="screen_overlay_reopen_delay_comborow">
                     <property name="title" translatable="yes">Reopen Delay</property>
                     <property name="subtitle" translatable="yes">Period of inactivity to reopen the overlay after it gets dismissed.</property>
-                    <property name="model">
-                      <object class="GtkStringList">
-                        <items>
-                          <item translatable="yes">15 seconds</item>
-                          <item translatable="yes">30 seconds</item>
-                          <item translatable="yes">1 minute</item>
-                          <item translatable="yes">2 minutes</item>
-                          <item translatable="yes">3 minutes</item>
-                          <item translatable="yes">5 minutes</item>
-                          <item translatable="yes">Never</item>
-                        </items>
-                      </object>
-                    </property>
                   </object>
                 </child>
               </object>
