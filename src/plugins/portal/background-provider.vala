@@ -16,6 +16,8 @@ namespace Portal
          */
         private const uint COMAPTIBLE_VERSION = 2U;
 
+        private const string[] COMMANDLINE = {"focus-timer", "--gapplication-service"};
+
         public new bool background_allowed {
             get {
                 return this._background_allowed;
@@ -171,8 +173,8 @@ namespace Portal
 
             var options = new GLib.HashTable<string, GLib.Variant> (GLib.str_hash, GLib.str_equal);
             options.insert ("handle_token", new GLib.Variant.string (handle_token));
-            options.insert ("dbus-activatable", new GLib.Variant.boolean (true));
             options.insert ("autostart", new GLib.Variant.boolean (autostart));
+            options.insert ("commandline", new GLib.Variant.strv (COMMANDLINE));
 
             this.proxy.request_background.begin (
                 parent_window,
