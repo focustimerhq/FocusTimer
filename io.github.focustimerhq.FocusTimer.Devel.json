@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.focustimerhq.FocusTimer.Devel",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "49",
+  "runtime-version": "50",
   "sdk": "org.gnome.Sdk",
   "command": "focus-timer",
   "tags": [
@@ -33,16 +33,8 @@
     "/include",
     "/lib/girepository-1.0",
     "/lib/pkgconfig",
-    "/man",
-    "/share/aclocal",
-    "/share/doc",
     "/share/gir-1.0",
-    "/share/gtk-doc",
-    "/share/pkgconfig",
-    "/share/man",
-    "/share/vala",
-    "*.la",
-    "*.a"
+    "/share/vala"
   ],
   "modules": [
     {
@@ -61,48 +53,6 @@
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
           "tag": "2.2.0"
-        }
-      ]
-    },
-    {
-      "name": "libadwaita",
-      "buildsystem": "meson",
-      "builddir": true,
-      "config-opts": [
-        "-Dexamples=false",
-        "-Dtests=false"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
-          "tag": "1.8.2"
-        }
-      ],
-      "modules": [
-        {
-          "name": "libsass",
-          "buildsystem": "meson",
-          "builddir": true,
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/lazka/libsass.git",
-              "branch": "meson"
-            }
-          ]
-        },
-        {
-          "name": "sassc",
-          "buildsystem": "meson",
-          "builddir": true,
-          "sources": [
-            {
-              "type": "git",
-              "url": "https://github.com/lazka/sassc.git",
-              "branch": "meson"
-            }
-          ]
         }
       ]
     },
