@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:31+0100\n"
+"POT-Creation-Date: 2026-04-05 11:06+0200\n"
 "PO-Revision-Date: 2023-03-26 11:34+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr ""
@@ -87,17 +87,12 @@ msgstr "Voer aangepaste opdrachten uit na een pomodoro of pauze"
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Timer"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-#, fuzzy
-msgid "Compact timer"
-msgstr "Compacte timer"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 msgid "Daily stats"
@@ -117,235 +112,149 @@ msgid "Screen overlay"
 msgstr "Schermoverlay"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.1"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-#, fuzzy
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "Tamil-vertaling toegevoegd (met dank aan @omeritzics)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-#, fuzzy
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "Hebreeuwse vertaling toegevoegd (met dank aan @Killersparrow1)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-#, fuzzy
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "Ondersteuning voor GNOME Shell 49 (met dank aan @aleasto)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-#, fuzzy
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "Duitse vertaling bijgewerkt (met dank aan @daPhipz)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.27.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-#, fuzzy
-msgid "Support for GNOME Shell 48"
-msgstr "Ondersteuning voor GNOME Shell 48"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-msgid "Split time spent across midnight"
-msgstr "Splits gespendeerde tijd rond middernacht"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-#, fuzzy
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "Telugu-vertaling toegevoegd (met dank aan @SpaciousCoder78)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.26.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-#, fuzzy
-msgid "Support for GNOME Shell 47"
-msgstr "Ondersteuning voor GNOME Shell 47"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+msgid "Automatic daily backup"
 msgstr ""
-"Toestaan om schermoverlay te sluiten met gebaren wanneer een video speelt"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
 #, fuzzy
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "Georgische vertaling toegevoegd (met dank aan @NorwayFun)"
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr "Russische vertaling bijgewerkt (met dank aan @rkaverin)"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "Vertalingen in appdata aangepast (met dank aan @yakushabb)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.2"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "Probleem opgelost waarbij melding bleef staan na verlengen Pomodoro"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.1"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-#, fuzzy
-msgid "Fixes for GNOME Shell 46"
-msgstr "Oplossingen voor GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-#, fuzzy
-msgid "Drop support for GNOME Shell 45"
-msgstr "Ondersteuning voor GNOME Shell 45 beëindigd"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-#, fuzzy
-msgid "Support for GNOME Shell 46"
-msgstr "Ondersteuning voor GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
-msgstr "Bouwscript aangepast voor meson 0.59.0 (met dank aan @mattst88)"
-
-#: src/application.vala:151 src/application.vala:606
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 #, fuzzy
 msgid "Start or Stop"
 msgstr "Starten of stoppen"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 #, fuzzy
 msgid "Start, Pause or Resume"
 msgstr "Starten, onderbreken of hervatten"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "Pomodoro starten"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr ""
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr ""
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "Starten"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "Stoppen"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "Onderbreken"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 msgid "Resume"
 msgstr "Hervatten"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "Overslaan"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Terugspoelen"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr ""
 
-#: src/application.vala:187
+#: src/application.vala:189
 msgid "Extend current pomodoro or break"
 msgstr "Huidige pomodoro of pauze verlengen"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 msgid "Reset"
 msgstr "Resetten"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr ""
 
-#: src/application.vala:196
+#: src/application.vala:198
 msgid "Show preferences"
 msgstr "Voorkeuren tonen"
 
-#: src/application.vala:199
+#: src/application.vala:201
 msgid "Quit application"
 msgstr "Toepassing afsluiten"
 
-#: src/application.vala:202
+#: src/application.vala:204
 msgid "Print version information and exit"
 msgstr "Versie-informatie tonen en afsluiten"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr ""
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr ""
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Bring to Focus"
 msgstr "Op de voorgrond plaatsen"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "nog %s"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -508,98 +417,98 @@ msgstr "Verstreken"
 msgid "Triggered when session is about to be reset due to inactivity."
 msgstr "Geactiveerd wanneer de sessie wordt gereset wegens inactiviteit."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Neem pauze"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 msgid "Take a short break"
 msgstr "Neem een korte pauze"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 msgid "Take a long break"
 msgstr "Neem een lange pauze"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "De Pomodoro loopt bijna af"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 #, fuzzy
 msgid "Take a Break"
 msgstr "Neem een pauze"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 msgid "Break is about to end"
 msgstr "De pauze loopt bijna af"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 #, fuzzy
 msgid "+1 minute"
 msgstr "+1 minuut"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "Maak je gereed…"
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 #, fuzzy
 msgid "Pomodoro is over!"
 msgstr "De Pomodoro is voorbij!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 #, fuzzy
 msgid "Break is over!"
 msgstr "De pauze is voorbij!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Bevestig de start van een Pomodoro…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 msgid "Confirm the start of a break…"
 msgstr "Bevestig de start van een pauze…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 msgid "Confirm the start of a short break…"
 msgstr "Bevestig de start van een korte pauze…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 msgid "Confirm the start of a long break…"
 msgstr "Bevestig de start van een lange pauze…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "Pauze overslaan"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 msgid "Failed to initialize playback"
 msgstr "Initialiseren van afspelen mislukt"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 msgid "File not found"
 msgstr "Bestand niet gevonden"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 msgid "File type not supported"
 msgstr "Bestandstype niet ondersteund"
 
@@ -714,7 +623,165 @@ msgstr "De resterende tijd voordat het aftellen eindigt."
 msgid "Time when the countdown has started."
 msgstr "Tijdstip waarop het aftellen is gestart."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+msgid "GNOME Shell Extension"
+msgstr "GNOME Shell-uitbreiding"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+msgid "Get the best experience!"
+msgstr "Krijg de beste ervaring!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr "Schakel de <b>GNOME Shell-uitbreiding</b> in voor naadloze integratie"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+msgid "Always within reach"
+msgstr "Altijd binnen handbereik"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+msgid "Control timer directly from the top bar without opening the app"
+msgstr "Bedien de timer direct vanuit de bovenbalk zonder de app te openen"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+msgid "Less distractions"
+msgstr "Minder afleidingen"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+msgid "Refined break reminders"
+msgstr "Verfijnde pauze-herinneringen"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr ""
+"Elegante schermvullende overlay die het nemen van pauzes aangenamer maakt"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+msgid "Ready to try it?"
+msgstr "Klaar om het te proberen?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+msgid "_Install Extension"
+msgstr "Uitbreiding _installeren"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+msgid "_Not Now"
+msgstr "_Niet nu"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+msgid "Something went wrong"
+msgstr "Er is iets misgegaan"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+msgid "Copy to clipboard"
+msgstr "Kopiëren naar klembord"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+msgid "_Try Again"
+msgstr "Opnieuw _proberen"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+#, fuzzy
+msgid "_Abort"
+msgstr "_Afbreken"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+msgid "Time-out reached"
+msgstr "Time-out bereikt"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+msgid "Installing extensions is not allowed"
+msgstr "Installeren van uitbreidingen is niet toegestaan"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+#, fuzzy
+msgid "Failed to download the extension"
+msgstr "Downloaden van uitbreiding mislukt"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+msgid "Screen Overlay"
+msgstr "Schermoverlay"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr "Bureaublad"
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+msgid "GNOME Shell extension available"
+msgstr "GNOME Shell-uitbreiding beschikbaar"
+
+#: src/plugins/gnome/window-extension.vala:33
+msgid "Learn More"
+msgstr "Meer informatie"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 #, fuzzy
 msgid "Unused"
 msgstr "Niet gebruikt"
@@ -765,94 +832,6 @@ msgstr ""
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
 msgstr "Doneren"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-msgid "GNOME Shell Extension"
-msgstr "GNOME Shell-uitbreiding"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-msgid "Get the best experience!"
-msgstr "Krijg de beste ervaring!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr "Schakel de <b>GNOME Shell-uitbreiding</b> in voor naadloze integratie"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-msgid "Always within reach"
-msgstr "Altijd binnen handbereik"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-msgid "Control timer directly from the top bar without opening the app"
-msgstr "Bedien de timer direct vanuit de bovenbalk zonder de app te openen"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-msgid "Less distractions"
-msgstr "Minder afleidingen"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr ""
-"Laat <b>Pomodoro</b> de systeemmeldingen beheren terwijl de timer loopt"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-msgid "Refined break reminders"
-msgstr "Verfijnde pauze-herinneringen"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr ""
-"Elegante schermvullende overlay die het nemen van pauzes aangenamer maakt"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-msgid "Ready to try it?"
-msgstr "Klaar om het te proberen?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-msgid "_Install Extension"
-msgstr "Uitbreiding _installeren"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-msgid "_Not Now"
-msgstr "_Niet nu"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-msgid "Something went wrong"
-msgstr "Er is iets misgegaan"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-msgid "Copy to clipboard"
-msgstr "Kopiëren naar klembord"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-msgid "_Try Again"
-msgstr "Opnieuw _proberen"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-#, fuzzy
-msgid "_Abort"
-msgstr "_Afbreken"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-msgid "Time-out reached"
-msgstr "Time-out bereikt"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-msgid "Installing extensions is not allowed"
-msgstr "Installeren van uitbreidingen is niet toegestaan"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-#, fuzzy
-msgid "Failed to download the extension"
-msgstr "Downloaden van uitbreiding mislukt"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -959,8 +938,8 @@ msgstr "_Korte pauze"
 msgid "_Long Break"
 msgstr "_Lange pauze"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 msgid "Finished!"
 msgstr "Klaar!"
 
@@ -973,11 +952,11 @@ msgstr "_Pauze"
 msgid "Open screen overlay"
 msgstr "Schermoverlay openen"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 msgid "Session has expired"
 msgstr "Sessie is verlopen"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, fuzzy, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "Lange pauze over <b>%s</b>"
@@ -1011,19 +990,11 @@ msgstr "Hoofdmenu"
 msgid "Stats"
 msgstr "Statistieken"
 
-#: src/ui/main/window.vala:302
-msgid "GNOME Shell extension available"
-msgstr "GNOME Shell-uitbreiding beschikbaar"
-
-#: src/ui/main/window.vala:303
-msgid "Learn More"
-msgstr "Meer informatie"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 msgid "Keep timer running?"
 msgstr "Timer laten lopen?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -1031,11 +1002,11 @@ msgstr ""
 "U kunt de timer in de achtergrond laten lopen — meldingen en sneltoetsen "
 "blijven dan werken."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 #, fuzzy
 msgid "Run in background"
 msgstr "In de achtergrond uitvoeren"
@@ -1309,6 +1280,20 @@ msgstr ""
 "Voer automatisch shell-opdrachten uit bij timer-gebeurtenissen of "
 "voorwaarden. <a href=\"\">Meer informatie.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 #, fuzzy
 msgid "Set Shortcut"
@@ -1402,11 +1387,6 @@ msgstr "Tijd loopt af"
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "Melden wanneer Pomodoro of pauze bijna voorbij is."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-msgid "Screen Overlay"
-msgstr "Schermoverlay"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 msgid "A full-screen notification intended to enforce taking a break."
 msgstr "Een schermvullende melding bedoeld om een pauze af te dwingen."
@@ -1419,52 +1399,17 @@ msgstr "Vergrendelingsvertraging"
 msgid "Period of inactivity to lock the screen."
 msgstr "Inactiviteitsduur om het scherm te vergrendelen."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-msgid "15 seconds"
-msgstr "15 seconden"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-msgid "30 seconds"
-msgstr "30 seconden"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-#, fuzzy
-msgid "1 minute"
-msgstr "1 minuut"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-#, fuzzy
-msgid "2 minutes"
-msgstr "2 minuten"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-#, fuzzy
-msgid "3 minutes"
-msgstr "3 minuten"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-#, fuzzy
-msgid "5 minutes"
-msgstr "5 minuten"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-msgid "Never"
-msgstr "Nooit"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 msgid "Reopen Delay"
 msgstr "Heropenvertraging"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr "Inactiviteitsduur om de overlay opnieuw te tonen na sluiten."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+msgid "Never"
+msgstr "Nooit"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1485,6 +1430,10 @@ msgid "Keyboard Shortcuts"
 msgstr "Sneltoetsen"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 #, fuzzy
 msgid "Automation"
 msgstr "Automatisering"
@@ -1527,14 +1476,14 @@ msgid "Clock Ticking"
 msgstr "Tikkende klok"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "Tikkende timer"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-msgid "Birds"
-msgstr "Vogels"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Geen"
@@ -1584,27 +1533,27 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "Starten van Pomodoro bevestigen"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "Een enkele sessie duurt <b>%s</b>."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "<b>%u%%</b> van de tijd wordt gereserveerd voor pauzes."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 #, fuzzy
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "Wijzigingen toepassen op huidige Pomodoro?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 #, fuzzy
 msgid "Apply changes to ongoing break?"
 msgstr "Wijzigingen toepassen op huidige pauze?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 #, fuzzy
 msgid "Apply"
 msgstr "Toepassen"
@@ -1614,6 +1563,131 @@ msgstr "Toepassen"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Zijbalk"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Compacte timer"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Tamil-vertaling toegevoegd (met dank aan @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Hebreeuwse vertaling toegevoegd (met dank aan @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Ondersteuning voor GNOME Shell 49 (met dank aan @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Duitse vertaling bijgewerkt (met dank aan @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Ondersteuning voor GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Splits gespendeerde tijd rond middernacht"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Telugu-vertaling toegevoegd (met dank aan @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Ondersteuning voor GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Toestaan om schermoverlay te sluiten met gebaren wanneer een video speelt"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Georgische vertaling toegevoegd (met dank aan @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Vertalingen in appdata aangepast (met dank aan @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Probleem opgelost waarbij melding bleef staan na verlengen Pomodoro"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Oplossingen voor GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Ondersteuning voor GNOME Shell 45 beëindigd"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Overzicht van wijzigingen in gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Ondersteuning voor GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Bouwscript aangepast voor meson 0.59.0 (met dank aan @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Laat <b>Pomodoro</b> de systeemmeldingen beheren terwijl de timer loopt"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 seconden"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 seconden"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minuut"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuten"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuten"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuten"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tikkende timer"
+
+#~ msgid "Birds"
+#~ msgstr "Vogels"
 
 #~ msgid "@APPLICATION_NAME@"
 #~ msgstr "@APPLICATION_NAME@"
@@ -1703,10 +1777,6 @@ msgstr "Zijbalk"
 #, fuzzy
 #~ msgid "Updated Brazilian translation (thanks @costaronaldo)"
 #~ msgstr "Catalaanse vertaling bijgewerkt (met dank aan @antoniofsm)"
-
-#, fuzzy
-#~ msgid "Updated Russian translation (thanks @ViktorOn)"
-#~ msgstr "Russische vertaling bijgewerkt (met dank aan @rkaverin)"
 
 #, fuzzy
 #~ msgid "Updated Chinese translation (thanks @HaorongX)"
@@ -1885,9 +1955,6 @@ msgstr "Zijbalk"
 
 #~ msgid "Screen notifications"
 #~ msgstr "Schermmeldingen"
-
-#~ msgid "Desktop"
-#~ msgstr "Bureaublad"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Wachten op activiteit na pauzes"

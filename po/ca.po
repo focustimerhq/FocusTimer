@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:31+0100\n"
+"POT-Creation-Date: 2026-04-05 11:06+0200\n"
 "PO-Revision-Date: 2023-03-24 15:33+0100\n"
 "Last-Translator: Antonio Vicién Faure <antonio@antonio.cat>\n"
 "Language-Team: Catalan\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr ""
@@ -94,17 +94,12 @@ msgstr "Executeu ordres personalitzades després d'un Pomodoro o d'un descans"
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Temporitzador"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-#, fuzzy
-msgid "Compact timer"
-msgstr "Temporitzador compacte"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 #, fuzzy
@@ -127,247 +122,153 @@ msgid "Screen overlay"
 msgstr "Superposició de pantalla"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "Resum dels canvis a gnome-pomodoro 0.28.1"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-#, fuzzy
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "S'ha afegit la traducció al tàmil (gràcies @omeritzics)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-#, fuzzy
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "S'ha afegit la traducció a l'hebreu (gràcies @Killersparrow1)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "Resum dels canvis a gnome-pomodoro 0.28.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-#, fuzzy
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "Compatibilitat amb GNOME Shell 49 (gràcies @aleasto)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-#, fuzzy
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "Traducció a l'alemany actualitzada (gràcies @daPhipz)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "Resum dels canvis a gnome-pomodoro 0.27.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-#, fuzzy
-msgid "Support for GNOME Shell 48"
-msgstr "Compatibilitat amb GNOME Shell 48"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-#, fuzzy
-msgid "Split time spent across midnight"
-msgstr "Divideix el temps passat a través de la mitjanit"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-#, fuzzy
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "S'ha afegit la traducció al telugu (gràcies @SpaciousCoder78)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "Resum dels canvis a gnome-pomodoro 0.26.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-#, fuzzy
-msgid "Support for GNOME Shell 47"
-msgstr "Compatibilitat amb GNOME Shell 47"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-#, fuzzy
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+msgid "Automatic daily backup"
 msgstr ""
-"Permet tancar la superposició de pantalla mitjançant un gest quan s'està "
-"reproduint un vídeo"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-#, fuzzy
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "S'ha afegit la traducció al georgià (gràcies @NorwayFun)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-#, fuzzy
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "Traduccions ajustades a l'appdata (gràcies @yakushabb)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "Resum dels canvis a gnome-pomodoro 0.25.2"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-#, fuzzy
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "Correcció de la notificació persistent després d'ampliar el Pomodoro"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "Resum dels canvis a gnome-pomodoro 0.25.1"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-#, fuzzy
-msgid "Fixes for GNOME Shell 46"
-msgstr "Correccions per a GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-#, fuzzy
-msgid "Drop support for GNOME Shell 45"
-msgstr "S'elimina la compatibilitat amb GNOME Shell 45"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "Resum dels canvis a gnome-pomodoro 0.25.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-#, fuzzy
-msgid "Support for GNOME Shell 46"
-msgstr "Compatibilitat amb GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-#, fuzzy
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
 msgstr ""
-"S'ha ajustat l'script de construcció a meson 0.59.0 (gràcies @mattst88)"
 
-#: src/application.vala:151 src/application.vala:606
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr ""
+
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 #, fuzzy
 msgid "Start or Stop"
 msgstr "Inicia o Atura"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 #, fuzzy
 msgid "Start, Pause or Resume"
 msgstr "Inicia, Pausa o Reprèn"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "Inicia el Pomodoro"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr ""
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr ""
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "Inicia"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "Atura"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "Pausa"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 #, fuzzy
 msgid "Resume"
 msgstr "Reprèn"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "Omet"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 #, fuzzy
 msgid "Rewind"
 msgstr "Rebobina"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr ""
 
-#: src/application.vala:187
+#: src/application.vala:189
 #, fuzzy
 msgid "Extend current pomodoro or break"
 msgstr "Amplia el pomodoro actual o el descans"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 #, fuzzy
 msgid "Reset"
 msgstr "Restableix"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr ""
 
-#: src/application.vala:196
+#: src/application.vala:198
 msgid "Show preferences"
 msgstr "Mostra les preferències"
 
-#: src/application.vala:199
+#: src/application.vala:201
 msgid "Quit application"
 msgstr "Surt de l'aplicació"
 
-#: src/application.vala:202
+#: src/application.vala:204
 msgid "Print version information and exit"
 msgstr "Imprimeix la informació de la versió i surt"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr ""
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr ""
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 #, fuzzy
 msgid "Bring to Focus"
 msgstr "Porta al focus"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "queden %s"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -558,108 +459,108 @@ msgstr "Expirat"
 msgid "Triggered when session is about to be reset due to inactivity."
 msgstr "Es dispara quan la sessió està a punt de restablir-se per inactivitat."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 #, fuzzy
 msgid "Take a break"
 msgstr "Fes un descans"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 #, fuzzy
 msgid "Take a short break"
 msgstr "Fes un descans curt"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 #, fuzzy
 msgid "Take a long break"
 msgstr "Fes un descans llarg"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "El Pomodoro està a punt de finalitzar"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 #, fuzzy
 msgid "Take a Break"
 msgstr "Fes un descans"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 #, fuzzy
 msgid "Break is about to end"
 msgstr "El descans està a punt de finalitzar"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 #, fuzzy
 msgid "+1 minute"
 msgstr "+1 minut"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "Prepara't…"
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 #, fuzzy
 msgid "Pomodoro is over!"
 msgstr "El Pomodoro ha acabat!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 #, fuzzy
 msgid "Break is over!"
 msgstr "El descans ha acabat!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 #, fuzzy
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Confirma l'inici d'un Pomodoro…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 #, fuzzy
 msgid "Confirm the start of a break…"
 msgstr "Confirma l'inici d'un descans…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 #, fuzzy
 msgid "Confirm the start of a short break…"
 msgstr "Confirma l'inici d'un descans curt…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 #, fuzzy
 msgid "Confirm the start of a long break…"
 msgstr "Confirma l'inici d'un descans llarg…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "Omet el descans"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 #, fuzzy
 msgid "Failed to initialize playback"
 msgstr "No s'ha pogut inicialitzar la reproducció"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 #, fuzzy
 msgid "File not found"
 msgstr "No s'ha trobat el fitxer"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 #, fuzzy
 msgid "File type not supported"
 msgstr "Tipus de fitxer no admès"
@@ -788,7 +689,189 @@ msgstr "La quantitat de temps restant abans que acabi el compte enrere."
 msgid "Time when the countdown has started."
 msgstr "Hora en què s'ha iniciat el compte enrere."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+#, fuzzy
+msgid "GNOME Shell Extension"
+msgstr "Extensió del GNOME Shell"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+#, fuzzy
+msgid "Get the best experience!"
+msgstr "Obteniu la millor experiència!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+#, fuzzy
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr ""
+"Habiliteu l'<b>extensió del GNOME Shell</b> per a una integració perfecta "
+"amb l'escriptori"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+#, fuzzy
+msgid "Always within reach"
+msgstr "Sempre a l'abast"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+#, fuzzy
+msgid "Control timer directly from the top bar without opening the app"
+msgstr ""
+"Controleu el temporitzador directament des de la barra superior sense obrir "
+"l'aplicació"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+#, fuzzy
+msgid "Less distractions"
+msgstr "Menys distraccions"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+#, fuzzy
+msgid "Refined break reminders"
+msgstr "Recordatoris de descans refinats"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+#, fuzzy
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr ""
+"Superposició elegant a pantalla completa que fa que els descansos siguin una "
+"experiència més agradable"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+#, fuzzy
+msgid "Ready to try it?"
+msgstr "Esteu preparat per provar-ho?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+#, fuzzy
+msgid "_Install Extension"
+msgstr "_Instal·la l'extensió"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+#, fuzzy
+msgid "_Not Now"
+msgstr "Ara _no"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+#, fuzzy
+msgid "Something went wrong"
+msgstr "Alguna cosa ha anat malament"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "Copia al porta-retalls"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+#, fuzzy
+msgid "_Try Again"
+msgstr "_Torna-ho a provar"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+#, fuzzy
+msgid "_Abort"
+msgstr "_Avorta"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+#, fuzzy
+msgid "Time-out reached"
+msgstr "S'ha esgotat el temps d'espera"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+#, fuzzy
+msgid "Installing extensions is not allowed"
+msgstr "No es permet instal·lar extensions"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+#, fuzzy
+msgid "Failed to download the extension"
+msgstr "No s'ha pogut baixar l'extensió"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+#, fuzzy
+msgid "Screen Overlay"
+msgstr "Superposició de pantalla"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr "Escriptori"
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+#, fuzzy
+msgid "GNOME Shell extension available"
+msgstr "Extensió del GNOME Shell disponible"
+
+#: src/plugins/gnome/window-extension.vala:33
+#, fuzzy
+msgid "Learn More"
+msgstr "Saber-ne més"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 #, fuzzy
 msgid "Unused"
 msgstr "No utilitzat"
@@ -846,117 +929,6 @@ msgstr "Antonio Vicién Faure <antonio@antonio.cat>"
 #, fuzzy
 msgid "Donate"
 msgstr "Donatius"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-#, fuzzy
-msgid "GNOME Shell Extension"
-msgstr "Extensió del GNOME Shell"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-#, fuzzy
-msgid "Get the best experience!"
-msgstr "Obteniu la millor experiència!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-#, fuzzy
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr ""
-"Habiliteu l'<b>extensió del GNOME Shell</b> per a una integració perfecta "
-"amb l'escriptori"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-#, fuzzy
-msgid "Always within reach"
-msgstr "Sempre a l'abast"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-#, fuzzy
-msgid "Control timer directly from the top bar without opening the app"
-msgstr ""
-"Controleu el temporitzador directament des de la barra superior sense obrir "
-"l'aplicació"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-#, fuzzy
-msgid "Less distractions"
-msgstr "Menys distraccions"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-#, fuzzy
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr ""
-"Deixeu que <b>Pomodoro</b> gestioni les notificacions del sistema mentre el "
-"temporitzador està en marxa"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-#, fuzzy
-msgid "Refined break reminders"
-msgstr "Recordatoris de descans refinats"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-#, fuzzy
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr ""
-"Superposició elegant a pantalla completa que fa que els descansos siguin una "
-"experiència més agradable"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-#, fuzzy
-msgid "Ready to try it?"
-msgstr "Esteu preparat per provar-ho?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-#, fuzzy
-msgid "_Install Extension"
-msgstr "_Instal·la l'extensió"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-#, fuzzy
-msgid "_Not Now"
-msgstr "Ara _no"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-#, fuzzy
-msgid "Something went wrong"
-msgstr "Alguna cosa ha anat malament"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-#, fuzzy
-msgid "Copy to clipboard"
-msgstr "Copia al porta-retalls"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-#, fuzzy
-msgid "_Try Again"
-msgstr "_Torna-ho a provar"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-#, fuzzy
-msgid "_Abort"
-msgstr "_Avorta"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-#, fuzzy
-msgid "Time-out reached"
-msgstr "S'ha esgotat el temps d'espera"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-#, fuzzy
-msgid "Installing extensions is not allowed"
-msgstr "No es permet instal·lar extensions"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-#, fuzzy
-msgid "Failed to download the extension"
-msgstr "No s'ha pogut baixar l'extensió"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -1065,8 +1037,8 @@ msgstr "Descans _curt"
 msgid "_Long Break"
 msgstr "Descans _llarg"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 #, fuzzy
 msgid "Finished!"
 msgstr "Finalitzat!"
@@ -1081,12 +1053,12 @@ msgstr "_Descans"
 msgid "Open screen overlay"
 msgstr "Obre la superposició de pantalla"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 #, fuzzy
 msgid "Session has expired"
 msgstr "La sessió ha expirat"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, fuzzy, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "Descans llarg en <b>%s</b>"
@@ -1122,22 +1094,12 @@ msgstr "Menú principal"
 msgid "Stats"
 msgstr "Estadístiques"
 
-#: src/ui/main/window.vala:302
-#, fuzzy
-msgid "GNOME Shell extension available"
-msgstr "Extensió del GNOME Shell disponible"
-
-#: src/ui/main/window.vala:303
-#, fuzzy
-msgid "Learn More"
-msgstr "Saber-ne més"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 #, fuzzy
 msgid "Keep timer running?"
 msgstr "Voleu mantenir el temporitzador en marxa?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 #, fuzzy
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
@@ -1146,11 +1108,11 @@ msgstr ""
 "Podeu mantenir-lo en marxa en segon pla; les notificacions i les dreceres de "
 "teclat continuaran funcionant."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "Surt"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 #, fuzzy
 msgid "Run in background"
 msgstr "Executa en segon pla"
@@ -1462,6 +1424,20 @@ msgstr ""
 "Executeu ordres de l'intèrpret automàticament en esdeveniments o condicions "
 "del temporitzador. <a href=\"\">Saber-ne més.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 #, fuzzy
 msgid "Set Shortcut"
@@ -1572,12 +1548,6 @@ msgstr "El temps s'acaba"
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "Notifica quan el Pomodoro o el descans estiguin a punt de finalitzar."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-#, fuzzy
-msgid "Screen Overlay"
-msgstr "Superposició de pantalla"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
 msgid "A full-screen notification intended to enforce taking a break."
@@ -1593,59 +1563,22 @@ msgstr "Retard de bloqueig"
 msgid "Period of inactivity to lock the screen."
 msgstr "Període d'inactivitat per bloquejar la pantalla."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-#, fuzzy
-msgid "15 seconds"
-msgstr "15 segons"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-#, fuzzy
-msgid "30 seconds"
-msgstr "30 segons"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-#, fuzzy
-msgid "1 minute"
-msgstr "1 minut"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-#, fuzzy
-msgid "2 minutes"
-msgstr "2 minuts"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-#, fuzzy
-msgid "3 minutes"
-msgstr "3 minuts"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-#, fuzzy
-msgid "5 minutes"
-msgstr "5 minuts"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-#, fuzzy
-msgid "Never"
-msgstr "Mai"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 #, fuzzy
 msgid "Reopen Delay"
 msgstr "Retard de reobertura"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr ""
 "Període d'inactivitat per tornar a obrir la superposició després d'haver "
 "estat tancada."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+#, fuzzy
+msgid "Never"
+msgstr "Mai"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1666,6 +1599,10 @@ msgid "Keyboard Shortcuts"
 msgstr "Dreceres de teclat"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 #, fuzzy
 msgid "Automation"
 msgstr "Automatització"
@@ -1709,15 +1646,14 @@ msgid "Clock Ticking"
 msgstr "Tic-tac del rellotge"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "Tic-tac del temporitzador"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-#, fuzzy
-msgid "Birds"
-msgstr "Ocells"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Cap"
@@ -1771,27 +1707,27 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "Confirma l'inici d'un Pomodoro"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, fuzzy, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "Una sessió única durarà <b>%s</b>."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, fuzzy, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "Es dedicarà el <b>%u%%</b> del temps als descansos."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 #, fuzzy
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "Voleu aplicar els canvis al Pomodoro actual?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 #, fuzzy
 msgid "Apply changes to ongoing break?"
 msgstr "Voleu aplicar els canvis al descans actual?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 #, fuzzy
 msgid "Apply"
 msgstr "Aplica"
@@ -1801,6 +1737,144 @@ msgstr "Aplica"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Barra lateral"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "Temporitzador compacte"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.28.1"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "S'ha afegit la traducció al tàmil (gràcies @omeritzics)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "S'ha afegit la traducció a l'hebreu (gràcies @Killersparrow1)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.28.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Compatibilitat amb GNOME Shell 49 (gràcies @aleasto)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Traducció a l'alemany actualitzada (gràcies @daPhipz)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.27.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Compatibilitat amb GNOME Shell 48"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Divideix el temps passat a través de la mitjanit"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "S'ha afegit la traducció al telugu (gràcies @SpaciousCoder78)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.26.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Compatibilitat amb GNOME Shell 47"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Permet tancar la superposició de pantalla mitjançant un gest quan s'està "
+#~ "reproduint un vídeo"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "S'ha afegit la traducció al georgià (gràcies @NorwayFun)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Traduccions ajustades a l'appdata (gràcies @yakushabb)"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.2"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr ""
+#~ "Correcció de la notificació persistent després d'ampliar el Pomodoro"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.1"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Correccions per a GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "S'elimina la compatibilitat amb GNOME Shell 45"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Resum dels canvis a gnome-pomodoro 0.25.0"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Compatibilitat amb GNOME Shell 46"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr ""
+#~ "S'ha ajustat l'script de construcció a meson 0.59.0 (gràcies @mattst88)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Deixeu que <b>Pomodoro</b> gestioni les notificacions del sistema mentre "
+#~ "el temporitzador està en marxa"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 segons"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 segons"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 minuts"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 minuts"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 minuts"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tic-tac del temporitzador"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "Ocells"
 
 #~ msgid "@APPLICATION_NAME@"
 #~ msgstr "@APPLICATION_NAME@"
@@ -1895,9 +1969,6 @@ msgstr "Barra lateral"
 
 #~ msgid "Screen notifications"
 #~ msgstr "Notificacions en pantalla"
-
-#~ msgid "Desktop"
-#~ msgstr "Escriptori"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Espera que hi hagi activitat després d'un descans"

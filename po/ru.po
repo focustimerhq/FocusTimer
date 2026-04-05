@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:31+0100\n"
+"POT-Creation-Date: 2026-04-05 11:06+0200\n"
 "PO-Revision-Date: 2023-03-26 11:41+0200\n"
 "Last-Translator: ViktorOn <https://github.com/viktoron>\n"
 "Language-Team: Russian\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr ""
@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Таймер продуктивности, который помогает работать эффективнее, разделяя время "
 "на периоды, для сосредоточения на работе, и короткие перерывы. Работайте 25 "
-"минут, затем сделайте 5-минутный перерыв, чтобы сохранить концентрацию и избежать "
-"выгорания."
+"минут, затем сделайте 5-минутный перерыв, чтобы сохранить концентрацию и "
+"избежать выгорания."
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:16
 msgid "Key features:"
@@ -88,16 +88,12 @@ msgstr "Запуск команд после завершения Помодор
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Таймер"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-msgid "Compact timer"
-msgstr "Компактный таймер"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 msgid "Daily stats"
@@ -117,214 +113,146 @@ msgid "Screen overlay"
 msgstr "Покрытие экрана"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "Обзор изменений в gnome-pomodoro 0.28.1"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "Добавлен перевод на тамильский (спасибо @omeritzics)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "Добавлен перевод на иврит (спасибо @Killersparrow1)"
+msgid "Automatic daily backup"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "Обзор изменений в gnome-pomodoro 0.28.0"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "Поддержка GNOME Shell 49 (спасибо @aleasto)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "Обновлен немецкий перевод (спасибо @daPhipz)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr "Обновлен русский перевод (спасибо @ViktorOn)"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "Обзор изменений в gnome-pomodoro 0.27.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-msgid "Support for GNOME Shell 48"
-msgstr "Поддержка GNOME Shell 48"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-msgid "Split time spent across midnight"
-msgstr "Разделение времени, проведенного в полночь"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "Добавлен перевод на телугу (спасибо @SpaciousCoder78)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "Обзор изменений в gnome-pomodoro 0.26.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-msgid "Support for GNOME Shell 47"
-msgstr "Поддержка GNOME Shell 47"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
-msgstr "Разрешить скрывать экранное наложение жестом во время воспроизведения видео"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "Добавлен перевод на грузинский (спасибо @NorwayFun)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "Скорректированы переводы в appdata (спасибо @yakushabb)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "Обзор изменений в gnome-pomodoro 0.25.2"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "Исправлено отображение уведомления после продления Помодоро"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "Обзор изменений в gnome-pomodoro 0.25.1"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-msgid "Fixes for GNOME Shell 46"
-msgstr "Исправления для GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-msgid "Drop support for GNOME Shell 45"
-msgstr "Прекращение поддержки GNOME Shell 45"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "Обзор изменений в gnome-pomodoro 0.25.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-msgid "Support for GNOME Shell 46"
-msgstr "Поддержка GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
-msgstr "Скрипт сборки адаптирован для meson 0.59.0 (спасибо @mattst88)"
-
-#: src/application.vala:151 src/application.vala:606
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 msgid "Start or Stop"
 msgstr "Старт или Стоп"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 msgid "Start, Pause or Resume"
 msgstr "Старт, Пауза или Возобновить"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "Запустить Помодоро"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr ""
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr ""
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "Старт"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "Стоп"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 msgid "Resume"
 msgstr "Возобновить"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "Пропустить"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Перемотать назад"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr ""
 
-#: src/application.vala:187
+#: src/application.vala:189
 msgid "Extend current pomodoro or break"
 msgstr "Продлить текущий помодоро или перерыв"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 msgid "Reset"
 msgstr "Сбросить"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr ""
 
-#: src/application.vala:196
+#: src/application.vala:198
 msgid "Show preferences"
 msgstr "Показать настройки"
 
-#: src/application.vala:199
+#: src/application.vala:201
 msgid "Quit application"
 msgstr "Выйти из приложения"
 
-#: src/application.vala:202
+#: src/application.vala:204
 msgid "Print version information and exit"
 msgstr "Вывести информацию о версии и выйти"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr ""
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr ""
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Bring to Focus"
 msgstr "Переместить в фокус"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, c-format
 msgid "%s remaining"
 msgstr "Осталось %s"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -448,7 +376,8 @@ msgstr "Подтверждение перехода"
 
 #: src/core/event.vala:343
 msgid "A manual confirmation is required to start next time-block."
-msgstr "Требуется ручное подтверждение для запуска следующего временного блока."
+msgstr ""
+"Требуется ручное подтверждение для запуска следующего временного блока."
 
 #: src/core/event.vala:350
 msgid "Advanced"
@@ -483,94 +412,94 @@ msgstr "Истекло"
 msgid "Triggered when session is about to be reset due to inactivity."
 msgstr "Срабатывает, когда сессия настроена на сброс из-за бездействия."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Помодоро"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Сделать перерыв"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 msgid "Take a short break"
 msgstr "Сделать короткий перерыв"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 msgid "Take a long break"
 msgstr "Сделать длинный перерыв"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "Помодоро скоро завершится"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "Сделать перерыв"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 msgid "Break is about to end"
 msgstr "Перерыв скоро закончится"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 msgid "+1 minute"
 msgstr "+1 минута"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "Приготовьтесь…"
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 msgid "Pomodoro is over!"
 msgstr "Помодоро завершен!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 msgid "Break is over!"
 msgstr "Перерыв окончен!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Подтвердите запуск Помодоро…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 msgid "Confirm the start of a break…"
 msgstr "Подтвердите начало перерыва…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 msgid "Confirm the start of a short break…"
 msgstr "Подтвердите начало короткого перерыва…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 msgid "Confirm the start of a long break…"
 msgstr "Подтвердите начало длинного перерыва…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "Пропустить перерыв"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 msgid "Failed to initialize playback"
 msgstr "Не удалось инициализировать воспроизведение"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 msgid "File not found"
 msgstr "Файл не найден"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 msgid "File type not supported"
 msgstr "Тип файла не поддерживается"
 
@@ -690,7 +619,163 @@ msgstr "Время, оставшееся до конца отсчета."
 msgid "Time when the countdown has started."
 msgstr "Время начала обратного отсчета."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+msgid "GNOME Shell Extension"
+msgstr "Расширение GNOME Shell"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+msgid "Get the best experience!"
+msgstr "Сделайте использование приложения еще удобнее!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr ""
+"Включите <b>расширение GNOME Shell</b> для полной интеграции с рабочим столом"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+msgid "Always within reach"
+msgstr "Всегда под рукой"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+msgid "Control timer directly from the top bar without opening the app"
+msgstr "Управляйте таймером прямо из верхней панели, не открывая приложение"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+msgid "Less distractions"
+msgstr "Меньше отвлекающих факторов"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+msgid "Refined break reminders"
+msgstr "Улучшенные напоминания о перерывах"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr "Элегантный полноэкранный оверлей сделает перерывы более приятными"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+msgid "Ready to try it?"
+msgstr "Готовы попробовать?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+msgid "_Install Extension"
+msgstr "_Установить расширение"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+msgid "_Not Now"
+msgstr "_Не сейчас"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+msgid "Copy to clipboard"
+msgstr "Копировать в буфер обмена"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+msgid "_Try Again"
+msgstr "_Попробовать снова"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+msgid "_Abort"
+msgstr "_Прервать"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+msgid "Time-out reached"
+msgstr "Время ожидания истекло"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+msgid "Installing extensions is not allowed"
+msgstr "Установка расширений запрещена"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+msgid "Failed to download the extension"
+msgstr "Не удалось загрузить расширение"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+msgid "Screen Overlay"
+msgstr "Покрытие экрана (оверлей)"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr "Рабочий стол"
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+msgid "GNOME Shell extension available"
+msgstr "Доступно расширение GNOME Shell"
+
+#: src/plugins/gnome/window-extension.vala:33
+msgid "Learn More"
+msgstr "Узнать больше"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 msgid "Unused"
 msgstr "Не используется"
 
@@ -743,93 +828,6 @@ msgstr ""
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
 msgstr "Пожертвовать"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-msgid "GNOME Shell Extension"
-msgstr "Расширение GNOME Shell"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-msgid "Get the best experience!"
-msgstr "Сделайте использование приложения еще удобнее!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr ""
-"Включите <b>расширение GNOME Shell</b> для полной интеграции с рабочим столом"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-msgid "Always within reach"
-msgstr "Всегда под рукой"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-msgid "Control timer directly from the top bar without opening the app"
-msgstr "Управляйте таймером прямо из верхней панели, не открывая приложение"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-msgid "Less distractions"
-msgstr "Меньше отвлекающих факторов"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr ""
-"Позвольте <b>Pomodoro</b> управлять системными уведомлениями во время работы "
-"таймера"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-msgid "Refined break reminders"
-msgstr "Улучшенные напоминания о перерывах"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr "Элегантный полноэкранный оверлей сделает перерывы более приятными"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-msgid "Ready to try it?"
-msgstr "Готовы попробовать?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-msgid "_Install Extension"
-msgstr "_Установить расширение"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-msgid "_Not Now"
-msgstr "_Не сейчас"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-msgid "Something went wrong"
-msgstr "Что-то пошло не так"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-msgid "Copy to clipboard"
-msgstr "Копировать в буфер обмена"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-msgid "_Try Again"
-msgstr "_Попробовать снова"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-msgid "_Abort"
-msgstr "_Прервать"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-msgid "Time-out reached"
-msgstr "Время ожидания истекло"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-msgid "Installing extensions is not allowed"
-msgstr "Установка расширений запрещена"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-msgid "Failed to download the extension"
-msgstr "Не удалось загрузить расширение"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -936,8 +934,8 @@ msgstr "_Короткий перерыв"
 msgid "_Long Break"
 msgstr "_Длинный перерыв"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 msgid "Finished!"
 msgstr "Завершено!"
 
@@ -949,11 +947,11 @@ msgstr "_Перерыв"
 msgid "Open screen overlay"
 msgstr "Открыть полноэкранный оверлей"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 msgid "Session has expired"
 msgstr "Срок сессии истек"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "Длинный перерыв через <b>%s</b>"
@@ -986,19 +984,11 @@ msgstr "Основное меню"
 msgid "Stats"
 msgstr "Статистика"
 
-#: src/ui/main/window.vala:302
-msgid "GNOME Shell extension available"
-msgstr "Доступно расширение GNOME Shell"
-
-#: src/ui/main/window.vala:303
-msgid "Learn More"
-msgstr "Узнать больше"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 msgid "Keep timer running?"
 msgstr "Оставить таймер запущенным?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -1006,11 +996,11 @@ msgstr ""
 "Вы можете оставить его работать в фоне — уведомления и горячие клавиши "
 "продолжат работать."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "Выход"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 msgid "Run in background"
 msgstr "Работа в фоне"
 
@@ -1268,6 +1258,20 @@ msgstr ""
 "Автоматически запускать команды оболочки при событиях или условиях таймера. "
 "<a href=\"\">Узнать больше.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 msgid "Set Shortcut"
 msgstr "Установить комбинацию клавиш"
@@ -1357,11 +1361,6 @@ msgstr "Время заканчивается"
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "Уведомлять, когда Помодоро или перерыв подходят к концу."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-msgid "Screen Overlay"
-msgstr "Покрытие экрана (оверлей)"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 msgid "A full-screen notification intended to enforce taking a break."
 msgstr "Полноэкранное уведомление, помогающее не пропускать перерыв."
@@ -1374,48 +1373,17 @@ msgstr "Задержка блокировки"
 msgid "Period of inactivity to lock the screen."
 msgstr "Период бездействия перед блокировкой экрана."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-msgid "15 seconds"
-msgstr "15 секунд"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-msgid "30 seconds"
-msgstr "30 секунд"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-msgid "1 minute"
-msgstr "1 минута"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-msgid "2 minutes"
-msgstr "2 минуты"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-msgid "3 minutes"
-msgstr "3 минуты"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-msgid "5 minutes"
-msgstr "5 минут"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-msgid "Never"
-msgstr "Никогда"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 msgid "Reopen Delay"
 msgstr "Задержка повторного открытия"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr "Период бездействия перед повторным открытием оверлея после закрытия."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+msgid "Never"
+msgstr "Никогда"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1434,6 +1402,10 @@ msgid "Keyboard Shortcuts"
 msgstr "Комбинации клавиш"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 msgid "Automation"
 msgstr "Автоматизация"
 
@@ -1471,14 +1443,14 @@ msgid "Clock Ticking"
 msgstr "Тиканье часов"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "Тиканье таймера"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-msgid "Birds"
-msgstr "Птицы"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Нет"
@@ -1524,25 +1496,25 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "Подтверждать начало Помодоро"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "Одна сессия займет <b>%s</b>."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "<b>%u%%</b> времени будет отведено на перерывы."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "Применить изменения к текущему Помодоро?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 msgid "Apply changes to ongoing break?"
 msgstr "Применить изменения к текущему перерыву?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 msgid "Apply"
 msgstr "Применить"
 
@@ -1550,6 +1522,110 @@ msgstr "Применить"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Боковая панель"
+
+#~ msgid "Compact timer"
+#~ msgstr "Компактный таймер"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.28.1"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "Добавлен перевод на тамильский (спасибо @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "Добавлен перевод на иврит (спасибо @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.28.0"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Поддержка GNOME Shell 49 (спасибо @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Обновлен немецкий перевод (спасибо @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.27.0"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Поддержка GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Разделение времени, проведенного в полночь"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "Добавлен перевод на телугу (спасибо @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.26.0"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Поддержка GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr ""
+#~ "Разрешить скрывать экранное наложение жестом во время воспроизведения "
+#~ "видео"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "Добавлен перевод на грузинский (спасибо @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Скорректированы переводы в appdata (спасибо @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Исправлено отображение уведомления после продления Помодоро"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.25.1"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Исправления для GNOME Shell 46"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Прекращение поддержки GNOME Shell 45"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Обзор изменений в gnome-pomodoro 0.25.0"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Поддержка GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Скрипт сборки адаптирован для meson 0.59.0 (спасибо @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Позвольте <b>Pomodoro</b> управлять системными уведомлениями во время "
+#~ "работы таймера"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 секунд"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 секунд"
+
+#~ msgid "1 minute"
+#~ msgstr "1 минута"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 минуты"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 минуты"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 минут"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Тиканье таймера"
+
+#~ msgid "Birds"
+#~ msgstr "Птицы"
 
 #~ msgid "@APPLICATION_NAME@"
 #~ msgstr "@APPLICATION_NAME@"
@@ -1632,9 +1708,6 @@ msgstr "Боковая панель"
 
 #~ msgid "Updated Brazilian translation (thanks @costaronaldo)"
 #~ msgstr "Обновлен бразильский перевод (спасибо @antoniofsm)"
-
-#~ msgid "Updated Russian translation (thanks @ViktorOn)"
-#~ msgstr "Обновлен русский перевод (спасибо @ViktorOn)"
 
 #~ msgid "Updated Chinese translation (thanks @HaorongX)"
 #~ msgstr "Обновлен китайский перевод (спасибо @HaorongX)"
@@ -1787,9 +1860,6 @@ msgstr "Боковая панель"
 
 #~ msgid "Screen notifications"
 #~ msgstr "Экранные уведомления"
-
-#~ msgid "Desktop"
-#~ msgstr "Рабочий стол"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "Дождаться активности пользователя после перерыва"
@@ -1986,11 +2056,12 @@ msgstr "Боковая панель"
 #~ msgid ""
 #~ "System notifications including chat messages won't show up during break."
 #~ msgstr ""
-#~ "Системные уведомления, включая сообщения чата, не будут показываться "
-#~ "в течении перерыва."
+#~ "Системные уведомления, включая сообщения чата, не будут показываться в "
+#~ "течении перерыва."
 
 #~ msgid "System notifications including chat messages won't show up."
-#~ msgstr "Системные уведомления, включая сообщения чата, не будут показываться."
+#~ msgstr ""
+#~ "Системные уведомления, включая сообщения чата, не будут показываться."
 
 #~ msgid ""
 #~ "The shortcut \"%s\" cannot be used because it will become impossible to "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:31+0100\n"
+"POT-Creation-Date: 2026-04-05 11:06+0200\n"
 "PO-Revision-Date: 2025-10-30 22:00+0530\n"
 "Last-Translator: Killersparrow1 <github.com/Killersparrow1>\n"
 "Language-Team: Tamil\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr ""
@@ -93,17 +93,12 @@ msgstr "பொமோடோரோ அல்லது இடைவேளைக்�
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "நேரங்காட்டி"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-#, fuzzy
-msgid "Compact timer"
-msgstr "சிறிய நேரங்காட்டி"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 #, fuzzy
@@ -126,240 +121,155 @@ msgid "Screen overlay"
 msgstr "திரை மேலடுக்கு"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-#, fuzzy
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "gnome-pomodoro 0.28.1 மாற்றங்களின் கண்ணோட்டம்"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-#, fuzzy
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "தமிழ் மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@omeritzics-க்கு நன்றி)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-#, fuzzy
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "ஹீப்ரு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@Killersparrow1-க்கு நன்றி)"
+msgid "Automatic daily backup"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "gnome-pomodoro 0.28.0 மாற்றங்களின் கண்ணோட்டம்"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-#, fuzzy
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "GNOME Shell 49-க்கான ஆதரவு (@aleasto-க்கு நன்றி)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-#, fuzzy
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "ஜெர்மன் மொழிபெயர்ப்பு புதுப்பிக்கப்பட்டது (@daPhipz-க்கு நன்றி)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "gnome-pomodoro 0.27.0 மாற்றங்களின் கண்ணோட்டம்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-#, fuzzy
-msgid "Support for GNOME Shell 48"
-msgstr "GNOME Shell 48-க்கான ஆதரவு"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-#, fuzzy
-msgid "Split time spent across midnight"
-msgstr "நள்ளிரவைத் தாண்டிய நேரத்தைப் பிரித்தல்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-#, fuzzy
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "தெலுங்கு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@SpaciousCoder78-க்கு நன்றி)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "gnome-pomodoro 0.26.0 மாற்றங்களின் கண்ணோட்டம்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-#, fuzzy
-msgid "Support for GNOME Shell 47"
-msgstr "GNOME Shell 47-க்கான ஆதரவு"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-#, fuzzy
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
-msgstr "வீடியோ ஓடும்போது சைகை மூலம் திரை மேலடுக்கை நீக்க அனுமதி"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-#, fuzzy
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "ஜார்ஜிய மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@NorwayFun-க்கு நன்றி)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-#, fuzzy
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "appdata-ல் மொழிபெயர்ப்புகள் சரிசெய்யப்பட்டன (@yakushabb-க்கு நன்றி)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "gnome-pomodoro 0.25.2 மாற்றங்களின் கண்ணோட்டம்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-#, fuzzy
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "பொமோடோரோவை நீட்டித்த பிறகும் அறிவிப்பு நீடிப்பது சரி செய்யப்பட்டது"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "gnome-pomodoro 0.25.1 மாற்றங்களின் கண்ணோட்டம்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-#, fuzzy
-msgid "Fixes for GNOME Shell 46"
-msgstr "GNOME Shell 46-க்கான திருத்தங்கள்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-#, fuzzy
-msgid "Drop support for GNOME Shell 45"
-msgstr "GNOME Shell 45-க்கான ஆதரவு நீக்கப்பட்டது"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "gnome-pomodoro 0.25.0 மாற்றங்களின் கண்ணோட்டம்"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-#, fuzzy
-msgid "Support for GNOME Shell 46"
-msgstr "GNOME Shell 46-க்கான ஆதரவு"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-#, fuzzy
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
-msgstr "பில்ட் ஸ்கிரிப்ட் meson 0.59.0-க்கு மாற்றப்பட்டது (@mattst88-க்கு நன்றி)"
-
-#: src/application.vala:151 src/application.vala:606
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 #, fuzzy
 msgid "Start or Stop"
 msgstr "தொடங்கு அல்லது நிறுத்து"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 #, fuzzy
 msgid "Start, Pause or Resume"
 msgstr "தொடங்கு, இடைநிறுத்து அல்லது மீண்டும் தொடங்கு"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "பொமோடோரோ தொடங்கு"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr ""
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr ""
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "தொடங்கு"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "நிறுத்து"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "இடைநிறுத்து"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 msgid "Resume"
 msgstr "மீண்டும் தொடங்கு"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "தவிர்"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 #, fuzzy
 msgid "Rewind"
 msgstr "பின்னோக்கிச் செல்"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr ""
 
-#: src/application.vala:187
+#: src/application.vala:189
 #, fuzzy
 msgid "Extend current pomodoro or break"
 msgstr "தற்போதைய பொமோடோரோ அல்லது இடைவேளையை நீட்டி"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 #, fuzzy
 msgid "Reset"
 msgstr "மீட்டமை"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr ""
 
-#: src/application.vala:196
+#: src/application.vala:198
 #, fuzzy
 msgid "Show preferences"
 msgstr "விருப்பத்தேர்வுகளைக் காட்டு"
 
-#: src/application.vala:199
+#: src/application.vala:201
 #, fuzzy
 msgid "Quit application"
 msgstr "செயலியை விட்டு வெளியேறு"
 
-#: src/application.vala:202
+#: src/application.vala:204
 #, fuzzy
 msgid "Print version information and exit"
 msgstr "பதிப்புத் தகவலை அச்சிட்டு வெளியேறு"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr ""
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr ""
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 #, fuzzy
 msgid "Bring to Focus"
 msgstr "முன்னிலைக்குக் கொண்டுவா"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "இன்னும் %s உள்ளது"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -546,104 +456,104 @@ msgstr "காலாவதியானது"
 msgid "Triggered when session is about to be reset due to inactivity."
 msgstr "செயல்பாடின்மை காரணமாக அமர்வு மீளமைக்கப்படும்போது தூண்டப்படும்."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "பொமோடோரோ"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "ஓர் இடைவெளி எடு"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 msgid "Take a short break"
 msgstr "ஒரு சிறு இடைவெளி எடு"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 msgid "Take a long break"
 msgstr "ஒரு நீண்ட இடைவெளி எடு"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "பொமோடோரோ விரைவில் முடிவடைகிறது"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 #, fuzzy
 msgid "Take a Break"
 msgstr "ஓர் இடைவெளி எடு"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 msgid "Break is about to end"
 msgstr "இடைவெளி விரைவில் முடிவடைகிறது"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 #, fuzzy
 msgid "+1 minute"
 msgstr "+1 நிமிடம்"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "தயாராகுங்கள்..."
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 #, fuzzy
 msgid "Pomodoro is over!"
 msgstr "பொமோடோரோ முடிந்தது!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 #, fuzzy
 msgid "Break is over!"
 msgstr "இடைவெளி முடிந்தது!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 #, fuzzy
 msgid "Confirm the start of a Pomodoro…"
 msgstr "பொமோடோரோ தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 #, fuzzy
 msgid "Confirm the start of a break…"
 msgstr "இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 #, fuzzy
 msgid "Confirm the start of a short break…"
 msgstr "சிறு இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 #, fuzzy
 msgid "Confirm the start of a long break…"
 msgstr "நீண்ட இடைவெளி தொடங்குவதை உறுதிப்படுத்துங்கள்…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "இடைவெளியைத் தவிர்"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 #, fuzzy
 msgid "Failed to initialize playback"
 msgstr "ஒலியைத் தொடங்குவதில் தோல்வி"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 #, fuzzy
 msgid "File not found"
 msgstr "கோப்பு காணப்படவில்லை"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 #, fuzzy
 msgid "File type not supported"
 msgstr "கோப்பு வகை ஆதரிக்கப்படவில்லை"
@@ -768,7 +678,183 @@ msgstr "நேரங்காட்டி முடிவதற்கு மு�
 msgid "Time when the countdown has started."
 msgstr "நேரங்காட்டி தொடங்கிய நேரம்."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+#, fuzzy
+msgid "GNOME Shell Extension"
+msgstr "GNOME Shell நீட்டிப்பு"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+#, fuzzy
+msgid "Get the best experience!"
+msgstr "சிறந்த அனுபவத்தைப் பெறுங்கள்!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+#, fuzzy
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr "டெஸ்க்டாப் ஒருங்கிணைப்பிற்கு <b>GNOME Shell நீட்டிப்பை</b> செயல்படுத்தவும்"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+#, fuzzy
+msgid "Always within reach"
+msgstr "எப்போதும் அணுகும் தூரத்தில்"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+#, fuzzy
+msgid "Control timer directly from the top bar without opening the app"
+msgstr "செயலியைத் திறக்காமல் மேல் பட்டியில் இருந்தே நேரங்காட்டியை நிர்வகிக்கவும்"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+#, fuzzy
+msgid "Less distractions"
+msgstr "குறைவான கவனச்சிதறல்கள்"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+#, fuzzy
+msgid "Refined break reminders"
+msgstr "நேர்த்தியான இடைவெளி நினைவூட்டல்கள்"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+#, fuzzy
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr "இடைவெளி எடுப்பதை இனிமையான அனுபவமாக்கும் முழுத்திரை மேலடுக்கு"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+#, fuzzy
+msgid "Ready to try it?"
+msgstr "முயற்சி செய்யத் தயாரா?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+#, fuzzy
+msgid "_Install Extension"
+msgstr "நீட்டிப்பை நிறுவு (_I)"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+#, fuzzy
+msgid "_Not Now"
+msgstr "இப்போது வேண்டாம் (_N)"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+#, fuzzy
+msgid "Something went wrong"
+msgstr "ஏதோ தவறு நடந்துவிட்டது"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+#, fuzzy
+msgid "Copy to clipboard"
+msgstr "நகலெடு"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+#, fuzzy
+msgid "_Try Again"
+msgstr "மீண்டும் முயற்சி செய் (_T)"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+#, fuzzy
+msgid "_Abort"
+msgstr "கைவிடு (_A)"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+#, fuzzy
+msgid "Time-out reached"
+msgstr "கால அளவு முடிந்தது"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+#, fuzzy
+msgid "Installing extensions is not allowed"
+msgstr "நீட்டிப்புகளை நிறுவ அனுமதி இல்லை"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+#, fuzzy
+msgid "Failed to download the extension"
+msgstr "நீட்டிப்பைத் தரவிறக்க முடியவில்லை"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+#, fuzzy
+msgid "Screen Overlay"
+msgstr "திரை மேலடுக்கு"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr "டெஸ்க்டாப்"
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+#, fuzzy
+msgid "GNOME Shell extension available"
+msgstr "GNOME Shell நீட்டிப்பு கிடைக்கிறது"
+
+#: src/plugins/gnome/window-extension.vala:33
+#, fuzzy
+msgid "Learn More"
+msgstr "மேலும் அறிய"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 #, fuzzy
 msgid "Unused"
 msgstr "பயன்படுத்தப்படாதது"
@@ -826,109 +912,6 @@ msgstr "Killersparrow1 <github.com/Killersparrow1>, 2025"
 #, fuzzy
 msgid "Donate"
 msgstr "நன்கொடை அளிக்கவும்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-#, fuzzy
-msgid "GNOME Shell Extension"
-msgstr "GNOME Shell நீட்டிப்பு"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-#, fuzzy
-msgid "Get the best experience!"
-msgstr "சிறந்த அனுபவத்தைப் பெறுங்கள்!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-#, fuzzy
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr "டெஸ்க்டாப் ஒருங்கிணைப்பிற்கு <b>GNOME Shell நீட்டிப்பை</b> செயல்படுத்தவும்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-#, fuzzy
-msgid "Always within reach"
-msgstr "எப்போதும் அணுகும் தூரத்தில்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-#, fuzzy
-msgid "Control timer directly from the top bar without opening the app"
-msgstr "செயலியைத் திறக்காமல் மேல் பட்டியில் இருந்தே நேரங்காட்டியை நிர்வகிக்கவும்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-#, fuzzy
-msgid "Less distractions"
-msgstr "குறைவான கவனச்சிதறல்கள்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-#, fuzzy
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr "நேரங்காட்டி ஓடும்போது <b>Pomodoro</b> அறிவிப்புகளை நிர்வகிக்கட்டும்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-#, fuzzy
-msgid "Refined break reminders"
-msgstr "நேர்த்தியான இடைவெளி நினைவூட்டல்கள்"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-#, fuzzy
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr "இடைவெளி எடுப்பதை இனிமையான அனுபவமாக்கும் முழுத்திரை மேலடுக்கு"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-#, fuzzy
-msgid "Ready to try it?"
-msgstr "முயற்சி செய்யத் தயாரா?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-#, fuzzy
-msgid "_Install Extension"
-msgstr "நீட்டிப்பை நிறுவு (_I)"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-#, fuzzy
-msgid "_Not Now"
-msgstr "இப்போது வேண்டாம் (_N)"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-#, fuzzy
-msgid "Something went wrong"
-msgstr "ஏதோ தவறு நடந்துவிட்டது"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-#, fuzzy
-msgid "Copy to clipboard"
-msgstr "நகலெடு"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-#, fuzzy
-msgid "_Try Again"
-msgstr "மீண்டும் முயற்சி செய் (_T)"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-#, fuzzy
-msgid "_Abort"
-msgstr "கைவிடு (_A)"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-#, fuzzy
-msgid "Time-out reached"
-msgstr "கால அளவு முடிந்தது"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-#, fuzzy
-msgid "Installing extensions is not allowed"
-msgstr "நீட்டிப்புகளை நிறுவ அனுமதி இல்லை"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-#, fuzzy
-msgid "Failed to download the extension"
-msgstr "நீட்டிப்பைத் தரவிறக்க முடியவில்லை"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -1039,8 +1022,8 @@ msgstr "_சிறு இடைவெளி"
 msgid "_Long Break"
 msgstr "_நீண்ட இடைவெளி"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 #, fuzzy
 msgid "Finished!"
 msgstr "முடிந்தது!"
@@ -1055,12 +1038,12 @@ msgstr "இடைவெளி (_B)"
 msgid "Open screen overlay"
 msgstr "திரை மேலடுக்கைத் திற"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 #, fuzzy
 msgid "Session has expired"
 msgstr "அமர்வு காலாவதியானது"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, fuzzy, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "இன்னும் <b>%s</b>-ல் நீண்ட இடைவெளி வரும்"
@@ -1096,22 +1079,12 @@ msgstr "முன்மை மெனு"
 msgid "Stats"
 msgstr "புள்ளிவிவரங்கள்"
 
-#: src/ui/main/window.vala:302
-#, fuzzy
-msgid "GNOME Shell extension available"
-msgstr "GNOME Shell நீட்டிப்பு கிடைக்கிறது"
-
-#: src/ui/main/window.vala:303
-#, fuzzy
-msgid "Learn More"
-msgstr "மேலும் அறிய"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 #, fuzzy
 msgid "Keep timer running?"
 msgstr "நேரங்காட்டி ஓடிக்கொண்டிருக்க வேண்டுமா?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 #, fuzzy
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
@@ -1120,11 +1093,11 @@ msgstr ""
 "இதை நீங்கள் பின்னணியில் ஓட விடலாம் — அறிவிப்புகள் மற்றும் விசைப்பலகை குறுக்குவழிகள் "
 "தொடர்ந்து வேலை செய்யும்."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "வெளியேறு"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 #, fuzzy
 msgid "Run in background"
 msgstr "பின்னணியில் இயக்கு"
@@ -1429,6 +1402,20 @@ msgstr ""
 "நேரங்காட்டி நிகழ்வுகள் அல்லது நிபந்தனைகளின் போது ஷெல் கட்டளைகளை தானாக இயக்கவும். <a "
 "href=\"\">மேலும் அறிய.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 #, fuzzy
 msgid "Set Shortcut"
@@ -1536,12 +1523,6 @@ msgstr "நேரம் முடிந்து கொண்டிருக்�
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "பொமோடோரோ அல்லது இடைவெளி முடியும்போது அறிவிக்கவும்."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-#, fuzzy
-msgid "Screen Overlay"
-msgstr "திரை மேலடுக்கு"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
 msgid "A full-screen notification intended to enforce taking a break."
@@ -1557,57 +1538,20 @@ msgstr "பூட்டு தாமதம்"
 msgid "Period of inactivity to lock the screen."
 msgstr "திரையைப் பூட்ட வேண்டிய செயல்பாடற்ற காலம்."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-#, fuzzy
-msgid "15 seconds"
-msgstr "15 வினாடிகள்"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-#, fuzzy
-msgid "30 seconds"
-msgstr "30 வினாடிகள்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-#, fuzzy
-msgid "1 minute"
-msgstr "1 நிமிடம்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-#, fuzzy
-msgid "2 minutes"
-msgstr "2 நிமிடங்கள்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-#, fuzzy
-msgid "3 minutes"
-msgstr "3 நிமிடங்கள்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-#, fuzzy
-msgid "5 minutes"
-msgstr "5 நிமிடங்கள்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-#, fuzzy
-msgid "Never"
-msgstr "ஒருபோதும் வேண்டாம்"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 #, fuzzy
 msgid "Reopen Delay"
 msgstr "மறுதிறப்பு தாமதம்"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr "மேலடுக்கு நீக்கப்பட்ட பிறகு அதை மீண்டும் திறப்பதற்கான கால அளவு."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+#, fuzzy
+msgid "Never"
+msgstr "ஒருபோதும் வேண்டாம்"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1629,6 +1573,10 @@ msgid "Keyboard Shortcuts"
 msgstr "விசைப்பலகை குறுக்குவழி"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 #, fuzzy
 msgid "Automation"
 msgstr "தானியக்கம்"
@@ -1672,15 +1620,14 @@ msgid "Clock Ticking"
 msgstr "கடிகார இடித்தல்"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "நேரங்காட்டி இடித்தல்"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-#, fuzzy
-msgid "Birds"
-msgstr "பறவைகள்"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 #, fuzzy
 msgid "None"
@@ -1735,27 +1682,27 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "பொமோடோரோ தொடங்கு"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, fuzzy, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "ஒரு அமர்வு <b>%s</b> எடுக்கும்."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, fuzzy, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "நேரத்தில் <b>%u%%</b> இடைவெளிகளுக்காக ஒதுக்கப்படும்."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 #, fuzzy
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "நடந்து கொண்டிருக்கும் பொமோடோரோவில் மாற்றங்களைப் பயன்படுத்தவா?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 #, fuzzy
 msgid "Apply changes to ongoing break?"
 msgstr "நடந்து கொண்டிருக்கும் இடைவெளியில் மாற்றங்களைப் பயன்படுத்தவா?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 #, fuzzy
 msgid "Apply"
 msgstr "பயன்படுத்து"
@@ -1765,6 +1712,132 @@ msgstr "பயன்படுத்து"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "பக்கவாட்டுப் பட்டை"
+
+#, fuzzy
+#~ msgid "Compact timer"
+#~ msgstr "சிறிய நேரங்காட்டி"
+
+#, fuzzy
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "gnome-pomodoro 0.28.1 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "தமிழ் மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@omeritzics-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "ஹீப்ரு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@Killersparrow1-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "gnome-pomodoro 0.28.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "GNOME Shell 49-க்கான ஆதரவு (@aleasto-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "ஜெர்மன் மொழிபெயர்ப்பு புதுப்பிக்கப்பட்டது (@daPhipz-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "gnome-pomodoro 0.27.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "GNOME Shell 48-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Split time spent across midnight"
+#~ msgstr "நள்ளிரவைத் தாண்டிய நேரத்தைப் பிரித்தல்"
+
+#, fuzzy
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "தெலுங்கு மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@SpaciousCoder78-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "gnome-pomodoro 0.26.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "GNOME Shell 47-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "வீடியோ ஓடும்போது சைகை மூலம் திரை மேலடுக்கை நீக்க அனுமதி"
+
+#, fuzzy
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "ஜார்ஜிய மொழிபெயர்ப்பு சேர்க்கப்பட்டது (@NorwayFun-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "appdata-ல் மொழிபெயர்ப்புகள் சரிசெய்யப்பட்டன (@yakushabb-க்கு நன்றி)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "gnome-pomodoro 0.25.2 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "பொமோடோரோவை நீட்டித்த பிறகும் அறிவிப்பு நீடிப்பது சரி செய்யப்பட்டது"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "gnome-pomodoro 0.25.1 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46-க்கான திருத்தங்கள்"
+
+#, fuzzy
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "GNOME Shell 45-க்கான ஆதரவு நீக்கப்பட்டது"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "gnome-pomodoro 0.25.0 மாற்றங்களின் கண்ணோட்டம்"
+
+#, fuzzy
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46-க்கான ஆதரவு"
+
+#, fuzzy
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "பில்ட் ஸ்கிரிப்ட் meson 0.59.0-க்கு மாற்றப்பட்டது (@mattst88-க்கு நன்றி)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr "நேரங்காட்டி ஓடும்போது <b>Pomodoro</b> அறிவிப்புகளை நிர்வகிக்கட்டும்"
+
+#, fuzzy
+#~ msgid "15 seconds"
+#~ msgstr "15 வினாடிகள்"
+
+#, fuzzy
+#~ msgid "30 seconds"
+#~ msgstr "30 வினாடிகள்"
+
+#, fuzzy
+#~ msgid "1 minute"
+#~ msgstr "1 நிமிடம்"
+
+#, fuzzy
+#~ msgid "2 minutes"
+#~ msgstr "2 நிமிடங்கள்"
+
+#, fuzzy
+#~ msgid "3 minutes"
+#~ msgstr "3 நிமிடங்கள்"
+
+#, fuzzy
+#~ msgid "5 minutes"
+#~ msgstr "5 நிமிடங்கள்"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "நேரங்காட்டி இடித்தல்"
+
+#, fuzzy
+#~ msgid "Birds"
+#~ msgstr "பறவைகள்"
 
 #~ msgid "@APPLICATION_NAME@"
 #~ msgstr "@APPLICATION_NAME@"
@@ -1850,9 +1923,6 @@ msgstr "பக்கவாட்டுப் பட்டை"
 
 #~ msgid "Screen notifications"
 #~ msgstr "திரை அறிவிப்புகள்"
-
-#~ msgid "Desktop"
-#~ msgstr "டெஸ்க்டாப்"
 
 #~ msgid "Wait for activity after a break"
 #~ msgstr "இடைவெளிக்குப் பிறகு செயல்பாட்டிற்காக காத்திரு"

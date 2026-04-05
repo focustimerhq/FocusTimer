@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:31+0100\n"
+"POT-Creation-Date: 2026-04-05 11:05+0200\n"
 "PO-Revision-Date: 2026-01-10 15:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr "Focus Timer"
@@ -83,16 +83,12 @@ msgstr "მომხმარებლის ბრძანებების �
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "წამმზომი"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-msgid "Compact timer"
-msgstr "კომპაქტური ტაიმერი"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 msgid "Daily stats"
@@ -112,214 +108,146 @@ msgid "Screen overlay"
 msgstr "ეკრანზე განლაგება"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "gnome-pomodoro 0.28.1-ის ცვლილებების მიმოხილვა"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "დაემატა ტამილური თარგმანი (მადლობა @omeritzics)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "დაემატა ებრაული თარგმანი (მადლობა @Killersparrow1)"
+msgid "Automatic daily backup"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "gnome-pomodoro 0.28.0-ის ცვლილებების მიმოხილვა"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "GNOME Shell 49-ის მხარდაჭერა (მადლობა @aleasto)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "განახლდა გერმანული თარგმანი (მადლობა @daPhipz)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "gnome-pomodoro 0.27.0-ის ცვლილებების მიმოხილვა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-msgid "Support for GNOME Shell 48"
-msgstr "GNOME Shell 48-ის მხარდაჭერა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-msgid "Split time spent across midnight"
-msgstr "შუაღამისას დახარჯული დროის გაყოფა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "დაემატა ტელუგური თარგმანი (მადლობა @SpaciousCoder78)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "gnome-pomodoro 0.26.0-ის ცვლილებების მიმოხილვა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-msgid "Support for GNOME Shell 47"
-msgstr "GNOME Shell 47-ის მხარდაჭერა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
-msgstr "ეკრანის განლაგების ჟესტით დახურვის ნებართვა ვიდეოს დაკვრისას"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "დაემატა ქართული თარგმანი (მადლობა @NorwayFun)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "გასწორდა თარგმანები appdata-ში (მადლობა @yakushabb)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "gnome-pomodoro 0.25.2-ის ცვლილებების მიმოხილვა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "შეტყობინების დარჩენის გასწორება Pomodoro გაგრძელების შემდეგ"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "gnome-pomodoro 0.25.1-ის ცვლილებების მიმოხილვა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-msgid "Fixes for GNOME Shell 46"
-msgstr "შესწორებები GNOME Shell 46-ისთვის"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-msgid "Drop support for GNOME Shell 45"
-msgstr "GNOME Shell 45-ის მხარდაჭერის შეწყვეტა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "gnome-pomodoro 0.25.0-ის ცვლილებების მიმოხილვა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-msgid "Support for GNOME Shell 46"
-msgstr "GNOME Shell 46-ის მხარდაჭერა"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
-msgstr "აგების სკრიპტის მორგება meson 0.59.0-სთვის (მადლობა @mattst88)"
-
-#: src/application.vala:151 src/application.vala:606
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 msgid "Start or Stop"
 msgstr "გაშვება ან გაჩერება"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 msgid "Start, Pause or Resume"
 msgstr "გაშვება, შეჩერება, ან გაგრძელება"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "Pomodoro-ის გაშვება"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr "შესვენების დაწყება"
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr "მოკლე დასვენების დასაწყისი"
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr "გრძელი დასვენების დასაწყისი"
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "გაშვება"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "გაჩერება"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "პაუზა"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "გამოტოვება"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 msgid "Rewind"
 msgstr "გადახვევა"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr "წამი"
 
-#: src/application.vala:187
+#: src/application.vala:189
 msgid "Extend current pomodoro or break"
 msgstr "მიმდინარე პომოდოროს ან შესვენების გაფართოება"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 msgid "Reset"
 msgstr "ჩამოყრა"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr "ტაიმერის სტატუსის გამოტანა"
 
-#: src/application.vala:196
+#: src/application.vala:198
 msgid "Show preferences"
 msgstr "პარამეტრების _ჩვენება"
 
-#: src/application.vala:199
+#: src/application.vala:201
 msgid "Quit application"
 msgstr "აპლიკაციიდან გასვლა"
 
-#: src/application.vala:202
+#: src/application.vala:204
 msgid "Print version information and exit"
 msgstr "ვერსიის ჩვენება და გასვლა"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr "ტაიმერის მორგება:"
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr "ტაიმერის მართვის პარამეტრების ჩვენება"
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr "შეცდომების შესახებ მოგვწერეთ მისამართზე: %s"
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Bring to Focus"
 msgstr "ფოკუსში მოყვანა"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, c-format
 msgid "%s remaining"
 msgstr "დარჩენილია %s"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 "არასწორი გამოყენება. ერთდროულად შესაძლებელია ტაიმერის მართვის, მხოლოდ, ერთი "
@@ -481,94 +409,94 @@ msgid "Triggered when session is about to be reset due to inactivity."
 msgstr ""
 "ირთვება, როცა ახლოვდება დრო, როცა მოხდება სესიის ჩამოყრა უქმეობის გამო."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "შესვენება"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 msgid "Take a short break"
 msgstr "მოკლე შესვენება"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 msgid "Take a long break"
 msgstr "გრძელი შესვენება"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro მალე დასრულდება"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "დასვენება"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 msgid "Break is about to end"
 msgstr "შესვენება მალე დასრულდება"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 msgid "+1 minute"
 msgstr "+1 წუთი"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "მოემზადეთ…"
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 msgid "Pomodoro is over!"
 msgstr "Pomodoro დასრულდა!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 msgid "Break is over!"
 msgstr "შესვენება დასრულდა!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 msgid "Confirm the start of a Pomodoro…"
 msgstr "დაადასტურეთ Pomodoro-ის გაშვება…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 msgid "Confirm the start of a break…"
 msgstr "დაადასტურეთ შესვენების დაწყება…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 msgid "Confirm the start of a short break…"
 msgstr "დაადასტურეთ მოკლე შესვენების დაწყება…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 msgid "Confirm the start of a long break…"
 msgstr "დაადასტურეთ გრძელი შესვენების დაწყება…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "შესვენების გამოტოვება"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 msgid "Failed to initialize playback"
 msgstr "დაკვრის ინიციალიზაცია ჩავარდა"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 msgid "File not found"
 msgstr "ფაილი ვერ მოიძებნა"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 msgid "File type not supported"
 msgstr "ფაილის ტიპი მხარდაჭერილი არაა"
 
@@ -680,7 +608,162 @@ msgstr "ათვლის დასრულებამდე დარჩე�
 msgid "Time when the countdown has started."
 msgstr "ათვლის დაწყების დრო."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+msgid "GNOME Shell Extension"
+msgstr "GNOME Shell-ის გაფართოება"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+msgid "Get the best experience!"
+msgstr "მიიღეთ საუკეთესო გამოცდილება!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr "ჩართეთ <b>GNOME Shell-ის გაფართოება</b> გარემოსთან ინტეგრაციისთვის"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+msgid "Always within reach"
+msgstr "ყოველთვის ხელმისაწვდომი"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+msgid "Control timer directly from the top bar without opening the app"
+msgstr "მართეთ ტაიმერი პირდაპირ ზედა პანელიდან აპლიკაციის გახსნის გარეშე"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+msgid "Less distractions"
+msgstr "ნაკლები ყურადღების გაფანტვა"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+msgid "Refined break reminders"
+msgstr "დახვეწილი შესვენების შეხსენებები"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr "ელეგანტური სრული ეკრანის გალაგება შესვენებებს უფრო სასიამოვნოს ხდის"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+msgid "Ready to try it?"
+msgstr "მზად ბრძანდებით, სცადოთ?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+msgid "_Install Extension"
+msgstr "გაფართოებ_ის დაყენება"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+msgid "_Not Now"
+msgstr "_არა ახლა"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+msgid "Something went wrong"
+msgstr "რაღაც ცუდადაა"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+msgid "Copy to clipboard"
+msgstr "ბუფერში კოპირება"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+msgid "_Try Again"
+msgstr "_თავიდან სცადეთ"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+msgid "_Abort"
+msgstr "_შეწყვეტა"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+msgid "Time-out reached"
+msgstr "მოლოდინის ვადა ამოიწურა"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+msgid "Installing extensions is not allowed"
+msgstr "გაფართოებების დაყენება დაშვებული არაა"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+msgid "Failed to download the extension"
+msgstr "გაფართოების გადმოწერა ჩავარდა"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+msgid "Screen Overlay"
+msgstr "ეკრანზე განლაგება"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+msgid "GNOME Shell extension available"
+msgstr "GNOME Shell-ის გაფართოება ხელმისაწვდომია"
+
+#: src/plugins/gnome/window-extension.vala:33
+msgid "Learn More"
+msgstr "დაწვრილებით"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 msgid "Unused"
 msgstr "გამოუყენებელი"
 
@@ -728,92 +811,6 @@ msgstr "თემური დოღონაძე"
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
 msgstr "შემოწირულობა"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-msgid "GNOME Shell Extension"
-msgstr "GNOME Shell-ის გაფართოება"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-msgid "Get the best experience!"
-msgstr "მიიღეთ საუკეთესო გამოცდილება!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr "ჩართეთ <b>GNOME Shell-ის გაფართოება</b> გარემოსთან ინტეგრაციისთვის"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-msgid "Always within reach"
-msgstr "ყოველთვის ხელმისაწვდომი"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-msgid "Control timer directly from the top bar without opening the app"
-msgstr "მართეთ ტაიმერი პირდაპირ ზედა პანელიდან აპლიკაციის გახსნის გარეშე"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-msgid "Less distractions"
-msgstr "ნაკლები ყურადღების გაფანტვა"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr ""
-"<b>Pomodoro</b>-ისთვის სისტემური გაფრთხილებების მართვის უფლების მიცემა, "
-"სანამ ტაიმერი გაშვებულია"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-msgid "Refined break reminders"
-msgstr "დახვეწილი შესვენების შეხსენებები"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr "ელეგანტური სრული ეკრანის გალაგება შესვენებებს უფრო სასიამოვნოს ხდის"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-msgid "Ready to try it?"
-msgstr "მზად ბრძანდებით, სცადოთ?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-msgid "_Install Extension"
-msgstr "გაფართოებ_ის დაყენება"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-msgid "_Not Now"
-msgstr "_არა ახლა"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-msgid "Something went wrong"
-msgstr "რაღაც ცუდადაა"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-msgid "Copy to clipboard"
-msgstr "ბუფერში კოპირება"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-msgid "_Try Again"
-msgstr "_თავიდან სცადეთ"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-msgid "_Abort"
-msgstr "_შეწყვეტა"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-msgid "Time-out reached"
-msgstr "მოლოდინის ვადა ამოიწურა"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-msgid "Installing extensions is not allowed"
-msgstr "გაფართოებების დაყენება დაშვებული არაა"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-msgid "Failed to download the extension"
-msgstr "გაფართოების გადმოწერა ჩავარდა"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -914,8 +911,8 @@ msgstr "_მოკლე შესვენება"
 msgid "_Long Break"
 msgstr "_დიდი შესვენება"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 msgid "Finished!"
 msgstr "დასრულდა!"
 
@@ -927,11 +924,11 @@ msgstr "_შესვენება"
 msgid "Open screen overlay"
 msgstr "ეკრანზე განლაგების გახსნა"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 msgid "Session has expired"
 msgstr "სესიის ვადა ამოიწურა"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "დიდი შესვენება დაიწყება <b>%s</b>-ში"
@@ -964,19 +961,11 @@ msgstr "ძირითადი მენიუ"
 msgid "Stats"
 msgstr "სტატისტიკა"
 
-#: src/ui/main/window.vala:302
-msgid "GNOME Shell extension available"
-msgstr "GNOME Shell-ის გაფართოება ხელმისაწვდომია"
-
-#: src/ui/main/window.vala:303
-msgid "Learn More"
-msgstr "დაწვრილებით"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 msgid "Keep timer running?"
 msgstr "იყოს ტაიმერი გაშვებული?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -984,11 +973,11 @@ msgstr ""
 "შეგიძლიათ დატოვოთ ფონურ რეჟიმში — შეტყობინებები და მალსახმობები მაინც "
 "იმუშავებს."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "გასვლა"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 msgid "Run in background"
 msgstr "გაშვება ფონურ რეჟიმში"
 
@@ -1246,6 +1235,20 @@ msgstr ""
 "გარსის ბრძანებების ავტომატური გაშვება ტაიმერის მოვლენებზე. <a "
 "href=\"\">გაიგეთ მეტი.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 msgid "Set Shortcut"
 msgstr "მალსახმობის დაყენება"
@@ -1335,11 +1338,6 @@ msgstr "დრო იწურება"
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "შეტყობინება, როცა Pomodoro ან შესვენება სრულდება."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-msgid "Screen Overlay"
-msgstr "ეკრანზე განლაგება"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 msgid "A full-screen notification intended to enforce taking a break."
 msgstr "სრულეკრანის შეტყობინება შესვენების აღების დასაძალებლად."
@@ -1352,48 +1350,17 @@ msgstr "დაბლოკვის დაყოვნება"
 msgid "Period of inactivity to lock the screen."
 msgstr "უმოქმედობის პერიოდი ეკრანის დასაბლოკად."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-msgid "15 seconds"
-msgstr "15 წამი"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-msgid "30 seconds"
-msgstr "30 წამი"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-msgid "1 minute"
-msgstr "1 წუთი"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-msgid "2 minutes"
-msgstr "2 წუთი"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-msgid "3 minutes"
-msgstr "3 წუთი"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-msgid "5 minutes"
-msgstr "5 წუთი"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-msgid "Never"
-msgstr "არასდროს"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 msgid "Reopen Delay"
 msgstr "ხელახლა გახსნის დაყოვნება"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr "უმოქმედობის პერიოდი გადაფარვის ხელახლა გასახსნელად."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+msgid "Never"
+msgstr "არასდროს"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1412,6 +1379,10 @@ msgid "Keyboard Shortcuts"
 msgstr "კლავიატურის მალსახმობები"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 msgid "Automation"
 msgstr "ავტომატიზაცია"
 
@@ -1449,14 +1420,14 @@ msgid "Clock Ticking"
 msgstr "საათის წიკწიკი"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "ტაიმერის წიკწიკი"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-msgid "Birds"
-msgstr "ჩიტები"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "არცერთი"
@@ -1502,25 +1473,25 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "Pomodoro-ის გაშვების დასტური"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "ერთი სესია გასტანს <b>%s</b>."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "დროის <b>%u%%</b> დაეთმობა შესვენებებს."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "გადავატარო ცვლილებები მიმდინარე Pomodoro-ზე?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 msgid "Apply changes to ongoing break?"
 msgstr "გადავატარო ცვლილებები მიმდინარე შესვენებაზე?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 msgid "Apply"
 msgstr "გადატარება"
 
@@ -1528,3 +1499,105 @@ msgstr "გადატარება"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "გვერდითი პანელი"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 წამი"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 წამი"
+
+#~ msgid "1 minute"
+#~ msgstr "1 წუთი"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 წუთი"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 წუთი"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 წუთი"
+
+#~ msgid "Compact timer"
+#~ msgstr "კომპაქტური ტაიმერი"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "gnome-pomodoro 0.28.1-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "დაემატა ტამილური თარგმანი (მადლობა @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "დაემატა ებრაული თარგმანი (მადლობა @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "gnome-pomodoro 0.28.0-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "GNOME Shell 49-ის მხარდაჭერა (მადლობა @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "განახლდა გერმანული თარგმანი (მადლობა @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "gnome-pomodoro 0.27.0-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "GNOME Shell 48-ის მხარდაჭერა"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "შუაღამისას დახარჯული დროის გაყოფა"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "დაემატა ტელუგური თარგმანი (მადლობა @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "gnome-pomodoro 0.26.0-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "GNOME Shell 47-ის მხარდაჭერა"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "ეკრანის განლაგების ჟესტით დახურვის ნებართვა ვიდეოს დაკვრისას"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "დაემატა ქართული თარგმანი (მადლობა @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "გასწორდა თარგმანები appdata-ში (მადლობა @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "gnome-pomodoro 0.25.2-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "შეტყობინების დარჩენის გასწორება Pomodoro გაგრძელების შემდეგ"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "gnome-pomodoro 0.25.1-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "შესწორებები GNOME Shell 46-ისთვის"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "GNOME Shell 45-ის მხარდაჭერის შეწყვეტა"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "gnome-pomodoro 0.25.0-ის ცვლილებების მიმოხილვა"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "GNOME Shell 46-ის მხარდაჭერა"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "აგების სკრიპტის მორგება meson 0.59.0-სთვის (მადლობა @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "<b>Pomodoro</b>-ისთვის სისტემური გაფრთხილებების მართვის უფლების მიცემა, "
+#~ "სანამ ტაიმერი გაშვებულია"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "ტაიმერის წიკწიკი"
+
+#~ msgid "Birds"
+#~ msgstr "ჩიტები"

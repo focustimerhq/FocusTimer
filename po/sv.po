@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-10 11:02+0100\n"
+"POT-Creation-Date: 2026-04-05 11:05+0200\n"
 "PO-Revision-Date: 2026-01-13 00:53+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #. translators: consider 'Concentration Timer' as an alternative, whichever sounds more natural
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:34
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:9 src/main.vala:35
 #: src/ui/main/dialogs/about-dialog.vala:17
 msgid "Focus Timer"
 msgstr "Focus Timer"
@@ -82,16 +82,12 @@ msgstr "Kör anpassade kommandon efter pomodoro eller rast"
 msgid "Kamil Prusko"
 msgstr "Kamil Prusko"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 #: src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:37
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Tidtagare"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-msgid "Compact timer"
-msgstr "Kompakt tidtagare"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 msgid "Daily stats"
@@ -111,214 +107,146 @@ msgid "Screen overlay"
 msgstr "Skärmöverlägg"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Overview of changes in gnome-pomodoro 0.28.1"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.28.1"
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Added Tamil translation (thanks @omeritzics)"
-msgstr "La till tamilsk översättning (tack @omeritzics)"
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Added Hebrew translation (thanks @Killersparrow1)"
-msgstr "La till hebreisk översättning (tack @Killersparrow1)"
+msgid "Automatic daily backup"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in gnome-pomodoro 0.28.0"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.28.0"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Removed libcanberra backend for playing notification sounds"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-msgid "Support for GNOME Shell 49 (thanks @aleasto)"
-msgstr "Stöd för GNOME Shell 49 (tack @aleasto)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Updated Lithuanian translation (thanks @psukys)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-msgid "Updated German translation (thanks @daPhipz)"
-msgstr "Uppdaterade tysk översättning (tack @daPhipz)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Updated Russian translation (thanks @ViktorOn)"
+msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-msgid "Overview of changes in gnome-pomodoro 0.27.0"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.27.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
-msgid "Support for GNOME Shell 48"
-msgstr "Stöd för GNOME Shell 48"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:116
-msgid "Split time spent across midnight"
-msgstr "Dela upp tid som spenderats över midnatt"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
-msgid "Added Telugu translation (thanks @SpaciousCoder78)"
-msgstr "La till telugisk översättning (tack @SpaciousCoder78)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Overview of changes in gnome-pomodoro 0.26.0"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.26.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-msgid "Support for GNOME Shell 47"
-msgstr "Stöd för GNOME Shell 47"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-msgid "Allow to dismiss screen overlay by gesture when a video is playing"
-msgstr "Tillåt avvisande av skärmöverlägg genom en gest då en video spelas"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-msgid "Added Georgian translation (thanks @NorwayFun)"
-msgstr "La till georgisk översättning (tack @NorwayFun)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-msgid "Adjusted translations in appdata (thanks @yakushabb)"
-msgstr "Justerade översättningar i appdata (tack @yakushabb)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Overview of changes in gnome-pomodoro 0.25.2"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.25.2"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-msgid "Fix keeping notification after extending Pomodoro"
-msgstr "Fixa bevarande av avisering efter att pomodoro förlängts"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:142
-msgid "Overview of changes in gnome-pomodoro 0.25.1"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.25.1"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-msgid "Fixes for GNOME Shell 46"
-msgstr "Fixar för Gnome Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-msgid "Drop support for GNOME Shell 45"
-msgstr "Ta bort stöd för Gnome Shell 45"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:151
-msgid "Overview of changes in gnome-pomodoro 0.25.0"
-msgstr "Översikt över ändringar i gnome-pomodoro 0.25.0"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:153
-msgid "Support for GNOME Shell 46"
-msgstr "Stöd för GNOME Shell 46"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:154
-msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
-msgstr "Justera byggskript till meson 0.59.0 (tack @mattst88)"
-
-#: src/application.vala:151 src/application.vala:606
+#: src/application.vala:153 src/application.vala:593
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
 msgid "Start or Stop"
 msgstr "Starta eller stoppa"
 
-#: src/application.vala:154 src/application.vala:609
+#: src/application.vala:156 src/application.vala:596
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:47
 msgid "Start, Pause or Resume"
 msgstr "Starta, pausa eller återuppta"
 
-#: src/application.vala:157 src/core/notification-manager.vala:502
-#: src/core/notification-manager.vala:598
+#: src/application.vala:159 src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:532
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
 msgstr "Starta Pomodoro"
 
-#: src/application.vala:160
+#: src/application.vala:162
 msgid "Start break"
 msgstr "Starta rast"
 
-#: src/application.vala:163
+#: src/application.vala:165
 msgid "Start short break"
 msgstr "Starta kort rast"
 
-#: src/application.vala:166
+#: src/application.vala:168
 msgid "Start long break"
 msgstr "Starta lång rast"
 
 #. Actions
-#: src/application.vala:169 src/application.vala:611 src/core/event.vala:268
+#: src/application.vala:171 src/application.vala:598 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 msgid "Start"
 msgstr "Starta"
 
-#: src/application.vala:172 src/application.vala:613 src/core/event.vala:276
+#: src/application.vala:174 src/application.vala:600 src/core/event.vala:276
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:64
 msgid "Stop"
 msgstr "Stoppa"
 
-#: src/application.vala:175 src/application.vala:615 src/core/event.vala:284
+#: src/application.vala:177 src/application.vala:602 src/core/event.vala:284
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:71
 msgid "Pause"
 msgstr "Pausa"
 
-#: src/application.vala:178 src/application.vala:617 src/core/event.vala:292
+#: src/application.vala:180 src/application.vala:604 src/core/event.vala:292
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:78
 msgid "Resume"
 msgstr "Återuppta"
 
-#: src/application.vala:181 src/application.vala:619 src/core/event.vala:300
+#: src/application.vala:183 src/application.vala:606 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:85
 msgid "Skip"
 msgstr "Hoppa över"
 
-#: src/application.vala:184 src/application.vala:621 src/core/event.vala:308
+#: src/application.vala:186 src/application.vala:608 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Spola tillbaka"
 
-#: src/application.vala:185 src/application.vala:188
+#: src/application.vala:187 src/application.vala:190
 msgid "SECONDS"
 msgstr "SEKUNDER"
 
-#: src/application.vala:187
+#: src/application.vala:189
 msgid "Extend current pomodoro or break"
 msgstr "Förläng nuvarande pomodoro eller rast"
 
-#: src/application.vala:190 src/core/event.vala:316
+#: src/application.vala:192 src/core/event.vala:316
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 msgid "Reset"
 msgstr "Återställ"
 
-#: src/application.vala:193
+#: src/application.vala:195
 msgid "Print timer status"
 msgstr "Skriv ut tidtagarstatus"
 
-#: src/application.vala:196
+#: src/application.vala:198
 msgid "Show preferences"
 msgstr "Visa inställningar"
 
-#: src/application.vala:199
+#: src/application.vala:201
 msgid "Quit application"
 msgstr "Avsluta program"
 
-#: src/application.vala:202
+#: src/application.vala:204
 msgid "Print version information and exit"
 msgstr "Skriv ut versionsinformation och avsluta"
 
-#: src/application.vala:236
+#: src/application.vala:238
 msgid "Timer Options:"
 msgstr "Tidtagaralternativ:"
 
-#: src/application.vala:237
+#: src/application.vala:239
 msgid "Show options for controlling the timer"
 msgstr "Visa alternativ för att styra tidtagaren"
 
-#: src/application.vala:244
+#: src/application.vala:246
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr "Fel kan rapporteras på: %s"
 
-#: src/application.vala:623
+#: src/application.vala:610
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Bring to Focus"
 msgstr "Ge fokus"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:786 src/core/notification-manager.vala:188
+#: src/application.vala:797 src/core/notification-manager.vala:138
 #, c-format
 msgid "%s remaining"
 msgstr "%s återstår"
 
-#: src/application.vala:829
+#: src/application.vala:840
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 "Ogiltig användning. Skicka en flagga för att styra tidtagaren åt gången."
@@ -480,94 +408,94 @@ msgid "Triggered when session is about to be reset due to inactivity."
 msgstr ""
 "Utlöses när sessionen håller på att återställas på grund av inaktivitet."
 
-#: src/core/notification-manager.vala:420 src/core/state.vala:78
+#: src/core/notification-manager.vala:354 src/core/state.vala:78
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:184
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:187
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:424
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:314
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:330
+#: src/core/notification-manager.vala:358
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Ta en rast"
 
-#: src/core/notification-manager.vala:428
+#: src/core/notification-manager.vala:362
 msgid "Take a short break"
 msgstr "Ta en kort paus"
 
-#: src/core/notification-manager.vala:432
+#: src/core/notification-manager.vala:366
 msgid "Take a long break"
 msgstr "Ta en lång paus"
 
-#: src/core/notification-manager.vala:494
+#: src/core/notification-manager.vala:428
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro håller på att ta slut"
 
-#: src/core/notification-manager.vala:495
-#: src/core/notification-manager.vala:603
-#: src/core/notification-manager.vala:608
-#: src/core/notification-manager.vala:613 src/ui/overlays/screen-overlay.ui:5
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:537
+#: src/core/notification-manager.vala:542
+#: src/core/notification-manager.vala:547 src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "Ta en rast"
 
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:435
 msgid "Break is about to end"
 msgstr "Rast håller på att ta slut"
 
-#: src/core/notification-manager.vala:511
+#: src/core/notification-manager.vala:445
 msgid "+1 minute"
 msgstr "+1 minut"
 
-#: src/core/notification-manager.vala:536
+#: src/core/notification-manager.vala:470
 msgid "Get ready…"
 msgstr "Gör dig redo…"
 
-#: src/core/notification-manager.vala:541
-#: src/core/notification-manager.vala:581
+#: src/core/notification-manager.vala:475
+#: src/core/notification-manager.vala:515
 msgid "Pomodoro is over!"
 msgstr "Pomodoro är slut!"
 
-#: src/core/notification-manager.vala:547
-#: src/core/notification-manager.vala:587
+#: src/core/notification-manager.vala:481
+#: src/core/notification-manager.vala:521
 msgid "Break is over!"
 msgstr "Rasten är över!"
 
-#: src/core/notification-manager.vala:597
+#: src/core/notification-manager.vala:531
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Bekräfta starten på en pomodoro…"
 
-#: src/core/notification-manager.vala:602
+#: src/core/notification-manager.vala:536
 msgid "Confirm the start of a break…"
 msgstr "Bekräfta starten på en rast…"
 
-#: src/core/notification-manager.vala:607
+#: src/core/notification-manager.vala:541
 msgid "Confirm the start of a short break…"
 msgstr "Bekräfta starten på en kort rast…"
 
-#: src/core/notification-manager.vala:612
+#: src/core/notification-manager.vala:546
 msgid "Confirm the start of a long break…"
 msgstr "Bekräfta starten på en lång rast…"
 
-#: src/core/notification-manager.vala:624
+#: src/core/notification-manager.vala:558
 msgid "Skip Break"
 msgstr "Hoppa över rast"
 
-#: src/core/sound.vala:405 src/core/sound.vala:605 src/core/sound.vala:662
+#: src/core/sound.vala:371
 msgid "Failed to initialize playback"
 msgstr "Misslyckades med att initiera uppspelning"
 
 #. Validate file.
-#: src/core/sound.vala:757
+#: src/core/sound.vala:587
 msgid "File not found"
 msgstr "Filen hittades inte"
 
-#: src/core/sound.vala:775
+#: src/core/sound.vala:599
 msgid "File type not supported"
 msgstr "Filtypen stöds inte"
 
@@ -681,7 +609,164 @@ msgstr "Tiden kvar innan nedräkningen tar slut."
 msgid "Time when the countdown has started."
 msgstr "Tiden när nedräkningen startades."
 
-#: src/integrations/portal/global-shortcuts-provider.vala:298
+#: src/plugins/gnome/install-extension-dialog.ui:6
+#: src/plugins/gnome/preferences-window-extension.vala:166
+msgid "GNOME Shell Extension"
+msgstr "GNOME Shell-tillägg"
+
+#: src/plugins/gnome/install-extension-dialog.ui:57
+msgid "Get the best experience!"
+msgstr "Få den bästa upplevelsen!"
+
+#: src/plugins/gnome/install-extension-dialog.ui:68
+msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
+msgstr "Aktivera <b>GNOME Shell-tillägget</b> för sömlös skrivbordsintegration"
+
+#: src/plugins/gnome/install-extension-dialog.ui:95
+msgid "Always within reach"
+msgstr "Alltid inom räckhåll"
+
+#: src/plugins/gnome/install-extension-dialog.ui:106
+msgid "Control timer directly from the top bar without opening the app"
+msgstr "Styr tidtagaren direkt från systemraden utan att öppna programmet"
+
+#: src/plugins/gnome/install-extension-dialog.ui:132
+msgid "Less distractions"
+msgstr "Färre distraktioner"
+
+#: src/plugins/gnome/install-extension-dialog.ui:143
+msgid ""
+"Let <b>Focus Timer</b> manage system notifications while the timer is running"
+msgstr ""
+
+#: src/plugins/gnome/install-extension-dialog.ui:170
+msgid "Refined break reminders"
+msgstr "Eleganta rastpåminnelser"
+
+#: src/plugins/gnome/install-extension-dialog.ui:181
+msgid ""
+"Elegant full-screen overlay that make taking breaks a more pleasant "
+"experience"
+msgstr ""
+"Elegant helskärmsöverlägg som gör det till en mer angenäm upplevelse att ta "
+"rast"
+
+#. translators: "It" refers to installing GNOME Shell extension
+#: src/plugins/gnome/install-extension-dialog.ui:195
+msgid "Ready to try it?"
+msgstr "Redo att prova?"
+
+#: src/plugins/gnome/install-extension-dialog.ui:219
+#: src/plugins/gnome/install-extension-dialog.ui:252
+msgid "_Install Extension"
+msgstr "_Installera tillägg"
+
+#: src/plugins/gnome/install-extension-dialog.ui:229
+#: src/plugins/gnome/install-extension-dialog.ui:245
+msgid "_Not Now"
+msgstr "I_nte nu"
+
+#: src/plugins/gnome/install-extension-dialog.ui:317
+#: src/plugins/gnome/preferences-window-extension.vala:399
+msgid "Something went wrong"
+msgstr "Något gick fel"
+
+#: src/plugins/gnome/install-extension-dialog.ui:364
+msgid "Copy to clipboard"
+msgstr "Kopiera till urklipp"
+
+#: src/plugins/gnome/install-extension-dialog.ui:383
+#: src/plugins/gnome/install-extension-dialog.ui:416
+msgid "_Try Again"
+msgstr "_Försök igen"
+
+#: src/plugins/gnome/install-extension-dialog.ui:393
+#: src/plugins/gnome/install-extension-dialog.ui:409
+msgid "_Abort"
+msgstr "A_vbryt"
+
+#: src/plugins/gnome/install-extension-dialog.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:387
+msgid "Time-out reached"
+msgstr "Tidsgräns uppnådd"
+
+#: src/plugins/gnome/install-extension-dialog.vala:90
+#: src/plugins/gnome/preferences-window-extension.vala:391
+msgid "Installing extensions is not allowed"
+msgstr "Installation av tillägg är inte tillåtet"
+
+#: src/plugins/gnome/install-extension-dialog.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:395
+msgid "Failed to download the extension"
+msgstr "Misslyckades med att hämta tillägget"
+
+#: src/plugins/gnome/preferences-window-extension.vala:55
+msgid "Indicator"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:62
+msgid "Icon"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:63
+msgid "Text"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:70
+msgid "Display As"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+msgid "Screen Overlay"
+msgstr "Skärmöverlägg"
+
+#: src/plugins/gnome/preferences-window-extension.vala:85
+msgid "Blur Effect"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:93
+msgid "Dismiss Gesture"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:125
+msgid "Desktop"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:128
+msgid "Install"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:132
+msgid "Update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:135
+msgid "Log out to finish the update"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:153
+msgid "Outdated"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:172
+msgid "Manage Notifications"
+msgstr ""
+
+#: src/plugins/gnome/preferences-window-extension.vala:173
+msgid "Toggle Do Not Disturb mode during Pomodoro."
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:32
+msgid "GNOME Shell extension available"
+msgstr "GNOME Shell-tillägg tillgängligt"
+
+#: src/plugins/gnome/window-extension.vala:33
+msgid "Learn More"
+msgstr "Läs mer"
+
+#: src/plugins/portal/global-shortcuts-provider.vala:298
 msgid "Unused"
 msgstr "Oanvänd"
 
@@ -732,93 +817,6 @@ msgstr ""
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
 msgstr "Donera"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:6
-msgid "GNOME Shell Extension"
-msgstr "GNOME Shell-tillägg"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:57
-msgid "Get the best experience!"
-msgstr "Få den bästa upplevelsen!"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:68
-msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
-msgstr "Aktivera <b>GNOME Shell-tillägget</b> för sömlös skrivbordsintegration"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:95
-msgid "Always within reach"
-msgstr "Alltid inom räckhåll"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:106
-msgid "Control timer directly from the top bar without opening the app"
-msgstr "Styr tidtagaren direkt från systemraden utan att öppna programmet"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:132
-msgid "Less distractions"
-msgstr "Färre distraktioner"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:143
-msgid ""
-"Let <b>Pomodoro</b> manage system notifications while the timer is running"
-msgstr ""
-"Låt <b>Pomodoro</b> hantera systemaviseringar under tiden tidtagaren körs"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:170
-msgid "Refined break reminders"
-msgstr "Eleganta rastpåminnelser"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:181
-msgid ""
-"Elegant full-screen overlay that make taking breaks a more pleasant "
-"experience"
-msgstr ""
-"Elegant helskärmsöverlägg som gör det till en mer angenäm upplevelse att ta "
-"rast"
-
-#. translators: "It" refers to installing GNOME Shell extension
-#: src/ui/main/dialogs/install-extension-dialog.ui:195
-msgid "Ready to try it?"
-msgstr "Redo att prova?"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:219
-#: src/ui/main/dialogs/install-extension-dialog.ui:252
-msgid "_Install Extension"
-msgstr "_Installera tillägg"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:229
-#: src/ui/main/dialogs/install-extension-dialog.ui:245
-msgid "_Not Now"
-msgstr "I_nte nu"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:317
-msgid "Something went wrong"
-msgstr "Något gick fel"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:364
-msgid "Copy to clipboard"
-msgstr "Kopiera till urklipp"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:383
-#: src/ui/main/dialogs/install-extension-dialog.ui:416
-msgid "_Try Again"
-msgstr "_Försök igen"
-
-#: src/ui/main/dialogs/install-extension-dialog.ui:393
-#: src/ui/main/dialogs/install-extension-dialog.ui:409
-msgid "_Abort"
-msgstr "A_vbryt"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:86
-msgid "Time-out reached"
-msgstr "Tidsgräns uppnådd"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:91
-msgid "Installing extensions is not allowed"
-msgstr "Installation av tillägg är inte tillåtet"
-
-#: src/ui/main/dialogs/install-extension-dialog.vala:96
-msgid "Failed to download the extension"
-msgstr "Misslyckades med att hämta tillägget"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -922,8 +920,8 @@ msgstr "_Kort rast"
 msgid "_Long Break"
 msgstr "_Lång rast"
 
-#: src/ui/main/timer/compact-timer-view.vala:74
-#: src/ui/main/timer/timer-view.vala:130
+#: src/ui/main/timer/compact-timer-view.vala:73
+#: src/ui/main/timer/timer-view.vala:141
 msgid "Finished!"
 msgstr "Färdig!"
 
@@ -935,11 +933,11 @@ msgstr "_Rast"
 msgid "Open screen overlay"
 msgstr "Öppna skärmöverlägg"
 
-#: src/ui/main/timer/timer-view.vala:246
+#: src/ui/main/timer/timer-view.vala:257
 msgid "Session has expired"
 msgstr "Sessionen har gått ut"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1472
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
 #, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "Lång rast om <b>%s</b>"
@@ -972,19 +970,11 @@ msgstr "Primär meny"
 msgid "Stats"
 msgstr "Statistik"
 
-#: src/ui/main/window.vala:302
-msgid "GNOME Shell extension available"
-msgstr "GNOME Shell-tillägg tillgängligt"
-
-#: src/ui/main/window.vala:303
-msgid "Learn More"
-msgstr "Läs mer"
-
-#: src/ui/main/window.vala:325
+#: src/ui/main/window.vala:280
 msgid "Keep timer running?"
 msgstr "Håll igång tidtagaren?"
 
-#: src/ui/main/window.vala:326
+#: src/ui/main/window.vala:281
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -992,11 +982,11 @@ msgstr ""
 "Du kan låta den köra i bakgrunden — aviseringar och tangentbordsgenvägare "
 "kommer fortfarande fungera."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:285
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/ui/main/window.vala:333
+#: src/ui/main/window.vala:288
 msgid "Run in background"
 msgstr "Kör i bakgrunden"
 
@@ -1255,6 +1245,20 @@ msgstr ""
 "Kör skalkommandon automatiskt vid tidtagarhändelser eller villkor. <a "
 "href=\"\">Läs mer.</a>"
 
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
+msgid "Autostart"
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
+msgid "Automatically launch the app when you log in."
+msgstr ""
+
+#: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
+msgid ""
+"The app will start in the background. You'll be able to use the indicator "
+"and keyboard shortcuts."
+msgstr ""
+
 #: src/ui/preferences/keyboard-shortcuts/accelerator-chooser-window.ui:14
 msgid "Set Shortcut"
 msgstr "Ställ in kortkommando"
@@ -1344,11 +1348,6 @@ msgstr "Tiden håller på att ta slut"
 msgid "Notify when Pomodoro or break is about to end."
 msgstr "Avisera när pomodoro eller rast håller på att ta slut."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
-msgid "Screen Overlay"
-msgstr "Skärmöverlägg"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 msgid "A full-screen notification intended to enforce taking a break."
 msgstr ""
@@ -1362,49 +1361,18 @@ msgstr "Låsfördröjning"
 msgid "Period of inactivity to lock the screen."
 msgstr "Inaktivitetsperiod innan skärmen kommer att låsas."
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:61
-msgid "15 seconds"
-msgstr "15 sekunder"
-
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:62
-msgid "30 seconds"
-msgstr "30 sekunder"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:63
-msgid "1 minute"
-msgstr "1 minut"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:45
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:64
-msgid "2 minutes"
-msgstr "2 minuter"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:46
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:65
-msgid "3 minutes"
-msgstr "3 minuter"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:47
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:66
-msgid "5 minutes"
-msgstr "5 minuter"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:67
-msgid "Never"
-msgstr "Aldrig"
-
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:56
 msgid "Reopen Delay"
 msgstr "Återöppningsfördröjning"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:57
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 msgid "Period of inactivity to reopen the overlay after it gets dismissed."
 msgstr ""
 "Inaktivitetsperiod innan överlägget ska öppnas igen efter att det avvisats."
+
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+msgid "Never"
+msgstr "Aldrig"
 
 #: src/ui/preferences/preferences-window.vala:37
 msgid "Notifications"
@@ -1423,6 +1391,10 @@ msgid "Keyboard Shortcuts"
 msgstr "Tangentbordsgenvägar"
 
 #: src/ui/preferences/preferences-window.vala:71
+msgid "Integrations"
+msgstr ""
+
+#: src/ui/preferences/preferences-window.vala:79
 msgid "Automation"
 msgstr "Automatisering"
 
@@ -1460,14 +1432,14 @@ msgid "Clock Ticking"
 msgstr "Tickande klocka"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
-msgid "Timer Ticking"
-msgstr "Tickande äggklocka"
+msgid "Metronome"
+msgstr ""
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
-msgid "Birds"
-msgstr "Fåglar"
+msgid "Brown Noise"
+msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:86
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Inget"
@@ -1513,25 +1485,25 @@ msgid "Confirm Starting a Pomodoro"
 msgstr "Bekräfta start av pomodoro"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
-#: src/ui/preferences/timer/preferences-panel-timer.vala:94
+#: src/ui/preferences/timer/preferences-panel-timer.vala:96
 #, c-format
 msgid "A single session will take <b>%s</b>."
 msgstr "En ensam session kommer ta <b>%s</b>."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:95
+#: src/ui/preferences/timer/preferences-panel-timer.vala:97
 #, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks."
 msgstr "<b>%u%%</b> av tiden kommer vara avsatt för raster."
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:143
+#: src/ui/preferences/timer/preferences-panel-timer.vala:146
 msgid "Apply changes to ongoing Pomodoro?"
 msgstr "Tillämpa ändringar på pågående pomodoro?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:144
+#: src/ui/preferences/timer/preferences-panel-timer.vala:147
 msgid "Apply changes to ongoing break?"
 msgstr "Tillämpa ändringar på pågående rast?"
 
-#: src/ui/preferences/timer/preferences-panel-timer.vala:146
+#: src/ui/preferences/timer/preferences-panel-timer.vala:149
 msgid "Apply"
 msgstr "Tillämpa"
 
@@ -1539,3 +1511,104 @@ msgstr "Tillämpa"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Sidopanel"
+
+#~ msgid "15 seconds"
+#~ msgstr "15 sekunder"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekunder"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuter"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minuter"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minuter"
+
+#~ msgid "Compact timer"
+#~ msgstr "Kompakt tidtagare"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.1"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.28.1"
+
+#~ msgid "Added Tamil translation (thanks @omeritzics)"
+#~ msgstr "La till tamilsk översättning (tack @omeritzics)"
+
+#~ msgid "Added Hebrew translation (thanks @Killersparrow1)"
+#~ msgstr "La till hebreisk översättning (tack @Killersparrow1)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.28.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.28.0"
+
+#~ msgid "Support for GNOME Shell 49 (thanks @aleasto)"
+#~ msgstr "Stöd för GNOME Shell 49 (tack @aleasto)"
+
+#~ msgid "Updated German translation (thanks @daPhipz)"
+#~ msgstr "Uppdaterade tysk översättning (tack @daPhipz)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.27.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.27.0"
+
+#~ msgid "Support for GNOME Shell 48"
+#~ msgstr "Stöd för GNOME Shell 48"
+
+#~ msgid "Split time spent across midnight"
+#~ msgstr "Dela upp tid som spenderats över midnatt"
+
+#~ msgid "Added Telugu translation (thanks @SpaciousCoder78)"
+#~ msgstr "La till telugisk översättning (tack @SpaciousCoder78)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.26.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.26.0"
+
+#~ msgid "Support for GNOME Shell 47"
+#~ msgstr "Stöd för GNOME Shell 47"
+
+#~ msgid "Allow to dismiss screen overlay by gesture when a video is playing"
+#~ msgstr "Tillåt avvisande av skärmöverlägg genom en gest då en video spelas"
+
+#~ msgid "Added Georgian translation (thanks @NorwayFun)"
+#~ msgstr "La till georgisk översättning (tack @NorwayFun)"
+
+#~ msgid "Adjusted translations in appdata (thanks @yakushabb)"
+#~ msgstr "Justerade översättningar i appdata (tack @yakushabb)"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.2"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.2"
+
+#~ msgid "Fix keeping notification after extending Pomodoro"
+#~ msgstr "Fixa bevarande av avisering efter att pomodoro förlängts"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.1"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.1"
+
+#~ msgid "Fixes for GNOME Shell 46"
+#~ msgstr "Fixar för Gnome Shell 46"
+
+#~ msgid "Drop support for GNOME Shell 45"
+#~ msgstr "Ta bort stöd för Gnome Shell 45"
+
+#~ msgid "Overview of changes in gnome-pomodoro 0.25.0"
+#~ msgstr "Översikt över ändringar i gnome-pomodoro 0.25.0"
+
+#~ msgid "Support for GNOME Shell 46"
+#~ msgstr "Stöd för GNOME Shell 46"
+
+#~ msgid "Adjust build script to meson 0.59.0 (thanks @mattst88)"
+#~ msgstr "Justera byggskript till meson 0.59.0 (tack @mattst88)"
+
+#~ msgid ""
+#~ "Let <b>Pomodoro</b> manage system notifications while the timer is running"
+#~ msgstr ""
+#~ "Låt <b>Pomodoro</b> hantera systemaviseringar under tiden tidtagaren körs"
+
+#~ msgid "Timer Ticking"
+#~ msgstr "Tickande äggklocka"
+
+#~ msgid "Birds"
+#~ msgstr "Fåglar"
