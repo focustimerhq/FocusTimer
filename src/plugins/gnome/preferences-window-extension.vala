@@ -223,7 +223,7 @@ namespace Gnome
                 this.manage_notifications_binding = this.settings.bind_property (
                         "manage-notifications",
                         this.manage_notifications_row, "active",
-                        GLib.BindingFlags.SYNC_CREATE);
+                        GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
             }
         }
 
