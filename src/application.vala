@@ -307,10 +307,12 @@ namespace Ft
         public void show_window (Ft.WindowView view = Ft.WindowView.DEFAULT)
         {
             var window = this.get_window<Ft.Window> ();
+            var window_created = false;
 
             if (window == null)
             {
                 window = new Ft.Window ();
+                window_created = true;
                 this.add_window (window);
 
                 if (this.application_id.has_suffix ("Devel")) {
@@ -324,7 +326,7 @@ namespace Ft
 
             window.present ();
 
-            if (!window.is_active) {
+            if (!window.is_active && !window_created) {
                 this.dbus_service.emit_request_focus ();
             }
         }
