@@ -27,6 +27,7 @@ sqlite_dep = dependency('sqlite3')
 pangocairo_dep = dependency('pangocairo')
 gtk_x11_dep = dependency('gtk4-x11', required: false)
 gtk_wayland_dep = dependency('gtk4-wayland', required: false)
+bash_completion_dep = dependency('bash-completion', required: false)
 
 cc = meson.get_compiler('c')
 libm_dep = cc.find_library('m')

@@ -1,0 +1,38 @@
+# Check for bash
+[ -z "$BASH_VERSION" ] && return
+
+################################################################################
+
+__focus_timer() {
+  local cur prev split=false
+  _init_completion -s || return
+
+  # Suggest default value for rewind and extend
+  case "$prev" in
+    --rewind|--extend)
+      COMPREPLY=( $(compgen -W "60" -- "${cur}") )
+      return 0
+      ;;
+  esac
+
+  # Stop if we are currently waiting for an option value
+  $split && return
+
+  # If the current word starts with a dash, suggest options
+  if [[ "$COMP_CWORD" == "1" && "$cur" == -* ]]; then
+    local options="--help --help-all --help-gapplication --help-timer \
+      --gapplication-service \
+      --start-stop --start-pause-resume --start-pomodoro --start-break \
+      --start-short-break --start-long-break --start --stop --pause \
+      --resume --skip --rewind= --extend= --reset --status \
+      --preferences --quit --version"
+
+    COMPREPLY=( $(compgen -W "${options}" -- "${cur}") )
+    [[ $COMPREPLY == *= ]] && compopt -o nospace
+    return 0
+  fi
+}
+
+################################################################################
+
+complete -F __focus_timer focus-timer

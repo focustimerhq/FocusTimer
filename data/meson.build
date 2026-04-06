@@ -84,6 +84,16 @@ compiled_schemas = gnome.compile_schemas(
   depend_files: 'io.github.focustimerhq.FocusTimer.gschema.xml'
 )
 
+# Bash completions
+if bash_completion_dep.found()
+  install_data('completion/bash/focus-timer',
+    install_dir: bash_completion_dep.get_variable(
+      'completionsdir',
+      pkgconfig_define: ['datadir', get_option('datadir')]
+    )
+  )
+endif
+
 # Run required post-install steps
 gnome.post_install(
   glib_compile_schemas: true,
