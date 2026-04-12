@@ -1,11 +1,18 @@
 # Focus Timer
 
 <p align="center">
-  <img src="/data/icons/256x256/io.github.focustimerhq.FocusTimer.png" width="256" height="256">
+  <img src="data/icons/256x256/io.github.focustimerhq.FocusTimer.png" width="256" height="256">
 </p>
 
-[Focus Timer](https://gnomepomodoro.org) (formerly gnome-pomodoro) is a time-management application that helps with taking breaks according to [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). It intends to help maintain your focus and health. It's built
-using [GNOME](https://gnome.org/) technologies. It integrates best with the GNOME desktop environment, but you should be able to use it on most Linux desktops with limited features.
+[Focus Timer](https://gnomepomodoro.org) (formerly gnome-pomodoro) is a time-management application that helps with taking breaks according to [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique). It intends to help maintain concentration and prevent burnout.
+
+Key features:
+* Customizable work session and break lengths
+* Visual and audio notifications
+* Time tracking and statistics
+* GNOME desktop integration
+* Screen overlay during breaks
+* Run custom commands after Pomodoro or break
 
 <p align="center">
   <br/>
@@ -74,8 +81,7 @@ Install `gnome-shell-pomodoro` from the [AUR](https://aur.archlinux.org/packages
 sudo zypper install gnome-pomodoro
 ```
 
-
-## Building from source
+### Building from source
 
 To build the application from source, you will need `meson`, `ninja`, and the necessary development headers (GLib, GTK+, etc.).
 
@@ -101,6 +107,21 @@ focus-timer
 The app will try to migrate data from the old gnome-pomodoro app at first run.
 
 If you decide to uninstall it. Run: `sudo ninja -C build uninstall`.
+
+## Support & Feedback
+
+* **Issues & Bug Reports:** Check the [Troubleshooting](CONTRIBUTING.md#troubleshooting) on how to check logs. Report it on our [issue tracker](https://github.com/focustimerhq/FocusTimer/issues).
+* **Feature Requests:** Open a feature request on [GitHub](https://github.com/focustimerhq/FocusTimer/issues).
+* **Questions & Discussions:** Join our [Discussions page](https://github.com/focustimerhq/FocusTimer/discussions) for help and general chat.
+* **Reviews:** If you enjoy the app, please leave a review in the software centre you use.
+
+## Contributing
+
+We welcome contributions! Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for details on setting up your development environment, coding guidelines, and translation instructions.
+
+## Donations
+
+If you'd like to support the development of Focus Timer, you can use [Liberapay](https://liberapay.com/kamilprusko) or [PayPal](https://www.paypal.me/kamilprusko). Thank you!
 
 ## License
 
