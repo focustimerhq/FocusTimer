@@ -18,6 +18,117 @@ namespace Ft
     }
 
 
+    /**
+     * A fallback implementation for missing Background portal.
+     *
+     * `BackgroundManager` already handles the application hold. Only thing to do
+     * is managing the autostart file.
+     */
+    private class DefaultBackgroundProvider : Ft.Provider, Ft.BackgroundProvider
+    {
+        private const string AUTOSTART_TEMPLATE = """[Desktop Entry]
+Type=Application
+Name=${APPLICATION_ID}
+X-XDP-Autostart=${APPLICATION_ID}
+Exec=focus-timer --gapplication-service
+""";
+
+        public bool background_allowed {
+            get {
+                return this.available;
+            }
+        }
+
+        public bool autostart_allowed  {
+            get {
+                return this._autostart_allowed;
+            }
+        }
+
+        private bool _autostart_allowed = false;
+
+        private GLib.File get_autostart_file ()
+        {
+            var path = GLib.Path.build_filename (
+                    GLib.Environment.get_user_config_dir (),
+                    "autostart",
+                    @"$(Config.APPLICATION_ID).desktop");
+
+            return GLib.File.new_for_path (path);
+        }
+
+        public override async void initialize (GLib.Cancellable? cancellable) throws GLib.Error
+        {
+            this.available = Ft.is_flatpak ();
+        }
+
+        public override async void enable (GLib.Cancellable? cancellable) throws GLib.Error
+        {
+            var autostart_file = this.get_autostart_file ();
+            var autostart_allowed = false;
+
+            try {
+                yield autostart_file.query_info_async (
+                        GLib.FileAttribute.STANDARD_TYPE,
+                        GLib.FileQueryInfoFlags.NONE,
+                        GLib.Priority.DEFAULT,
+                        cancellable);
+                autostart_allowed = true;
+            }
+            catch (GLib.IOError.NOT_FOUND error) {
+            }
+            catch (GLib.Error error) {
+                GLib.warning ("Failed to query autostart file: %s", error.message);
+            }
+
+            this._autostart_allowed = autostart_allowed;
+            this.notify_property ("autostart-allowed");
+        }
+
+        public override async void disable () throws GLib.Error
+        {
+        }
+
+        public override async void uninitialize () throws GLib.Error
+        {
+        }
+
+        public async void request_background (bool   autostart,
+                                              string parent_window)
+        {
+            var autostart_file = this.get_autostart_file ();
+            var autostart_contents = AUTOSTART_TEMPLATE.replace (
+                    "${APPLICATION_ID}",
+                    Config.APPLICATION_ID);
+
+            try {
+                if (autostart) {
+                    yield autostart_file.replace_contents_async (
+                            autostart_contents.data,
+                            null,
+                            false,
+                            GLib.FileCreateFlags.NONE,
+                            null,
+                            null);
+                }
+                else {
+                    yield autostart_file.delete_async ();
+                }
+            }
+            catch (GLib.IOError.NOT_FOUND error) {
+                // already removed
+            }
+            catch (GLib.Error error) {
+                GLib.warning ("Failed to update autostart file: %s", error.message);
+                return;
+            }
+
+            this._autostart_allowed = autostart;
+            this.notify_property ("autostart-allowed");
+        }
+    }
+
+
     [SingleInstance]
     public class BackgroundManager : Ft.ProvidedObject<Ft.BackgroundProvider>
     {
@@ -153,7 +264,7 @@ namespace Ft
 
         protected override void setup_providers ()
         {
-            // TODO: add a permissive provider if the Background portal is not available
+            this.providers.add (new Ft.DefaultBackgroundProvider (), Ft.Priority.LOW);
         }
 
         protected override void provider_enabled (Ft.BackgroundProvider provider)
