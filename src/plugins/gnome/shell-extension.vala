@@ -76,18 +76,21 @@ namespace Gnome
             this.extension_info = Gnome.ExtensionInfo (EXTENSION_UUID);
             this.cancellable = new GLib.Cancellable ();
 
-            this.shell_watcher_id = GLib.Bus.watch_name (
-                    GLib.BusType.SESSION,
-                    "org.gnome.Shell",
-                    GLib.BusNameWatcherFlags.NONE,
-                    this.on_shell_name_appeared,
-                    this.on_shell_name_vanished);
-            this.shell_integration_watcher_id = GLib.Bus.watch_name (
-                    GLib.BusType.SESSION,
-                    "io.github.focustimerhq.FocusTimer.ShellIntegration",
-                    GLib.BusNameWatcherFlags.NONE,
-                    this.on_shell_integration_name_appeared,
-                    this.on_shell_integration_name_vanished);
+            if (!Config.APPLICATION_ID.has_suffix ("Devel"))
+            {
+                this.shell_watcher_id = GLib.Bus.watch_name (
+                        GLib.BusType.SESSION,
+                        "org.gnome.Shell",
+                        GLib.BusNameWatcherFlags.NONE,
+                        this.on_shell_name_appeared,
+                        this.on_shell_name_vanished);
+                this.shell_integration_watcher_id = GLib.Bus.watch_name (
+                        GLib.BusType.SESSION,
+                        "io.github.focustimerhq.FocusTimer.ShellIntegration",
+                        GLib.BusNameWatcherFlags.NONE,
+                        this.on_shell_integration_name_appeared,
+                        this.on_shell_integration_name_vanished);
+            }
         }
 
         internal unowned Gnome.ShellIntegration? get_shell_integration_proxy ()
