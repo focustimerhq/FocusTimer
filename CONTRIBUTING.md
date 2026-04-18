@@ -46,7 +46,7 @@ flatpak run --env=G_MESSAGES_DEBUG=focus-timer io.github.focustimerhq.FocusTimer
 
 If the app crashes, providing steps to reproduce it is usually enough. However, to share a stack trace, install the debug info:
 ```bash
-flatpak install --user --include-sdk --include-debug io.github.focustimerhq.FocusTimer.flatpak
+flatpak install --user --include-sdk --include-debug io.github.focustimerhq.FocusTimer
 ```
 
 Find the app PID from recent crashes:
