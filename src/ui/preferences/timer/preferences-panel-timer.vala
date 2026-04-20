@@ -136,8 +136,6 @@ namespace Ft
                                                uint     timeout)
         {
             var window = this.get_root () as Ft.PreferencesWindow;
-            assert (window != null);
-
             var toast = this.apply_changes_toast;
 
             if (toast == null)
@@ -160,7 +158,7 @@ namespace Ft
 
             toast.timeout = timeout;
 
-            window.add_toast (toast);
+            window?.add_toast (toast);
         }
 
         private void hide_apply_changes_toast ()
