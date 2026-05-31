@@ -339,7 +339,7 @@ namespace Tests
 
         public void test_execute__use_subshell ()
         {
-            var command = new Ft.Command ("cat <<< \"hello\"");
+            var command = new Ft.Command ("printf '%s\n' hello");
             command.use_subshell = true;
 
             var context = new Ft.Context ();
