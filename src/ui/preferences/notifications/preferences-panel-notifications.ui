@@ -44,6 +44,12 @@
                     <property name="subtitle" translatable="yes">Period of inactivity to reopen the overlay after it gets dismissed.</property>
                   </object>
                 </child>
+                <child>
+                  <object class="AdwSwitchRow" id="screen_overlay_dismiss_challenge_switchrow">
+                    <property name="title" translatable="yes">Dismiss Challenge</property>
+                    <property name="subtitle" translatable="yes">Require a one minute typing challenge to leave the break instead of a single key press.</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>

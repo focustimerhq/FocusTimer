@@ -66,6 +66,11 @@
       <summary>Time to reopen screen overlay</summary>
       <description></description>
     </key>
+    <key name="screen-overlay-dismiss-challenge" type="b">
+      <default>true</default>
+      <summary>Require a typing challenge to dismiss the screen overlay</summary>
+      <description>When enabled, dismissing the break overlay requires keeping a one minute typing challenge going instead of a single key press.</description>
+    </key>
 
     <!-- Appearance -->
     <key name="dark-theme" type="b">

@@ -508,6 +508,21 @@ lightbox .message {
     font-size: 14pt;
 }
 
+lightbox .challenge-key {
+    font-size: 110pt;
+    font-weight: 700;
+    min-width: 120px;
+}
+
+lightbox .challenge-key.wrong {
+    color: #ff6b6b;
+}
+
+lightbox .challenge-hint {
+    font-size: 11pt;
+    opacity: 0.6;
+}
+
 lightbox button {
     padding: 10px;
 }

@@ -669,11 +669,16 @@ namespace Ft
             switch (keyval)
             {
                 case Gdk.Key.Escape:
-                    this.close ();
-                    return true;
+                    return this.handle_escape ();
             }
 
             return false;
+        }
+
+        protected virtual bool handle_escape ()
+        {
+            this.close ();
+            return true;
         }
 
         private bool resolve_all_monitors_mode (int width,

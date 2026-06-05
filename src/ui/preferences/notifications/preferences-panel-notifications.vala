@@ -21,6 +21,8 @@ namespace Ft
         private unowned Adw.ComboRow screen_overlay_lock_delay_comborow;
         [GtkChild]
         private unowned Adw.ComboRow screen_overlay_reopen_delay_comborow;
+        [GtkChild]
+        private unowned Adw.SwitchRow screen_overlay_dismiss_challenge_switchrow;
 
         private GLib.Settings?  settings;
         private Ft.IdleMonitor? idle_monitor = null;
@@ -82,6 +84,15 @@ namespace Ft
             this.screen_overlay_switchrow.bind_property (
                                 "active",
                                 this.screen_overlay_reopen_delay_comborow,
+                                "sensitive",
+                                GLib.BindingFlags.SYNC_CREATE);
+            this.settings.bind ("screen-overlay-dismiss-challenge",
+                                this.screen_overlay_dismiss_challenge_switchrow,
+                                "active",
+                                GLib.SettingsBindFlags.DEFAULT);
+            this.screen_overlay_switchrow.bind_property (
+                                "active",
+                                this.screen_overlay_dismiss_challenge_switchrow,
                                 "sensitive",
                                 GLib.BindingFlags.SYNC_CREATE);
         }
