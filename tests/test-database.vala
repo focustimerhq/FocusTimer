@@ -139,8 +139,11 @@ namespace Tests
             assert_true (this.run_main_loop ());
 
             // Apply v3 migration (populate stats and drop legacy tables)
+            // and v4 migration (add task columns), so that the schema matches
+            // the current Gom resources before querying.
             try {
                 repository.migrate_sync (3U, Ft.Database.migrate_repository);
+                repository.migrate_sync (4U, Ft.Database.migrate_repository);
             }
             catch (GLib.Error error) {
                 assert_no_error (error);

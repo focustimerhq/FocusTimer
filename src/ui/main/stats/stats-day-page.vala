@@ -63,6 +63,12 @@ namespace Ft
         private unowned Ft.StatsCard interruptions_card;
         [GtkChild]
         private unowned Ft.StatsCard break_ratio_card;
+        [GtkChild]
+        private unowned Ft.TaskBreakdown task_breakdown;
+        [GtkChild]
+        private unowned Gtk.Box history_box;
+        [GtkChild]
+        private unowned Gtk.ListBox history_listbox;
 
         private int64               _interval = DEFAULT_INTERVAL;
         private Ft.StatsManager?    stats_manager;
@@ -75,6 +81,7 @@ namespace Ft
         private int64               entries_end_time = Ft.Timestamp.UNDEFINED;
         private string              time_format;
         private Ft.Matrix?          histogram_data;
+        private uint                update_lists_timeout_id = 0U;
 
         construct
         {
@@ -95,6 +102,8 @@ namespace Ft
 
             this.update_time_format ();
             this.update_histogram_y_spacing ();
+
+            this.task_breakdown.set_range (this.date, this.date);
 
             this.stats_manager.entry_saved.connect (this.on_entry_saved);
             this.stats_manager.entry_deleted.connect (this.on_entry_deleted);
@@ -530,6 +539,159 @@ namespace Ft
             for (var index = 0U; index < entries.count; index++) {
                 this.process_entry ((Ft.StatsEntry) entries.get_index (index));
             }
+
+            this.update_lists (entries);
+        }
+
+        private inline string format_row_time (int64 timestamp)
+        {
+            var timezone = this.timezone_history.search (timestamp);
+            var datetime = Ft.Timestamp.to_datetime (timestamp, timezone);
+            var row_time_format = Ft.Locale.use_12h_format () ? "%I:%M %p" : "%H:%M";
+            var time_string = datetime.format (row_time_format);
+
+            if (time_string.has_prefix ("0")) {
+                time_string = time_string.substring (1);
+            }
+
+            return time_string;
+        }
+
+        private void remove_all_rows (Gtk.ListBox listbox)
+        {
+            Gtk.Widget? row;
+
+            while ((row = listbox.get_first_child ()) != null) {
+                listbox.remove (row);
+            }
+        }
+
+        private void append_history_row (int64  start_time,
+                                         int64  end_time,
+                                         int64  duration,
+                                         string task)
+        {
+            var time_label = new Gtk.Label (
+                    "%s – %s".printf (this.format_row_time (start_time),
+                                      this.format_row_time (end_time)));
+            time_label.xalign = 0.0f;
+            time_label.add_css_class ("numeric");
+            time_label.add_css_class ("dim-label");
+
+            var name_label = new Gtk.Label (task != "" ? task : _("Pomodoro"));
+            name_label.hexpand = true;
+            name_label.xalign = 0.0f;
+            name_label.ellipsize = Pango.EllipsizeMode.END;
+
+            if (task == "") {
+                name_label.add_css_class ("dim-label");
+            }
+
+            var duration_label = new Gtk.Label (Ft.Interval.format_short (duration));
+            duration_label.add_css_class ("dim-label");
+            duration_label.add_css_class ("numeric");
+
+            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+            box.margin_top = 8;
+            box.margin_bottom = 8;
+            box.margin_start = 12;
+            box.margin_end = 12;
+            box.append (time_label);
+            box.append (name_label);
+            box.append (duration_label);
+
+            var row = new Gtk.ListBoxRow ();
+            row.activatable = false;
+            row.child = box;
+
+            this.history_listbox.append (row);
+        }
+
+        /**
+         * Build the "History" timeline for the day.
+         *
+         * History rows are stats entries merged by their source time-block,
+         * so a pomodoro split by pauses shows as a single row.
+         */
+        private void update_lists (Gom.ResourceGroup? entries)
+        {
+            this.remove_all_rows (this.history_listbox);
+
+            var date_string = Ft.Database.serialize_date (this.date);
+
+            int64[]  group_start_times = {};
+            int64[]  group_end_times = {};
+            int64[]  group_durations = {};
+            string[] group_tasks = {};
+            int64    last_source_id = 0;
+
+            var entries_count = entries != null ? entries.count : 0U;
+
+            for (var index = 0U; index < entries_count; index++)
+            {
+                var entry = (Ft.StatsEntry) entries.get_index (index);
+                var category = Ft.StatsCategory.from_string (entry.category);
+
+                if (category != Ft.StatsCategory.POMODORO ||
+                    entry.date != date_string ||
+                    entry.duration <= 0)
+                {
+                    continue;
+                }
+
+                var task = entry.task ?? "";
+
+                // Merge entries originating from the same time-block.
+                var group_index = group_start_times.length - 1;
+
+                if (group_index >= 0 &&
+                    entry.source_id != 0 &&
+                    entry.source_id == last_source_id)
+                {
+                    group_end_times[group_index] = entry.time + entry.duration;
+                    group_durations[group_index] += entry.duration;
+                }
+                else {
+                    group_start_times += entry.time;
+                    group_end_times += entry.time + entry.duration;
+                    group_durations += entry.duration;
+                    group_tasks += task;
+                }
+
+                last_source_id = entry.source_id;
+            }
+
+            for (var i = 0; i < group_start_times.length; i++)
+            {
+                this.append_history_row (group_start_times[i],
+                                         group_end_times[i],
+                                         group_durations[i],
+                                         group_tasks[i]);
+            }
+
+            this.history_box.visible = group_start_times.length > 0;
+        }
+
+        private void queue_update_lists ()
+        {
+            if (this.update_lists_timeout_id != 0) {
+                return;
+            }
+
+            this.update_lists_timeout_id = GLib.Timeout.add (
+                500,
+                () => {
+                    this.update_lists_timeout_id = 0;
+
+                    this.fetch_entries.begin (
+                        (obj, res) => {
+                            this.update_lists (this.fetch_entries.end (res));
+                        });
+
+                    return GLib.Source.REMOVE;
+                });
+            GLib.Source.set_name_by_id (this.update_lists_timeout_id,
+                                        "Ft.StatsDayPage.update_lists");
         }
 
         private void invalidate_histogram_data ()
@@ -555,12 +717,20 @@ namespace Ft
             if (this.histogram_data != null) {
                 this.process_entry (entry, 1);
             }
+
+            if (entry.date == Ft.Database.serialize_date (this.date)) {
+                this.queue_update_lists ();
+            }
         }
 
         private void on_entry_deleted (Ft.StatsEntry entry)
         {
             if (this.histogram_data != null) {
                 this.process_entry (entry, -1);
+            }
+
+            if (entry.date == Ft.Database.serialize_date (this.date)) {
+                this.queue_update_lists ();
             }
         }
 
@@ -611,6 +781,11 @@ namespace Ft
 
         public override void dispose ()
         {
+            if (this.update_lists_timeout_id != 0) {
+                GLib.Source.remove (this.update_lists_timeout_id);
+                this.update_lists_timeout_id = 0;
+            }
+
             this.histogram.set_format_value_func (null);
             this.stats_manager.entry_saved.disconnect (this.on_entry_saved);
             this.stats_manager.entry_deleted.disconnect (this.on_entry_deleted);

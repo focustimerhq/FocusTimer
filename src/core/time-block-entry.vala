@@ -15,6 +15,7 @@ namespace Ft
         public string state { get; set; }
         public string status { get; set; }
         public int64 intended_duration { get; set; }
+        public string task { get; set; default = ""; }
 
         internal ulong version = 0;
 

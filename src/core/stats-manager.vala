@@ -37,6 +37,7 @@ namespace Ft
         {
             public string    category;
             public int64     source_id;
+            public string    task;
             public Segment[] segments;
         }
 
@@ -285,6 +286,7 @@ namespace Ft
         {
             var category  = item.category;
             var source_id = item.source_id;
+            var task      = item.task;
             var segments  = item.segments;
 
             var repository = Ft.Database.get_repository ();
@@ -331,7 +333,8 @@ namespace Ft
                     entry_index++;
 
                     if (entry.time == segment.timestamp &&
-                        entry.duration == segment.duration)
+                        entry.duration == segment.duration &&
+                        entry.task == task)
                     {
                         continue;
                     }
@@ -353,6 +356,7 @@ namespace Ft
                 entry.offset = offset;
                 entry.duration = segment.duration;
                 entry.source_id = source_id;
+                entry.task = task;
 
                 to_save.append (entry);
                 to_save_count++;
@@ -418,6 +422,7 @@ namespace Ft
 
         private void track_internal (string          category,
                                      int64           source_id,
+                                     string          task,
                                      owned Segment[] segments)
         {
             if (segments.length == 0) {
@@ -428,6 +433,7 @@ namespace Ft
                 Item () {
                     category  = category,
                     source_id = source_id,
+                    task      = task,
                     segments  = segments
                 });
 
@@ -437,7 +443,8 @@ namespace Ft
         public void track (string category,
                            int64  timestamp,
                            int64  duration,
-                           int64  source_id = 0)
+                           int64  source_id = 0,
+                           string task = "")
         {
             if (Ft.Timestamp.is_undefined (timestamp) || duration <= 0) {
                 return;
@@ -445,7 +452,7 @@ namespace Ft
 
             var segments = this.split (timestamp, duration);
 
-            this.track_internal (category, source_id, segments);
+            this.track_internal (category, source_id, task, segments);
         }
 
         /**
@@ -566,7 +573,9 @@ namespace Ft
                     segments,
                     this.split (time_block.start_time, time_block.duration));
 
-            this.track_internal (category, time_block_entry.id, segments);
+            var task = category == "pomodoro" ? time_block.get_task () : "";
+
+            this.track_internal (category, time_block_entry.id, task, segments);
         }
 
         public void track_gap (Ft.Gap gap)

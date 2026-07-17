@@ -131,6 +131,7 @@ src/ui/main/stats/widgets/stats-card.ui
 src/ui/main/stats/widgets/stats-card.vala
 src/ui/main/stats/widgets/stats-date-popover.ui
 src/ui/main/stats/widgets/stats-date-popover.vala
+src/ui/main/stats/widgets/task-breakdown.vala
 src/ui/main/stats/widgets/week-chooser.ui
 src/ui/main/stats/widgets/week-chooser.vala
 src/ui/main/timer/compact-timer-view.ui
@@ -139,6 +140,7 @@ src/ui/main/timer/menus.ui
 src/ui/main/timer/timer-view.ui
 src/ui/main/timer/timer-view.vala
 src/ui/main/timer/widgets/session-progress-bar.vala
+src/ui/main/timer/widgets/task-button.vala
 src/ui/main/timer/widgets/timer-control-buttons.ui
 src/ui/main/timer/widgets/timer-control-buttons.vala
 src/ui/main/timer/widgets/timer-label.ui

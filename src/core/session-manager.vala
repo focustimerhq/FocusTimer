@@ -34,6 +34,11 @@ namespace Ft
          */
         private const int64 OVERDUE_TIMEOUT = Ft.Interval.HOUR;
 
+        /**
+         * Number of recently used task names kept for suggestions.
+         */
+        private const uint TASK_HISTORY_LIMIT = 10;
+
         private static Ft.SessionManager? instance = null;
 
         public Ft.Timer timer {
@@ -158,6 +163,38 @@ namespace Ft
             }
         }
 
+        /**
+         * Name of the task time is tracked against. An empty string means no task.
+         *
+         * The task is stamped onto pomodoro time-blocks as they start. Changing it
+         * mid-pomodoro re-assigns the whole current time-block to the new task.
+         */
+        [CCode (notify = false)]
+        public string current_task {
+            get {
+                return this._current_task;
+            }
+            set {
+                var task = value != null ? value.strip () : "";
+
+                if (this._current_task == task) {
+                    return;
+                }
+
+                this._current_task = task;
+
+                if (this._current_time_block != null &&
+                    this._current_time_block.state == Ft.State.POMODORO)
+                {
+                    this._current_time_block.set_task (task);
+                    this.save.begin ();
+                }
+
+                this.store_current_task ();
+                this.notify_property ("current-task");
+            }
+        }
+
         private Ft.Timer                _timer;
         private Ft.Scheduler            _scheduler;
         private Ft.Session?             _current_session = null;
@@ -165,6 +202,7 @@ namespace Ft
         private Ft.Gap?                 _current_gap = null;
         private Ft.State                _current_state = Ft.State.STOPPED;
         private bool                    _has_uniform_breaks = false;
+        private string                  _current_task = "";
         private Ft.Session?             next_session = null;
         private Ft.TimeBlock?           next_time_block = null;
         private Ft.IdleMonitor?         idle_monitor = null;
@@ -217,11 +255,40 @@ namespace Ft
             this.timezone_monitor = new Ft.TimeZoneMonitor ();
             this.timezone_history = new Ft.TimezoneHistory ();
             this.save_callbacks = {};
+            this._current_task = this.settings.get_string ("current-task").strip ();
 
             this.settings.changed.connect (this.on_settings_changed);
             this.timezone_monitor.changed.connect (this.on_timezone_changed);
 
             this.update_session_template ();
+        }
+
+        /**
+         * Persist the current task and keep a list of recently used tasks
+         * for suggestions.
+         */
+        private void store_current_task ()
+        {
+            this.settings.set_string ("current-task", this._current_task);
+
+            if (this._current_task == "") {
+                return;
+            }
+
+            string[] task_history = { this._current_task };
+
+            foreach (unowned var task in this.settings.get_strv ("task-history"))
+            {
+                if (task != this._current_task && task != "") {
+                    task_history += task;
+                }
+
+                if (task_history.length >= TASK_HISTORY_LIMIT) {
+                    break;
+                }
+            }
+
+            this.settings.set_strv ("task-history", task_history);
         }
 
         /**
@@ -735,6 +802,13 @@ namespace Ft
                 this._current_time_block = time_block;
                 this._current_gap        = gap;
                 this._current_state      = state;
+
+                if (time_block != null &&
+                    time_block.state == Ft.State.POMODORO &&
+                    time_block.get_task () == "")
+                {
+                    time_block.set_task (this._current_task);
+                }
 
                 this.notify_property ("current-time-block");
 
@@ -1323,6 +1397,7 @@ namespace Ft
                 time_block.set_time_range (time_block_entry.start_time, time_block_entry.end_time);
                 time_block.set_status (Ft.TimeBlockStatus.from_string (time_block_entry.status));
                 time_block.set_intended_duration (time_block_entry.intended_duration);
+                time_block.set_task (time_block_entry.task ?? "");
                 time_block.entry = time_block_entry;
 
                 time_blocks_by_id.insert (time_block_entry.id, time_block);

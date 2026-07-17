@@ -59,6 +59,9 @@
             </child>
           </object>
         </child>
+        <child>
+          <object class="FtTaskBreakdown" id="task_breakdown"/>
+        </child>
       </object>
     </property>
   </template>

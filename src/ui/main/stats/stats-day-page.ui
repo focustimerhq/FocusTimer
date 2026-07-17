@@ -122,6 +122,35 @@
             </child>
           </object><!-- flow-box -->
         </child>
+        <child>
+          <object class="FtTaskBreakdown" id="task_breakdown"/>
+        </child>
+        <child>
+          <object class="GtkBox" id="history_box">
+            <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
+            <property name="visible">false</property>
+            <property name="margin-bottom">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">History</property>
+                <property name="halign">start</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="heading"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkListBox" id="history_listbox">
+                <property name="selection-mode">none</property>
+                <style>
+                  <class name="boxed-list"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
       </object><!-- box -->
     </property>
   </template>

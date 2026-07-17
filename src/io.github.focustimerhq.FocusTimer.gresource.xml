@@ -5,6 +5,7 @@
     <file compressed="true">migrations/version-1.sql</file>
     <file compressed="true">migrations/version-2.sql</file>
     <file compressed="true">migrations/version-3.sql</file>
+    <file compressed="true">migrations/version-4.sql</file>
 
     <!-- UI -->
     <file compressed="true" preprocess="xml-stripblanks">ui/log/log-window.ui</file>

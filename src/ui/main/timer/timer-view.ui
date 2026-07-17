@@ -5,33 +5,44 @@
   <template class="FtTimerView" parent="GtkWidget">
     <child>
       <object class="GtkBox" id="header_box">
-        <property name="spacing">10</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
         <child>
-          <object class="GtkMenuButton" id="state_menubutton">
-            <property name="halign">start</property>
-            <property name="hexpand">true</property>
-            <property name="has-frame">false</property>
-            <style>
-              <class name="title-1"/>
-              <class name="ft-state-menu"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkButton" id="open_screen_overlay_button">
-            <property name="action-name">app.screen-overlay</property>
-            <property name="tooltip-text" translatable="yes">Open screen overlay</property>
-            <style>
-              <class name="flat"/>
-            </style>
+          <object class="GtkBox">
+            <property name="spacing">10</property>
             <child>
-              <object class="GtkImage">
-                <property name="icon-name">screen-overlay-open-symbolic</property>
+              <object class="GtkMenuButton" id="state_menubutton">
+                <property name="halign">start</property>
+                <property name="hexpand">true</property>
+                <property name="has-frame">false</property>
                 <style>
-                  <class name="symbolic"/>
+                  <class name="title-1"/>
+                  <class name="ft-state-menu"/>
                 </style>
               </object>
             </child>
+            <child>
+              <object class="GtkButton" id="open_screen_overlay_button">
+                <property name="action-name">app.screen-overlay</property>
+                <property name="tooltip-text" translatable="yes">Open screen overlay</property>
+                <style>
+                  <class name="flat"/>
+                </style>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">screen-overlay-open-symbolic</property>
+                    <style>
+                      <class name="symbolic"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="FtTaskButton" id="task_button">
+            <property name="halign">start</property>
           </object>
         </child>
       </object>
