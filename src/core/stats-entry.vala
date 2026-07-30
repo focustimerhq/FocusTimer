@@ -18,6 +18,7 @@ namespace Ft
         public int64 duration { get; set; }
         public string category { get; set; }
         public int64 source_id { get; set; default = 0; }
+        public string task { get; set; default = ""; }
 
         static construct
         {
@@ -42,7 +43,8 @@ namespace Ft
                     offset: this.offset,
                     duration: this.duration,
                     category: this.category,
-                    source_id: this.source_id);
+                    source_id: this.source_id,
+                    task: this.task);
         }
     }
 

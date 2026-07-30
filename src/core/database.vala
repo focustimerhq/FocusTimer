@@ -9,7 +9,7 @@ using GLib;
 
 namespace Ft.Database
 {
-    private const uint VERSION = 3;
+    private const uint VERSION = 4;
     private const string MIGRATIONS_URI = "resource:///io/github/focustimerhq/FocusTimer/migrations";
     private const string DATE_FORMAT = "%Y-%m-%d";
 

@@ -45,6 +45,18 @@
       <summary>Pause Pomodoro when screen is locked</summary>
     </key>
 
+    <!-- Tasks -->
+    <key name="current-task" type="s">
+      <default>''</default>
+      <summary>Current task</summary>
+      <description>Name of the task time is currently tracked against. An empty string means no task.</description>
+    </key>
+    <key name="task-history" type="as">
+      <default>[]</default>
+      <summary>Recently used tasks</summary>
+      <description>Recently used task names, most recent first.</description>
+    </key>
+
     <!-- Notifications -->
     <key name="announce-about-to-end" type="b">
       <default>true</default>

@@ -196,6 +196,8 @@ namespace Tests
 
             this.add_test ("track_time_block__pomodoro_1",
                            this.test_track_time_block__pomodoro_1);
+            this.add_test ("track_time_block__task",
+                           this.test_track_time_block__task);
             this.add_test ("track_time_block__pomodoro_2",
                            this.test_track_time_block__pomodoro_2);
             this.add_test ("track_time_block__break",
@@ -585,6 +587,63 @@ namespace Tests
                 assert_cmpvariant (
                         new GLib.Variant.int64 (aggregated_entry.count),
                         new GLib.Variant.int64 (1));
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__task ()
+        {
+            var timestamp = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 7, 0, 0));
+
+            var time_block = new Ft.TimeBlock (Ft.State.POMODORO);
+            time_block.set_time_range (timestamp, timestamp + 5 * Ft.Interval.MINUTE);
+            time_block.set_status (Ft.TimeBlockStatus.COMPLETED);
+            time_block.set_task ("Write report");
+
+            var session = new Ft.Session ();
+            session.append (time_block);
+
+            this.stats_manager.track_time_block (time_block);
+
+            this.run_flush ();
+
+            try {
+                var stats_entry = (Ft.StatsEntry?) this.repository.find_one_sync (
+                        typeof (Ft.StatsEntry), null);
+                assert_cmpstr (
+                        stats_entry.category,
+                        GLib.CompareOperator.EQ,
+                        "pomodoro");
+                assert_cmpstr (
+                        stats_entry.task,
+                        GLib.CompareOperator.EQ,
+                        "Write report");
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+
+            // Re-assigning the time-block to another task should update stats entries.
+            time_block.set_task ("Review patches");
+
+            this.stats_manager.track_time_block (time_block);
+
+            this.run_flush ();
+
+            try {
+                var results = this.repository.find_sync (typeof (Ft.StatsEntry), null);
+                assert_cmpuint (results.count, GLib.CompareOperator.EQ, 1U);
+
+                results.fetch_sync (0U, results.count);
+
+                var stats_entry = (Ft.StatsEntry?) results.get_index (0U);
+                assert_cmpstr (
+                        stats_entry.task,
+                        GLib.CompareOperator.EQ,
+                        "Review patches");
             }
             catch (GLib.Error error) {
                 assert_no_error (error);

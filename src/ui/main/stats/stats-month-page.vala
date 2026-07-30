@@ -26,6 +26,8 @@ namespace Ft
         private unowned Ft.StatsCard interruptions_card;
         [GtkChild]
         private unowned Ft.StatsCard break_ratio_card;
+        [GtkChild]
+        private unowned Ft.TaskBreakdown task_breakdown;
 
         private Ft.StatsManager? stats_manager;
         private GLib.Date        display_start_date;
@@ -66,6 +68,8 @@ namespace Ft
             this.display_start_date = Ft.Timeframe.WEEK.normalize_date (month_start_date);
             this.display_end_date   = Ft.Timeframe.WEEK.normalize_date (month_end_date);
             this.display_end_date.add_days (6U);
+
+            this.task_breakdown.set_range (month_start_date, month_end_date);
 
             this.populate.begin (
                 (obj, res) => {

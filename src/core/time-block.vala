@@ -211,6 +211,7 @@ namespace Ft
         private int                 changed_freeze_count = 0;
         private bool                changed_is_pending = false;
         private Ft.TimeBlockMeta    meta;
+        private string              task = "";
 
         construct
         {
@@ -722,6 +723,22 @@ namespace Ft
             }
         }
 
+        public string get_task ()
+        {
+            return this.task;
+        }
+
+        /**
+         * A task does not affect scheduling, so it does not emit `changed`.
+         */
+        public void set_task (string task)
+        {
+            if (this.task != task) {
+                this.task = task;
+                this.version++;
+            }
+        }
+
 
         /*
          * Database
@@ -765,6 +782,7 @@ namespace Ft
             this.entry.state = this._state.to_string ();
             this.entry.status = this.meta.status.to_string ();
             this.entry.intended_duration = this.meta.intended_duration;
+            this.entry.task = this.task;
             this.entry.version = this.version;
 
             return this.entry;
