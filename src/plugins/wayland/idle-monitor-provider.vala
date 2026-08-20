@@ -203,6 +203,10 @@ namespace Wayland
                         this);
             }
 
+            if (watch_id == 0) {
+                throw new GLib.IOError.FAILED ("Failed to add Wayland idle notification");
+            }
+
             var watch = new Watch ();
             watch.id = watch_id;
             watch.relative_timeout = relative_timeout;
@@ -301,6 +305,10 @@ namespace Wayland
                             null,
                             on_notification_resumed,
                             this);
+                }
+
+                if (this.active_watch_id == 0) {
+                    throw new GLib.IOError.FAILED ("Failed to add Wayland active-watch notification");
                 }
 
                 var active_watch = new Watch ();

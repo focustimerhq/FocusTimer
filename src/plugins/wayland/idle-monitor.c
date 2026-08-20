@@ -146,6 +146,7 @@ ft_wayland_idle_monitor_new (struct wl_display *display,
 
   monitor->display = display;
   monitor->seat = seat;
+  monitor->next_id = 1;
   monitor->watches = g_hash_table_new_full (g_direct_hash,
                                             g_direct_equal,
                                             NULL,
@@ -230,11 +231,6 @@ add_notification_internal (FtWaylandIdleMonitor         *monitor,
                            gboolean                      use_input_idle)
 {
   uint32_t id = monitor->next_id++;
-
-  if (monitor->next_id == 0) {
-    monitor->next_id = 1;
-  }
-
   FtWaylandIdleMonitorWatch *watch = g_new0 (FtWaylandIdleMonitorWatch, 1);
 
   watch->id = id;
