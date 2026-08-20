@@ -190,7 +190,7 @@ namespace Ft
                             watch.external_id = this.provider.reset_idle_watch (watch.external_id, monotonic_time);
                         }
                         catch (GLib.Error error) {
-                            GLib.warning ("Unable to reset an idle-watch: %s", error.message);
+                            GLib.warning ("Unable to reset an idle watch: %s", error.message);
                             return;
                         }
                     }
@@ -231,15 +231,28 @@ namespace Ft
             // Recreate watches with the new provider.
             this.watches.@foreach (
                 (id, watch) => {
-                    try {
-                        watch.external_id = provider.add_idle_watch (
-                                watch.timeout,
-                                watch.ignore_inhibitors && provider.can_ignore_inhibitors,
-                                watch.reference_time);
+                    if (watch.idle_callback != null && watch.external_id == 0)
+                    {
+                        try {
+                            watch.external_id = provider.add_idle_watch (
+                                    watch.timeout,
+                                    watch.ignore_inhibitors && provider.can_ignore_inhibitors,
+                                    watch.reference_time);
+                        }
+                        catch (GLib.Error error) {
+                            GLib.warning ("Error while adding idle watch: %s", error.message);
+                        }
                     }
-                    catch (GLib.Error error) {
-                        GLib.warning ("Error while adding idle watch: %s", error.message);
-                    }
+
+                    if (watch.active_callback != null)
+                    {
+                        try {
+                            provider.add_active_watch ();
+                        }
+                        catch (GLib.Error error) {
+                            GLib.warning ("Error while adding active watch: %s", error.message);
+                        }
+                     }
                 });
         }
 
@@ -296,11 +309,11 @@ namespace Ft
                             monotonic_time);
                 }
                 catch (GLib.Error error) {
-                    GLib.warning ("Unable to add an idle-watch: %s", error.message);
+                    GLib.warning ("Unable to add an idle watch: %s", error.message);
                 }
             }
             else {
-                GLib.debug ("Unable to add an idle-watch: no provider.");
+                GLib.debug ("Unable to add an idle watch: no provider.");
             }
 
             this.watches.insert (watch_id, (owned) watch);
@@ -329,11 +342,11 @@ namespace Ft
                     this.provider.add_active_watch ();
                 }
                 catch (GLib.Error error) {
-                    GLib.warning ("Unable to add an active-watch: %s", error.message);
+                    GLib.warning ("Unable to add an active watch: %s", error.message);
                 }
             }
             else {
-                GLib.debug ("Unable to add an active-watch: no provider.");
+                GLib.debug ("Unable to add an active watch: no provider.");
             }
 
             this.watches.insert (watch_id, (owned) watch);
