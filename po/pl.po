@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20 11:22+0200\n"
+"POT-Creation-Date: 2026-08-21 18:34+0200\n"
 "PO-Revision-Date: 2026-07-20 11:48+0200\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
@@ -61,7 +61,7 @@ msgid "Screen overlay during breaks"
 msgstr "Nakładka ekranowa podczas przerw"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:121
 msgid "System tray icon"
 msgstr "Ikona w zasobniku"
 
@@ -81,115 +81,151 @@ msgstr "Możliwość rozszerzenia przez własne polecenia powłoki, D-Bus i CLI"
 msgid "GNOME Shell extension for deeper desktop integration"
 msgstr "Rozszerzenie GNOME Shell dla głębszej integracji z pulpitem"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:45
-msgid "Kamil Prusko"
-msgstr "Kamil Prusko"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:69
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:68
 #: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:76
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Minutnik"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:73
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:72
 msgid "Daily stats"
 msgstr "Statystyki dzienne"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:77
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:76
 msgid "Monthly stats"
 msgstr "Statystyki miesięczne"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:81
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:80
 #: src/plugins/sni/indicator-provider.vala:301
 #: src/plugins/sni/indicator-provider.vala:307
 #: src/ui/preferences/preferences-window.ui:6
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:85
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:84
 msgid "Screen overlay"
 msgstr "Nakładka ekranowa"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:93
-msgid "Overview of changes in focus-timer 1.1.2:"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:92
+msgid "Overview of changes in focus-timer 1.1.3:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:94
+msgid "Middle-button gesture on timer views"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Deeper integration with notification servers"
+msgid "Option to toggle DND on KDE"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:96
-msgid "Idle detection on Wayland"
+msgid "Increase session expiry timeout to 2 hours"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Improve screensaver detection"
+msgid "Handle CLI timer options while starting the app"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Fix autostart"
+msgid "Improve Global Shortcuts integration"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in focus-timer 1.1.1:"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
+msgid "Improve saving session to database frequently"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-msgid "Smoother sound transitions"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
+msgid "Improve initializing gnome-shell extension"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
+msgid "Fix withdrawing notifications on shutdown"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:102
+msgid "Fix \"variable\" popover in automation panel"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:108
+msgid "Overview of changes in focus-timer 1.1.2:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:110
+msgid "Deeper integration with notification servers"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:111
+msgid "Idle detection on Wayland"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:112
+msgid "Improve screensaver detection"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
+msgid "Fix autostart"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:119
+msgid "Overview of changes in focus-timer 1.1.1:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:122
+msgid "Smoother sound transitions"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
 msgid "Fix break overlay scaling on HiDPI displays"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:109
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:124
 msgid "Fix missing sounds after switching soundcards"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:115
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:130
 msgid "Overview of changes in focus-timer 1.1.0:"
 msgstr "Przegląd zmian w focus-timer 1.1.0:"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:117
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:132
 msgid "Support for GNOME Shell extension"
 msgstr "Wsparcie dla rozszerzenia GNOME Shell"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:118
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:133
 msgid "Option to autostart on login"
 msgstr "Opcja automatycznego uruchamiania przy logowaniu"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:119
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
 msgid "Reviewed sound files"
 msgstr "Zweryfikowane pliki dźwiękowe"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:120
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:135
 msgid "Fix build with vala 0.56.19"
 msgstr "Naprawiono kompatebilność z vala 0.56.19"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:141
 msgid "Overview of changes in focus-timer 1.0:"
 msgstr "Przegląd zmian w focus-timer 1.0:"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:143
 msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
 msgstr ""
 "Naprawiono skalowanie nakładki przerwy na wyświetlaczach HiDPI "
 "(podziękowania dla @scholzri)"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:129
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
 msgid "Automatic daily backup"
 msgstr "Automatyczna codzienna kopia zapasowa"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:130
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
 msgid "Removed libcanberra backend for playing notification sounds"
 msgstr "Usunięto libcanberra do odtwarzania dźwięków powiadomień"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:131
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:146
 msgid "Updated Lithuanian translation (thanks @psukys)"
 msgstr "Zaktualizowano tłumaczenie litewskie (podziękowania dla @psukys)"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:132
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:147
 msgid "Updated Russian translation (thanks @ViktorOn)"
 msgstr "Zaktualizowano tłumaczenie rosyjskie (podziękowania dla @ViktorOn)"
 
@@ -690,7 +726,7 @@ msgid "Time when the countdown has started."
 msgstr "Czas rozpoczęcia odliczania."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:165
 msgid "GNOME Shell Extension"
 msgstr "Rozszerzenie GNOME Shell"
 
@@ -750,7 +786,7 @@ msgid "_Not Now"
 msgstr "_Nie teraz"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:400
+#: src/plugins/gnome/preferences-window-extension.vala:398
 msgid "Something went wrong"
 msgstr "Coś poszło nie tak"
 
@@ -769,17 +805,17 @@ msgid "_Abort"
 msgstr "_Przerwij"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:388
+#: src/plugins/gnome/preferences-window-extension.vala:386
 msgid "Time-out reached"
 msgstr "Osiągnięto limit czasu"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:392
+#: src/plugins/gnome/preferences-window-extension.vala:390
 msgid "Installing extensions is not allowed"
 msgstr "Instalowanie rozszerzeń jest niedozwolone"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:396
+#: src/plugins/gnome/preferences-window-extension.vala:394
 msgid "Failed to download the extension"
 msgstr "Nie udało się pobrać rozszerzenia"
 
@@ -814,35 +850,35 @@ msgstr "Efekt Rozmycia"
 msgid "Dismiss Gesture"
 msgstr "Gest Odrzucenia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:125
-#: src/plugins/kde/preferences-window-extension.vala:83
+#: src/plugins/gnome/preferences-window-extension.vala:123
+#: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: src/plugins/gnome/preferences-window-extension.vala:128
+#: src/plugins/gnome/preferences-window-extension.vala:126
 msgid "Install"
 msgstr "Zainstaluj"
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:133
+#: src/plugins/gnome/preferences-window-extension.vala:131
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: src/plugins/gnome/preferences-window-extension.vala:136
+#: src/plugins/gnome/preferences-window-extension.vala:134
 msgid "Log out to finish the update"
 msgstr "Wyloguj się by zakończyć aktualizację"
 
-#: src/plugins/gnome/preferences-window-extension.vala:154
+#: src/plugins/gnome/preferences-window-extension.vala:152
 msgid "Outdated"
 msgstr "Brak Wsparcia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:173
-#: src/plugins/kde/preferences-window-extension.vala:87
+#: src/plugins/gnome/preferences-window-extension.vala:171
+#: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr "Nie Przeszkadzać"
 
-#: src/plugins/gnome/preferences-window-extension.vala:174
-#: src/plugins/kde/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:172
+#: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer."
 msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika."
 
@@ -866,6 +902,18 @@ msgid ""
 msgstr ""
 "Zezwól na powiadomienia w trybie „Nie przeszkadzać” i wyłącz ich historię, "
 "aby aplikacja działała niezawodnie."
+
+#: src/plugins/mpris/preferences-window-extension.vala:32
+msgid "Media Playback"
+msgstr ""
+
+#: src/plugins/mpris/preferences-window-extension.vala:36
+msgid "Auto-Pause Media"
+msgstr ""
+
+#: src/plugins/mpris/preferences-window-extension.vala:37
+msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
 msgid "Unused"
@@ -1066,7 +1114,7 @@ msgstr "Otwórz nakładkę ekranową"
 msgid "Session has expired"
 msgstr "Sesja wygasła"
 
-#: src/ui/main/timer/widgets/session-progress-bar.vala:1477
+#: src/ui/main/timer/widgets/session-progress-bar.vala:1496
 #, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "Długa przerwa za <b>%s</b>"
@@ -1571,19 +1619,19 @@ msgstr "Długość Długiej Przerwy"
 msgid "Number of Cycles"
 msgstr "Liczba Cykli"
 
-#: src/ui/preferences/timer/preferences-panel-timer.ui:96
+#: src/ui/preferences/timer/preferences-panel-timer.ui:95
 msgid "Behavior"
 msgstr "Zachowanie"
 
-#: src/ui/preferences/timer/preferences-panel-timer.ui:99
+#: src/ui/preferences/timer/preferences-panel-timer.ui:98
 msgid "Pause By Locking The Screen"
 msgstr "Wstrzymaj Odliczanie, Blokując Ekran"
 
-#: src/ui/preferences/timer/preferences-panel-timer.ui:104
+#: src/ui/preferences/timer/preferences-panel-timer.ui:103
 msgid "Confirm Starting a Break"
 msgstr "Potwierdź Rozpoczęcie Przerwy"
 
-#: src/ui/preferences/timer/preferences-panel-timer.ui:109
+#: src/ui/preferences/timer/preferences-panel-timer.ui:108
 msgid "Confirm Starting a Pomodoro"
 msgstr "Potwierdź Rozpoczęcie Pomodoro"
 
@@ -1614,6 +1662,9 @@ msgstr "Zastosuj"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Panel boczny"
+
+#~ msgid "Kamil Prusko"
+#~ msgstr "Kamil Prusko"
 
 #~ msgid "Manage Notifications"
 #~ msgstr "Zarządzaj Powiadomieniami"

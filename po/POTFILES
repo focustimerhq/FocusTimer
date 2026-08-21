@@ -82,6 +82,11 @@ src/plugins/kde/application-extension.vala
 src/plugins/kde/interfaces.vala
 src/plugins/kde/kde.vala
 src/plugins/kde/preferences-window-extension.vala
+src/plugins/mpris/application-extension.vala
+src/plugins/mpris/interfaces.vala
+src/plugins/mpris/mpris.vala
+src/plugins/mpris/player-wrapper.vala
+src/plugins/mpris/preferences-window-extension.vala
 src/plugins/portal/background-provider.vala
 src/plugins/portal/global-shortcuts-provider.vala
 src/plugins/portal/interfaces.vala
