@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-21 18:34+0200\n"
-"PO-Revision-Date: 2026-07-20 11:48+0200\n"
+"PO-Revision-Date: 2026-08-21 18:40+0200\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -905,15 +905,15 @@ msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
 msgid "Media Playback"
-msgstr ""
+msgstr "Odtwarzanie Multimediów"
 
 #: src/plugins/mpris/preferences-window-extension.vala:36
 msgid "Auto-Pause Media"
-msgstr ""
+msgstr "Automatyczne Wstrzymywanie Multimediów"
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
 msgid "Pauses during breaks, resumes at the next Pomodoro."
-msgstr ""
+msgstr "Wstrzymaj odtwarzanie na czas przerwy, wznów przy następnym Pomodoro."
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
 msgid "Unused"
