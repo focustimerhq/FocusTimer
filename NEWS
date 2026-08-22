@@ -1,3 +1,14 @@
+2026-08-22  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 1.1.4:
+
+	* MPRIS integration
+	* Relax Pomodoro completion threshold from 80% to 75%
+	* Relax completion threshold for long breaks
+	* Determine session expiry timeout based on Pomodoro duration
+	* Do not detect activity while on a lock-screen with "Pause By Locking The Screen" off
+	* Fix activity detection after first break
+	* Fix higher CPU usage when opening window in Stats view
+
 2026-07-20  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 1.1.3:
 
