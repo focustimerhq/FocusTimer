@@ -87,7 +87,6 @@ libft_ui = static_library(
     gtk_dep,
     gtk_x11_dep,
     gtk_wayland_dep,
-    cairo_dep,
     graphene_dep,
     libadwaita_dep,
     peas_dep,
