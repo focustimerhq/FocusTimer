@@ -65,18 +65,17 @@ Find a community-maintained package in your distro repos:
 #### Fedora
 
 ```bash
-sudo dnf install gnome-pomodoro
+sudo dnf install focus-timer
+sudo dnf install gnome-shell-extension-focus-timer
 ```
+
+*Thanks to [Ankur Sinha](https://github.com/sanjayankur31) for maintaining the packages.*
 
 #### Arch Linux
 
 Install `gnome-shell-pomodoro` from the [AUR](https://aur.archlinux.org/packages/gnome-shell-pomodoro).
 
-#### OpenSUSE
-
-```bash
-sudo zypper install gnome-pomodoro
-```
+*Thanks to [Liam Timms](https://github.com/liamtimms) for maintaining the package.*
 
 ### Building from source
 
