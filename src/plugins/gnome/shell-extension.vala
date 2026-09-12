@@ -19,8 +19,9 @@ namespace Gnome
     public class ShellExtension : GLib.Object
     {
         public const string EXTENSION_UUID = "focus-timer@focustimerhq.github.io";
+        public const string EXTENSION_URL = "https://github.com/focustimerhq/gnome-shell-extension-focus-timer";
 
-        // When published we suggest to install it
+        // When published, show InstallExtensionDialog
         public const bool IS_PUBLISHED = false;
 
         [CCode (notify = false)]
