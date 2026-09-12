@@ -733,10 +733,7 @@ namespace Ft
             this.logger                 = new Ft.Logger ();
             this.indicator              = new Ft.Indicator ();
             this.screensaver            = new Ft.ScreenSaver ();
-
-            #if ENABLE_AUTOMATION
-            this.action_manager = new Ft.ActionManager ();
-            #endif
+            this.action_manager         = new Ft.ActionManager ();
 
             this.sound_manager = this.settings.get_boolean ("sounds")
                     ? new Ft.SoundManager ()

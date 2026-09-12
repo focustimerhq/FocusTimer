@@ -26,6 +26,7 @@ libft_core_sources = files(
   'notification.vala',
   'notification-backend.vala',
   'notification-manager.vala',
+  'permissions.vala',
   'priority.vala',
   'provided-object.vala',
   'provider.vala',

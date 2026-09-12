@@ -73,14 +73,12 @@ namespace Ft
         panel_info.content_class = typeof (Ft.PreferencesPanelIntegrations);
         model.append (panel_info);
 
-        #if ENABLE_AUTOMATION
         panel_info = new PreferencesPanelInfo ();
         panel_info.name = "automation";
         panel_info.title = _("Automation");
         panel_info.icon_name = "custom-action-symbolic";
         panel_info.content_class = typeof (Ft.PreferencesPanelAutomation);
         model.append (panel_info);
-        #endif
 
         return new Gtk.SingleSelection ((owned) model);
     }

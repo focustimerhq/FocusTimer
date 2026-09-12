@@ -34,6 +34,7 @@
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/action/condition-group-widget.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/action/condition-widget.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/action/variable-popover.ui</file>
+    <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/permissions-dialog.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/automation/preferences-panel-automation.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/integrations/preferences-panel-integrations.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/preferences/keyboard-shortcuts/accelerator-row.ui</file>
@@ -68,6 +69,7 @@
     <file preprocess="xml-stripblanks">icons/24x24/actions/timer-stop-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/condition-enter-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/condition-exit-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/copy-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/custom-action-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/dark-theme-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/document-edit-symbolic.svg</file>

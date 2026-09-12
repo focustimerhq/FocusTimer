@@ -20,18 +20,32 @@
           </object>
         </child>
         <property name="content">
-          <object class="AdwPreferencesPage" id="page">
-            <property name="description" translatable="yes"><![CDATA[Run shell commands automatically on timer events or conditions. <a href="">Learn more.</a>]]></property>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
             <child>
-              <object class="AdwPreferencesGroup">
+              <object class="AdwBanner" id="permissions_banner">
+                <property name="title" translatable="yes">Extra permissions are needed to run commands</property>
+                <property name="button-label" translatable="yes">Learn More</property>
+                <property name="button-style">suggested</property>
+                <property name="revealed">false</property>
+                <signal name="button-clicked" handler="on_permissions_banner_button_clicked"/>
+              </object>
+            </child>
+            <child>
+              <object class="AdwPreferencesPage" id="page">
+                <property name="description" translatable="yes"><![CDATA[Run shell commands automatically on timer events or conditions. <a href="">Learn more.</a>]]></property>
                 <child>
-                  <object class="AdwPreferencesRow" id="add_row">
-                    <property name="activatable">true</property>
-                    <property name="selectable">false</property>
+                  <object class="AdwPreferencesGroup">
                     <child>
-                      <object class="GtkImage">
-                        <property name="icon-name">list-add-symbolic</property>
-                        <property name="height-request">50</property>
+                      <object class="AdwPreferencesRow" id="add_row">
+                        <property name="activatable">true</property>
+                        <property name="selectable">false</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">list-add-symbolic</property>
+                            <property name="height-request">50</property>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>

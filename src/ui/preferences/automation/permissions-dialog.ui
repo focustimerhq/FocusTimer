@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <template class="FtPermissionsDialog" parent="AdwDialog">
+    <property name="title" translatable="yes">Extra permissions needed for Custom Actions</property>
+    <property name="presentation-mode">auto</property>
+    <property name="follows-content-size">false</property>
+    <property name="content-width">680</property>
+    <property name="child">
+      <object class="AdwToastOverlay" id="toast_overlay">
+        <property name="child">
+          <object class="AdwToolbarView">
+            <property name="extend-content-to-top-edge">true</property>
+            <child type="top">
+              <object class="AdwHeaderBar" id="content_headerbar">
+                <property name="show-title">false</property>
+              </object>
+            </child>
+            <property name="content">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">8</property>
+                <property name="margin-start">32</property>
+                <property name="margin-end">32</property>
+                <property name="margin-top">32</property>
+                <property name="margin-bottom">32</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Extra permissions needed to run commands</property>
+                    <property name="xalign">0.0</property>
+                    <property name="wrap">true</property>
+                    <property name="margin-bottom">8</property>
+                    <style>
+                      <class name="title-2"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Custom Actions run shell commands, requiring access outside the Flatpak sandbox. Grant this only if you understand your commands and trust Focus Timer — it allows arbitrary command execution.</property>
+                    <property name="justify">fill</property>
+                    <property name="xalign">0.0</property>
+                    <property name="wrap">true</property>
+                    <property name="margin-bottom">12</property>
+                    <style>
+                      <class name="body"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes"><![CDATA[In <a href="https://flathub.org/apps/com.github.tchx84.Flatseal">Flatseal</a>, under <b>Session Bus</b> section, add:]]></property>
+                    <property name="use-markup">true</property>
+                    <property name="xalign">0.0</property>
+                    <style>
+                      <class name="body"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="margin-bottom">12</property>
+                    <child>
+                      <object class="GtkBox">
+                        <child>
+                          <object class="GtkLabel" id="talk_name_label">
+                            <property name="label">org.freedesktop.Flatpak</property>
+                            <property name="hexpand">true</property>
+                            <property name="xalign">0.0</property>
+                            <style>
+                              <class name="monospace"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">copy-symbolic</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="copy-area"/>
+                    </style>
+                    <signal name="clicked" handler="on_talk_name_button_clicked"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">or via Terminal:</property>
+                    <property name="xalign">0.0</property>
+                    <style>
+                      <class name="body"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="margin-bottom">12</property>
+                    <child>
+                      <object class="GtkBox">
+                        <child>
+                          <object class="GtkLabel" id="command_label">
+                            <property name="hexpand">true</property>
+                            <property name="xalign">0.0</property>
+                            <property name="wrap">true</property>
+                            <style>
+                              <class name="monospace"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="icon-name">copy-symbolic</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="copy-area"/>
+                    </style>
+                    <signal name="clicked" handler="on_command_button_clicked"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Restart Focus Timer for the change to take effect.</property>
+                    <property name="justify">fill</property>
+                    <property name="xalign">0.0</property>
+                    <property name="wrap">true</property>
+                    <style>
+                      <class name="body"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

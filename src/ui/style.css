@@ -686,3 +686,12 @@ dialog.about .icon-dropshadow {
 .tooltip-header {
     font-weight: bold;
 }
+
+button.copy-area {
+    font-weight: inherit;
+    padding: 0.66rem 0.9rem;
+}
+
+.copy-area .monospace {
+    font-size: inherit;
+}

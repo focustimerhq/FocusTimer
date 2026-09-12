@@ -100,10 +100,6 @@ if gtk_wayland_dep.found()
   add_project_arguments(['-D', 'HAVE_GDK_WAYLAND'], language: 'vala')
 endif
 
-if get_option('automation').enabled()
-  add_project_arguments(['-D', 'ENABLE_AUTOMATION'], language: 'vala')
-endif
-
 if get_option('profile') == 'development'
   add_project_arguments(['--enable-checking'], language: 'vala')
 endif
@@ -213,13 +209,5 @@ summary(
     'xfce': get_option('plugin_xfce').enabled(),
   },
   section: 'Plugins',
-  bool_yn: true,
-)
-
-summary(
-  {
-    'automation': get_option('automation').enabled(),
-  },
-  section: 'Features',
   bool_yn: true,
 )

@@ -13,6 +13,8 @@ namespace Ft
         private unowned Adw.PreferencesPage page;
         [GtkChild]
         private unowned Adw.PreferencesRow add_row;
+        [GtkChild]
+        private unowned Adw.Banner permissions_banner;
 
         private Ft.ActionManager?                                    action_manager = null;
         private GLib.HashTable<string, unowned Ft.ActionListBoxRow>? rows = null;
@@ -31,6 +33,8 @@ namespace Ft
             this.listbox.selection_mode = Gtk.SelectionMode.NONE;
             this.listbox.set_sort_func (sort_func);
             this.listbox.row_activated.connect (this.on_listbox_row_activated);
+
+            this.permissions_banner.revealed = !Ft.Permissions.allow_commands ();
 
             this.update ();
         }
@@ -141,6 +145,14 @@ namespace Ft
             this.action_manager.model.move_action (row.action.uuid, destination_row.sort_order);
 
             this.update ();
+        }
+
+        [GtkCallback]
+        private void on_permissions_banner_button_clicked (Adw.Banner banner)
+        {
+            var permissions_dialog = new Ft.PermissionsDialog ();
+
+            permissions_dialog.present (this.get_root () as Adw.ApplicationWindow);
         }
 
         public override unowned Adw.PreferencesPage get_preferences_page ()

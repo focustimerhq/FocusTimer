@@ -9,12 +9,6 @@ option(
   description: 'The build profile for Focus Timer. One of "default" or "development".'
 )
 option(
-  'automation',
-  type: 'feature',
-  value: 'enabled',
-  description: 'Enable Automation panel.'
-)
-option(
   'plugin_gnome',
   type: 'feature',
   value: 'enabled',

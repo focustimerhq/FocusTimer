@@ -53,6 +53,7 @@ libft_ui_sources = files(
   'ui/preferences/automation/action/condition-group-widget.vala',
   'ui/preferences/automation/action/condition-widget.vala',
   'ui/preferences/automation/action/variable-popover.vala',
+  'ui/preferences/automation/permissions-dialog.vala',
   'ui/preferences/automation/preferences-panel-automation.vala',
   'ui/preferences/integrations/preferences-panel-integrations.vala',
   'ui/preferences/keyboard-shortcuts/accelerator-row.vala',
