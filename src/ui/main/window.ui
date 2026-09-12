@@ -5,7 +5,7 @@
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">_Compact View</attribute>
+        <attribute name="label" translatable="yes">_Compact Mode</attribute>
         <attribute name="verb-icon">window-compact-size-symbolic</attribute>
         <attribute name="action">win.toggle-compact-size</attribute>
       </item>

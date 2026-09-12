@@ -14,7 +14,7 @@ namespace Ft
         [GtkChild]
         private unowned Adw.SwitchRow dark_theme_switchrow;
         [GtkChild]
-        private unowned Adw.SwitchRow compact_view_switchrow;
+        private unowned Adw.SwitchRow compact_mode_switchrow;
 
         private GLib.Settings? settings = null;
 
@@ -26,7 +26,7 @@ namespace Ft
                                 "active",
                                 GLib.SettingsBindFlags.DEFAULT);
             this.settings.bind ("prefer-compact-size",
-                                this.compact_view_switchrow,
+                                this.compact_mode_switchrow,
                                 "active",
                                 GLib.SettingsBindFlags.DEFAULT);
         }
