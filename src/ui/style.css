@@ -687,11 +687,11 @@ dialog.about .icon-dropshadow {
     font-weight: bold;
 }
 
-button.copy-area {
+button.copy-block {
     font-weight: inherit;
     padding: 0.66rem 0.9rem;
 }
 
-.copy-area .monospace {
+button.copy-block .monospace {
     font-size: inherit;
 }

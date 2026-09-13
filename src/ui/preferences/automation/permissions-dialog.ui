@@ -30,7 +30,7 @@
                     <property name="label" translatable="yes">Extra permissions needed to run commands</property>
                     <property name="xalign">0.0</property>
                     <property name="wrap">true</property>
-                    <property name="margin-bottom">8</property>
+                    <property name="margin-bottom">4</property>
                     <style>
                       <class name="title-2"/>
                     </style>
@@ -39,10 +39,9 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Custom Actions run shell commands, requiring access outside the Flatpak sandbox. Grant this only if you understand your commands and trust Focus Timer — it allows arbitrary command execution.</property>
-                    <property name="justify">fill</property>
                     <property name="xalign">0.0</property>
                     <property name="wrap">true</property>
-                    <property name="margin-bottom">12</property>
+                    <property name="margin-bottom">8</property>
                     <style>
                       <class name="body"/>
                     </style>
@@ -60,7 +59,7 @@
                 </child>
                 <child>
                   <object class="GtkButton">
-                    <property name="margin-bottom">12</property>
+                    <property name="margin-bottom">4</property>
                     <child>
                       <object class="GtkBox">
                         <child>
@@ -81,14 +80,14 @@
                       </object>
                     </child>
                     <style>
-                      <class name="copy-area"/>
+                      <class name="copy-block"/>
                     </style>
                     <signal name="clicked" handler="on_talk_name_button_clicked"/>
                   </object>
                 </child>
                 <child>
                   <object class="GtkLabel">
-                    <property name="label" translatable="yes">or via Terminal:</property>
+                    <property name="label" translatable="yes">or via terminal:</property>
                     <property name="xalign">0.0</property>
                     <style>
                       <class name="body"/>
@@ -118,7 +117,7 @@
                       </object>
                     </child>
                     <style>
-                      <class name="copy-area"/>
+                      <class name="copy-block"/>
                     </style>
                     <signal name="clicked" handler="on_command_button_clicked"/>
                   </object>
@@ -126,7 +125,6 @@
                 <child>
                   <object class="GtkLabel">
                     <property name="label" translatable="yes">Restart Focus Timer for the change to take effect.</property>
-                    <property name="justify">fill</property>
                     <property name="xalign">0.0</property>
                     <property name="wrap">true</property>
                     <style>

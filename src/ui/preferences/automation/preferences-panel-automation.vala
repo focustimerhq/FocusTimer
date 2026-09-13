@@ -34,7 +34,7 @@ namespace Ft
             this.listbox.set_sort_func (sort_func);
             this.listbox.row_activated.connect (this.on_listbox_row_activated);
 
-            this.permissions_banner.revealed = !Ft.Permissions.allow_commands ();
+            this.permissions_banner.revealed = !Ft.Permissions.allow_commands () || Ft.is_devel ();
 
             this.update ();
         }

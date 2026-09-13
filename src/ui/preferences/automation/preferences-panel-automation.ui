@@ -24,7 +24,7 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="AdwBanner" id="permissions_banner">
-                <property name="title" translatable="yes">Extra permissions are needed to run commands</property>
+                <property name="title" translatable="yes">Extra permissions needed to run commands</property>
                 <property name="button-label" translatable="yes">Learn More</property>
                 <property name="button-style">suggested</property>
                 <property name="revealed">false</property>
@@ -33,7 +33,7 @@
             </child>
             <child>
               <object class="AdwPreferencesPage" id="page">
-                <property name="description" translatable="yes"><![CDATA[Run shell commands automatically on timer events or conditions. <a href="">Learn more.</a>]]></property>
+                <property name="description" translatable="yes"><![CDATA[Run shell commands automatically on timer events or conditions.]]></property>
                 <child>
                   <object class="AdwPreferencesGroup">
                     <child>

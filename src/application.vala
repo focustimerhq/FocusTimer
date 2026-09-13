@@ -389,6 +389,10 @@ namespace Ft
                 preferences_window.select_panel (panel_name);
             }
 
+            if (Ft.is_devel ()) {
+                preferences_window.add_css_class ("devel");
+            }
+
             preferences_window.present ();
         }
 
