@@ -99,6 +99,7 @@ namespace Ft
 
                 this.size_stack.visible_child_name = value.to_string ();
                 this.notify_property ("size");
+                this.update_size_actions ();
             }
         }
 
@@ -140,6 +141,7 @@ namespace Ft
         private Ft.TimerActionGroup?    timer_action_group = null;
         private Ft.BackgroundManager?   background_manager = null;
         private Peas.ExtensionSet?      extensions = null;
+        private Gtk.PopoverMenu?        primary_menu_popover = null;
         private static uint             background_hold_id = 0U;
 
         construct
@@ -195,6 +197,45 @@ namespace Ft
 
             timer_page.needs_attention = this.view_stack.visible_child != timer_page.child &&
                                          timer.is_started ();
+        }
+
+        private void update_size_actions ()
+        {
+            var compact_size_action = this.lookup_action ("compact-size") as GLib.SimpleAction;
+            var toggle_compact_size_action =
+                    this.lookup_action ("toggle-compact-size") as GLib.SimpleAction;
+            var can_change_size = !this.maximized;
+
+            if (compact_size_action == null || toggle_compact_size_action == null) {
+                return;
+            }
+
+            compact_size_action.set_enabled (can_change_size);
+            toggle_compact_size_action.set_enabled (can_change_size);
+
+            this.update_primary_menu ();
+        }
+
+        private void update_primary_menu ()
+        {
+            var primary_menu = this.primary_menu_popover?.menu_model as GLib.Menu;
+            var size_section = primary_menu?.get_item_link (0, GLib.Menu.LINK_SECTION) as GLib.Menu;
+
+            if (size_section == null) {
+                return;
+            }
+
+            var is_compact = this._size == Ft.WindowSize.COMPACT;
+            var toggle_compact_size_item = new GLib.MenuItem (
+                    is_compact ? _("_Full Mode") : _("_Compact Mode"),
+                    "win.toggle-compact-size");
+            toggle_compact_size_item.set_attribute (
+                    "verb-icon",
+                    "s",
+                    is_compact ? "window-normal-size-symbolic" : "window-compact-size-symbolic");
+
+            size_section.remove (0);
+            size_section.insert_item (0, toggle_compact_size_item);
         }
 
         public Ft.WindowView get_default_view ()
@@ -336,6 +377,27 @@ namespace Ft
             this.update_timer_indicator ();
         }
 
+        private void popup_primary_menu (Gtk.Widget relative_to,
+                                         double     x,
+                                         double     y)
+        {
+            var widget_point = Graphene.Point ();
+            widget_point.init ((float) x, (float) y);
+
+            var window_point = Graphene.Point ();
+            if (!relative_to.compute_point (this, widget_point, out window_point)) {
+                window_point.init ((float) x, (float) y);
+            }
+
+            this.primary_menu_popover.set_pointing_to (Gdk.Rectangle () {
+                x = (int) window_point.x,
+                y = (int) window_point.y,
+                width = 1,
+                height = 1
+            });
+            this.primary_menu_popover.popup ();
+        }
+
         [GtkCallback]
         private void on_gesture_click_pressed (Gtk.GestureClick gesture,
                                                int              n_press,
@@ -344,17 +406,31 @@ namespace Ft
         {
             var toggle_compact_size_action = this.lookup_action ("toggle-compact-size");
 
-            if (toggle_compact_size_action.enabled &&
-                gesture.get_current_button () == Gdk.BUTTON_PRIMARY &&
-                n_press == 2)
+            switch (gesture.get_current_button ())
             {
-                toggle_compact_size_action.activate (null);
-                gesture.set_state (Gtk.EventSequenceState.CLAIMED);
-            }
+                case Gdk.BUTTON_PRIMARY:
+                    if (n_press == 2 && toggle_compact_size_action.enabled) {
+                        toggle_compact_size_action.activate (null);
+                        gesture.set_state (Gtk.EventSequenceState.CLAIMED);
+                    }
+                    break;
 
-            if (gesture.get_current_button () == Gdk.BUTTON_MIDDLE && n_press == 1) {
-                this.timer_action_group?.activate_action ("start-pause-resume", null);
-                gesture.set_state (Gtk.EventSequenceState.CLAIMED);
+                case Gdk.BUTTON_SECONDARY:
+                    if (n_press == 1 && this.size == Ft.WindowSize.COMPACT) {
+                        this.popup_primary_menu (gesture.widget, x, y);
+                        gesture.set_state (Gtk.EventSequenceState.CLAIMED);
+                    }
+                    break;
+
+                case Gdk.BUTTON_MIDDLE:
+                    if (n_press == 1) {
+                        this.timer_action_group?.activate_action ("start-pause-resume", null);
+                        gesture.set_state (Gtk.EventSequenceState.CLAIMED);
+                    }
+                    break;
+
+                default:
+                    break;
             }
         }
 
@@ -390,14 +466,7 @@ namespace Ft
         private void on_notify_maximized (GLib.Object    object,
                                           GLib.ParamSpec pspec)
         {
-            var can_change_size = !this.maximized;
-
-            var compact_size_action = (GLib.SimpleAction) this.lookup_action ("compact-size");
-            compact_size_action.set_enabled (can_change_size);
-
-            var toggle_compact_size_action =
-                    (GLib.SimpleAction) this.lookup_action ("toggle-compact-size");
-            toggle_compact_size_action.set_enabled (can_change_size);
+            this.update_size_actions ();
         }
 
         private void on_compact_size_activate (GLib.SimpleAction action,
@@ -452,15 +521,31 @@ namespace Ft
             var toggle_compact_size_action = new GLib.SimpleAction ("toggle-compact-size", null);
             toggle_compact_size_action.activate.connect (this.on_toggle_compact_size_activate);
             action_map.add_action (toggle_compact_size_action);
+
+            this.update_size_actions ();
         }
 
         public void parser_finished (Gtk.Builder builder)
         {
             this.setup_actions ();
+
+            var primary_menu = builder.get_object ("primary_menu") as GLib.Menu;
+
+            this.primary_menu_popover = new Gtk.PopoverMenu.from_model (primary_menu);
+            this.primary_menu_popover.has_arrow = false;
+            this.primary_menu_popover.halign = Gtk.Align.START;
+            this.primary_menu_popover.set_parent (this);
+
+            this.update_primary_menu ();
         }
 
         public override void dispose ()
         {
+            if (this.primary_menu_popover != null) {
+                this.primary_menu_popover.unparent ();
+                this.primary_menu_popover = null;
+            }
+
             this.extensions = null;
             this.background_manager = null;
             this.timer_action_group = null;
