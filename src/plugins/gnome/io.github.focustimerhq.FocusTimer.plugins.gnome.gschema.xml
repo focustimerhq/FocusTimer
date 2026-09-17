@@ -1,0 +1,9 @@
+<schemalist>
+  <schema id="io.github.focustimerhq.FocusTimer.plugins.gnome" path="/io/github/focustimerhq/FocusTimer/plugins/gnome/">
+    <key name="last-toast-dismissed-time" type="x">
+      <default>0</default>
+      <summary>Last time install-extension toast was dismissed</summary>
+      <description>UNIX timestamp in seconds representing the last time the toast for installing the extension was dismissed.</description>
+    </key>
+  </schema>
+</schemalist>

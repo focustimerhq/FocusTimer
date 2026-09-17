@@ -26,4 +26,21 @@ if get_option('plugin_gnome').enabled()
   )
 
   libft_plugins += [libft_plugin_gnome]
+
+  # GSchema
+  install_data(
+    'io.github.focustimerhq.FocusTimer.plugins.gnome.gschema.xml',
+    install_dir: gschema_dir,
+  )
+
+  compile_schemas = find_program('glib-compile-schemas', required: false)
+  if compile_schemas.found()
+    test('Validate gnome schema file', compile_schemas,
+      args: ['--strict', '--dry-run', meson.current_source_dir()]
+    )
+  endif
+
+  compiled_schemas = gnome.compile_schemas(
+    depend_files: 'io.github.focustimerhq.FocusTimer.plugins.gnome.gschema.xml'
+  )
 endif

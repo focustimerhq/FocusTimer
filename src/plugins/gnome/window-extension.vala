@@ -8,12 +8,17 @@ namespace Gnome
 {
     public class WindowExtension : Ft.WindowExtension
     {
-        private Gnome.ShellExtension? shell_extension = null;
-        private Adw.Toast?            extension_toast = null;
-        private static bool           extension_toast_dismissed = false;
+        private const int64 EXTENSION_AVAILABLE_TOAST_INTERVAL = Ft.Interval.DAY * 14;
+
+        private GLib.Settings?          settings = null;
+        private Gnome.ShellExtension?   shell_extension = null;
+        private Adw.Toast?              extension_toast = null;
+        private static bool             extension_toast_dismissed = false;
 
         construct
         {
+            this.settings = new GLib.Settings ("io.github.focustimerhq.FocusTimer.plugins.gnome");
+
             this.shell_extension = new Gnome.ShellExtension ();
             this.shell_extension.notify["available"].connect (this.on_extension_notify_available);
 
@@ -89,15 +94,30 @@ namespace Gnome
             this.window.add_toast (toast);
         }
 
+        private bool should_show_extension_available_toast ()
+        {
+            if (!this.shell_extension.available || this.shell_extension.is_installed ()) {
+                return false;
+            }
+
+            var now = Ft.Timestamp.from_now ();
+            var last_dismissed_date_time = this.settings.get_int64 (
+                    "last-toast-dismissed-time").clamp (0, now / Ft.Interval.SECOND);
+            if (last_dismissed_date_time <= 0) {
+                return true;
+            }
+
+            return now - last_dismissed_date_time * Ft.Interval.SECOND >=
+                   EXTENSION_AVAILABLE_TOAST_INTERVAL;
+        }
+
         private void update_extension_toast ()
         {
             if (this.window == null || !this.window.get_mapped ()) {
                 return;
             }
 
-            if (this.shell_extension.available &&
-                !this.shell_extension.is_installed ())
-            {
+            if (this.should_show_extension_available_toast ()) {
                 this.show_extension_available_toast ();
             }
             else if (this.shell_extension.available &&
@@ -136,6 +156,9 @@ namespace Gnome
         private void on_extension_toast_dismissed (Adw.Toast toast)
         {
             this.extension_toast = null;
+            this.settings.set_int64 (
+                    "last-toast-dismissed-time",
+                    Ft.Timestamp.from_now () / Ft.Interval.SECOND);
 
             Gnome.WindowExtension.extension_toast_dismissed = true;
         }
@@ -152,6 +175,7 @@ namespace Gnome
             }
 
             this.extension_toast = null;
+            this.settings = null;
 
             base.dispose ();
         }
