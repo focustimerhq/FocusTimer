@@ -24,6 +24,7 @@
             <property name="name">placeholder</property>
             <property name="child">
               <object class="AdwNavigationPage">
+                <property name="title">Empty Log</property>
                 <property name="child">
                   <object class="AdwToolbarView">
                     <child type="top">
@@ -112,6 +113,7 @@
                 </property>
                 <property name="content">
                   <object class="AdwNavigationPage">
+                    <property name="title">Details</property>
                     <property name="child">
                       <object class="AdwToolbarView">
                         <style>
