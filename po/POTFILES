@@ -28,6 +28,7 @@ src/core/matrix.vala
 src/core/notification-backend.vala
 src/core/notification-manager.vala
 src/core/notification.vala
+src/core/permissions.vala
 src/core/priority.vala
 src/core/provided-object.vala
 src/core/provider-set.vala
@@ -172,6 +173,8 @@ src/ui/preferences/automation/action/condition-widget.ui
 src/ui/preferences/automation/action/condition-widget.vala
 src/ui/preferences/automation/action/variable-popover.ui
 src/ui/preferences/automation/action/variable-popover.vala
+src/ui/preferences/automation/permissions-dialog.ui
+src/ui/preferences/automation/permissions-dialog.vala
 src/ui/preferences/automation/preferences-panel-automation.ui
 src/ui/preferences/automation/preferences-panel-automation.vala
 src/ui/preferences/integrations/preferences-panel-integrations.ui

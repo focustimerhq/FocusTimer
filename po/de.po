@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-21 18:34+0200\n"
+"POT-Creation-Date: 2026-09-20 10:53+0200\n"
 "PO-Revision-Date: 2025-04-16 13:24+0200\n"
 "Last-Translator: Philipp Kiemle <l10n@prly.mozmail.com>\n"
 "Language-Team: German\n"
@@ -68,7 +68,7 @@ msgid "Screen overlay during breaks"
 msgstr "Bildschirmüberlagerung während der Pausen"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:121
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:147
 msgid "System tray icon"
 msgstr ""
 
@@ -118,132 +118,190 @@ msgid "Screen overlay"
 msgstr "Bildschirmüberlagerung"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:92
-msgid "Overview of changes in focus-timer 1.1.3:"
+msgid "Overview of changes in focus-timer 1.1.5:"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:94
-msgid "Middle-button gesture on timer views"
+msgid "Added a dialog for installing the GNOME Shell extension"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Option to toggle DND on KDE"
+msgid "Automation panel is now available in the Flatpak version"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:96
-msgid "Increase session expiry timeout to 2 hours"
+msgid "Added a right-click context menu in compact mode"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Handle CLI timer options while starting the app"
+msgid "Updated runtime to GNOME 51"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Improve Global Shortcuts integration"
+msgid "Removed dependency on cairo"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:99
-msgid "Improve saving session to database frequently"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
+msgid "Overview of changes in focus-timer 1.1.4:"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:100
-msgid "Improve initializing gnome-shell extension"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
+msgid "MPRIS integration"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:101
-msgid "Fix withdrawing notifications on shutdown"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:102
-msgid "Fix \"variable\" popover in automation panel"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
+msgid "Relax Pomodoro completion threshold from 80% to 75%"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:108
-msgid "Overview of changes in focus-timer 1.1.2:"
+msgid "Relax completion threshold for long breaks"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:109
+msgid "Determine session expiry timeout based on Pomodoro duration"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:110
-msgid "Deeper integration with notification servers"
+msgid ""
+"Do not detect activity while on a lock-screen with \"Pause By Locking The "
+"Screen\" off"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:111
-msgid "Idle detection on Wayland"
+msgid "Fix activity detection after first break"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:112
-msgid "Improve screensaver detection"
+msgid "Fix higher CPU usage when opening window in Stats view"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:113
-msgid "Fix autostart"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:118
+msgid "Overview of changes in focus-timer 1.1.3:"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:119
-msgid "Overview of changes in focus-timer 1.1.1:"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:120
+msgid "Middle-button gesture on timer views"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:121
+msgid "Option to toggle DND on KDE"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:122
-msgid "Smoother sound transitions"
+msgid "Increase session expiry timeout to 2 hours"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Fix break overlay scaling on HiDPI displays"
+msgid "Handle CLI timer options while starting the app"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:124
-msgid "Fix missing sounds after switching soundcards"
+msgid "Improve Global Shortcuts integration"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:130
-msgid "Overview of changes in focus-timer 1.1.0:"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
+msgid "Improve saving session to database frequently"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:132
-msgid "Support for GNOME Shell extension"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
+msgid "Improve initializing gnome-shell extension"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:133
-msgid "Option to autostart on login"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
+msgid "Fix withdrawing notifications on shutdown"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
+msgid "Fix \"variable\" popover in automation panel"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Reviewed sound files"
+msgid "Overview of changes in focus-timer 1.1.2:"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:135
-msgid "Fix build with vala 0.56.19"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
+msgid "Deeper integration with notification servers"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:141
-msgid "Overview of changes in focus-timer 1.0:"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:137
+msgid "Idle detection on Wayland"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:143
-msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:138
+msgid "Improve screensaver detection"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:144
-msgid "Automatic daily backup"
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:139
+msgid "Fix autostart"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
+msgid "Overview of changes in focus-timer 1.1.1:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:148
+msgid "Smoother sound transitions"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:149
+msgid "Fix break overlay scaling on HiDPI displays"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:150
+msgid "Fix missing sounds after switching soundcards"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:156
+msgid "Overview of changes in focus-timer 1.1.0:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:158
+msgid "Support for GNOME Shell extension"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:159
+msgid "Option to autostart on login"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:160
+msgid "Reviewed sound files"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:161
+msgid "Fix build with vala 0.56.19"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:167
+msgid "Overview of changes in focus-timer 1.0:"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:169
+msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:170
+msgid "Automatic daily backup"
+msgstr ""
+
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:171
 msgid "Removed libcanberra backend for playing notification sounds"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:146
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:172
 msgid "Updated Lithuanian translation (thanks @psukys)"
 msgstr ""
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:147
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:173
 msgid "Updated Russian translation (thanks @ViktorOn)"
 msgstr ""
 
-#: src/application.vala:173 src/application.vala:650
+#: src/application.vala:173 src/application.vala:654
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 #, fuzzy
 msgid "Start or Stop"
 msgstr "Starten oder Stoppen"
 
-#: src/application.vala:176 src/application.vala:653
+#: src/application.vala:176 src/application.vala:657
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 #, fuzzy
 msgid "Start, Pause or Resume"
@@ -271,13 +329,13 @@ msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:191 src/application.vala:655 src/core/event.vala:268
+#: src/application.vala:191 src/application.vala:659 src/core/event.vala:268
 #: src/plugins/sni/indicator-provider.vala:251
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:75
 msgid "Start"
 msgstr "Start"
 
-#: src/application.vala:194 src/application.vala:657 src/core/event.vala:276
+#: src/application.vala:194 src/application.vala:661 src/core/event.vala:276
 #: src/plugins/sni/indicator-provider.vala:263
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:81
@@ -285,14 +343,14 @@ msgstr "Start"
 msgid "Stop"
 msgstr "Stopp"
 
-#: src/application.vala:197 src/application.vala:659 src/core/event.vala:284
+#: src/application.vala:197 src/application.vala:663 src/core/event.vala:284
 #: src/plugins/sni/indicator-provider.vala:254
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:87
 msgid "Pause"
 msgstr "Pause"
 
-#: src/application.vala:200 src/application.vala:661 src/core/event.vala:292
+#: src/application.vala:200 src/application.vala:665 src/core/event.vala:292
 #: src/plugins/sni/indicator-provider.vala:257
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:93
@@ -300,13 +358,13 @@ msgstr "Pause"
 msgid "Resume"
 msgstr "Fortsetzen"
 
-#: src/application.vala:203 src/application.vala:663 src/core/event.vala:300
+#: src/application.vala:203 src/application.vala:667 src/core/event.vala:300
 #: src/plugins/sni/indicator-provider.vala:266
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:99
 msgid "Skip"
 msgstr "Überspringen"
 
-#: src/application.vala:206 src/application.vala:665 src/core/event.vala:308
+#: src/application.vala:206 src/application.vala:669 src/core/event.vala:308
 #, fuzzy
 msgid "Rewind"
 msgstr "Zurückspulen"
@@ -355,20 +413,20 @@ msgstr ""
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:667
+#: src/application.vala:671
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 #, fuzzy
 msgid "Bring to Focus"
 msgstr "In den Fokus rücken"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:878 src/core/notification-manager.vala:138
+#: src/application.vala:879 src/core/notification-manager.vala:138
 #: src/plugins/sni/indicator-provider.vala:25
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "%s verbleibend"
 
-#: src/application.vala:923
+#: src/application.vala:924
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -565,7 +623,7 @@ msgstr "Wird ausgelöst, wenn die Sitzung wegen Inaktivität zurückgesetzt wird
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:188
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:190
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
@@ -858,7 +916,7 @@ msgid "_Not Now"
 msgstr "Jetzt _nicht"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:398
+#: src/plugins/gnome/preferences-window-extension.vala:382
 #, fuzzy
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
@@ -881,19 +939,19 @@ msgid "_Abort"
 msgstr "_Abbrechen"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:386
+#: src/plugins/gnome/preferences-window-extension.vala:370
 #, fuzzy
 msgid "Time-out reached"
 msgstr "Zeitüberschreitung erreicht"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:390
+#: src/plugins/gnome/preferences-window-extension.vala:374
 #, fuzzy
 msgid "Installing extensions is not allowed"
 msgstr "Installation von Erweiterungen ist nicht erlaubt"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:394
+#: src/plugins/gnome/preferences-window-extension.vala:378
 #, fuzzy
 msgid "Failed to download the extension"
 msgstr "Herunterladen der Erweiterung fehlgeschlagen"
@@ -962,15 +1020,21 @@ msgstr ""
 msgid "Hide non-critical notifications while using the timer."
 msgstr ""
 
-#: src/plugins/gnome/window-extension.vala:32
-#, fuzzy
-msgid "GNOME Shell extension available"
-msgstr "GNOME Shell Erweiterung verfügbar"
+#: src/plugins/gnome/window-extension.vala:37
+msgid "Try the GNOME extension"
+msgstr ""
 
-#: src/plugins/gnome/window-extension.vala:33
-#, fuzzy
-msgid "Learn More"
-msgstr "Mehr erfahren"
+#: src/plugins/gnome/window-extension.vala:38
+msgid "Details"
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:74
+msgid "GNOME extension is disabled"
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:75
+msgid "Enable"
+msgstr "Aktivieren"
 
 #. translators: abbreviate it to just "Settings" if it gets too long
 #: src/plugins/kde/preferences-window-extension.vala:30
@@ -1017,7 +1081,7 @@ msgstr ""
 msgid "Stats"
 msgstr "Statistiken"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:286
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:327
 msgid "Quit"
 msgstr "Beenden"
 
@@ -1038,42 +1102,42 @@ msgstr ""
 msgid "Log"
 msgstr "Protokoll"
 
-#: src/ui/log/log-window.ui:37
+#: src/ui/log/log-window.ui:38
 #, fuzzy
 msgid "Empty Log"
 msgstr "Leeres Protokoll"
 
-#: src/ui/log/log-window.ui:38
+#: src/ui/log/log-window.ui:39
 #, fuzzy
 msgid "Entries will show up here once you start the timer."
 msgstr "Einträge erscheinen hier, sobald Sie den Timer starten."
 
-#: src/ui/log/log-window.ui:164
+#: src/ui/log/log-window.ui:166
 #, fuzzy
 msgid "Context"
 msgstr "Kontext"
 
-#: src/ui/log/log-window.ui:189
+#: src/ui/log/log-window.ui:191
 #: src/ui/preferences/automation/action/action-edit-window.ui:186
 msgid "Command"
 msgstr "Befehl"
 
-#: src/ui/log/log-window.ui:213
+#: src/ui/log/log-window.ui:215
 #, fuzzy
 msgid "Output"
 msgstr "Ausgabe"
 
-#: src/ui/log/log-window.ui:237
+#: src/ui/log/log-window.ui:239
 #, fuzzy
 msgid "Error"
 msgstr "Fehler"
 
-#: src/ui/log/log-window.ui:266
+#: src/ui/log/log-window.ui:268
 #, fuzzy
 msgid "Exit Code:"
 msgstr "Beendigungscode:"
 
-#: src/ui/log/log-window.ui:277
+#: src/ui/log/log-window.ui:279
 #, fuzzy
 msgid "Execution Time:"
 msgstr "Ausführungszeit:"
@@ -1224,10 +1288,9 @@ msgstr "Lange Pause fällig in <b>%s</b>"
 msgid "Rewind one minute"
 msgstr "Eine Minute zurückspulen"
 
-#: src/ui/main/window.ui:8
-#, fuzzy
-msgid "_Compact View"
-msgstr "_Kompakte Ansicht"
+#: src/ui/main/window.ui:8 src/ui/main/window.vala:230
+msgid "_Compact Mode"
+msgstr ""
 
 #: src/ui/main/window.ui:15
 msgid "_Preferences"
@@ -1246,12 +1309,16 @@ msgstr "_Beenden"
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: src/ui/main/window.vala:281
+#: src/ui/main/window.vala:230
+msgid "_Full Mode"
+msgstr ""
+
+#: src/ui/main/window.vala:322
 #, fuzzy
 msgid "Keep timer running?"
 msgstr "Timer weiterlaufen lassen?"
 
-#: src/ui/main/window.vala:282
+#: src/ui/main/window.vala:323
 #, fuzzy
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
@@ -1260,7 +1327,7 @@ msgstr ""
 "Sie können ihn im Hintergrund weiterlaufen lassen — Benachrichtigungen und "
 "Tastenkürzel funktionieren weiterhin."
 
-#: src/ui/main/window.vala:289
+#: src/ui/main/window.vala:330
 #, fuzzy
 msgid "Run in background"
 msgstr "Im Hintergrund ausführen"
@@ -1281,9 +1348,8 @@ msgid "Prefer Dark Theme"
 msgstr "Dunkles Thema bevorzugen"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
-#, fuzzy
-msgid "Prefer Compact View"
-msgstr "Kompakte Ansicht bevorzugen"
+msgid "Prefer Compact Mode"
+msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:12
 #: src/ui/preferences/automation/action/condition-widget.vala:117
@@ -1556,6 +1622,40 @@ msgstr "Variable einfügen"
 msgid "Format"
 msgstr "Format"
 
+#: src/ui/preferences/automation/permissions-dialog.ui:6
+msgid "Extra permissions needed for Custom Actions"
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.ui:30
+#: src/ui/preferences/automation/preferences-panel-automation.ui:27
+msgid "Extra permissions needed to run commands"
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.ui:41
+msgid ""
+"Custom Actions run shell commands, requiring access outside the Flatpak "
+"sandbox. Grant this only if you understand your commands and trust Focus "
+"Timer — it allows arbitrary command execution."
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.ui:52
+msgid ""
+"In <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
+"a>, under <b>Session Bus</b> section, add:"
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.ui:90
+msgid "or via terminal:"
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.ui:127
+msgid "Restart Focus Timer for the change to take effect."
+msgstr ""
+
+#: src/ui/preferences/automation/permissions-dialog.vala:34
+msgid "Copied"
+msgstr ""
+
 #: src/ui/preferences/automation/preferences-panel-automation.ui:13
 #, fuzzy
 msgid "_Log"
@@ -1566,14 +1666,14 @@ msgstr "_Protokoll"
 msgid "Show execution log"
 msgstr "Ausführungsprotokoll anzeigen"
 
-#: src/ui/preferences/automation/preferences-panel-automation.ui:24
+#: src/ui/preferences/automation/preferences-panel-automation.ui:28
 #, fuzzy
-msgid ""
-"Run shell commands automatically on timer events or conditions. <a "
-"href=\"\">Learn more.</a>"
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+#: src/ui/preferences/automation/preferences-panel-automation.ui:36
+msgid "Run shell commands automatically on timer events or conditions."
 msgstr ""
-"Shell-Befehle automatisch bei Timer-Ereignissen oder Bedingungen ausführen. "
-"<a href=\"\">Mehr erfahren.</a>"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
 msgid "Autostart"
@@ -1737,7 +1837,7 @@ msgstr "Tastenkürzel"
 msgid "Integrations"
 msgstr ""
 
-#: src/ui/preferences/preferences-window.vala:79
+#: src/ui/preferences/preferences-window.vala:78
 #, fuzzy
 msgid "Automation"
 msgstr "Automatisierung"
@@ -1873,6 +1973,26 @@ msgstr "Anwenden"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Seitenleiste"
+
+#, fuzzy
+#~ msgid "GNOME Shell extension available"
+#~ msgstr "GNOME Shell Erweiterung verfügbar"
+
+#, fuzzy
+#~ msgid "_Compact View"
+#~ msgstr "_Kompakte Ansicht"
+
+#, fuzzy
+#~ msgid "Prefer Compact View"
+#~ msgstr "Kompakte Ansicht bevorzugen"
+
+#, fuzzy
+#~ msgid ""
+#~ "Run shell commands automatically on timer events or conditions. <a "
+#~ "href=\"\">Learn more.</a>"
+#~ msgstr ""
+#~ "Shell-Befehle automatisch bei Timer-Ereignissen oder Bedingungen "
+#~ "ausführen. <a href=\"\">Mehr erfahren.</a>"
 
 #~ msgid "Kamil Prusko"
 #~ msgstr "Kamil Prusko"
@@ -2167,9 +2287,6 @@ msgstr "Seitenleiste"
 
 #~ msgid "Complete"
 #~ msgstr "Vollständig"
-
-#~ msgid "Enable"
-#~ msgstr "Aktivieren"
 
 #~ msgid "Add"
 #~ msgstr "Hinzufügen"
