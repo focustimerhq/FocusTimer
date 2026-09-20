@@ -87,6 +87,18 @@
 
   <!-- Releases -->
   <releases>
+    <release version="1.1.5" date="2026-09-20">
+      <description translate="no">
+        <p>Overview of changes in focus-timer 1.1.5:</p>
+        <ul>
+          <li>Added a dialog for installing the GNOME Shell extension</li>
+          <li>Automation panel is now available in the Flatpak version</li>
+          <li>Added a right-click context menu in compact mode</li>
+          <li>Updated runtime to GNOME 51</li>
+          <li>Removed dependency on cairo</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.4" date="2026-08-22">
       <description translate="no">
         <p>Overview of changes in focus-timer 1.1.4:</p>
