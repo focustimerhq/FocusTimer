@@ -152,6 +152,14 @@ timerview sessionprogressbar {
 timerview timercontrolbuttons button {
     padding: 16px;
     -gtk-icon-size: 24px;
+    transition: background-color 200ms ease,
+                outline-width 100ms ease,
+                outline-offset 100ms ease,
+                transform 100ms ease;
+}
+
+timerview timercontrolbuttons button:active {
+    transform: scale(0.95);
 }
 
 timerview timercontrolbuttons button.suggested-action {
