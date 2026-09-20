@@ -8,7 +8,7 @@ namespace Gnome
 {
     public class WindowExtension : Ft.WindowExtension
     {
-        private const int64 EXTENSION_AVAILABLE_TOAST_INTERVAL = Ft.Interval.DAY * 14;
+        private const int64 INSTALL_EXTENSION_TOAST_INTERVAL = Ft.Interval.DAY * 14;
 
         private GLib.Settings?          settings = null;
         private Gnome.ShellExtension?   shell_extension = null;
@@ -25,7 +25,7 @@ namespace Gnome
             this.notify["window"].connect (this.on_notify_window);
         }
 
-        private void show_extension_available_toast ()
+        private void show_install_extension_toast ()
         {
             if (Gnome.WindowExtension.extension_toast_dismissed ||
                 this.extension_toast != null ||
@@ -34,42 +34,35 @@ namespace Gnome
                 return;
             }
 
-            var toast = new Adw.Toast (_("GNOME Shell extension available"));
-            toast.button_label = _("Learn More");
+            var toast = new Adw.Toast (_("Try the GNOME extension"));
+            toast.button_label = _("Details");
             toast.priority = Adw.ToastPriority.HIGH;
             toast.timeout = 0;
             toast.button_clicked.connect (
                 () => {
-                    if (Gnome.ShellExtension.IS_PUBLISHED) {
-                        var dialog = new Gnome.InstallExtensionDialog ();
-
-                        dialog.present (this.window);
-                    }
-                    else {
-                        var uri = Gnome.ShellExtension.EXTENSION_URL;
-
-                        GLib.AppInfo.launch_default_for_uri_async.begin (
-                            uri, null, null,
-                            (obj, res) => {
-                                try {
-                                    GLib.AppInfo.launch_default_for_uri_async.end (res);
-                                }
-                                catch (GLib.Error error) {
-                                    GLib.warning ("Failed to open URI %s: %s", uri, error.message);
-                                }
-                            });
-                    }
+                    var dialog = new Gnome.InstallExtensionDialog ();
+                    dialog.present (this.window);
 
                     this.extension_toast = null;
                 });
-            toast.dismissed.connect (this.on_extension_toast_dismissed);
+            toast.dismissed.connect (
+                (_toast) => {
+                    if (this.extension_toast == _toast) {
+                        this.extension_toast = null;
+                        this.settings.set_int64 (
+                                "last-toast-dismissed-time",
+                                Ft.Timestamp.from_now () / Ft.Interval.SECOND);
+
+                        Gnome.WindowExtension.extension_toast_dismissed = true;
+                    }
+                });
 
             this.extension_toast = toast;
 
             this.window.add_toast (toast);
         }
 
-        private void show_extension_installed_toast ()
+        private void show_enable_extension_toast ()
         {
             if (Gnome.WindowExtension.extension_toast_dismissed ||
                 this.extension_toast != null ||
@@ -78,7 +71,7 @@ namespace Gnome
                 return;
             }
 
-            var toast = new Adw.Toast (_("GNOME Shell extension is installed"));
+            var toast = new Adw.Toast (_("GNOME extension is disabled"));
             toast.button_label = _("Enable");
             toast.priority = Adw.ToastPriority.HIGH;
             toast.timeout = 0;
@@ -87,28 +80,31 @@ namespace Gnome
                     this.shell_extension.enable_extension.begin ();
                     this.extension_toast = null;
                 });
-            toast.dismissed.connect (this.on_extension_toast_dismissed);
+            toast.dismissed.connect (
+                (_toast) => {
+                    if (this.extension_toast == _toast) {
+                        this.extension_toast = null;
+
+                        Gnome.WindowExtension.extension_toast_dismissed = true;
+                    }
+                });
 
             this.extension_toast = toast;
 
             this.window.add_toast (toast);
         }
 
-        private bool should_show_extension_available_toast ()
+        private bool has_toast_been_dismissed ()
         {
-            if (!this.shell_extension.available || this.shell_extension.is_installed ()) {
+            var now = Ft.Timestamp.from_now ();
+            var last_dismissed_timestamp = this.settings.get_int64 (
+                    "last-toast-dismissed-time").clamp (0, now / Ft.Interval.SECOND);
+            if (last_dismissed_timestamp <= 0) {
                 return false;
             }
 
-            var now = Ft.Timestamp.from_now ();
-            var last_dismissed_date_time = this.settings.get_int64 (
-                    "last-toast-dismissed-time").clamp (0, now / Ft.Interval.SECOND);
-            if (last_dismissed_date_time <= 0) {
-                return true;
-            }
-
-            return now - last_dismissed_date_time * Ft.Interval.SECOND >=
-                   EXTENSION_AVAILABLE_TOAST_INTERVAL;
+            return now - last_dismissed_timestamp * Ft.Interval.SECOND <
+                   INSTALL_EXTENSION_TOAST_INTERVAL;
         }
 
         private void update_extension_toast ()
@@ -117,20 +113,23 @@ namespace Gnome
                 return;
             }
 
-            if (this.should_show_extension_available_toast ()) {
-                this.show_extension_available_toast ();
+            if (this.shell_extension.available &&
+                !this.shell_extension.is_installed () &&
+                !this.has_toast_been_dismissed ())
+            {
+                this.show_install_extension_toast ();
             }
             else if (this.shell_extension.available &&
                 !this.shell_extension.enabled &&
                 this.shell_extension.is_installed ())
             {
-                this.show_extension_installed_toast ();
+                this.show_enable_extension_toast ();
             }
             else if (this.extension_toast != null) {
-                this.extension_toast.dismissed.disconnect (
-                        this.on_extension_toast_dismissed);
-                this.extension_toast.dismiss ();
+                var extension_toast = this.extension_toast;
+
                 this.extension_toast = null;
+                extension_toast.dismiss ();
             }
         }
 
@@ -151,16 +150,6 @@ namespace Gnome
                                                     GLib.ParamSpec pspec)
         {
             this.update_extension_toast ();
-        }
-
-        private void on_extension_toast_dismissed (Adw.Toast toast)
-        {
-            this.extension_toast = null;
-            this.settings.set_int64 (
-                    "last-toast-dismissed-time",
-                    Ft.Timestamp.from_now () / Ft.Interval.SECOND);
-
-            Gnome.WindowExtension.extension_toast_dismissed = true;
         }
 
         public override void dispose ()

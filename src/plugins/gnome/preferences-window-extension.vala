@@ -191,12 +191,6 @@ namespace Gnome
 
                 this.shell_extension.bind_property (
                         "state",
-                        desktop_group, "visible",
-                        GLib.BindingFlags.SYNC_CREATE,
-                        this.transform_state_to_can_install);
-
-                this.shell_extension.bind_property (
-                        "state",
                         manage_notifications_row, "visible",
                         GLib.BindingFlags.SYNC_CREATE,
                         this.transform_state_to_is_installed);
@@ -235,16 +229,6 @@ namespace Gnome
 
             this.desktop_group?.unparent ();
             this.desktop_group = null;
-        }
-
-        private bool transform_state_to_can_install (GLib.Binding   binding,
-                                                     GLib.Value     source_value,
-                                                     ref GLib.Value target_value)
-        {
-            target_value.set_boolean (this.shell_extension.is_installed () ||
-                                      Gnome.ShellExtension.IS_PUBLISHED);
-
-            return true;
         }
 
         private bool transform_state_to_is_installed (GLib.Binding   binding,
