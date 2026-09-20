@@ -3,7 +3,7 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.0"/>
   <template class="FtPermissionsDialog" parent="AdwDialog">
-    <property name="title" translatable="yes">Extra permissions needed for Custom Actions</property>
+    <property name="title" translatable="yes">Extra permissions needed to run commands</property>
     <property name="presentation-mode">auto</property>
     <property name="follows-content-size">false</property>
     <property name="content-width">680</property>

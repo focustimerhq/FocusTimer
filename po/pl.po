@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-20 10:53+0200\n"
-"PO-Revision-Date: 2026-08-21 18:40+0200\n"
+"PO-Revision-Date: 2026-09-20 11:07+0200\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -942,15 +942,15 @@ msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika."
 
 #: src/plugins/gnome/window-extension.vala:37
 msgid "Try the GNOME extension"
-msgstr ""
+msgstr "Wypróbuj rozszerzenie GNOME"
 
 #: src/plugins/gnome/window-extension.vala:38
 msgid "Details"
-msgstr ""
+msgstr "Szczegóły"
 
 #: src/plugins/gnome/window-extension.vala:74
 msgid "GNOME extension is disabled"
-msgstr ""
+msgstr "Rozszerzenie GNOME jest wyłączone"
 
 #: src/plugins/gnome/window-extension.vala:75
 msgid "Enable"
@@ -1191,7 +1191,7 @@ msgstr "Przewiń jedną minutę"
 
 #: src/ui/main/window.ui:8 src/ui/main/window.vala:230
 msgid "_Compact Mode"
-msgstr ""
+msgstr "Tryb _Kompaktowy"
 
 #: src/ui/main/window.ui:15
 msgid "_Preferences"
@@ -1211,7 +1211,7 @@ msgstr "Menu główne"
 
 #: src/ui/main/window.vala:230
 msgid "_Full Mode"
-msgstr ""
+msgstr "Tryb _Pełny"
 
 #: src/ui/main/window.vala:322
 msgid "Keep timer running?"
@@ -1243,7 +1243,7 @@ msgstr "Preferuj ciemny motyw"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
 msgid "Prefer Compact Mode"
-msgstr ""
+msgstr "Preferuj tryb kompaktowy"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:12
 #: src/ui/preferences/automation/action/condition-widget.vala:117
@@ -1475,7 +1475,7 @@ msgstr ""
 #: src/ui/preferences/automation/permissions-dialog.ui:30
 #: src/ui/preferences/automation/preferences-panel-automation.ui:27
 msgid "Extra permissions needed to run commands"
-msgstr ""
+msgstr "Do uruchamiania poleceń wymagane są dodatkowe uprawnienia"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:41
 msgid ""
@@ -1483,24 +1483,30 @@ msgid ""
 "sandbox. Grant this only if you understand your commands and trust Focus "
 "Timer — it allows arbitrary command execution."
 msgstr ""
+"Akcje wykonują polecenia powłoki, co wymaga dostępu spoza piaskownicy "
+"Flatpak. Udziel tego uprawnienia tylko wtedy, gdy rozumiesz wykonywane "
+"polecenia i ufasz aplikacji Minutnik Knocentracji – umożliwia ona bowiem "
+"uruchamianie dowolnych poleceń."
 
 #: src/ui/preferences/automation/permissions-dialog.ui:52
 msgid ""
 "In <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
 "a>, under <b>Session Bus</b> section, add:"
 msgstr ""
+"W <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
+"a>, w sekcji <b>Session Bus</b>, dodaj:"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:90
 msgid "or via terminal:"
-msgstr ""
+msgstr "lub w konsoli:"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:127
 msgid "Restart Focus Timer for the change to take effect."
-msgstr ""
+msgstr "Uruchom ponownie Minutnik Knocentracji, aby zomaczyć zmiany."
 
 #: src/ui/preferences/automation/permissions-dialog.vala:34
 msgid "Copied"
-msgstr ""
+msgstr "Skopiowano"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:13
 msgid "_Log"
@@ -1516,7 +1522,7 @@ msgstr "Czytaj więcej"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
 msgid "Run shell commands automatically on timer events or conditions."
-msgstr ""
+msgstr "Odpalaj polecenia powłoki według zdarzeń lub warunków minutnika."
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
 msgid "Autostart"
