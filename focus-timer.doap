@@ -6,23 +6,23 @@
          xmlns="http://usefulinc.com/ns/doap#">
 
   <name xml:lang="en">Focus Timer</name>
-  <shortdesc xml:lang="en">Maintain focus by taking frequent breaks</shortdesc>
-  <homepage rdf:resource="https://gnomepomodoro.org" />
-  <license rdf:resource="https://www.gnu.org/licenses/gpl-3.0.html" />
+  <shortdesc xml:lang="en">Work better with regular breaks</shortdesc>
+  <homepage rdf:resource="https://focustimerhq.github.io"/>
+  <license rdf:resource="https://www.gnu.org/licenses/gpl-3.0.html"/>
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps"/>
   <programming-language>Vala</programming-language>
 
   <repository>
     <GitRepository>
-      <browse rdf:resource="https://github.com/focustimerhq/FocusTimer" />
-      <location rdf:resource="git@github.com:focustimerhq/FocusTimer.git" />
+      <browse rdf:resource="https://github.com/focustimerhq/FocusTimer"/>
+      <location rdf:resource="git@github.com:focustimerhq/FocusTimer.git"/>
     </GitRepository>
   </repository>
 
   <maintainer>
     <foaf:Person>
       <foaf:name>Kamil Prusko</foaf:name>
-      <foaf:mbox rdf:resource="mailto:kamilprusko@gmail.com" />
+      <foaf:mbox rdf:resource="mailto:kamilprusko@gmail.com"/>
     </foaf:Person>
   </maintainer>
 </Project>

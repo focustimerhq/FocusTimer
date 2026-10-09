@@ -19,9 +19,6 @@ Suggestions and feature requests are always welcome!
 ### Missing indicator
 If you're on GNOME, you'll need the [Focus Timer extension](https://github.com/focustimerhq/gnome-shell-extension-focus-timer). Check its [troubleshooting page](https://github.com/focustimerhq/gnome-shell-extension-focus-timer/blob/main/CONTRIBUTING.md#troubleshooting) if you already have it.
 
-### Missing Automation panel
-If you installed the app via Flathub, restricted permissions hide this panel. Try another [installation option](README.md#installation) if you need it.
-
 ### Getting logs
 
 Since boot:
@@ -78,7 +75,7 @@ LLM prompt to ease the process:
 
 ## Development
 
-We recommend using [GNOME Builder](https://flathub.org/en/apps/org.gnome.Builder) with the provided Flatpak manifest.
+We recommend using [GNOME Builder](https://flathub.org/apps/org.gnome.Builder) with the provided Flatpak manifest.
 
 When running `Devel` manifest some features will not work, including notifications and background indicator. SQLite database will be separate from user session.
 

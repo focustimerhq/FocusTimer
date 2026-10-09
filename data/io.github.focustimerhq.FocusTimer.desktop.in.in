@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Focus Timer
-Comment=Work with regular breaks
+Comment=Work better with regular breaks
 Exec=focus-timer
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=@APPLICATION_ID@

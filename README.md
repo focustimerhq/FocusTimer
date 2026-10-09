@@ -4,7 +4,7 @@
   <img src="data/icons/256x256/io.github.focustimerhq.FocusTimer.png" width="256" height="256">
 </p>
 
-[Focus Timer](https://gnomepomodoro.org) (formerly gnome-pomodoro) is a time-management app built around the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), helping you maintain focus and prevent burnout through structured work and break intervals.
+[Focus Timer](https://focustimerhq.github.io) (formerly gnome-pomodoro) is a time-management app built around the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), helping you maintain focus and prevent burnout through structured work and break intervals.
 
 **Key features:**
 * Customizable work session and break lengths
@@ -17,27 +17,27 @@
 
 <p align="center">
   <br/>
-  <a href="https://flathub.org/en/apps/io.github.focustimerhq.FocusTimer">
-    <img width="200" alt="Get it on Flathub" src="https://flathub.org/api/badge?locale=en"/>
+  <a href="https://flathub.org/apps/io.github.focustimerhq.FocusTimer">
+    <img width="200" alt="Get it on Flathub" src="https://flathub.org/api/badge?svg&locale=en"/>
   </a>
   <br/>
 </p>
 
 ## Screenshots
 
-![Timer](https://gnomepomodoro.org/release/1.1/timer.png)
+![Timer](https://focustimerhq.github.io/assets/screenshots/1.1/timer.png)
 
-![Compact timer](https://gnomepomodoro.org/release/1.1/compact-timer.png)
+![Compact timer](https://focustimerhq.github.io/assets/screenshots/1.1/compact-timer.png)
 
-![Daily stats](https://gnomepomodoro.org/release/1.1/stats-daily.png)
+![Daily stats](https://focustimerhq.github.io/assets/screenshots/1.1/stats-daily.png)
 
-![Monthly stats](https://gnomepomodoro.org/release/1.1/stats-monthly.png)
+![Monthly stats](https://focustimerhq.github.io/assets/screenshots/1.1/stats-monthly.png)
 
-![Preferences](https://gnomepomodoro.org/release/1.1/preferences.png)
+![Preferences](https://focustimerhq.github.io/assets/screenshots/1.1/preferences.png)
 
-![Screen overlay](https://gnomepomodoro.org/release/1.1/screen-overlay.png)
+![Screen overlay](https://focustimerhq.github.io/assets/screenshots/1.1/screen-overlay.png)
 
-![System tray icons](https://gnomepomodoro.org/release/1.1/indicators.svg)
+![System tray icons](https://focustimerhq.github.io/assets/screenshots/1.1/indicators.svg)
 
 <br/>
 
@@ -45,18 +45,13 @@
 
 ### Flatpak (recommended)
 
-To get latest releases we recommend installing the app from [Flathub](https://flathub.org/en/apps/io.github.focustimerhq.FocusTimer).
-
-Installing from CLI:
+To get latest releases we recommend installing the app from [Flathub](https://flathub.org/apps/io.github.focustimerhq.FocusTimer):
 
 ```bash
-flatpak install flathub io.github.focustimerhq.FocusTimer
-flatpak run io.github.focustimerhq.FocusTimer
+flatpak install --user flathub io.github.focustimerhq.FocusTimer
 ```
 
-To migrate data from the old gnome-pomodoro app, copy file `~/.local/share/gnome-pomodoro/database.sqlite` to `~/.var/app/io.github.focustimerhq.FocusTimer/data/focus-timer/database.sqlite`.
-
-The version on Flathub doesn't have the ability to run custom scripts, shown as *Automation* panel in the *Preferences* window.
+If you're switching from the gnome-pomodoro and want to keep your data, copy `~/.local/share/gnome-pomodoro/database.sqlite` to `~/.var/app/io.github.focustimerhq.FocusTimer/data/focus-timer/database.sqlite`.
 
 ### Distributions
 
@@ -65,8 +60,7 @@ Find a community-maintained package in your distro repos:
 #### Fedora
 
 ```bash
-sudo dnf install focus-timer
-sudo dnf install gnome-shell-extension-focus-timer
+sudo dnf install focus-timer gnome-shell-extension-focus-timer
 ```
 
 *Thanks to [Ankur Sinha](https://github.com/sanjayankur31) for maintaining the packages.*

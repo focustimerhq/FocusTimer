@@ -5,11 +5,10 @@
   <!-- General -->
   <id>io.github.focustimerhq.FocusTimer</id>
   <name>Focus Timer</name>
-  <summary>Work with regular breaks</summary>
+  <summary>Work better with regular breaks</summary>
   <description>
     <p>
-      A productivity timer that helps you work more effectively by breaking your time into focused work sessions followed by short breaks.
-      Work for 25 minutes, then take a 5-minute break to maintain concentration and prevent burnout.
+      A productivity timer that helps you work more effectively by alternating focused work sessions with short breaks. By default, work for 25 minutes, then take a 5-minute break to stay focused and prevent burnout.
     </p>
     <p>
       Key features:
@@ -55,7 +54,7 @@
   <project_license>GPL-3.0-or-later</project_license>
 
   <!-- URLs -->
-  <url type="homepage">https://github.com/focustimerhq/FocusTimer</url>
+  <url type="homepage">https://focustimerhq.github.io</url>
   <url type="bugtracker">https://github.com/focustimerhq/FocusTimer/issues</url>
   <url type="vcs-browser">https://github.com/focustimerhq/FocusTimer</url>
   <url type="translate">https://github.com/focustimerhq/FocusTimer/blob/main/CONTRIBUTING.md#translating</url>
@@ -64,23 +63,23 @@
   <!-- Screenshots -->
   <screenshots>
     <screenshot type="default">
-      <image scale="2">https://gnomepomodoro.org/release/1.1/timer@2.png</image>
+      <image scale="2">https://focustimerhq.github.io/assets/screenshots/1.1/timer@2.webp</image>
       <caption>Timer</caption>
     </screenshot>
     <screenshot>
-      <image scale="2">https://gnomepomodoro.org/release/1.1/stats-daily@2.png</image>
+      <image scale="2">https://focustimerhq.github.io/assets/screenshots/1.1/stats-daily@2.webp</image>
       <caption>Daily stats</caption>
     </screenshot>
     <screenshot>
-      <image scale="2">https://gnomepomodoro.org/release/1.1/stats-monthly@2.png</image>
+      <image scale="2">https://focustimerhq.github.io/assets/screenshots/1.1/stats-monthly@2.webp</image>
       <caption>Monthly stats</caption>
     </screenshot>
     <screenshot>
-      <image scale="2">https://gnomepomodoro.org/release/1.1/preferences@2.png</image>
+      <image scale="2">https://focustimerhq.github.io/assets/screenshots/1.1/preferences@2.webp</image>
       <caption>Preferences</caption>
     </screenshot>
     <screenshot>
-      <image scale="2">https://gnomepomodoro.org/release/1.1/screen-overlay@2.png</image>
+      <image scale="2">https://focustimerhq.github.io/assets/screenshots/1.1/screen-overlay@2.webp</image>
       <caption>Screen overlay</caption>
     </screenshot>
   </screenshots>
