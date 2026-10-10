@@ -59,6 +59,10 @@ namespace Ft
                     new GLib.Variant.boolean (this._settings.get_boolean ("announce-about-to-end")));
             builder.add (
                     "{sv}",
+                    "announcement-lead-time",
+                    new GLib.Variant.uint32 (this._settings.get_uint ("announcement-lead-time")));
+            builder.add (
+                    "{sv}",
                     "screen-overlay",
                     new GLib.Variant.boolean (this._settings.get_boolean ("screen-overlay")));
             builder.add (

@@ -51,6 +51,11 @@
       <summary>Announce Time Running Out</summary>
       <description>Notify when Pomodoro or break is about to end.</description>
     </key>
+    <key name="announcement-lead-time" type="u">
+      <default>15</default>
+      <summary>Announcement lead time</summary>
+      <description></description>
+    </key>
     <key name="screen-overlay" type="b">
       <default>true</default>
       <summary>Show screen overlay</summary>

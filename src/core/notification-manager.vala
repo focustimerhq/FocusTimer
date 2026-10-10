@@ -36,8 +36,7 @@ namespace Ft
 
         private const int EXPIRY_TIMEOUT = 5000;  // milliseconds
 
-        private const int64 TIME_BLOCK_ABOUT_TO_END_TIMEOUT = 10 * Ft.Interval.SECOND;
-        private const int64 TIME_BLOCK_ABOUT_TO_END_TOLERANCE = 5 * Ft.Interval.SECOND;
+        private const int64 LEAD_TIME_TOLERANCE = 5 * Ft.Interval.SECOND;
 
         public Ft.Timer timer {
             get {
@@ -204,7 +203,7 @@ namespace Ft
 
             // Don't reopen if close to announcement notification.
             var timestamp = this._timer.get_current_time ();
-            var about_to_end_threshold = this.get_about_to_end_duration () + TIME_BLOCK_ABOUT_TO_END_TOLERANCE;
+            var about_to_end_threshold = this.get_annoucement_lead_time () + LEAD_TIME_TOLERANCE;
 
             if (this._timer.calculate_remaining (timestamp) <= about_to_end_threshold) {
                 return;
@@ -559,13 +558,16 @@ namespace Ft
             this.remove_withdraw_timeout ();
         }
 
-        private int64 get_about_to_end_duration ()
+        private int64 get_annoucement_lead_time ()
         {
-            if (!this.settings.get_boolean ("announce-about-to-end")) {
+            if (this.settings.get_boolean ("announce-about-to-end")) {
+                return int64.min (
+                        this.settings.get_uint ("announcement-lead-time") * Ft.Interval.SECOND,
+                        this._timer.duration / 2);
+            }
+            else {
                 return 0;
             }
-
-            return TIME_BLOCK_ABOUT_TO_END_TIMEOUT;
         }
 
         private void update_full (Ft.TimerState current_state,
@@ -613,8 +615,8 @@ namespace Ft
             else if (current_state.is_running ())
             {
                 var remaining = this._timer.calculate_remaining (timestamp);
-                var about_to_end_duration =
-                        this.get_about_to_end_duration () + TIME_BLOCK_ABOUT_TO_END_TOLERANCE;
+                var annoucement_lead_time =
+                        this.get_annoucement_lead_time () + LEAD_TIME_TOLERANCE;
                 var is_rewinding =
                         current_state.user_data == previous_state.user_data &&
                         current_state.paused_time == previous_state.paused_time &&
@@ -622,7 +624,7 @@ namespace Ft
 
                 if (current_time_block.state.is_break ())
                 {
-                    if (remaining >= about_to_end_duration &&
+                    if (remaining >= annoucement_lead_time &&
                         !is_rewinding &&
                         allow_screen_overlay &&
                         this.can_open_screen_overlay ())
@@ -637,7 +639,7 @@ namespace Ft
                 if (current_state.started_time == timestamp) {
                     this.notify_time_block_started (current_time_block);
                 }
-                else if (remaining < about_to_end_duration) {
+                else if (remaining <= annoucement_lead_time) {
                     this.notify_time_block_about_to_end (current_time_block);
                 }
                 else {
@@ -675,8 +677,8 @@ namespace Ft
 
             var remaining = this._timer.calculate_remaining (timestamp);
 
-            if (remaining <= this.get_about_to_end_duration () &&
-                remaining >= TIME_BLOCK_ABOUT_TO_END_TOLERANCE)
+            if (remaining <= this.get_annoucement_lead_time () &&
+                remaining >= LEAD_TIME_TOLERANCE)
             {
                 this.notify_time_block_about_to_end (this.session_manager.current_time_block);
             }

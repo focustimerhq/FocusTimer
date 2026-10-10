@@ -17,8 +17,13 @@
                 <property name="title" translatable="yes">Announcements</property>
                 <child>
                   <object class="AdwSwitchRow" id="announce_about_to_end_switchrow">
-                    <property name="title" translatable="yes">Time Running Out</property>
-                    <property name="subtitle" translatable="yes">Notify when Pomodoro or break is about to end.</property>
+                    <property name="title" translatable="yes">About to End Notification</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwComboRow" id="announcement_lead_time_comborow">
+                    <property name="title" translatable="yes">Early Notice</property>
+                    <property name="sensitive" bind-source="announce_about_to_end_switchrow" bind-property="active" bind-flags="sync-create"/>
                   </object>
                 </child>
               </object>
