@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2025 focus-timer contributors
+ * Copyright (c) 2023-2026 focus-timer contributors
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
@@ -192,6 +192,8 @@ namespace Ft
      */
     public class LightboxGroup : GLib.InitiallyUnowned
     {
+        private const uint DEACTIVATE_TIMEOUT_MS = 250;
+
         private GLib.Type                       lightbox_type;
         private GLib.GenericSet<Ft.Lightbox>?   lightboxes = null;
         private Gtk.WindowGroup?                window_group = null;
@@ -199,6 +201,9 @@ namespace Ft
         private ulong                           monitors_changed_id = 0;
         private uint                            updating_count = 0;
         private uint                            update_idle_id = 0;
+        private uint                            deactivate_timeout_id = 0;
+        private bool                            closing = false;
+        private unowned Ft.Lightbox?            primary_lightbox = null;
         private GLib.SourceFunc?                open_callback = null;
 
         public LightboxGroup (GLib.Type lightbox_type)
@@ -221,6 +226,27 @@ namespace Ft
             return first_lightbox;
         }
 
+        private unowned Ft.Lightbox? get_active_lightbox ()
+        {
+            unowned Ft.Lightbox? active_lightbox = null;
+
+            this.lightboxes.@foreach (
+                (lightbox) => {
+                    if (active_lightbox == null && lightbox != null && lightbox.is_active) {
+                        active_lightbox = lightbox;
+                    }
+                });
+
+            return active_lightbox;
+        }
+
+        private unowned Ft.Lightbox? get_primary_lightbox ()
+        {
+            return this.primary_lightbox != null
+                    ? this.primary_lightbox
+                    : this.get_first_lightbox ();
+        }
+
         private Ft.Lightbox create_lightbox (Gdk.Monitor? monitor_request)
         {
             var monitor_request_value = GLib.Value (typeof (Gdk.Monitor?));
@@ -233,7 +259,10 @@ namespace Ft
                                         this.lightbox_type,
                                         { "monitor-request", "show-contents" },
                                         { monitor_request_value, show_contents_value });
-            lightbox.notify["monitor"].connect (this.on_lightbox_notify_monitor);
+            lightbox.notify["monitor"].connect (this.on_lightbox_queue_update);
+            lightbox.notify["all-monitors-mode"].connect (this.on_lightbox_notify_all_monitors_mode);
+            lightbox.notify["fullscreened"].connect (this.on_lightbox_notify_fullscreened);
+            lightbox.notify["is-active"].connect (this.on_lightbox_notify_is_active);
             lightbox.close_request.connect (this.on_lightbox_close_request);
 
             var lightbox_widget = (Gtk.Widget) lightbox;
@@ -242,7 +271,10 @@ namespace Ft
             this.window_group.add_window (lightbox);
             this.lightboxes.add (lightbox);
 
-            // Note that the new window may steal focus from the primary window.
+            if (this.primary_lightbox == null) {
+                this.primary_lightbox = lightbox;
+            }
+
             lightbox.present ();
 
             return lightbox;
@@ -250,13 +282,20 @@ namespace Ft
 
         private void destroy_lightbox (Ft.Lightbox lightbox)
         {
-            lightbox.notify["monitor"].disconnect (this.on_lightbox_notify_monitor);
+            lightbox.notify["monitor"].disconnect (this.on_lightbox_queue_update);
+            lightbox.notify["all-monitors-mode"].disconnect (this.on_lightbox_notify_all_monitors_mode);
+            lightbox.notify["fullscreened"].disconnect (this.on_lightbox_notify_fullscreened);
+            lightbox.notify["is-active"].disconnect (this.on_lightbox_notify_is_active);
             lightbox.close_request.disconnect (this.on_lightbox_close_request);
 
             var lightbox_widget = (Gtk.Widget) lightbox;
             lightbox_widget.unrealize.disconnect (this.on_lightbox_unrealize);
 
             this.lightboxes.remove (lightbox);
+
+            if (this.primary_lightbox == lightbox) {
+                this.primary_lightbox = null;
+            }
 
             lightbox.close ();
         }
@@ -269,11 +308,31 @@ namespace Ft
                 return;
             }
 
+            if (this.get_active_lightbox () == null)
+            {
+                // Spawning windows per monitor is unreliable while none of the windows
+                // is active (e.g. in GNOME Shell overview). Keep only the primary window.
+                var primary_lightbox = this.get_primary_lightbox ();
+
+                this.lightboxes.get_values ().@foreach (
+                    (lightbox) => {
+                        if (lightbox != primary_lightbox) {
+                            this.destroy_lightbox (lightbox);
+                        }
+                    });
+
+                return;
+            }
+
             if (this.lightboxes.length == 1)
             {
                 var lightbox = this.get_first_lightbox ();
 
-                if (lightbox.all_monitors_mode) {
+                if (lightbox.all_monitors_mode ||
+                    !lightbox.fullscreened ||
+                    lightbox.monitor == null)
+                {
+                    // Wait until the compositor has placed this window.
                     return;
                 }
             }
@@ -287,31 +346,32 @@ namespace Ft
                 (lightbox) => {
                     var lightbox_monitor = lightbox.monitor;
 
-                    if (lightbox_monitor != null) {
+                    // Keep the requested monitor. The compositor can report the
+                    // focused output for a new window while leaving the overview;
+                    // adopting that output makes the next update destroy the
+                    // window and open another one.
+                    if (lightbox.monitor_request == null && lightbox_monitor != null) {
                         lightbox.monitor_request = lightbox_monitor;
                     }
 
-                    if (lightbox_monitor != null && !paired_monitors.contains (lightbox_monitor)) {
-                        paired_monitors.add (lightbox_monitor);
+                    var claimed_monitor = lightbox.monitor_request;
+
+                    if (claimed_monitor != null &&
+                        !paired_monitors.contains (claimed_monitor) &&
+                        !paired_lightboxes.contains (lightbox))
+                    {
+                        paired_monitors.add (claimed_monitor);
                         paired_lightboxes.add (lightbox);
                     }
                 });
 
-            this.lightboxes.@foreach (
-                (lightbox) => {
-                    if (lightbox.monitor_request != null &&
-                        !lightbox.get_mapped () &&
-                        !paired_monitors.contains (lightbox.monitor_request) &&
-                        !paired_lightboxes.contains (lightbox))
-                    {
-                        paired_monitors.add (lightbox.monitor_request);
-                        paired_lightboxes.add (lightbox);
-                    }
-                });
+            var primary_lightbox = this.get_primary_lightbox ();
 
             this.lightboxes.get_values ().@foreach (
                 (lightbox) => {
-                    if (!paired_lightboxes.contains (lightbox)) {
+                    if (lightbox != primary_lightbox &&
+                        !paired_lightboxes.contains (lightbox))
+                    {
                         this.destroy_lightbox (lightbox);
                     }
                 });
@@ -337,7 +397,7 @@ namespace Ft
 
         private void update ()
         {
-            if (this.updating_count > 0 || this.monitors == null) {
+            if (this.closing || this.updating_count > 0 || this.monitors == null) {
                 return;
             }
 
@@ -353,7 +413,7 @@ namespace Ft
 
         private void queue_update ()
         {
-            if (this.update_idle_id != 0) {
+            if (this.closing || this.update_idle_id != 0) {
                 return;
             }
 
@@ -381,10 +441,62 @@ namespace Ft
             this.queue_update ();
         }
 
-        private void on_lightbox_notify_monitor (GLib.Object    object,
-                                                 GLib.ParamSpec pspec)
+        private void on_lightbox_queue_update (GLib.Object    object,
+                                               GLib.ParamSpec pspec)
         {
             this.queue_update ();
+        }
+
+        private void on_lightbox_notify_all_monitors_mode (GLib.Object    object,
+                                                           GLib.ParamSpec pspec)
+        {
+            unowned var lightbox = (Ft.Lightbox) object;
+
+            if (!lightbox.all_monitors_mode) {
+                this.queue_update ();
+            }
+        }
+
+        private void on_lightbox_notify_fullscreened (GLib.Object    object,
+                                                      GLib.ParamSpec pspec)
+        {
+            unowned var lightbox = (Ft.Lightbox) object;
+
+            if (lightbox.fullscreened) {
+                this.queue_update ();
+            }
+        }
+
+        private void on_lightbox_notify_is_active (GLib.Object    object,
+                                                   GLib.ParamSpec pspec)
+        {
+            unowned var lightbox = (Ft.Lightbox) object;
+
+            if (lightbox.is_active)
+            {
+                // Cancel pending teardown. Open windows on other monitors.
+                if (this.deactivate_timeout_id != 0) {
+                    GLib.Source.remove (this.deactivate_timeout_id);
+                    this.deactivate_timeout_id = 0;
+                }
+
+                this.queue_update ();
+            }
+            else if (this.get_active_lightbox () == null && this.deactivate_timeout_id == 0)
+            {
+                // Delay closing extra windows: focus moves between our own windows
+                // while they steal focus on present().
+                this.deactivate_timeout_id = GLib.Timeout.add (
+                    DEACTIVATE_TIMEOUT_MS,
+                    () => {
+                        this.deactivate_timeout_id = 0;
+                        this.update ();
+
+                        return GLib.Source.REMOVE;
+                    });
+                GLib.Source.set_name_by_id (this.deactivate_timeout_id,
+                                            "Ft.LightboxGroup.deactivate");
+            }
         }
 
         private bool on_lightbox_close_request (Gtk.Window window)
@@ -443,9 +555,23 @@ namespace Ft
 
         private void close ()
         {
-            if (this.open_callback != null) {
-                this.open_callback ();
+            if (this.open_callback == null) {
+                return;
             }
+
+            this.closing = true;
+
+            if (this.update_idle_id != 0) {
+                GLib.Source.remove (this.update_idle_id);
+                this.update_idle_id = 0;
+            }
+
+            if (this.deactivate_timeout_id != 0) {
+                GLib.Source.remove (this.deactivate_timeout_id);
+                this.deactivate_timeout_id = 0;
+            }
+
+            this.open_callback ();
         }
 
         public override void dispose ()
@@ -453,6 +579,11 @@ namespace Ft
             if (this.update_idle_id != 0) {
                 GLib.Source.remove (this.update_idle_id);
                 this.update_idle_id = 0;
+            }
+
+            if (this.deactivate_timeout_id != 0) {
+                GLib.Source.remove (this.deactivate_timeout_id);
+                this.deactivate_timeout_id = 0;
             }
 
             if (this.monitors_changed_id != 0) {
@@ -467,6 +598,7 @@ namespace Ft
 
             this.window_group = null;
             this.monitors = null;
+            this.primary_lightbox = null;
 
             base.dispose ();
         }
@@ -476,6 +608,8 @@ namespace Ft
     [GtkTemplate (ui = "/io/github/focustimerhq/FocusTimer/ui/overlays/lightbox.ui")]
     public class Lightbox : Gtk.Window, Gtk.Buildable
     {
+        private const uint FULLSCREEN_LOST_TIMEOUT = 250;
+
         public Gdk.Monitor? monitor_request
         {
             get {
@@ -536,8 +670,10 @@ namespace Ft
         private Gdk.Monitor?                 _monitor_request = null;
         private Gdk.Monitor?                 _monitor = null;
         private GLib.GenericSet<Gdk.Monitor> monitors = null;
+
         private bool                         _all_monitors_mode = false;
         private bool                         closing = false;
+        private uint                         fullscreen_lost_id = 0;
 
         private static uint next_id = 0;
         internal uint id = 0;
@@ -622,10 +758,36 @@ namespace Ft
                 return;
             }
 
-            if (!this.fullscreened) {
-                GLib.debug ("Failed to make lightbox fullscreen. Closing...");
-                this.close ();
+            if (this.fullscreened)
+            {
+                if (this.fullscreen_lost_id != 0) {
+                    GLib.Source.remove (this.fullscreen_lost_id);
+                    this.fullscreen_lost_id = 0;
+                }
+
+                return;
             }
+
+            // The compositor can clear `fullscreen` for a moment while placing the window.
+            // Close only if it sticks.
+            if (this.fullscreen_lost_id != 0) {
+                return;
+            }
+
+            this.fullscreen_lost_id = GLib.Timeout.add (
+                FULLSCREEN_LOST_TIMEOUT,
+                () => {
+                    this.fullscreen_lost_id = 0;
+
+                    if (!this.closing && !this.fullscreened) {
+                        GLib.debug ("Failed to make lightbox fullscreen. Closing...");
+                        this.close ();
+                    }
+
+                    return GLib.Source.REMOVE;
+                });
+            GLib.Source.set_name_by_id (this.fullscreen_lost_id,
+                                        "Ft.Lightbox.fullscreen-lost");
         }
 
         private void on_monitor_notify_valid (GLib.Object    object,
@@ -723,6 +885,13 @@ namespace Ft
             }
         }
 
+        public new void close ()
+        {
+            this.closing = true;
+
+            base.close ();
+        }
+
         public override Gtk.SizeRequestMode get_request_mode ()
         {
             return Gtk.SizeRequestMode.CONSTANT_SIZE;
@@ -782,13 +951,16 @@ namespace Ft
                     toplevel.fullscreen_mode = Gdk.FullscreenMode.ALL_MONITORS;
                     this.fullscreen ();
                 }
+                else if (this._monitor_request != null &&
+                         this._monitor != this._monitor_request) {
+                    // Keep requesting the target output until the compositor
+                    // places the window there.
+                    toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
+                    this.fullscreen_on_monitor (this._monitor_request);
+                }
                 else if (this._monitor != null) {
                     toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
                     this.fullscreen_on_monitor (this._monitor);
-                }
-                else if (this._monitor_request != null) {
-                    toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
-                    this.fullscreen_on_monitor (this._monitor_request);
                 }
                 else {
                     toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
@@ -849,6 +1021,11 @@ namespace Ft
 
         public override void dispose ()
         {
+            if (this.fullscreen_lost_id != 0) {
+                GLib.Source.remove (this.fullscreen_lost_id);
+                this.fullscreen_lost_id = 0;
+            }
+
             if (this._monitor != null) {
                 this._monitor.notify["valid"].disconnect (this.on_monitor_notify_valid);
             }
