@@ -8,6 +8,19 @@
 
 namespace Ft
 {
+    private static bool have_fullscreen_transparency ()
+    {
+        switch (Ft.get_desktop_name ())
+        {
+            case "gnome":
+                return false;
+
+            default:
+                return true;
+        }
+    }
+
+
     /**
      * A primary monitor used to be defined in X11. Nowadays a primary monitor might be chosen
      * by the compositor. It's unlikely that we will integrate properly with all compositors.
@@ -608,6 +621,8 @@ namespace Ft
     [GtkTemplate (ui = "/io/github/focustimerhq/FocusTimer/ui/overlays/lightbox.ui")]
     public class Lightbox : Gtk.Window, Gtk.Buildable
     {
+        private const uint FADE_IN_TIME = 350;
+        private const uint FADE_OUT_TIME = 300;
         private const uint FULLSCREEN_LOST_TIMEOUT = 250;
 
         public Gdk.Monitor? monitor_request
@@ -674,6 +689,8 @@ namespace Ft
         private bool                         _all_monitors_mode = false;
         private bool                         closing = false;
         private uint                         fullscreen_lost_id = 0;
+        private Adw.TimedAnimation?          fade_in_animation = null;
+        private Adw.TimedAnimation?          fade_out_animation = null;
 
         private static uint next_id = 0;
         internal uint id = 0;
@@ -889,7 +906,37 @@ namespace Ft
         {
             this.closing = true;
 
-            base.close ();
+            if (this.fade_out_animation != null) {
+                return;
+            }
+
+            var animate = have_fullscreen_transparency ();
+            if (!animate || !this.get_mapped ()) {
+                base.close ();
+                return;
+            }
+
+            var opacity_from = this.opacity;
+
+            if (this.fade_in_animation != null) {
+                this.fade_in_animation.skip ();
+                this.opacity = opacity_from;
+            }
+
+            var target = new Adw.PropertyAnimationTarget (this, "opacity");
+
+            this.fade_out_animation = new Adw.TimedAnimation (this,
+                                                              opacity_from,
+                                                              0.0,
+                                                              FADE_OUT_TIME,
+                                                              target);
+            this.fade_out_animation.set_easing (Adw.Easing.EASE_IN_OUT_CUBIC);
+            this.fade_out_animation.done.connect (
+                () => {
+                    base.close ();
+                    this.fade_out_animation = null;
+                });
+            this.fade_out_animation.play ();
         }
 
         public override Gtk.SizeRequestMode get_request_mode ()
@@ -1007,7 +1054,29 @@ namespace Ft
                 this.fullscreen_on_monitor (this._monitor_request);
             }
 
+            var animate = have_fullscreen_transparency ();
+            if (animate) {
+                this.opacity = 0.0;
+            }
+
             base.map ();
+
+            if (animate)
+            {
+                var target = new Adw.PropertyAnimationTarget (this, "opacity");
+
+                this.fade_in_animation = new Adw.TimedAnimation (this,
+                                                                 0.0,
+                                                                 1.0,
+                                                                 FADE_IN_TIME,
+                                                                 target);
+                this.fade_in_animation.set_easing (Adw.Easing.EASE_OUT_QUAD);
+                this.fade_in_animation.done.connect (
+                    () => {
+                        this.fade_in_animation = null;
+                    });
+                this.fade_in_animation.play ();
+            }
         }
 
         public override void unmap ()
@@ -1037,6 +1106,8 @@ namespace Ft
 
             this.notify["fullscreened"].disconnect (this.on_notify_fullscreened);
 
+            this.fade_in_animation = null;
+            this.fade_out_animation = null;
             this._monitor_request = null;
             this._monitor = null;
 
