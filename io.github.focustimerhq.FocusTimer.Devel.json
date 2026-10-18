@@ -71,6 +71,26 @@
       ]
     },
     {
+      "name": "gtk4-layer-shell",
+      "buildsystem": "meson",
+      "builddir": true,
+      "config-opts": [
+        "-Dexamples=false",
+        "-Ddocs=false",
+        "-Dtests=false",
+        "-Dsmoke-tests=false",
+        "-Dintrospection=true",
+        "-Dvapi=true"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/wmww/gtk4-layer-shell.git",
+          "tag": "v1.3.0"
+        }
+      ]
+    },
+    {
       "name": "focus-timer",
       "buildsystem": "meson",
       "config-opts": [

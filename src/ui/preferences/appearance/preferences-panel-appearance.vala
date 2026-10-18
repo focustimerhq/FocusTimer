@@ -48,16 +48,16 @@ namespace Ft
 
         private void update_screen_overlay_group ()
         {
-            if (this.screen_overlay_manager?.provider is Ft.DefaultScreenOverlayProvider) {
-                this.screen_overlay_group.visible = true;
+            if (this.screen_overlay_manager?.provider is Ft.DefaultScreenOverlayProvider)
+            {
+                var have_blur_effect = Ft.have_blur_effect ();
 
-                // TODO: hide blur-effect if not supported
+                this.screen_overlay_group.visible = have_blur_effect;
+                this.blur_effect_switchrow.sensitive = have_blur_effect;
             }
             else {
-                this.screen_overlay_group.visible = true;
+                this.screen_overlay_group.visible = false;
             }
-
-            // TODO: hide screen_overlay_group when none of the rows are visible
         }
 
         private void on_screen_overlay_manager_notify_provider (GLib.Object    object,

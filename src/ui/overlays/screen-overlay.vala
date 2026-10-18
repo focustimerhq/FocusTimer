@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2025 focus-timer contributors
+ * Copyright (c) 2023-2026 focus-timer contributors
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */

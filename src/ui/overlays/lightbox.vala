@@ -9,9 +9,27 @@
 namespace Ft
 {
     /**
-     * Some compositors (like mutter) unredirect compositing for fullscreened windows, which
-     * prevents the window from being transparent. In this case, we can't fade-in/out the
-     * window and blur-effect won't work either.
+     * Compositor may apply transitions to windows based on their layer.
+     * We want to use appropriate layer, preferably without any transitions.
+     */
+    #if HAVE_GTK4_LAYER_SHELL
+    private string get_layer_shell_namespace ()
+    {
+        switch (Ft.get_desktop_name ())
+        {
+            case "kde":
+                return "on-screen-display";
+
+            default:
+                return "osd";
+        }
+    }
+    #endif
+
+
+    /**
+     * In some compositors (like mutter) fullscreened windows skip the compositing for extra
+     * performance (aka. fullscreen unredirect). This prevents windows from being transparent.
      */
     private bool have_fullscreen_transparency ()
     {
@@ -20,17 +38,16 @@ namespace Ft
             case "gnome":
                 return false;
 
+            case "cosmic":
+                return false;
+
             default:
                 return true;
         }
     }
 
 
-    /**
-     * GTK applies `ext_background_effect_manager_v1` when using a `backdrop-filter` on a
-     * semi-transparent window. Check if the compositor advertises the protocol.
-     */
-    private bool have_background_effect ()
+    private bool have_wayland_background_effect ()
     {
         #if HAVE_GDK_WAYLAND
         if (Gtk.check_version (4, 23, 3) != null) {
@@ -45,6 +62,14 @@ namespace Ft
         #else
         return false;
         #endif
+    }
+
+
+    internal bool have_blur_effect (bool is_layer = resolve_is_layer ())
+    {
+        return is_layer || have_fullscreen_transparency ()
+                ? have_wayland_background_effect ()
+                : false;
     }
 
 
@@ -136,7 +161,8 @@ namespace Ft
     /**
      * Layout manager that positions window contents within the bounds of a monitor.
      *
-     * It's necessary for handling `Gdk.FullscreenMode.ALL_MONITORS`.
+     * It's necessary for `Gdk.FullscreenMode.ALL_MONITORS`, where one window
+     * spans every output and the contents stay on the primary monitor.
      */
     private class MonitorConstrainedLayoutManager : Gtk.LayoutManager
     {
@@ -221,6 +247,44 @@ namespace Ft
     }
 
 
+    /**
+     * Check support for Wayland `zwlr_layer_shell_v1` protocol.
+     *
+     * We prefer layer-shell over fullscreen windows:
+     * - it ensures the window can be transparent, allowing fade-in/out and blur effect
+     * - windows tend to have no transitions when opened
+     * - may work better with GNOME Shell Overview mode or alike
+     * - windows skips pager - less visual changes for the user
+     * - placing it on a monitor is more explicit - not a request
+     */
+    private bool resolve_is_layer ()
+    {
+        #if HAVE_GTK4_LAYER_SHELL
+        #if HAVE_GDK_WAYLAND
+        var display = Gdk.Display.get_default ();
+
+        if (display is Gdk.Wayland.Display && GtkLayerShell.is_supported ()) {
+            return true;
+        }
+        #endif
+        #endif
+
+        return false;
+    }
+
+
+    private Gdk.FullscreenMode resolve_fullscreen_mode ()
+    {
+        var display = Gdk.Display.get_default ();
+
+        if (display != null && display.get_type ().name () == "GdkX11Display") {
+            return Gdk.FullscreenMode.ALL_MONITORS;
+        }
+
+        return Gdk.FullscreenMode.CURRENT_MONITOR;
+    }
+
+
     private errordomain LightboxError
     {
         NO_MONITORS,
@@ -235,6 +299,8 @@ namespace Ft
         private const uint DEACTIVATE_TIMEOUT_MS = 250;
 
         private GLib.Type                       lightbox_type;
+        private Gdk.FullscreenMode              fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
+        private bool                            is_layer = false;
         private GLib.GenericSet<Ft.Lightbox>?   lightboxes = null;
         private Gtk.WindowGroup?                window_group = null;
         private GLib.ListModel?                 monitors = null;
@@ -289,18 +355,27 @@ namespace Ft
 
         private Ft.Lightbox create_lightbox (Gdk.Monitor? monitor_request)
         {
+            if (this.is_layer) {
+                assert (monitor_request != null);
+            }
+
             var monitor_request_value = GLib.Value (typeof (Gdk.Monitor?));
             monitor_request_value.set_object (monitor_request);
 
             var show_contents_value = GLib.Value (typeof (bool));
             show_contents_value.set_boolean (false);
 
+            var fullscreen_mode_value = GLib.Value (typeof (Gdk.FullscreenMode));
+            fullscreen_mode_value.set_enum (this.fullscreen_mode);
+
+            var is_layer_value = GLib.Value (typeof (bool));
+            is_layer_value.set_boolean (this.is_layer);
+
             var lightbox = (Ft.Lightbox) GLib.Object.new_with_properties (
-                                        this.lightbox_type,
-                                        { "monitor-request", "show-contents" },
-                                        { monitor_request_value, show_contents_value });
+                    this.lightbox_type,
+                    { "monitor-request", "show-contents", "fullscreen-mode", "is-layer" },
+                    { monitor_request_value, show_contents_value, fullscreen_mode_value, is_layer_value });
             lightbox.notify["monitor"].connect (this.on_lightbox_queue_update);
-            lightbox.notify["all-monitors-mode"].connect (this.on_lightbox_notify_all_monitors_mode);
             lightbox.notify["fullscreened"].connect (this.on_lightbox_notify_fullscreened);
             lightbox.notify["is-active"].connect (this.on_lightbox_notify_is_active);
             lightbox.close_request.connect (this.on_lightbox_close_request);
@@ -323,7 +398,6 @@ namespace Ft
         private void destroy_lightbox (Ft.Lightbox lightbox)
         {
             lightbox.notify["monitor"].disconnect (this.on_lightbox_queue_update);
-            lightbox.notify["all-monitors-mode"].disconnect (this.on_lightbox_notify_all_monitors_mode);
             lightbox.notify["fullscreened"].disconnect (this.on_lightbox_notify_fullscreened);
             lightbox.notify["is-active"].disconnect (this.on_lightbox_notify_is_active);
             lightbox.close_request.disconnect (this.on_lightbox_close_request);
@@ -340,7 +414,7 @@ namespace Ft
             lightbox.close ();
         }
 
-        private void update_lightboxes ()
+        private void update_lightboxes__current_monitor ()
         {
             if (this.lightboxes.length == 0)
             {
@@ -350,8 +424,7 @@ namespace Ft
 
             if (this.get_active_lightbox () == null)
             {
-                // Spawning windows per monitor is unreliable while none of the windows
-                // is active (e.g. in GNOME Shell overview). Keep only the primary window.
+                // Handle lightboxes on GNOME Shell overview.
                 var primary_lightbox = this.get_primary_lightbox ();
 
                 this.lightboxes.get_values ().@foreach (
@@ -368,10 +441,7 @@ namespace Ft
             {
                 var lightbox = this.get_first_lightbox ();
 
-                if (lightbox.all_monitors_mode ||
-                    !lightbox.fullscreened ||
-                    lightbox.monitor == null)
-                {
+                if (!lightbox.fullscreened || lightbox.monitor == null) {
                     // Wait until the compositor has placed this window.
                     return;
                 }
@@ -435,6 +505,55 @@ namespace Ft
             }
         }
 
+        private void update_lightboxes__all_monitors ()
+        {
+            if (this.lightboxes.length == 0)
+            {
+                this.create_lightbox (null);
+                return;
+            }
+
+            var primary_lightbox = this.get_primary_lightbox ();
+
+            this.lightboxes.get_values ().@foreach (
+                (lightbox) => {
+                    if (lightbox != primary_lightbox) {
+                        this.destroy_lightbox (lightbox);
+                    }
+                });
+        }
+
+        private void update_lightboxes__is_layer ()
+        {
+            var paired_monitors = new GLib.GenericSet<unowned Gdk.Monitor> (
+                                        GLib.direct_hash, GLib.direct_equal);
+
+            this.lightboxes.get_values ().@foreach (
+                (lightbox) => {
+                    var claimed_monitor = lightbox.monitor_request;
+
+                    if (claimed_monitor == null || !claimed_monitor.valid ||
+                        paired_monitors.contains (claimed_monitor))
+                    {
+                        this.destroy_lightbox (lightbox);
+                        return;
+                    }
+
+                    paired_monitors.add (claimed_monitor);
+                });
+
+            for (var index = 0U; index < this.monitors.get_n_items (); index++)
+            {
+                var monitor = (Gdk.Monitor?) this.monitors.get_item (index);
+
+                if (monitor != null && monitor.valid && !paired_monitors.contains (monitor))
+                {
+                    this.create_lightbox (monitor);
+                    paired_monitors.add (monitor);
+                }
+            }
+        }
+
         private void update ()
         {
             if (this.closing || this.updating_count > 0 || this.monitors == null) {
@@ -447,7 +566,17 @@ namespace Ft
             }
 
             this.updating_count++;
-            this.update_lightboxes ();
+
+            if (this.is_layer) {
+                this.update_lightboxes__is_layer ();
+            }
+            else if (this.fullscreen_mode == Gdk.FullscreenMode.ALL_MONITORS) {
+                this.update_lightboxes__all_monitors ();
+            }
+            else {
+                this.update_lightboxes__current_monitor ();
+            }
+
             this.updating_count--;
         }
 
@@ -487,19 +616,13 @@ namespace Ft
             this.queue_update ();
         }
 
-        private void on_lightbox_notify_all_monitors_mode (GLib.Object    object,
-                                                           GLib.ParamSpec pspec)
-        {
-            unowned var lightbox = (Ft.Lightbox) object;
-
-            if (!lightbox.all_monitors_mode) {
-                this.queue_update ();
-            }
-        }
-
         private void on_lightbox_notify_fullscreened (GLib.Object    object,
                                                       GLib.ParamSpec pspec)
         {
+            if (this.is_layer || this.fullscreen_mode != Gdk.FullscreenMode.CURRENT_MONITOR) {
+                return;
+            }
+
             unowned var lightbox = (Ft.Lightbox) object;
 
             if (lightbox.fullscreened) {
@@ -510,6 +633,10 @@ namespace Ft
         private void on_lightbox_notify_is_active (GLib.Object    object,
                                                    GLib.ParamSpec pspec)
         {
+            if (this.is_layer || this.fullscreen_mode != Gdk.FullscreenMode.CURRENT_MONITOR) {
+                return;
+            }
+
             unowned var lightbox = (Ft.Lightbox) object;
 
             if (lightbox.is_active)
@@ -568,6 +695,8 @@ namespace Ft
                 this.monitors_changed_id = this.monitors.items_changed.connect (this.on_monitors_changed);
             }
 
+            this.is_layer = resolve_is_layer ();
+            this.fullscreen_mode = resolve_fullscreen_mode ();
             this.window_group = new Gtk.WindowGroup ();
 
             this.update ();
@@ -657,7 +786,7 @@ namespace Ft
             get {
                 return this._monitor_request;
             }
-            set {
+            construct set {
                 this._monitor_request = value;
             }
         }
@@ -667,6 +796,18 @@ namespace Ft
             get {
                 return this._monitor;
             }
+        }
+
+        public Gdk.FullscreenMode fullscreen_mode {
+            get;
+            construct;
+            default = Gdk.FullscreenMode.CURRENT_MONITOR;
+        }
+
+        public bool is_layer {
+            get;
+            construct;
+            default = false;
         }
 
         public Gtk.Widget? contents
@@ -689,13 +830,6 @@ namespace Ft
             }
         }
 
-        public bool all_monitors_mode
-        {
-            get {
-                return this._all_monitors_mode;
-            }
-        }
-
         public bool show_contents
         {
             get {
@@ -713,7 +847,6 @@ namespace Ft
         private Gdk.Monitor?                 _monitor = null;
         private GLib.GenericSet<Gdk.Monitor> monitors = null;
 
-        private bool                         _all_monitors_mode = false;
         private bool                         closing = false;
         private uint                         fullscreen_lost_id = 0;
         private Adw.TimedAnimation?          fade_in_animation = null;
@@ -737,15 +870,36 @@ namespace Ft
 
             this.notify["fullscreened"].connect (this.on_notify_fullscreened);
 
+            if (this.is_layer) {
+                this.init_layer_shell ();
+            }
+
             var settings = Ft.get_settings ();
 
-            if (settings.get_boolean ("blur-effect") &&
-                have_fullscreen_transparency () &&
-                have_background_effect ())
-            {
+            if (settings.get_boolean ("blur-effect") && have_blur_effect (this.is_layer)) {
                 this.remove_css_class ("background");
                 this.add_css_class ("blur-effect");
             }
+        }
+
+        private void init_layer_shell ()
+        {
+            #if HAVE_GTK4_LAYER_SHELL
+            GtkLayerShell.init_for_window (this);
+            GtkLayerShell.set_layer (this, GtkLayerShell.Layer.OVERLAY);
+
+            if (this._monitor_request != null) {
+                GtkLayerShell.set_monitor (this, this._monitor_request);
+            }
+
+            GtkLayerShell.set_anchor (this, GtkLayerShell.Edge.LEFT, true);
+            GtkLayerShell.set_anchor (this, GtkLayerShell.Edge.RIGHT, true);
+            GtkLayerShell.set_anchor (this, GtkLayerShell.Edge.TOP, true);
+            GtkLayerShell.set_anchor (this, GtkLayerShell.Edge.BOTTOM, true);
+            GtkLayerShell.set_exclusive_zone (this, -1);
+            GtkLayerShell.set_keyboard_mode (this, GtkLayerShell.KeyboardMode.EXCLUSIVE);
+            GtkLayerShell.set_namespace (this, get_layer_shell_namespace ());
+            #endif
         }
 
         private void update_monitor ()
@@ -760,7 +914,13 @@ namespace Ft
                     : null;
             var primary_monitor = get_primary_monitor (display);
 
-            if (this._all_monitors_mode)
+            if (this.is_layer)
+            {
+                monitor = this._monitor_request ?? surface_monitor;
+                layout_manager.monitor = null;
+                this.show_contents = monitor == primary_monitor;
+            }
+            else if (this.fullscreen_mode == Gdk.FullscreenMode.ALL_MONITORS)
             {
                 if (this.monitors.contains (primary_monitor)) {
                     monitor = primary_monitor;
@@ -808,7 +968,7 @@ namespace Ft
         private void on_notify_fullscreened (GLib.Object    object,
                                              GLib.ParamSpec pspec)
         {
-            if (this.closing) {
+            if (this.is_layer || this.closing) {
                 return;
             }
 
@@ -822,7 +982,7 @@ namespace Ft
                 return;
             }
 
-            // The compositor can clear `fullscreen` for a moment while placing the window.
+            // The compositor can clear `fullscreened` for a moment while placing the window.
             // Close only if it sticks.
             if (this.fullscreen_lost_id != 0) {
                 return;
@@ -892,53 +1052,6 @@ namespace Ft
             return false;
         }
 
-        private bool resolve_all_monitors_mode (int width,
-                                                int height)
-        {
-            if (this._monitor_request != null) {
-                return false;
-            }
-
-            var display = this.get_display ();
-            var display_geometry = get_display_geometry (display);
-            var monitors = display.get_monitors ();
-            var monitors_count = monitors.get_n_items ();
-
-            if (monitors_count == 0) {
-                return false;
-            }
-
-            if (monitors_count == 1) {
-                return true;
-            }
-
-            for (var index = 0; index < monitors.get_n_items (); index++)
-            {
-                var monitor = (Gdk.Monitor?) monitors.get_item (index);
-
-                if (monitor.valid && !this.monitors.contains (monitor)) {
-                    return false;
-                }
-            }
-
-            return width >= display_geometry.width &&
-                   height >= display_geometry.height;
-        }
-
-        /**
-         * We don't have access to compositor coordinates.
-         */
-        private void update_all_monitors_mode (int width,
-                                               int height)
-        {
-            var all_monitors_mode = this.resolve_all_monitors_mode (width, height);
-
-            if (this._all_monitors_mode != all_monitors_mode) {
-                this._all_monitors_mode = all_monitors_mode;
-                this.notify_property ("all-monitors-mode");
-            }
-        }
-
         public new void close ()
         {
             this.closing = true;
@@ -947,7 +1060,7 @@ namespace Ft
                 return;
             }
 
-            var animate = have_fullscreen_transparency ();
+            var animate = this.is_layer || have_fullscreen_transparency ();
             if (!animate || !this.get_mapped ()) {
                 base.close ();
                 return;
@@ -990,7 +1103,7 @@ namespace Ft
         {
             var monitor = this._monitor != null ? this._monitor : this._monitor_request;
 
-            if (this._monitor_request == null && this.monitors.length > 1)
+            if (this.fullscreen_mode == Gdk.FullscreenMode.ALL_MONITORS && !this.is_layer)
             {
                 var display_geometry = get_display_geometry (this.get_display ());
 
@@ -1023,31 +1136,32 @@ namespace Ft
                                             int height,
                                             int baseline)
         {
-            if (this.monitors.length > 0)
-            {
-                this.update_all_monitors_mode (width, height);
+            if (this.monitors.length > 0 || this.is_layer) {
                 this.update_monitor ();
+            }
 
-                // Remind the compositor to do full-screen on all monitors.
+            if (this.monitors.length > 0 && !this.is_layer)
+            {
                 var toplevel = (Gdk.Toplevel) this.get_surface ();
 
-                if (this._all_monitors_mode) {
-                    toplevel.fullscreen_mode = Gdk.FullscreenMode.ALL_MONITORS;
-                    this.fullscreen ();
-                }
-                else if (this._monitor_request != null &&
-                         this._monitor != this._monitor_request) {
-                    // Keep requesting the target output until the compositor
-                    // places the window there.
+                if (this.fullscreen_mode == Gdk.FullscreenMode.CURRENT_MONITOR)
+                {
                     toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
-                    this.fullscreen_on_monitor (this._monitor_request);
-                }
-                else if (this._monitor != null) {
-                    toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
-                    this.fullscreen_on_monitor (this._monitor);
+
+                    if (this._monitor != this._monitor_request && this._monitor_request != null) {
+                        // Keep requesting the target output until the compositor
+                        // places the window there.
+                        this.fullscreen_on_monitor (this._monitor_request);
+                    }
+                    else if (this._monitor != null) {
+                        this.fullscreen_on_monitor (this._monitor);
+                    }
+                    else {
+                        this.fullscreen ();
+                    }
                 }
                 else {
-                    toplevel.fullscreen_mode = Gdk.FullscreenMode.CURRENT_MONITOR;
+                    toplevel.fullscreen_mode = Gdk.FullscreenMode.ALL_MONITORS;
                     this.fullscreen ();
                 }
             }
@@ -1057,41 +1171,33 @@ namespace Ft
                                 baseline);
         }
 
-        // public override void realize ()
-        // {
-        //     base.realize ();
-        //
-        //     var surface = this.get_surface ();
-        //     var display = surface?.get_display ();
-        //
-        //     #if HAVE_GDK_X11
-        //     if (display is Gdk.X11.Display)
-        //     {
-        //         var x11_surface = surface as Gdk.X11.Surface;
-        //
-        //         x11_surface.set_skip_pager_hint (true);
-        //         x11_surface.set_skip_taskbar_hint (true);
-        //     }
-        //     #endif
-        // }
-
         public override void map ()
         {
             var toplevel = (Gdk.Toplevel) this.get_surface ();
             toplevel.enter_monitor.connect (this.on_enter_monitor);
             toplevel.leave_monitor.connect (this.on_leave_monitor);
 
-            if (this._monitor_request == null) {
-                // Request opening window on all monitors. If it fails, open additional windows later.
-                toplevel.fullscreen_mode = Gdk.FullscreenMode.ALL_MONITORS;
+            var animate = have_fullscreen_transparency ();
 
-                this.fullscreen ();
+            if (this.is_layer)
+            {
+                // Layer surfaces are not fullscreen windows, and the
+                // compositor may not emit enter-monitor for them.
+                this.on_enter_monitor (this._monitor_request);
+                animate = true;
             }
-            else {
+            else if (this.fullscreen_mode == Gdk.FullscreenMode.CURRENT_MONITOR &&
+                     this._monitor_request != null)
+            {
                 this.fullscreen_on_monitor (this._monitor_request);
             }
+            else {
+                // Request opening window on all monitors. If it fails, open additional
+                // windows later.
+                toplevel.fullscreen_mode = Gdk.FullscreenMode.ALL_MONITORS;
+                this.fullscreen ();
+            }
 
-            var animate = have_fullscreen_transparency ();
             if (animate) {
                 this.opacity = 0.0;
             }

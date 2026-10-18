@@ -88,6 +88,7 @@ libft_ui = static_library(
     gtk_dep,
     gtk_x11_dep,
     gtk_wayland_dep,
+    gtk4_layer_shell_dep,
     graphene_dep,
     libadwaita_dep,
     peas_dep,
@@ -101,6 +102,7 @@ libft_ui_dep = declare_dependency(
     libft_core_dep,
     gtk_dep,
     libadwaita_dep,
+    gtk4_layer_shell_dep,
     peas_dep,
   ],
   include_directories: [

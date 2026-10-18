@@ -1,16 +1,16 @@
 if enable_plugin_wayland
-  protocol_xml = files('protocols/ext-idle-notify-v1.xml')
+  idle_protocol_xml = files('protocols/ext-idle-notify-v1.xml')
 
   ext_idle_protocol_client_header = custom_target(
     'ext-idle-protocol-client-header',
-    input: protocol_xml,
+    input: idle_protocol_xml,
     output: 'ext-idle-protocol-client.h',
     command: [wayland_scanner, 'client-header', '@INPUT@', '@OUTPUT@'],
   )
 
   ext_idle_protocol_private_code = custom_target(
     'ext-idle-protocol-private-code',
-    input: protocol_xml,
+    input: idle_protocol_xml,
     output: 'ext-idle-protocol.c',
     command: [wayland_scanner, 'private-code', '@INPUT@', '@OUTPUT@'],
   )

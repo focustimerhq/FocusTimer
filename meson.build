@@ -24,10 +24,11 @@ gstreamer_dep = dependency('gstreamer-1.0', version: '>=1.0.10')
 gstreamer_controller_dep = dependency('gstreamer-controller-1.0')
 json_dep = dependency('json-glib-1.0', version: '>=1.6.2')
 sqlite_dep = dependency('sqlite3')
-gtk_x11_dep = dependency('gtk4-x11', required: false)
 gtk_wayland_dep = dependency('gtk4-wayland', required: get_option('plugin_wayland'))
 wayland_client_dep = dependency('wayland-client', required: get_option('plugin_wayland'))
 wayland_scanner = find_program('wayland-scanner', required: get_option('plugin_wayland'))
+gtk_x11_dep = dependency('gtk4-x11', required: false)
+gtk4_layer_shell_dep = dependency('gtk4-layer-shell-0', version: '>=1.0', required: false)
 bash_completion_dep = dependency('bash-completion', required: false)
 
 cc = meson.get_compiler('c')
@@ -98,6 +99,10 @@ endif
 
 if gtk_wayland_dep.found()
   add_project_arguments(['-D', 'HAVE_GDK_WAYLAND'], language: 'vala')
+endif
+
+if gtk4_layer_shell_dep.found()
+  add_project_arguments(['-D', 'HAVE_GTK4_LAYER_SHELL'], language: 'vala')
 endif
 
 if get_option('profile') == 'development'
