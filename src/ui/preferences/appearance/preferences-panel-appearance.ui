@@ -27,6 +27,16 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="AdwPreferencesGroup" id="screen_overlay_group">
+                <property name="title" translatable="yes">Screen Overlay</property>
+                <child>
+                  <object class="AdwSwitchRow" id="blur_effect_switchrow">
+                    <property name="title" translatable="yes">Blur Effect</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </property>
       </object>

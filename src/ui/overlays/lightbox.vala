@@ -8,7 +8,12 @@
 
 namespace Ft
 {
-    private static bool have_fullscreen_transparency ()
+    /**
+     * Some compositors (like mutter) unredirect compositing for fullscreened windows, which
+     * prevents the window from being transparent. In this case, we can't fade-in/out the
+     * window and blur-effect won't work either.
+     */
+    private bool have_fullscreen_transparency ()
     {
         switch (Ft.get_desktop_name ())
         {
@@ -18,6 +23,28 @@ namespace Ft
             default:
                 return true;
         }
+    }
+
+
+    /**
+     * GTK applies `ext_background_effect_manager_v1` when using a `backdrop-filter` on a
+     * semi-transparent window. Check if the compositor advertises the protocol.
+     */
+    private bool have_background_effect ()
+    {
+        #if HAVE_GDK_WAYLAND
+        if (Gtk.check_version (4, 23, 3) != null) {
+            return false;
+        }
+
+        var display = Gdk.Display.get_default () as Gdk.Wayland.Display;
+
+        return display != null
+                ? display.query_registry ("ext_background_effect_manager_v1")
+                : false;
+        #else
+        return false;
+        #endif
     }
 
 
@@ -709,6 +736,16 @@ namespace Ft
             this.monitors = new GLib.GenericSet<Gdk.Monitor> (GLib.direct_hash, GLib.direct_equal);
 
             this.notify["fullscreened"].connect (this.on_notify_fullscreened);
+
+            var settings = Ft.get_settings ();
+
+            if (settings.get_boolean ("blur-effect") &&
+                have_fullscreen_transparency () &&
+                have_background_effect ())
+            {
+                this.remove_css_class ("background");
+                this.add_css_class ("blur-effect");
+            }
         }
 
         private void update_monitor ()

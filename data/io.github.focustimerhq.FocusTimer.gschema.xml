@@ -83,6 +83,10 @@
       <summary>Open app in compact view</summary>
       <description></description>
     </key>
+    <key name="blur-effect" type="b">
+      <default>true</default>
+      <summary>Blur effect</summary>
+    </key>
 
     <!-- Sounds -->
     <key name="sounds" type="b">
