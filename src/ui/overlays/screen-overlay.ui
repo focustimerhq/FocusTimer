@@ -6,14 +6,15 @@
     <property name="startup-id">focus-timer-screen-overlay</property>
     <property name="can-focus">true</property>
     <property name="contents">
-      <object class="GtkBox">
+      <object class="GtkCenterBox">
         <property name="orientation">vertical</property>
         <property name="vexpand">true</property>
         <property name="can-focus">false</property>
-        <child>
-          <object class="GtkBox">
+        <property name="start-widget">
+          <object class="GtkBox" id="buttons_box">
             <property name="halign">end</property>
             <property name="spacing">10</property>
+            <property name="visible" bind-source="FtScreenOverlay" bind-property="enable-dismiss-gesture" bind-flags="invert-boolean | sync-create"/>
             <child>
               <object class="GtkButton" id="lock_screen_button">
                 <child>
@@ -45,15 +46,14 @@
               </object>
             </child>
           </object>
-        </child>
-        <child>
+        </property>
+        <property name="center-widget">
           <object class="GtkBox">
             <property name="orientation">vertical</property>
             <property name="halign">center</property>
             <property name="valign">center</property>
             <property name="vexpand">true</property>
             <property name="spacing">6</property>
-            <property name="margin-bottom">50</property>
             <child>
               <object class="FtTimerLabel">
                 <property name="halign">center</property>
@@ -69,8 +69,44 @@
               </object>
             </child>
           </object>
-        </child>
+        </property>
+        <property name="end-widget">
+          <object class="GtkImage" id="do_not_touch_icon">
+            <property name="icon-name">do-not-touch-symbolic</property>
+            <property name="pixel-size">24</property>
+            <property name="halign">center</property>
+            <property name="margin-bottom">80</property>
+            <property name="visible" bind-source="FtScreenOverlay" bind-property="enable-dismiss-gesture" bind-flags="sync-create"/>
+            <style>
+              <class name="do-not-touch"/>
+            </style>
+          </object>
+        </property>
       </object>
     </property>
+    <child>
+      <object class="GtkEventControllerKey">
+        <signal name="key-pressed" handler="on_gesture_key_pressed" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkGestureClick">
+        <!-- Any mouse button or touch. The sequence stays unclaimed, so the
+             lock and close buttons still receive clicks when the gesture is off. -->
+        <property name="button">0</property>
+        <signal name="pressed" handler="on_gesture_pressed" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkEventControllerMotion">
+        <signal name="motion" handler="on_gesture_motion" swapped="no"/>
+      </object>
+    </child>
+    <child>
+      <object class="GtkEventControllerScroll">
+        <property name="flags">vertical|horizontal</property>
+        <signal name="scroll" handler="on_gesture_scroll" swapped="no"/>
+      </object>
+    </child>
   </template>
 </interface>

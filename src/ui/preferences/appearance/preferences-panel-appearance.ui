@@ -35,6 +35,11 @@
                     <property name="title" translatable="yes">Blur Effect</property>
                   </object>
                 </child>
+                <child>
+                  <object class="AdwSwitchRow" id="dismiss_gesture_switchrow">
+                    <property name="title" translatable="yes">Dismiss Gesture</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>

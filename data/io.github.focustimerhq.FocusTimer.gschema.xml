@@ -87,6 +87,11 @@
       <default>true</default>
       <summary>Blur effect</summary>
     </key>
+    <key name="dismiss-gesture" type="b">
+      <default>false</default>
+      <summary>Dismiss screen overlay by gesture</summary>
+      <description></description>
+    </key>
 
     <!-- Sounds -->
     <key name="sounds" type="b">

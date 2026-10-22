@@ -533,6 +533,15 @@ lightbox button:active {
     background-color: rgba(255, 255, 255, 0.30);
 }
 
+lightbox .do-not-touch {
+    opacity: 1;
+}
+
+lightbox.acknowledged .do-not-touch {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
 
 /*
  * Preferences window

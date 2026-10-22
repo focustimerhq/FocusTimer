@@ -19,6 +19,8 @@ namespace Ft
         private unowned Adw.PreferencesGroup screen_overlay_group;
         [GtkChild]
         private unowned Adw.SwitchRow blur_effect_switchrow;
+        [GtkChild]
+        private unowned Adw.SwitchRow dismiss_gesture_switchrow;
 
         private GLib.Settings?              settings = null;
         private Ft.ScreenOverlayManager?    screen_overlay_manager = null;
@@ -38,6 +40,10 @@ namespace Ft
                                 this.blur_effect_switchrow,
                                 "active",
                                 GLib.SettingsBindFlags.DEFAULT);
+            this.settings.bind ("dismiss-gesture",
+                                this.dismiss_gesture_switchrow,
+                                "active",
+                                GLib.SettingsBindFlags.DEFAULT);
 
             this.screen_overlay_manager = new Ft.ScreenOverlayManager ();
             this.screen_overlay_manager.notify["provider"].connect (
@@ -48,12 +54,9 @@ namespace Ft
 
         private void update_screen_overlay_group ()
         {
-            if (this.screen_overlay_manager?.provider is Ft.DefaultScreenOverlayProvider)
-            {
-                var have_blur_effect = Ft.have_blur_effect ();
-
-                this.screen_overlay_group.visible = have_blur_effect;
-                this.blur_effect_switchrow.sensitive = have_blur_effect;
+            if (this.screen_overlay_manager?.provider is Ft.DefaultScreenOverlayProvider) {
+                this.screen_overlay_group.visible = true;
+                this.blur_effect_switchrow.visible = Ft.have_blur_effect ();
             }
             else {
                 this.screen_overlay_group.visible = false;
