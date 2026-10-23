@@ -22,7 +22,7 @@
                 </child>
                 <child>
                   <object class="AdwSwitchRow" id="compact_mode_switchrow">
-                    <property name="title" translatable="yes">Prefer Compact Mode</property>
+                    <property name="title" translatable="yes">Open in Compact Mode</property>
                   </object>
                 </child>
               </object>

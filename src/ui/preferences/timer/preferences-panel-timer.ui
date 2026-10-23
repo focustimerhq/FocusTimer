@@ -95,7 +95,7 @@
                 <property name="title" translatable="yes">Behavior</property>
                 <child>
                   <object class="AdwSwitchRow" id="pause_on_lockscreen_switchrow">
-                    <property name="title" translatable="yes">Pause By Locking The Screen</property>
+                    <property name="title" translatable="yes">Pause When Locking the Screen</property>
                   </object>
                 </child>
                 <child>
