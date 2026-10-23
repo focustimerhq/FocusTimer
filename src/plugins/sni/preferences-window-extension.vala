@@ -43,7 +43,7 @@ namespace Sni
 
                 var indicator_row = new Adw.SwitchRow ();
                 indicator_row.title = _("Show Tray Icon");
-                indicator_row.subtitle = _("Closing the window keeps the app running in the background.");
+                indicator_row.subtitle = _("Closing the window keeps the app running in the background");
                 indicator_group.add (indicator_row);
                 this.settings.bind ("indicator",
                                     indicator_row, "active",

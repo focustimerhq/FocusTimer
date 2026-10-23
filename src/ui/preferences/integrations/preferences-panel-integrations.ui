@@ -17,7 +17,7 @@
                 <child>
                   <object class="AdwSwitchRow" id="autostart_switchrow">
                     <property name="title" translatable="yes">Autostart</property>
-                    <property name="subtitle" translatable="yes">Automatically launch the app when you log in.</property>
+                    <property name="subtitle" translatable="yes">Automatically launch the app when you log in</property>
                   </object>
                 </child>
                 <child>

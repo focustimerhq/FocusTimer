@@ -36,7 +36,7 @@
                       <object class="AdwStatusPage">
                         <property name="icon-name">view-list-symbolic</property>
                         <property name="title" translatable="yes">Empty Log</property>
-                        <property name="description" translatable="yes">Entries will show up here once you start the timer.</property>
+                        <property name="description" translatable="yes">Entries will show up here once you start the timer</property>
                       </object>
                     </property>
                   </object>

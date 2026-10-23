@@ -33,7 +33,7 @@
             </child>
             <child>
               <object class="AdwPreferencesPage" id="page">
-                <property name="description" translatable="yes"><![CDATA[Run shell commands automatically on timer events or conditions.]]></property>
+                <property name="description" translatable="yes">Run shell commands automatically on timer events or conditions</property>
                 <child>
                   <object class="AdwPreferencesGroup">
                     <child>

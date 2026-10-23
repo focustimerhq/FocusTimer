@@ -52,7 +52,7 @@ namespace Kde
                     });
 
                 var notification_group = new Adw.PreferencesGroup ();
-                notification_group.description = _("For reliable break reminders, allow this app's notifications during Do Not Disturb and disable its notification history.");
+                notification_group.description = _("For reliable break reminders, allow this app's notifications during Do Not Disturb and disable its notification history");
                 notification_group.header_suffix = notification_settings_button;
                 page.add (notification_group);
 
@@ -83,7 +83,7 @@ namespace Kde
 
                 var manage_notifications_row = new Adw.SwitchRow ();
                 manage_notifications_row.title = _("Do Not Disturb");
-                manage_notifications_row.subtitle = _("Hide non-critical notifications while using the timer.");
+                manage_notifications_row.subtitle = _("Hide non-critical notifications while using the timer");
                 desktop_group.add (manage_notifications_row);
 
                 this.desktop_group = desktop_group;

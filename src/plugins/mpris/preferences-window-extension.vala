@@ -34,7 +34,7 @@ namespace Mpris
 
                 var manage_notifications_row = new Adw.SwitchRow ();
                 manage_notifications_row.title = _("Auto-Pause Media");
-                manage_notifications_row.subtitle = _("Pauses during breaks, resumes at the next Pomodoro.");
+                manage_notifications_row.subtitle = _("Pauses during breaks, resumes at the next Pomodoro");
                 media_playback_group.add (manage_notifications_row);
 
                 this.media_playback_group = media_playback_group;

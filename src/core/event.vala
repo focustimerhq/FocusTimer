@@ -266,7 +266,7 @@ namespace Ft
         // Actions
         event_spec = new Ft.EventSpec ("start",
                                        _("Start"),
-                                       _("Started the timer."),
+                                       _("Started the timer"),
                                        Ft.EventCategory.ACTIONS);
         event_spec.add_trigger (Ft.TriggerHook.TIMER_STATE_CHANGED,
                                 (Ft.TriggerFunc) trigger_start_event);
@@ -274,7 +274,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("stop",
                                        _("Stop"),
-                                       _("Stopped the timer manually."),
+                                       _("Stopped the timer manually"),
                                        Ft.EventCategory.ACTIONS);
         event_spec.add_trigger (Ft.TriggerHook.TIMER_STATE_CHANGED,
                                 (Ft.TriggerFunc) trigger_stop_event);
@@ -290,7 +290,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("resume",
                                        _("Resume"),
-                                       _("The countdown has been manually resumed."),
+                                       _("The countdown has been manually resumed"),
                                        Ft.EventCategory.ACTIONS);
         event_spec.add_trigger (Ft.TriggerHook.TIMER_STATE_CHANGED,
                                 (Ft.TriggerFunc) trigger_resume_event);
@@ -298,7 +298,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("skip",
                                        _("Skip"),
-                                       _("Jumped to a next time-block before the countdown has finished."),
+                                       _("Jumped to a next time-block before the countdown has finished"),
                                        Ft.EventCategory.ACTIONS);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_ADVANCED,
                                 (Ft.TriggerFunc) trigger_skip_event);
@@ -314,7 +314,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("reset",
                                        _("Reset"),
-                                       _("Manually cleared the session."),
+                                       _("Manually cleared the session"),
                                        Ft.EventCategory.ACTIONS);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_ADVANCED,
                                 (Ft.TriggerFunc) trigger_reset_event);
@@ -331,7 +331,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("change",
                                        _("Changed"),
-                                       _("Triggered on any change related to the countdown."),
+                                       _("Triggered on any change related to the countdown"),
                                        Ft.EventCategory.COUNTDOWN);
         event_spec.add_trigger (Ft.TriggerHook.TIMER_STATE_CHANGED,
                                 (Ft.TriggerFunc) trigger_change_event);
@@ -340,7 +340,7 @@ namespace Ft
         // Session
         event_spec = new Ft.EventSpec ("confirm-advancement",
                                        _("Confirm Advancement"),
-                                       _("A manual confirmation is required to start next time-block."),
+                                       _("A manual confirmation is required to start next time-block"),
                                        Ft.EventCategory.SESSION);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_CONFIRM_ADVANCEMENT,
                                 (Ft.TriggerFunc) trigger_confirm_advancement_event);
@@ -348,7 +348,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("advance",
                                        _("Advanced"),
-                                       _("Transitioned or skipped to a next time-block."),
+                                       _("Transitioned or skipped to a next time-block"),
                                        Ft.EventCategory.SESSION);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_ADVANCED,
                                 (Ft.TriggerFunc) trigger_advance_event);
@@ -356,7 +356,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("state-change",
                                        _("State Changed"),
-                                       _("Transitioned to a next time-block or when a break gets relabelled."),
+                                       _("Transitioned to a next time-block or when a break gets relabelled"),
                                        Ft.EventCategory.SESSION);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_NOTIFY_CURRENT_STATE,
                                 (Ft.TriggerFunc) trigger_state_change_event);
@@ -364,7 +364,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("reschedule",
                                        _("Rescheduled"),  // translators: Change of plan
-                                       _("Triggered when scheduled time-blocks have changed."),
+                                       _("Triggered when scheduled time-blocks have changed"),
                                        Ft.EventCategory.SESSION);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_SESSION_RESCHEDULED,
                                 (Ft.TriggerFunc) trigger_reschedule_event);
@@ -372,7 +372,7 @@ namespace Ft
 
         event_spec = new Ft.EventSpec ("expire",
                                        _("Expired"),
-                                       _("Triggered when session is about to be reset due to inactivity."),
+                                       _("Triggered when session is about to be reset due to inactivity"),
                                        Ft.EventCategory.SESSION);
         event_spec.add_trigger (Ft.TriggerHook.SESSION_MANAGER_SESSION_EXPIRED,
                                 (Ft.TriggerFunc) trigger_expire_event);

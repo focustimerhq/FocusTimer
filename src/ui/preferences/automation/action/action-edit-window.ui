@@ -78,7 +78,7 @@
                     <child>
                       <object class="AdwActionRow">
                         <property name="title" translatable="yes">Event</property>
-                        <property name="subtitle" translatable="yes">Execute command after an event.</property>
+                        <property name="subtitle" translatable="yes">Execute command after an event</property>
                         <property name="activatable">true</property>
                         <property name="activatable-widget">event_radio</property>
                         <child type="prefix">
@@ -94,7 +94,7 @@
                     <child>
                       <object class="AdwActionRow">
                         <property name="title" translatable="yes">Condition</property>
-                        <property name="subtitle" translatable="yes">Ensure execution of a second command once condition is no longer met.</property>
+                        <property name="subtitle" translatable="yes">Ensure execution of a second command once condition is no longer met</property>
                         <property name="activatable">true</property>
                         <property name="activatable-widget">condition_radio</property>
                         <child type="prefix">
@@ -240,13 +240,13 @@
                     <child>
                       <object class="AdwSwitchRow" id="pass_input_switchrow">
                         <property name="title" translatable="yes">Pass Input Data</property>
-                        <property name="subtitle" translatable="yes">Instead of passing variables you can process a JSON object.</property>
+                        <property name="subtitle" translatable="yes">Instead of passing variables you can process a JSON object</property>
                       </object>
                     </child>
                     <child>
                       <object class="AdwSwitchRow" id="wait_for_completion_switchrow">
                         <property name="title" translatable="yes">Wait For Completion</property>
-                        <property name="subtitle" translatable="yes">Block execution of other commands until the command completes.</property>
+                        <property name="subtitle" translatable="yes">Block execution of other commands until the command completes</property>
                         <property name="visible" bind-source="event_radio" bind-property="active" bind-flags="sync-create"/>
                       </object>
                     </child>

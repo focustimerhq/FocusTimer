@@ -31,7 +31,7 @@
             <child>
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Screen Overlay</property>
-                <property name="description" translatable="yes">A full-screen notification intended to enforce taking a break.</property>
+                <property name="description" translatable="yes">A full-screen notification intended to enforce taking a break</property>
                 <child>
                   <object class="AdwSwitchRow" id="screen_overlay_switchrow">
                     <property name="title" translatable="yes">Screen Overlay</property>
@@ -40,13 +40,13 @@
                 <child>
                   <object class="AdwComboRow" id="screen_overlay_lock_delay_comborow">
                     <property name="title" translatable="yes">Lock Delay</property>
-                    <property name="subtitle" translatable="yes">Period of inactivity to lock the screen.</property>
+                    <property name="subtitle" translatable="yes">Period of inactivity to lock the screen</property>
                   </object>
                 </child>
                 <child>
                   <object class="AdwComboRow" id="screen_overlay_reopen_delay_comborow">
                     <property name="title" translatable="yes">Reopen Delay</property>
-                    <property name="subtitle" translatable="yes">Period of inactivity to reopen the overlay after it gets dismissed.</property>
+                    <property name="subtitle" translatable="yes">Period of inactivity to reopen the overlay after it gets dismissed</property>
                   </object>
                 </child>
               </object>
