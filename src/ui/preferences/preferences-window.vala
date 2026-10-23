@@ -155,14 +155,24 @@ namespace Ft
                 previous = child;
             }
 
-            foreach (unowned string name in order)
+            // There may be several groups with same name, only one of them visible
+            (unowned Adw.PreferencesGroup)[] groups = {};
+
+            foreach (unowned var name in order)
             {
-                unowned var group = this.get_group (name);
-
-                if (group == null) {
-                    continue;
+                for (unowned var child = parent.get_first_child ();
+                     child != null;
+                     child = child.get_next_sibling ())
+                {
+                    if (child is Adw.PreferencesGroup &&
+                        child.get_data<string> ("name") == name)
+                    {
+                        groups += (Adw.PreferencesGroup) child;
+                    }
                 }
+            }
 
+            foreach (var group in groups) {
                 group.insert_after (parent, previous);
                 previous = group;
             }

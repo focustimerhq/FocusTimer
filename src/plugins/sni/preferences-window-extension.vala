@@ -30,8 +30,6 @@ namespace Sni
 
         private void setup_appearance_panel (Ft.PreferencesPanel panel)
         {
-            var page = panel.get_preferences_page ();
-
             if (this.settings == null) {
                 this.taredown_appearance_panel (panel);
                 return;
@@ -41,7 +39,7 @@ namespace Sni
             {
                 var indicator_group = new Adw.PreferencesGroup ();
                 indicator_group.title = _("System Tray Icon");
-                page.add (indicator_group);
+                panel.add_group ("system-tray", indicator_group);
 
                 var indicator_row = new Adw.SwitchRow ();
                 indicator_row.title = _("Show Tray Icon");

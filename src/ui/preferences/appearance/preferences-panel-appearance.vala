@@ -9,8 +9,17 @@ namespace Ft
     [GtkTemplate (ui = "/io/github/focustimerhq/FocusTimer/ui/preferences/appearance/preferences-panel-appearance.ui")]
     public class PreferencesPanelAppearance : Ft.PreferencesPanel
     {
+        private const string[] GROUP_ORDER = {
+            "main-window",
+            "indicator",
+            "system-tray",
+            "screen-overlay",
+        };
+
         [GtkChild]
         private unowned Adw.PreferencesPage page;
+        [GtkChild]
+        private unowned Adw.PreferencesGroup main_window_group;
         [GtkChild]
         private unowned Adw.SwitchRow dark_theme_switchrow;
         [GtkChild]
@@ -49,6 +58,9 @@ namespace Ft
             this.screen_overlay_manager.notify["provider"].connect (
                     this.on_screen_overlay_manager_notify_provider);
 
+            this.main_window_group.set_data<string> ("name", "main-window");
+            this.screen_overlay_group.set_data<string> ("name", "screen-overlay");
+
             this.update_screen_overlay_group ();
         }
 
@@ -72,6 +84,11 @@ namespace Ft
         public override unowned Adw.PreferencesPage get_preferences_page ()
         {
             return this.page;
+        }
+
+        protected override unowned string[]? get_group_order ()
+        {
+            return GROUP_ORDER;
         }
 
         public override void dispose ()

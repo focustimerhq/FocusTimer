@@ -42,8 +42,6 @@ namespace Gnome
 
         private void setup_appearance_panel (Ft.PreferencesPanel panel)
         {
-            var page = panel.get_preferences_page ();
-
             if (this.settings == null) {
                 this.taredown_appearance_panel (panel);
                 return;
@@ -53,7 +51,7 @@ namespace Gnome
             {
                 var indicator_group = new Adw.PreferencesGroup ();
                 indicator_group.title = _("Indicator");
-                page.add (indicator_group);
+                panel.add_group ("indicator", indicator_group);
 
                 var indicator_type_toggle_group = new Adw.ToggleGroup ();
                 indicator_type_toggle_group.homogeneous = true;
@@ -79,7 +77,7 @@ namespace Gnome
             {
                 var screen_overlay_group = new Adw.PreferencesGroup ();
                 screen_overlay_group.title = _("Screen Overlay");
-                page.add (screen_overlay_group);
+                panel.add_group ("screen-overlay", screen_overlay_group);
 
                 var blur_effect_row = new Adw.SwitchRow ();
                 blur_effect_row.title = _("Blur Effect");
