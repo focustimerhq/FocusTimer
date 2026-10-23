@@ -18,6 +18,43 @@ namespace Ft
         FAILURE   =  1
     }
 
+    public enum ColorScheme
+    {
+        DEFAULT = 0,
+        LIGHT = 1,
+        DARK = 2;
+
+        public static Ft.ColorScheme from_string (string? color_scheme)
+        {
+            switch (color_scheme)
+            {
+                case "light":
+                    return LIGHT;
+
+                case "dark":
+                    return DARK;
+
+                default:
+                    return DEFAULT;
+            }
+        }
+
+        public string to_string ()
+        {
+            switch (this)
+            {
+                case LIGHT:
+                    return "light";
+
+                case DARK:
+                    return "dark";
+
+                default:
+                    return "default";
+            }
+        }
+    }
+
 
     public class Application : Adw.Application
     {
@@ -700,12 +737,21 @@ namespace Ft
         private void update_color_scheme ()
         {
             var style_manager = Adw.StyleManager.get_default ();
+            var color_scheme = (Ft.ColorScheme) this.settings.get_enum ("color-scheme");
 
-            if (this.settings.get_boolean ("dark-theme")) {
-                style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
-            }
-            else {
-                style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);
+            switch (color_scheme)
+            {
+                case Ft.ColorScheme.LIGHT:
+                    style_manager.set_color_scheme (Adw.ColorScheme.FORCE_LIGHT);
+                    break;
+
+                case Ft.ColorScheme.DARK:
+                    style_manager.set_color_scheme (Adw.ColorScheme.FORCE_DARK);
+                    break;
+
+                default:
+                    style_manager.set_color_scheme (Adw.ColorScheme.DEFAULT);
+                    break;
             }
         }
 
@@ -1151,7 +1197,7 @@ namespace Ft
         {
             switch (key)
             {
-                case "dark-theme":
+                case "color-scheme":
                     this.update_color_scheme ();
                     break;
 

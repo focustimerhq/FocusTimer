@@ -16,8 +16,17 @@
               <object class="AdwPreferencesGroup" id="main_window_group">
                 <property name="title" translatable="yes">Main Window</property>
                 <child>
-                  <object class="AdwSwitchRow" id="dark_theme_switchrow">
-                    <property name="title" translatable="yes">Prefer Dark Theme</property>
+                  <object class="AdwComboRow" id="color_scheme_comborow">
+                    <property name="title" translatable="yes">Style</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item translatable="yes">Follow System</item>
+                          <item translatable="yes">Light</item>
+                          <item translatable="yes">Dark</item>
+                        </items>
+                      </object>
+                    </property>
                   </object>
                 </child>
                 <child>

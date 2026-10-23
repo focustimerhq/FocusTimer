@@ -5,6 +5,12 @@
     <value nick="condition" value="1"/>
   </enum>
 
+  <enum id="io.github.focustimerhq.FocusTimer.ColorScheme">
+    <value nick="default" value="0"/>
+    <value nick="light" value="1"/>
+    <value nick="dark" value="2"/>
+  </enum>
+
   <schema id="io.github.focustimerhq.FocusTimer" path="/io/github/focustimerhq/FocusTimer/">
     <!-- Timer -->
     <key name="pomodoro-duration" type="u">
@@ -73,10 +79,9 @@
     </key>
 
     <!-- Appearance -->
-    <key name="dark-theme" type="b">
-      <default>false</default>
-      <summary>Use dark theme variant</summary>
-      <description></description>
+    <key name="color-scheme" enum="io.github.focustimerhq.FocusTimer.ColorScheme">
+      <default>"default"</default>
+      <summary>Color scheme</summary>
     </key>
     <key name="prefer-compact-size" type="b">
       <default>false</default>

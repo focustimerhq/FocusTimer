@@ -21,7 +21,7 @@ namespace Ft
         [GtkChild]
         private unowned Adw.PreferencesGroup main_window_group;
         [GtkChild]
-        private unowned Adw.SwitchRow dark_theme_switchrow;
+        private unowned Adw.ComboRow color_scheme_comborow;
         [GtkChild]
         private unowned Adw.SwitchRow compact_mode_switchrow;
         [GtkChild]
@@ -37,10 +37,15 @@ namespace Ft
         construct
         {
             this.settings = Ft.get_settings ();
-            this.settings.bind ("dark-theme",
-                                this.dark_theme_switchrow,
-                                "active",
-                                GLib.SettingsBindFlags.DEFAULT);
+            this.settings.bind_with_mapping (
+                                "color-scheme",
+                                this.color_scheme_comborow,
+                                "selected",
+                                GLib.SettingsBindFlags.DEFAULT,
+                                color_scheme_get_mapping,
+                                color_scheme_set_mapping,
+                                null,
+                                null);
             this.settings.bind ("prefer-compact-size",
                                 this.compact_mode_switchrow,
                                 "active",
@@ -62,6 +67,26 @@ namespace Ft
             this.screen_overlay_group.set_data<string> ("name", "screen-overlay");
 
             this.update_screen_overlay_group ();
+        }
+
+        private static bool color_scheme_get_mapping (GLib.Value   value,
+                                                      GLib.Variant variant,
+                                                      void*        user_data)
+        {
+            var color_scheme = Ft.ColorScheme.from_string (variant.get_string ());
+
+            value.set_uint ((uint) color_scheme);
+
+            return true;
+        }
+
+        private static GLib.Variant color_scheme_set_mapping (GLib.Value       value,
+                                                              GLib.VariantType expected_type,
+                                                              void*            user_data)
+        {
+            var color_scheme = (Ft.ColorScheme) value.get_uint ();
+
+            return new GLib.Variant.string (color_scheme.to_string ());
         }
 
         private void update_screen_overlay_group ()
