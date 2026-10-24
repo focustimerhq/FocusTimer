@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-20 10:53+0200\n"
+"POT-Creation-Date: 2026-10-24 17:15+0200\n"
 "PO-Revision-Date: 2026-09-20 11:07+0200\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
@@ -29,8 +29,8 @@ msgstr "Minutnik Koncentracji"
 
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:3
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:8
-msgid "Work with regular breaks"
-msgstr "Pracuj z regularnymi przerwami"
+msgid "Work better with regular breaks"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:11
@@ -39,266 +39,81 @@ msgstr "pomodoro;minutnik;produktywność;śledzenie czasu;zarządzanie czasem;"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:10
 msgid ""
-"A productivity timer that helps you work more effectively by breaking your "
-"time into focused work sessions followed by short breaks. Work for 25 "
-"minutes, then take a 5-minute break to maintain concentration and prevent "
-"burnout."
+"A productivity timer that helps you work more effectively by alternating "
+"focused work sessions with short breaks. By default, work for 25 minutes, "
+"then take a 5-minute break to stay focused and prevent burnout."
 msgstr ""
-"Minutnik pomaga pracować efektywniej, dzieląc czas na bloki skupionej pracy "
-"oraz krótkie przerwy. Cykl 25 minut pracy i 5 minut przerwy pomaga utrzymać "
-"koncentrację i zapobiega zmęczeniu."
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:14
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:13
 msgid "Key features:"
 msgstr "Kluczowe funkcje:"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:18
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:17
 msgid "Customizable work session and break lengths"
 msgstr "Dowolne długości pracy i przerw"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:19
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:18
 msgid "Screen overlay during breaks"
 msgstr "Nakładka ekranowa podczas przerw"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:147
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:19
 msgid "System tray icon"
 msgstr "Ikona w zasobniku"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:21
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
 msgid "Hotkeys (global shortcuts)"
 msgstr "Klawisze skrótu (skróty globalne)"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:22
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:21
 msgid "Daily, weekly, and monthly statistics"
 msgstr "Statystyki dzienne, tygodniowe i miesięczne"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:23
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:22
 msgid "Extensible via custom shell commands, D-Bus, and CLI"
 msgstr "Możliwość rozszerzenia przez własne polecenia powłoki, D-Bus i CLI"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:24
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:23
 msgid "GNOME Shell extension for deeper desktop integration"
 msgstr "Rozszerzenie GNOME Shell dla głębszej integracji z pulpitem"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:68
-#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:76
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
+#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:95
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
 msgstr "Minutnik"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:72
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
 msgid "Daily stats"
 msgstr "Statystyki dzienne"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:76
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
 msgid "Monthly stats"
 msgstr "Statystyki miesięczne"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:80
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:79
 #: src/plugins/sni/indicator-provider.vala:301
 #: src/plugins/sni/indicator-provider.vala:307
 #: src/ui/preferences/preferences-window.ui:6
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:84
+#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:83
 msgid "Screen overlay"
 msgstr "Nakładka ekranowa"
 
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:92
-msgid "Overview of changes in focus-timer 1.1.5:"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:94
-msgid "Added a dialog for installing the GNOME Shell extension"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:95
-msgid "Automation panel is now available in the Flatpak version"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:96
-msgid "Added a right-click context menu in compact mode"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:97
-msgid "Updated runtime to GNOME 51"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:98
-msgid "Removed dependency on cairo"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:104
-msgid "Overview of changes in focus-timer 1.1.4:"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:106
-msgid "MPRIS integration"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:107
-msgid "Relax Pomodoro completion threshold from 80% to 75%"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:108
-msgid "Relax completion threshold for long breaks"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:109
-msgid "Determine session expiry timeout based on Pomodoro duration"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:110
-msgid ""
-"Do not detect activity while on a lock-screen with \"Pause By Locking The "
-"Screen\" off"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:111
-msgid "Fix activity detection after first break"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:112
-msgid "Fix higher CPU usage when opening window in Stats view"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:118
-msgid "Overview of changes in focus-timer 1.1.3:"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:120
-msgid "Middle-button gesture on timer views"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:121
-msgid "Option to toggle DND on KDE"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:122
-msgid "Increase session expiry timeout to 2 hours"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:123
-msgid "Handle CLI timer options while starting the app"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:124
-msgid "Improve Global Shortcuts integration"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:125
-msgid "Improve saving session to database frequently"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:126
-msgid "Improve initializing gnome-shell extension"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:127
-msgid "Fix withdrawing notifications on shutdown"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:128
-msgid "Fix \"variable\" popover in automation panel"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:134
-msgid "Overview of changes in focus-timer 1.1.2:"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:136
-msgid "Deeper integration with notification servers"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:137
-msgid "Idle detection on Wayland"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:138
-msgid "Improve screensaver detection"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:139
-msgid "Fix autostart"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:145
-msgid "Overview of changes in focus-timer 1.1.1:"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:148
-msgid "Smoother sound transitions"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:149
-msgid "Fix break overlay scaling on HiDPI displays"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:150
-msgid "Fix missing sounds after switching soundcards"
-msgstr ""
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:156
-msgid "Overview of changes in focus-timer 1.1.0:"
-msgstr "Przegląd zmian w focus-timer 1.1.0:"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:158
-msgid "Support for GNOME Shell extension"
-msgstr "Wsparcie dla rozszerzenia GNOME Shell"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:159
-msgid "Option to autostart on login"
-msgstr "Opcja automatycznego uruchamiania przy logowaniu"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:160
-msgid "Reviewed sound files"
-msgstr "Zweryfikowane pliki dźwiękowe"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:161
-msgid "Fix build with vala 0.56.19"
-msgstr "Naprawiono kompatebilność z vala 0.56.19"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:167
-msgid "Overview of changes in focus-timer 1.0:"
-msgstr "Przegląd zmian w focus-timer 1.0:"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:169
-msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
-msgstr ""
-"Naprawiono skalowanie nakładki przerwy na wyświetlaczach HiDPI "
-"(podziękowania dla @scholzri)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:170
-msgid "Automatic daily backup"
-msgstr "Automatyczna codzienna kopia zapasowa"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:171
-msgid "Removed libcanberra backend for playing notification sounds"
-msgstr "Usunięto libcanberra do odtwarzania dźwięków powiadomień"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:172
-msgid "Updated Lithuanian translation (thanks @psukys)"
-msgstr "Zaktualizowano tłumaczenie litewskie (podziękowania dla @psukys)"
-
-#: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:173
-msgid "Updated Russian translation (thanks @ViktorOn)"
-msgstr "Zaktualizowano tłumaczenie rosyjskie (podziękowania dla @ViktorOn)"
-
-#: src/application.vala:173 src/application.vala:654
+#: src/application.vala:211 src/application.vala:695
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 msgid "Start or Stop"
 msgstr "Rozpocznij lub zatrzymaj"
 
-#: src/application.vala:176 src/application.vala:657
+#: src/application.vala:214 src/application.vala:698
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 msgid "Start, Pause or Resume"
 msgstr "Rozpocznij, wstrzymaj lub wznów"
 
-#: src/application.vala:179 src/core/notification-manager.vala:426
-#: src/core/notification-manager.vala:519
+#: src/application.vala:217 src/core/notification-manager.vala:425
+#: src/core/notification-manager.vala:518
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
@@ -306,112 +121,116 @@ msgstr "Rozpocznij, wstrzymaj lub wznów"
 msgid "Start Pomodoro"
 msgstr "Rozpocznij pomodoro"
 
-#: src/application.vala:182
+#: src/application.vala:220
 msgid "Start break"
 msgstr "Rozpocznij przerwę"
 
-#: src/application.vala:185
+#: src/application.vala:223
 msgid "Start short break"
 msgstr "Rozpocznij krótką przerwę"
 
-#: src/application.vala:188
+#: src/application.vala:226
 msgid "Start long break"
 msgstr "Rozpocznij długą przerwę"
 
 #. Actions
-#: src/application.vala:191 src/application.vala:659 src/core/event.vala:268
+#: src/application.vala:229 src/application.vala:700 src/core/event.vala:268
 #: src/plugins/sni/indicator-provider.vala:251
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:75
 msgid "Start"
 msgstr "Rozpocznij"
 
-#: src/application.vala:194 src/application.vala:661 src/core/event.vala:276
+#: src/application.vala:232 src/application.vala:702 src/core/event.vala:276
 #: src/plugins/sni/indicator-provider.vala:263
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:81
 msgid "Stop"
 msgstr "Zatrzymaj"
 
-#: src/application.vala:197 src/application.vala:663 src/core/event.vala:284
+#: src/application.vala:235 src/application.vala:704 src/core/event.vala:284
 #: src/plugins/sni/indicator-provider.vala:254
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:87
 msgid "Pause"
 msgstr "Wstrzymaj"
 
-#: src/application.vala:200 src/application.vala:665 src/core/event.vala:292
+#: src/application.vala:238 src/application.vala:706 src/core/event.vala:292
 #: src/plugins/sni/indicator-provider.vala:257
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:93
 msgid "Resume"
 msgstr "Wznów"
 
-#: src/application.vala:203 src/application.vala:667 src/core/event.vala:300
+#: src/application.vala:241 src/application.vala:708 src/core/event.vala:300
 #: src/plugins/sni/indicator-provider.vala:266
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:99
 msgid "Skip"
 msgstr "Pomiń"
 
-#: src/application.vala:206 src/application.vala:669 src/core/event.vala:308
+#: src/application.vala:244 src/application.vala:710 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Przewiń"
 
-#: src/application.vala:207 src/application.vala:210
+#: src/application.vala:245 src/application.vala:248
 msgid "SECONDS"
 msgstr "SEKUNDY"
 
-#: src/application.vala:209
+#: src/application.vala:247
 msgid "Extend current pomodoro or break"
 msgstr "Przedłuż obecne pomodoro lub przerwę"
 
-#: src/application.vala:212 src/core/event.vala:316
+#: src/application.vala:250 src/core/event.vala:316
 #: src/plugins/sni/indicator-provider.vala:269
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 msgid "Reset"
 msgstr "Resetuj"
 
-#: src/application.vala:216
+#: src/application.vala:254
 msgid "Print timer status"
 msgstr "Wyświetl stan minutnika"
 
-#: src/application.vala:220
+#: src/application.vala:258
 msgid "Show preferences"
 msgstr "Pokaż preferencje"
 
-#: src/application.vala:224
+#: src/application.vala:262
 msgid "Quit application"
 msgstr "Zakończ aplikację"
 
-#: src/application.vala:227
+#: src/application.vala:265
 msgid "Print version information and exit"
 msgstr "Wyświetl wersję aplikacji"
 
-#: src/application.vala:281
+#: src/application.vala:319
 msgid "Timer Options:"
 msgstr "Opcje Minutnika:"
 
-#: src/application.vala:282
+#: src/application.vala:320
 msgid "Show options for controlling the timer"
 msgstr "Wyświetla opcje sterowania minutnikiem"
 
-#: src/application.vala:289
+#: src/application.vala:327
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr "Błędy można zgłaszać pod adresem: %s"
 
-#: src/application.vala:671
+#: src/application.vala:712
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 msgid "Bring to Focus"
 msgstr "Przywołaj okno na wierzch"
 
+#: src/application.vala:778
+msgid "Screen overlay is open"
+msgstr ""
+
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:879 src/core/notification-manager.vala:138
+#: src/application.vala:955 src/core/notification-manager.vala:137
 #: src/plugins/sni/indicator-provider.vala:25
 #, c-format
 msgid "%s remaining"
 msgstr "Pozostało %s"
 
-#: src/application.vala:924
+#: src/application.vala:1000
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 "Nieprawidłowe użycie. Przekaż jedną flagę do sterowania minutnikiem na raz."
@@ -556,8 +375,7 @@ msgstr "Zmiana stanu"
 #: src/core/event.vala:359
 msgid "Transitioned to a next time-block or when a break gets relabelled"
 msgstr ""
-"Przejście do następnego bloku czasowego lub gdy przerwa zostaje "
-"przemianowana"
+"Przejście do następnego bloku czasowego lub gdy przerwa zostaje przemianowana"
 
 #: src/core/event.vala:366
 msgid "Rescheduled"
@@ -576,84 +394,84 @@ msgstr "Wygaśnięcie"
 msgid "Triggered when session is about to be reset due to inactivity"
 msgstr "Wywołane przy wygaśnięciu sesji spowodowane brakiem aktywności"
 
-#: src/core/notification-manager.vala:347 src/core/state.vala:78
+#: src/core/notification-manager.vala:346 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:190
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:205
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:351
+#: src/core/notification-manager.vala:350
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Zrób przerwę"
 
-#: src/core/notification-manager.vala:355
+#: src/core/notification-manager.vala:354
 msgid "Take a short break"
 msgstr "Zrób krótką przerwę"
 
-#: src/core/notification-manager.vala:359
+#: src/core/notification-manager.vala:358
 msgid "Take a long break"
 msgstr "Zrób długą przerwę"
 
-#: src/core/notification-manager.vala:418
+#: src/core/notification-manager.vala:417
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro za chwilę się skończy"
 
-#: src/core/notification-manager.vala:419
-#: src/core/notification-manager.vala:524
-#: src/core/notification-manager.vala:529
-#: src/core/notification-manager.vala:534
+#: src/core/notification-manager.vala:418
+#: src/core/notification-manager.vala:523
+#: src/core/notification-manager.vala:528
+#: src/core/notification-manager.vala:533
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "Zrób przerwę"
 
-#: src/core/notification-manager.vala:425
+#: src/core/notification-manager.vala:424
 msgid "Break is about to end"
 msgstr "Przerwa za chwilę się skończy"
 
-#: src/core/notification-manager.vala:436
+#: src/core/notification-manager.vala:435
 msgid "+1 minute"
 msgstr "+1 minuta"
 
-#: src/core/notification-manager.vala:458
+#: src/core/notification-manager.vala:457
 msgid "Get ready…"
 msgstr "Przygotuj się…"
 
-#: src/core/notification-manager.vala:463
-#: src/core/notification-manager.vala:502
+#: src/core/notification-manager.vala:462
+#: src/core/notification-manager.vala:501
 msgid "Pomodoro is over!"
 msgstr "Pomodoro się skończyło!"
 
-#: src/core/notification-manager.vala:469
-#: src/core/notification-manager.vala:508
+#: src/core/notification-manager.vala:468
+#: src/core/notification-manager.vala:507
 msgid "Break is over!"
 msgstr "Przerwa się skończyła!"
 
-#: src/core/notification-manager.vala:518
+#: src/core/notification-manager.vala:517
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Potwierdź rozpoczęcie pomodoro…"
 
-#: src/core/notification-manager.vala:523
+#: src/core/notification-manager.vala:522
 msgid "Confirm the start of a break…"
 msgstr "Potwierdź rozpoczęcie przerwy…"
 
-#: src/core/notification-manager.vala:528
+#: src/core/notification-manager.vala:527
 msgid "Confirm the start of a short break…"
 msgstr "Potwierdź rozpoczęcie krótkiej przerwy…"
 
-#: src/core/notification-manager.vala:533
+#: src/core/notification-manager.vala:532
 msgid "Confirm the start of a long break…"
 msgstr "Potwierdź rozpoczęcie długiej przerwy…"
 
-#: src/core/notification-manager.vala:546
+#: src/core/notification-manager.vala:545
 msgid "Skip Break"
 msgstr "Pomiń Przerwę"
 
@@ -784,7 +602,7 @@ msgid "Time when the countdown has started."
 msgstr "Czas rozpoczęcia odliczania."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:165
+#: src/plugins/gnome/preferences-window-extension.vala:163
 msgid "GNOME Shell Extension"
 msgstr "Rozszerzenie GNOME Shell"
 
@@ -844,7 +662,7 @@ msgid "_Not Now"
 msgstr "_Nie teraz"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:382
+#: src/plugins/gnome/preferences-window-extension.vala:380
 msgid "Something went wrong"
 msgstr "Coś poszło nie tak"
 
@@ -863,79 +681,82 @@ msgid "_Abort"
 msgstr "_Przerwij"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:370
+#: src/plugins/gnome/preferences-window-extension.vala:368
 msgid "Time-out reached"
 msgstr "Osiągnięto limit czasu"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:374
+#: src/plugins/gnome/preferences-window-extension.vala:372
 msgid "Installing extensions is not allowed"
 msgstr "Instalowanie rozszerzeń jest niedozwolone"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:378
+#: src/plugins/gnome/preferences-window-extension.vala:376
 msgid "Failed to download the extension"
 msgstr "Nie udało się pobrać rozszerzenia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:55
+#: src/plugins/gnome/preferences-window-extension.vala:53
 msgid "Indicator"
 msgstr "Wskaźnik"
 
-#: src/plugins/gnome/preferences-window-extension.vala:62
+#: src/plugins/gnome/preferences-window-extension.vala:60
 msgid "Icon"
 msgstr "Ikona"
 
-#: src/plugins/gnome/preferences-window-extension.vala:63
+#: src/plugins/gnome/preferences-window-extension.vala:61
 msgid "Text"
 msgstr "Tekst"
 
-#: src/plugins/gnome/preferences-window-extension.vala:70
+#: src/plugins/gnome/preferences-window-extension.vala:68
 msgid "Display As"
 msgstr "Wyświetl Jako"
 
-#: src/plugins/gnome/preferences-window-extension.vala:81
+#: src/plugins/gnome/preferences-window-extension.vala:79
 #: src/plugins/sni/indicator-provider.vala:298
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:28
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:32
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Screen Overlay"
 msgstr "Nakładka Ekranowa"
 
-#: src/plugins/gnome/preferences-window-extension.vala:85
+#: src/plugins/gnome/preferences-window-extension.vala:83
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr "Efekt Rozmycia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:93
+#: src/plugins/gnome/preferences-window-extension.vala:91
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr "Gest Odrzucenia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:123
+#: src/plugins/gnome/preferences-window-extension.vala:121
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:124
 msgid "Install"
 msgstr "Zainstaluj"
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:131
+#: src/plugins/gnome/preferences-window-extension.vala:129
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: src/plugins/gnome/preferences-window-extension.vala:134
+#: src/plugins/gnome/preferences-window-extension.vala:132
 msgid "Log out to finish the update"
 msgstr "Wyloguj się by zakończyć aktualizację"
 
-#: src/plugins/gnome/preferences-window-extension.vala:152
+#: src/plugins/gnome/preferences-window-extension.vala:150
 msgid "Outdated"
 msgstr "Brak Wsparcia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:171
+#: src/plugins/gnome/preferences-window-extension.vala:169
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr "Nie Przeszkadzać"
 
-#: src/plugins/gnome/preferences-window-extension.vala:172
+#: src/plugins/gnome/preferences-window-extension.vala:170
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika"
@@ -997,23 +818,23 @@ msgid "%u of %u"
 msgstr "%u z %u"
 
 #: src/plugins/sni/indicator-provider.vala:302
-#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:93
+#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:112
 msgid "Stats"
 msgstr "Statystyki"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:327
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:361
 msgid "Quit"
 msgstr "Zakończ"
 
-#: src/plugins/sni/preferences-window-extension.vala:43
-msgid "System Tray Icon"
-msgstr "Ikona w Zasobniku"
+#: src/plugins/sni/preferences-window-extension.vala:41
+msgid "System Tray"
+msgstr ""
 
-#: src/plugins/sni/preferences-window-extension.vala:47
+#: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
 msgstr "Pokaż Ikonę w Zasobniku"
 
-#: src/plugins/sni/preferences-window-extension.vala:48
+#: src/plugins/sni/preferences-window-extension.vala:46
 msgid "Closing the window keeps the app running in the background"
 msgstr "Zamknięcie okna sprawia, że aplikacja nadal działa w tle"
 
@@ -1176,7 +997,7 @@ msgstr "_Przerwa"
 msgid "Open screen overlay"
 msgstr "Otwórz nakładkę ekranową"
 
-#: src/ui/main/timer/timer-view.vala:257
+#: src/ui/main/timer/timer-view.vala:316
 msgid "Session has expired"
 msgstr "Sesja wygasła"
 
@@ -1189,44 +1010,60 @@ msgstr "Długa przerwa za <b>%s</b>"
 msgid "Rewind one minute"
 msgstr "Przewiń jedną minutę"
 
-#: src/ui/main/window.ui:8 src/ui/main/window.vala:230
+#: src/ui/main/window.ui:8
 msgid "_Compact Mode"
 msgstr "Tryb _Kompaktowy"
 
-#: src/ui/main/window.ui:15
+#: src/ui/main/window.ui:14
+msgid "Leave _Compact Mode"
+msgstr ""
+
+#: src/ui/main/window.ui:20
+msgid "_Mute"
+msgstr ""
+
+#: src/ui/main/window.ui:26
+msgid "_Unmute"
+msgstr ""
+
+#: src/ui/main/window.ui:34
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: src/ui/main/window.ui:19
+#: src/ui/main/window.ui:38
 msgid "_About"
 msgstr "_O programie"
 
-#: src/ui/main/window.ui:25
+#: src/ui/main/window.ui:44
 msgid "_Quit"
 msgstr "Za_kończ"
 
-#: src/ui/main/window.ui:62
+#: src/ui/main/window.ui:81
 msgid "Primary Menu"
 msgstr "Menu główne"
 
-#: src/ui/main/window.vala:230
-msgid "_Full Mode"
-msgstr "Tryb _Pełny"
-
-#: src/ui/main/window.vala:322
+#: src/ui/main/window.vala:356
 msgid "Keep timer running?"
 msgstr "Czy minutnik ma nadal odliczać?"
 
-#: src/ui/main/window.vala:323
+#: src/ui/main/window.vala:357
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
 "Może on działać w tle — powiadomienia i skróty klawiszowe nadal będą działać."
 
-#: src/ui/main/window.vala:330
+#: src/ui/main/window.vala:364
 msgid "Run in background"
 msgstr "Uruchom w tle"
+
+#: src/ui/main/window.vala:467
+msgid "Background Sound Muted"
+msgstr ""
+
+#: src/ui/main/window.vala:479
+msgid "Background Sound Unmuted"
+msgstr ""
 
 #: src/ui/overlays/screen-overlay.ui:64
 msgid "It's time to take a break"
@@ -1238,12 +1075,24 @@ msgid "Main Window"
 msgstr "Okno Główne"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:20
-msgid "Prefer Dark Theme"
-msgstr "Preferuj ciemny motyw"
+msgid "Style"
+msgstr ""
+
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:24
+msgid "Follow System"
+msgstr ""
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
-msgid "Prefer Compact Mode"
-msgstr "Preferuj tryb kompaktowy"
+msgid "Light"
+msgstr ""
+
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:26
+msgid "Dark"
+msgstr ""
+
+#: src/ui/preferences/appearance/preferences-panel-appearance.ui:34
+msgid "Open in Compact Mode"
+msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:12
 #: src/ui/preferences/automation/action/condition-widget.vala:117
@@ -1346,8 +1195,7 @@ msgstr "Przekaż Dane na Wejście"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 msgid "Instead of passing variables you can process a JSON object"
-msgstr ""
-"Zamiast przekazywać argumenty dla polecenia, możesz przkazać dane JSON"
+msgstr "Zamiast przekazywać argumenty dla polecenia, możesz przkazać dane JSON"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
@@ -1469,9 +1317,6 @@ msgid "Format"
 msgstr "Format"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:6
-msgid "Extra permissions needed for Custom Actions"
-msgstr ""
-
 #: src/ui/preferences/automation/permissions-dialog.ui:30
 #: src/ui/preferences/automation/preferences-panel-automation.ui:27
 msgid "Extra permissions needed to run commands"
@@ -1606,34 +1451,34 @@ msgid "Announcements"
 msgstr "Zapowiedzi"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:20
-msgid "Time Running Out"
-msgstr "O Kończącym Się Czasie"
+msgid "About to End Notification"
+msgstr ""
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:21
-msgid "Notify when Pomodoro or break is about to end."
-msgstr "Powiadom gdy pomodoro lub przerwa za chwilę się skończy."
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:25
+msgid "Early Notice"
+msgstr ""
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
 msgid "A full-screen notification intended to enforce taking a break"
 msgstr "Powiadomienie pełno-ekranowe skłaniające do zrobienia przerwy"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
 msgid "Lock Delay"
 msgstr "Opóżnienie Blokady"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Period of inactivity to lock the screen"
 msgstr "Czas nieaktywności do zablokowania ekranu"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
 msgid "Reopen Delay"
 msgstr "Czas Do Ponowienia"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
+#: src/ui/preferences/notifications/preferences-panel-notifications.ui:49
 msgid "Period of inactivity to reopen the overlay after it gets dismissed"
 msgstr "Czas nieaktywności do ponownego pokazania nakładki"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:113
 msgid "Never"
 msgstr "Nigdy"
 
@@ -1736,8 +1581,8 @@ msgid "Behavior"
 msgstr "Zachowanie"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:98
-msgid "Pause By Locking The Screen"
-msgstr "Wstrzymaj Odliczanie, Blokując Ekran"
+msgid "Pause When Locking the Screen"
+msgstr ""
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:103
 msgid "Confirm Starting a Break"
@@ -1774,6 +1619,75 @@ msgstr "Zastosuj"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Panel boczny"
+
+#~ msgid "Work with regular breaks"
+#~ msgstr "Pracuj z regularnymi przerwami"
+
+#~ msgid ""
+#~ "A productivity timer that helps you work more effectively by breaking "
+#~ "your time into focused work sessions followed by short breaks. Work for "
+#~ "25 minutes, then take a 5-minute break to maintain concentration and "
+#~ "prevent burnout."
+#~ msgstr ""
+#~ "Minutnik pomaga pracować efektywniej, dzieląc czas na bloki skupionej "
+#~ "pracy oraz krótkie przerwy. Cykl 25 minut pracy i 5 minut przerwy pomaga "
+#~ "utrzymać koncentrację i zapobiega zmęczeniu."
+
+#~ msgid "Overview of changes in focus-timer 1.1.0:"
+#~ msgstr "Przegląd zmian w focus-timer 1.1.0:"
+
+#~ msgid "Support for GNOME Shell extension"
+#~ msgstr "Wsparcie dla rozszerzenia GNOME Shell"
+
+#~ msgid "Option to autostart on login"
+#~ msgstr "Opcja automatycznego uruchamiania przy logowaniu"
+
+#~ msgid "Reviewed sound files"
+#~ msgstr "Zweryfikowane pliki dźwiękowe"
+
+#~ msgid "Fix build with vala 0.56.19"
+#~ msgstr "Naprawiono kompatebilność z vala 0.56.19"
+
+#~ msgid "Overview of changes in focus-timer 1.0:"
+#~ msgstr "Przegląd zmian w focus-timer 1.0:"
+
+#~ msgid "Fix break overlay scaling on HiDPI displays (thanks @scholzri)"
+#~ msgstr ""
+#~ "Naprawiono skalowanie nakładki przerwy na wyświetlaczach HiDPI "
+#~ "(podziękowania dla @scholzri)"
+
+#~ msgid "Automatic daily backup"
+#~ msgstr "Automatyczna codzienna kopia zapasowa"
+
+#~ msgid "Removed libcanberra backend for playing notification sounds"
+#~ msgstr "Usunięto libcanberra do odtwarzania dźwięków powiadomień"
+
+#~ msgid "Updated Lithuanian translation (thanks @psukys)"
+#~ msgstr "Zaktualizowano tłumaczenie litewskie (podziękowania dla @psukys)"
+
+#~ msgid "Updated Russian translation (thanks @ViktorOn)"
+#~ msgstr "Zaktualizowano tłumaczenie rosyjskie (podziękowania dla @ViktorOn)"
+
+#~ msgid "System Tray Icon"
+#~ msgstr "Ikona w Zasobniku"
+
+#~ msgid "_Full Mode"
+#~ msgstr "Tryb _Pełny"
+
+#~ msgid "Prefer Dark Theme"
+#~ msgstr "Preferuj ciemny motyw"
+
+#~ msgid "Prefer Compact Mode"
+#~ msgstr "Preferuj tryb kompaktowy"
+
+#~ msgid "Time Running Out"
+#~ msgstr "O Kończącym Się Czasie"
+
+#~ msgid "Notify when Pomodoro or break is about to end."
+#~ msgstr "Powiadom gdy pomodoro lub przerwa za chwilę się skończy."
+
+#~ msgid "Pause By Locking The Screen"
+#~ msgstr "Wstrzymaj Odliczanie, Blokując Ekran"
 
 #~ msgid "GNOME Shell extension available"
 #~ msgstr "Rozszerzenie GNOME Shell jest dostępne"
