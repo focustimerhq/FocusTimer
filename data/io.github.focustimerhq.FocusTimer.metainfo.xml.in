@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2025-2026 Kamil Prusko <kamilprusko@gmail.com> -->
-<component type="desktop-application">
+<component type="desktop-application" xmlns:its="http://www.w3.org/2005/11/its">
 
   <!-- General -->
   <id>io.github.focustimerhq.FocusTimer</id>
@@ -87,7 +87,7 @@
   <!-- Releases -->
   <releases>
     <release version="1.1.5" date="2026-09-20">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.5:</p>
         <ul>
           <li>Added a dialog for installing the GNOME Shell extension</li>
@@ -99,7 +99,7 @@
       </description>
     </release>
     <release version="1.1.4" date="2026-08-22">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.4:</p>
         <ul>
           <li>MPRIS integration</li>
@@ -113,7 +113,7 @@
       </description>
     </release>
     <release version="1.1.3" date="2026-07-20">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.3:</p>
         <ul>
           <li>Middle-button gesture on timer views</li>
@@ -129,7 +129,7 @@
       </description>
     </release>
     <release version="1.1.2" date="2026-05-29">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.2:</p>
         <ul>
           <li>Deeper integration with notification servers</li>
@@ -140,7 +140,7 @@
       </description>
     </release>
     <release version="1.1.1" date="2026-05-07">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.1:</p>
         <ul>
           <li>System tray icon</li>
@@ -151,7 +151,7 @@
       </description>
     </release>
     <release version="1.1.0" date="2026-04-16">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.0:</p>
         <ul>
           <li>Support for GNOME Shell extension</li>
@@ -162,7 +162,7 @@
       </description>
     </release>
     <release version="1.0" date="2026-03-01">
-      <description translate="no">
+      <description its:translate="no">
         <p>Overview of changes in focus-timer 1.0:</p>
         <ul>
           <li>Fix break overlay scaling on HiDPI displays (thanks @scholzri)</li>
