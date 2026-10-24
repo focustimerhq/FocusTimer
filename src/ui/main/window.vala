@@ -143,6 +143,7 @@ namespace Ft
         private Peas.ExtensionSet?      extensions = null;
         private Gtk.PopoverMenu?        primary_menu_popover = null;
         private GLib.SimpleAction?      compact_size_action = null;
+        private Adw.Toast?              action_toast = null;
         private GLib.Settings?          settings = null;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
@@ -389,6 +390,28 @@ namespace Ft
             dialog.present (self);
         }
 
+        private void show_action_toast (string title)
+        {
+            if (this._size != Ft.WindowSize.NORMAL) {
+                return;
+            }
+
+            if (this.action_toast != null) {
+                this.action_toast.dismiss ();
+            }
+
+            var toast = new Adw.Toast (title);
+            toast.use_markup = false;
+            toast.timeout = TOAST_DISMISS_TIMEOUT;
+            toast.dismissed.connect (() => {
+                if (this.action_toast == toast) {
+                    this.action_toast = null;
+                }
+            });
+            this.action_toast = toast;
+
+            this.add_toast (toast);
+        }
 
         private void popup_primary_menu (Gtk.Widget relative_to,
                                          double     x,
@@ -441,6 +464,7 @@ namespace Ft
             if (sound_manager != null) {
                 sound_manager.muted = true;
                 this.update_mute_action ();
+                this.show_action_toast (_("Background Sound Muted"));
             }
         }
 
@@ -452,6 +476,7 @@ namespace Ft
             if (sound_manager != null) {
                 sound_manager.muted = false;
                 this.update_mute_action ();
+                this.show_action_toast (_("Background Sound Unmuted"));
             }
         }
 
@@ -631,6 +656,7 @@ namespace Ft
             this.background_manager = null;
             this.timer_action_group = null;
             this.compact_size_action = null;
+            this.action_toast = null;
             this.settings = null;
 
             base.dispose ();
