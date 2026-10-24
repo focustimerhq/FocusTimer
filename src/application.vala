@@ -685,7 +685,8 @@ namespace Ft
             this.set_accels_for_action ("app.log", {"<Control>l"});
             this.set_accels_for_action ("app.quit", {"<Control>q"});
             this.set_accels_for_action ("window.close", {"<Control>w"});
-            this.set_accels_for_action ("win.toggle-compact-size", {"F9"});
+            this.set_accels_for_action ("win.compact-size", {"F9"});
+            this.set_accels_for_action ("win.normal-size", {"F9"});
             this.set_accels_for_action ("win.mute", {"<Control>m"});
             this.set_accels_for_action ("win.unmute", {"<Control>m"});
 

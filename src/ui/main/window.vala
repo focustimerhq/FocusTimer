@@ -142,6 +142,7 @@ namespace Ft
         private Ft.BackgroundManager?   background_manager = null;
         private Peas.ExtensionSet?      extensions = null;
         private Gtk.PopoverMenu?        primary_menu_popover = null;
+        private GLib.SimpleAction?      compact_size_action = null;
         private GLib.Settings?          settings = null;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
@@ -214,41 +215,33 @@ namespace Ft
 
         private void update_size_actions ()
         {
-            var compact_size_action = this.lookup_action ("compact-size") as GLib.SimpleAction;
             var toggle_compact_size_action =
                     this.lookup_action ("toggle-compact-size") as GLib.SimpleAction;
-            var can_change_size = !this.maximized;
-
-            if (compact_size_action == null || toggle_compact_size_action == null) {
-                return;
-            }
-
-            compact_size_action.set_enabled (can_change_size);
-            toggle_compact_size_action.set_enabled (can_change_size);
-
-            this.update_primary_menu ();
-        }
-
-        private void update_primary_menu ()
-        {
-            var primary_menu = this.primary_menu_popover?.menu_model as GLib.Menu;
-            var size_section = primary_menu?.get_item_link (0, GLib.Menu.LINK_SECTION) as GLib.Menu;
-
-            if (size_section == null) {
-                return;
-            }
-
+            var normal_size_action =
+                    this.lookup_action ("normal-size") as GLib.SimpleAction;
             var is_compact = this._size == Ft.WindowSize.COMPACT;
-            var toggle_compact_size_item = new GLib.MenuItem (
-                    is_compact ? _("_Full Mode") : _("_Compact Mode"),
-                    "win.toggle-compact-size");
-            toggle_compact_size_item.set_attribute (
-                    "verb-icon",
-                    "s",
-                    is_compact ? "window-normal-size-symbolic" : "window-compact-size-symbolic");
 
-            size_section.remove (0);
-            size_section.insert_item (0, toggle_compact_size_item);
+            if (toggle_compact_size_action == null ||
+                normal_size_action == null ||
+                this.compact_size_action == null) {
+                return;
+            }
+
+            toggle_compact_size_action.set_enabled (!this.maximized);
+            normal_size_action.set_enabled (is_compact);
+
+            if (is_compact) {
+                if (this.lookup_action ("compact-size") != null) {
+                    this.remove_action ("compact-size");
+                }
+            }
+            else {
+                if (this.lookup_action ("compact-size") == null) {
+                    this.add_action (this.compact_size_action);
+                }
+
+                this.compact_size_action.set_enabled (!this.maximized);
+            }
         }
 
         private void update_mute_action ()
@@ -418,6 +411,28 @@ namespace Ft
             this.primary_menu_popover.popup ();
         }
 
+        private void activate_compact_size (GLib.SimpleAction action,
+                                            GLib.Variant?     parameter)
+        {
+            this.size = Ft.WindowSize.COMPACT;
+        }
+
+        private void activate_normal_size (GLib.SimpleAction action,
+                                           GLib.Variant?     parameter)
+        {
+            this.size = Ft.WindowSize.NORMAL;
+            this.view = Ft.WindowView.TIMER;
+        }
+
+        private void activate_toggle_compact_size (GLib.SimpleAction action,
+                                                   GLib.Variant?     parameter)
+        {
+            this.activate_action (this._size == Ft.WindowSize.NORMAL
+                    ? "compact-size"
+                    : "normal-size",
+                    null);
+        }
+
         private void activate_mute (GLib.SimpleAction action,
                                     GLib.Variant?     parameter)
         {
@@ -532,30 +547,6 @@ namespace Ft
             this.update_size_actions ();
         }
 
-        private void on_compact_size_activate (GLib.SimpleAction action,
-                                               GLib.Variant?     parameter)
-        {
-            this.size = Ft.WindowSize.COMPACT;
-        }
-
-        private void on_normal_size_activate (GLib.SimpleAction action,
-                                              GLib.Variant?     parameter)
-        {
-            this.size = Ft.WindowSize.NORMAL;
-            this.view = Ft.WindowView.TIMER;
-        }
-
-        private void on_toggle_compact_size_activate (GLib.SimpleAction action,
-                                                      GLib.Variant?     parameter)
-        {
-            if (this.size == Ft.WindowSize.NORMAL) {
-                this.lookup_action ("compact-size").activate (null);
-            }
-            else {
-                this.lookup_action ("normal-size").activate (null);
-            }
-        }
-
         private void on_settings_changed (GLib.Settings settings,
                                           string        key)
         {
@@ -583,29 +574,30 @@ namespace Ft
 
         private void setup_actions ()
         {
-            var action_map = (GLib.ActionMap) this;
-
-            var compact_size_action = new GLib.SimpleAction ("compact-size", null);
-            compact_size_action.activate.connect (this.on_compact_size_activate);
-            action_map.add_action (compact_size_action);
+            this.compact_size_action = new GLib.SimpleAction ("compact-size", null);
+            this.compact_size_action.set_enabled (false);
+            this.compact_size_action.activate.connect (this.activate_compact_size);
+            this.add_action (this.compact_size_action);
 
             var normal_size_action = new GLib.SimpleAction ("normal-size", null);
-            normal_size_action.activate.connect (this.on_normal_size_activate);
-            action_map.add_action (normal_size_action);
+            normal_size_action.set_enabled (false);
+            normal_size_action.activate.connect (this.activate_normal_size);
+            this.add_action (normal_size_action);
 
             var toggle_compact_size_action = new GLib.SimpleAction ("toggle-compact-size", null);
-            toggle_compact_size_action.activate.connect (this.on_toggle_compact_size_activate);
-            action_map.add_action (toggle_compact_size_action);
+            toggle_compact_size_action.set_enabled (false);
+            toggle_compact_size_action.activate.connect (this.activate_toggle_compact_size);
+            this.add_action (toggle_compact_size_action);
 
             var mute_action = new GLib.SimpleAction ("mute", null);
             mute_action.set_enabled (false);
             mute_action.activate.connect (this.activate_mute);
-            action_map.add_action (mute_action);
+            this.add_action (mute_action);
 
             var unmute_action = new GLib.SimpleAction ("unmute", null);
             unmute_action.set_enabled (false);
             unmute_action.activate.connect (this.activate_unmute);
-            action_map.add_action (unmute_action);
+            this.add_action (unmute_action);
 
             this.update_size_actions ();
             this.update_mute_action ();
@@ -621,8 +613,6 @@ namespace Ft
             this.primary_menu_popover.has_arrow = false;
             this.primary_menu_popover.halign = Gtk.Align.START;
             this.primary_menu_popover.set_parent (this);
-
-            this.update_primary_menu ();
         }
 
         public override void dispose ()
@@ -640,6 +630,7 @@ namespace Ft
             this.extensions = null;
             this.background_manager = null;
             this.timer_action_group = null;
+            this.compact_size_action = null;
             this.settings = null;
 
             base.dispose ();

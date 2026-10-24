@@ -103,7 +103,7 @@
           <object class="GtkButton">
             <property name="halign">center</property>
             <property name="valign">center</property>
-            <property name="action-name">win.normal-size</property>
+            <property name="action-name">win.toggle-compact-size</property>
             <style>
               <class name="circular"/>
               <class name="flat"/>

@@ -7,7 +7,14 @@
       <item>
         <attribute name="label" translatable="yes">_Compact Mode</attribute>
         <attribute name="verb-icon">window-compact-size-symbolic</attribute>
-        <attribute name="action">win.toggle-compact-size</attribute>
+        <attribute name="action">win.compact-size</attribute>
+        <attribute name="hidden-when">action-missing</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">Leave _Compact Mode</attribute>
+        <attribute name="verb-icon">window-normal-size-symbolic</attribute>
+        <attribute name="action">win.normal-size</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">_Mute</attribute>
