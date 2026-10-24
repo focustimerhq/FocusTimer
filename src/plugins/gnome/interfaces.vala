@@ -227,6 +227,7 @@ namespace Gnome
     public interface ShellIntegration : GLib.Object
     {
         public abstract string version { owned get; }
+        public abstract bool screen_overlay_active { get; }
         public abstract string indicator_type { owned get; set; }
         public abstract bool enable_blur_effect { get; set; }
         public abstract bool enable_dismiss_gesture { get; set; }

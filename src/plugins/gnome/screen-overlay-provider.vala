@@ -18,6 +18,12 @@ namespace Gnome
      */
     public class ScreenOverlayProvider : Ft.Provider, Ft.ScreenOverlayProvider
     {
+        public bool active {
+            get {
+                return false;  // TODO
+            }
+        }
+
         private Gnome.ShellExtension? shell_extension = null;
 
         private void update_available ()

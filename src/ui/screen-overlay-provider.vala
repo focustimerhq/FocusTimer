@@ -13,6 +13,13 @@ namespace Ft
 {
     public class DefaultScreenOverlayProvider : Ft.Provider, Ft.ScreenOverlayProvider
     {
+        public bool active {
+            get {
+                return this._active;
+            }
+        }
+
+        private bool _active = false;
         private GLib.Cancellable? cancellable = null;
 
         construct
@@ -46,13 +53,15 @@ namespace Ft
 
                     if (this.cancellable == cancellable) {
                         this.cancellable = null;
-                        this.closed ();
+                        this._active = false;
+                        this.notify_property ("active");
                     }
                 });
 
             if (!cancellable.is_cancelled ()) {
                 this.cancellable = cancellable;
-                this.opened ();
+                this._active = true;
+                this.notify_property ("active");
             }
         }
 
@@ -62,6 +71,9 @@ namespace Ft
                 this.cancellable.cancel ();
                 this.cancellable = null;
             }
+
+            this._active = false;
+            this.notify_property ("active");
         }
 
         protected override async void initialize (GLib.Cancellable? cancellable) throws GLib.Error
