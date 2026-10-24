@@ -200,6 +200,7 @@ namespace Ft
         private Ft.SessionDBusService?      session_dbus_service;
         private uint                        session_dbus_service_id;
         private uint                        service_hold_id = 0U;
+        private uint                        idle_inhibit_cookie = 0U;
         private GLib.VariantDict?           command_line_options = null;
         private bool                        preferences_requested = false;
         private bool                        _ready = false;
@@ -755,6 +756,30 @@ namespace Ft
             }
         }
 
+        private void update_idle_inhibitor ()
+        {
+            var inhibit_idle = this.screen_overlay_manager != null &&
+                               this.screen_overlay_manager.active &&
+                               this.settings != null &&
+                               this.settings.get_uint ("screen-overlay-lock-delay") == 0U;
+            var is_idle_inhibited = this.idle_inhibit_cookie != 0U;
+
+            if (inhibit_idle == is_idle_inhibited) {
+                return;
+            }
+
+            if (inhibit_idle) {
+                // translators: reason for inhibiting the session from going idle
+                this.idle_inhibit_cookie = this.inhibit (null,
+                                                         Gtk.ApplicationInhibitFlags.IDLE,
+                                                         _("Screen overlay is open"));
+            }
+            else {
+                this.uninhibit (this.idle_inhibit_cookie);
+                this.idle_inhibit_cookie = 0U;
+            }
+        }
+
         /**
          * Emitted on the primary instance immediately after registration.
          */
@@ -798,6 +823,8 @@ namespace Ft
             this.update_color_scheme ();
 
             this.settings.changed.connect (this.on_settings_changed);
+            this.screen_overlay_manager.notify["active"].connect (
+                    this.on_screen_overlay_notify_active);
             this.event_bus.event.connect (this.on_event);
 
             this.session_manager.restore.begin (
@@ -1061,9 +1088,16 @@ namespace Ft
                 this.save_idle_id = 0;
             }
 
+            if (this.idle_inhibit_cookie != 0U) {
+                this.uninhibit (this.idle_inhibit_cookie);
+                this.idle_inhibit_cookie = 0U;
+            }
+
             this.settings.changed.disconnect (this.on_settings_changed);
             this.event_bus.event.disconnect (this.on_event);
             this.keyboard_manager.shortcut_activated.disconnect (this.on_shortcut_activated);
+            this.screen_overlay_manager.notify["active"].disconnect (
+                    this.on_screen_overlay_notify_active);
 
             base.shutdown ();
 
@@ -1206,6 +1240,10 @@ namespace Ft
                             ? new Ft.SoundManager ()
                             : null;
                     break;
+
+                case "screen-overlay-lock-delay":
+                    this.update_idle_inhibitor ();
+                    break;
             }
         }
 
@@ -1242,6 +1280,12 @@ namespace Ft
         private void on_shortcut_activated (string shortcut_name)
         {
             this.activate_prefixed_action (shortcut_name, null);
+        }
+
+        private void on_screen_overlay_notify_active (GLib.Object    object,
+                                                      GLib.ParamSpec pspec)
+        {
+            this.update_idle_inhibitor ();
         }
 
         public override void dispose ()

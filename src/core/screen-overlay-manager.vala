@@ -25,14 +25,39 @@ namespace Ft
     [SingleInstance]
     public class ScreenOverlayManager : GLib.Object
     {
+        [CCode (notify = false)]
+        public bool active {
+            get {
+                return this._active;
+            }
+            private set {
+                if (this._active == value) {
+                    return;
+                }
+
+                this._active = value;
+                this.notify_property ("active");
+            }
+        }
+
+        [CCode (notify = false)]
         public Ft.ScreenOverlayProvider? provider {
             get {
                 return this._provider;
             }
+            private set {
+                if (this._provider == value) {
+                    return;
+                }
+
+                this._provider = value;
+                this.notify_property ("provider");
+            }
         }
 
-        private Ft.ProviderSet<Ft.ScreenOverlayProvider>? providers = null;
+        private bool _active = false;
         private unowned Ft.ScreenOverlayProvider? _provider = null;
+        private Ft.ProviderSet<Ft.ScreenOverlayProvider>? providers = null;
         private Ft.NotificationManager? notification_manager = null;
 
         construct
@@ -78,11 +103,15 @@ namespace Ft
 
         private void on_screen_overlay_opened (Ft.ScreenOverlayProvider provider)
         {
+            this.active = true;
+
             this.notification_manager.emit_screen_overlay_opened ();
         }
 
         private void on_screen_overlay_closed (Ft.ScreenOverlayProvider provider)
         {
+            this.active = false;
+
             this.notification_manager.emit_screen_overlay_closed ();
         }
 
@@ -91,25 +120,28 @@ namespace Ft
             provider.opened.connect (this.on_screen_overlay_opened);
             provider.closed.connect (this.on_screen_overlay_closed);
 
-            this._provider = provider;
-            this.notify_property ("provider");
+            this.provider = provider;
         }
 
         private void on_provider_unselected (Ft.ScreenOverlayProvider provider)
         {
             provider.opened.disconnect (this.on_screen_overlay_opened);
             provider.closed.disconnect (this.on_screen_overlay_closed);
+
+            this.active = false;
         }
 
         public override void dispose ()
         {
+            this.active = false;
+            this.provider = null;
+
             if (this.notification_manager != null) {
                 this.notification_manager.request_screen_overlay_open.disconnect (this.on_request_screen_overlay_open);
                 this.notification_manager.request_screen_overlay_close.disconnect (this.on_request_screen_overlay_close);
                 this.notification_manager = null;
             }
 
-            this._provider = null;
             this.providers = null;
 
             base.dispose ();
