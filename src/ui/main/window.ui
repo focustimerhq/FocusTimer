@@ -9,6 +9,18 @@
         <attribute name="verb-icon">window-compact-size-symbolic</attribute>
         <attribute name="action">win.toggle-compact-size</attribute>
       </item>
+      <item>
+        <attribute name="label" translatable="yes">_Mute</attribute>
+        <attribute name="verb-icon">audio-volume-muted-symbolic</attribute>
+        <attribute name="action">win.mute</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Unmute</attribute>
+        <attribute name="verb-icon">audio-volume-high-symbolic</attribute>
+        <attribute name="action">win.unmute</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
     </section>
     <section>
       <item>

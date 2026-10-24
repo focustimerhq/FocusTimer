@@ -17,6 +17,23 @@ namespace Ft
         // Silence at the end of Pomodoro serves as a cue that it's about to end
         private const int64 ABOUT_TO_END_TIME = 10 * Ft.Interval.SECOND;
 
+        [CCode (notify = false)]
+        public bool muted {
+            get {
+                return this._muted;
+            }
+            set {
+                if (this._muted == value) {
+                    return;
+                }
+
+                this._muted = value;
+                this.update_background_sound (false);
+                this.notify_property ("muted");
+            }
+        }
+
+        private bool                _muted = false;
         private Ft.AlertSound?      pomodoro_finished_sound = null;
         private Ft.AlertSound?      break_finished_sound = null;
         private Ft.BackgroundSound? background_sound = null;
@@ -82,9 +99,14 @@ namespace Ft
             }
         }
 
-        private void update_background_sound ()
+        private void update_background_sound (bool animate = true)
         {
             this.unschedule_fade_out ();
+
+            if (this._muted) {
+                this.background_sound.fade_out (0);
+                return;
+            }
 
             if (this.background_sound_inhibit_count != 0) {
                 this.background_sound.fade_out (LONG_FADE_DURATION);
@@ -103,19 +125,23 @@ namespace Ft
             if (current_state == Ft.State.POMODORO && this.timer.is_running ())
             {
                 var remaining = this.timer.calculate_remaining ();
-                var fade_duration = LONG_FADE_DURATION;
+                var fade_duration = animate ? LONG_FADE_DURATION : 0;
 
                 if (remaining > ABOUT_TO_END_TIME) {
                     this.background_sound.fade_in (fade_duration);
                     this.schedule_fade_out (remaining - ABOUT_TO_END_TIME);
                 }
                 else {
-                    fade_duration = int64.max (remaining - Ft.Interval.SECOND, SHORT_FADE_DURATION);
+                    if (animate) {
+                        fade_duration = int64.max (remaining - Ft.Interval.SECOND,
+                                                   SHORT_FADE_DURATION);
+                    }
+
                     this.background_sound.fade_out (fade_duration);
                 }
             }
             else {
-                this.background_sound.fade_out (SHORT_FADE_DURATION);
+                this.background_sound.fade_out (animate ? SHORT_FADE_DURATION : 0);
             }
         }
 

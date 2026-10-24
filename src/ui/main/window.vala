@@ -142,11 +142,14 @@ namespace Ft
         private Ft.BackgroundManager?   background_manager = null;
         private Peas.ExtensionSet?      extensions = null;
         private Gtk.PopoverMenu?        primary_menu_popover = null;
+        private GLib.Settings?          settings = null;
+        private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
 
         construct
         {
-            var settings = Ft.get_settings ();
+            this.settings = Ft.get_settings ();
+            this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
             this.session_manager = Ft.SessionManager.get_default ();
             this.timer           = session_manager.timer;
@@ -158,7 +161,7 @@ namespace Ft
             this.insert_action_group ("session-manager", new Ft.SessionManagerActionGroup ());
             this.insert_action_group ("timer", this.timer_action_group);
 
-            if (settings.get_boolean ("prefer-compact-size")) {
+            if (this.settings.get_boolean ("prefer-compact-size")) {
                 this.size = Ft.WindowSize.COMPACT;
             }
 
@@ -169,6 +172,7 @@ namespace Ft
 
             this.update_title ();
             this.update_timer_indicator ();
+            this.update_mute_action ();
 
             this.extensions = new Peas.ExtensionSet.with_properties (
                     Peas.Engine.get_default (),
@@ -179,6 +183,15 @@ namespace Ft
                 (object) => {
                     this.setup_extension (object);
                 });
+        }
+
+        private Ft.SoundManager? get_sound_manager ()
+        {
+            if (this.settings == null || !this.settings.get_boolean ("sounds")) {
+                return null;
+            }
+
+            return new Ft.SoundManager ();
         }
 
         private void update_title ()
@@ -236,6 +249,33 @@ namespace Ft
 
             size_section.remove (0);
             size_section.insert_item (0, toggle_compact_size_item);
+        }
+
+        private void update_mute_action ()
+        {
+            var mute_action = this.lookup_action ("mute") as GLib.SimpleAction;
+            var unmute_action = this.lookup_action ("unmute") as GLib.SimpleAction;
+
+            if (mute_action == null || unmute_action == null || this.settings == null) {
+                return;
+            }
+
+            var sound_manager = this.get_sound_manager ();
+            var can_mute = this.settings.get_boolean ("sounds") &&
+                           this.settings.get_string ("background-sound") != "";
+
+            if (can_mute && sound_manager != null && sound_manager.muted) {
+                mute_action.set_enabled (false);
+                unmute_action.set_enabled (true);
+            }
+            else if (can_mute) {
+                unmute_action.set_enabled (false);
+                mute_action.set_enabled (true);
+            }
+            else {
+                mute_action.set_enabled (false);
+                unmute_action.set_enabled (false);
+            }
         }
 
         public Ft.WindowView get_default_view ()
@@ -356,26 +396,6 @@ namespace Ft
             dialog.present (self);
         }
 
-        [GtkCallback]
-        private void on_size_stack_visible_child_notify (GLib.Object    object,
-                                                         GLib.ParamSpec pspec)
-        {
-            this.size = Ft.WindowSize.from_string (this.size_stack.visible_child_name);
-        }
-
-        [GtkCallback]
-        private void on_view_stack_visible_child_notify (GLib.Object    object,
-                                                         GLib.ParamSpec pspec)
-        {
-            var view = Ft.WindowView.from_string (this.view_stack.visible_child_name);
-
-            this._view = this._view == Ft.WindowView.DEFAULT && this.get_default_view () == view
-                ? Ft.WindowView.DEFAULT
-                : view;
-
-            this.update_title ();
-            this.update_timer_indicator ();
-        }
 
         private void popup_primary_menu (Gtk.Widget relative_to,
                                          double     x,
@@ -396,6 +416,49 @@ namespace Ft
                 height = 1
             });
             this.primary_menu_popover.popup ();
+        }
+
+        private void activate_mute (GLib.SimpleAction action,
+                                    GLib.Variant?     parameter)
+        {
+            var sound_manager = this.get_sound_manager ();
+
+            if (sound_manager != null) {
+                sound_manager.muted = true;
+                this.update_mute_action ();
+            }
+        }
+
+        private void activate_unmute (GLib.SimpleAction action,
+                                      GLib.Variant?     parameter)
+        {
+            var sound_manager = this.get_sound_manager ();
+
+            if (sound_manager != null) {
+                sound_manager.muted = false;
+                this.update_mute_action ();
+            }
+        }
+
+        [GtkCallback]
+        private void on_size_stack_visible_child_notify (GLib.Object    object,
+                                                         GLib.ParamSpec pspec)
+        {
+            this.size = Ft.WindowSize.from_string (this.size_stack.visible_child_name);
+        }
+
+        [GtkCallback]
+        private void on_view_stack_visible_child_notify (GLib.Object    object,
+                                                         GLib.ParamSpec pspec)
+        {
+            var view = Ft.WindowView.from_string (this.view_stack.visible_child_name);
+
+            this._view = this._view == Ft.WindowView.DEFAULT && this.get_default_view () == view
+                    ? Ft.WindowView.DEFAULT
+                    : view;
+
+            this.update_title ();
+            this.update_timer_indicator ();
         }
 
         [GtkCallback]
@@ -493,6 +556,18 @@ namespace Ft
             }
         }
 
+        private void on_settings_changed (GLib.Settings settings,
+                                          string        key)
+        {
+            switch (key)
+            {
+                case "sounds":
+                case "background-sound":
+                    this.update_mute_action ();
+                    break;
+            }
+        }
+
         private void on_extension_added (Peas.ExtensionSet extension_set,
                                          Peas.PluginInfo   plugin_info,
                                          GLib.Object       object)
@@ -522,7 +597,18 @@ namespace Ft
             toggle_compact_size_action.activate.connect (this.on_toggle_compact_size_activate);
             action_map.add_action (toggle_compact_size_action);
 
+            var mute_action = new GLib.SimpleAction ("mute", null);
+            mute_action.set_enabled (false);
+            mute_action.activate.connect (this.activate_mute);
+            action_map.add_action (mute_action);
+
+            var unmute_action = new GLib.SimpleAction ("unmute", null);
+            unmute_action.set_enabled (false);
+            unmute_action.activate.connect (this.activate_unmute);
+            action_map.add_action (unmute_action);
+
             this.update_size_actions ();
+            this.update_mute_action ();
         }
 
         public void parser_finished (Gtk.Builder builder)
@@ -546,9 +632,15 @@ namespace Ft
                 this.primary_menu_popover = null;
             }
 
+            if (this.settings_changed_id != 0) {
+                this.settings.disconnect (this.settings_changed_id);
+                this.settings_changed_id = 0;
+            }
+
             this.extensions = null;
             this.background_manager = null;
             this.timer_action_group = null;
+            this.settings = null;
 
             base.dispose ();
         }
