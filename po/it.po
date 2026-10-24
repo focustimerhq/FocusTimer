@@ -493,13 +493,13 @@ msgstr "Altro"
 
 #: src/core/event.vala:269
 #, fuzzy
-msgid "Started the timer."
-msgstr "Timer avviato."
+msgid "Started the timer"
+msgstr "Timer avviato"
 
 #: src/core/event.vala:277
 #, fuzzy
-msgid "Stopped the timer manually."
-msgstr "Il timer è stato fermato manualmente."
+msgid "Stopped the timer manually"
+msgstr "Il timer è stato fermato manualmente"
 
 #: src/core/event.vala:285
 #, fuzzy
@@ -512,15 +512,15 @@ msgstr ""
 
 #: src/core/event.vala:293
 #, fuzzy
-msgid "The countdown has been manually resumed."
-msgstr "Il conto alla rovescia è stato ripreso manualmente."
+msgid "The countdown has been manually resumed"
+msgstr "Il conto alla rovescia è stato ripreso manualmente"
 
 #: src/core/event.vala:301
 #, fuzzy
-msgid "Jumped to a next time-block before the countdown has finished."
+msgid "Jumped to a next time-block before the countdown has finished"
 msgstr ""
 "Passato al blocco temporale successivo prima del termine del conto alla "
-"rovescia."
+"rovescia"
 
 #: src/core/event.vala:309
 #, fuzzy
@@ -531,8 +531,8 @@ msgstr ""
 
 #: src/core/event.vala:317
 #, fuzzy
-msgid "Manually cleared the session."
-msgstr "Sessione azzerata manualmente."
+msgid "Manually cleared the session"
+msgstr "Sessione azzerata manualmente"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -558,8 +558,8 @@ msgstr "Cambiato"
 
 #: src/core/event.vala:334
 #, fuzzy
-msgid "Triggered on any change related to the countdown."
-msgstr "Attivato su qualsiasi modifica relativa al conto alla rovescia."
+msgid "Triggered on any change related to the countdown"
+msgstr "Attivato su qualsiasi modifica relativa al conto alla rovescia"
 
 #. Session
 #: src/core/event.vala:342
@@ -569,9 +569,9 @@ msgstr "Conferma avanzamento"
 
 #: src/core/event.vala:343
 #, fuzzy
-msgid "A manual confirmation is required to start next time-block."
+msgid "A manual confirmation is required to start next time-block"
 msgstr ""
-"È richiesta una conferma manuale per avviare il blocco temporale successivo."
+"È richiesta una conferma manuale per avviare il blocco temporale successivo"
 
 #: src/core/event.vala:350
 #, fuzzy
@@ -580,8 +580,8 @@ msgstr "Avanzato"
 
 #: src/core/event.vala:351
 #, fuzzy
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Passato o saltato al blocco temporale successivo."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Passato o saltato al blocco temporale successivo"
 
 #: src/core/event.vala:358
 #, fuzzy
@@ -590,9 +590,9 @@ msgstr "Stato cambiato"
 
 #: src/core/event.vala:359
 #, fuzzy
-msgid "Transitioned to a next time-block or when a break gets relabelled."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
 msgstr ""
-"Passato a un blocco temporale successivo o quando una pausa viene rinominata."
+"Passato a un blocco temporale successivo o quando una pausa viene rinominata"
 
 #: src/core/event.vala:366
 #, fuzzy
@@ -602,8 +602,8 @@ msgstr "Riprogrammato"
 #. translators: Change of plan
 #: src/core/event.vala:367
 #, fuzzy
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Attivato quando i blocchi temporali pianificati sono cambiati."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Attivato quando i blocchi temporali pianificati sono cambiati"
 
 #: src/core/event.vala:374
 #, fuzzy
@@ -612,9 +612,9 @@ msgstr "Scaduto"
 
 #: src/core/event.vala:375
 #, fuzzy
-msgid "Triggered when session is about to be reset due to inactivity."
+msgid "Triggered when session is about to be reset due to inactivity"
 msgstr ""
-"Attivato quando la sessione sta per essere ripristinata per inattività."
+"Attivato quando la sessione sta per essere ripristinata per inattività"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -1016,7 +1016,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -1043,7 +1043,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -1055,7 +1055,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1093,7 +1093,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1108,8 +1108,8 @@ msgstr "Log vuoto"
 
 #: src/ui/log/log-window.ui:39
 #, fuzzy
-msgid "Entries will show up here once you start the timer."
-msgstr "Le voci appariranno qui una volta avviato il timer."
+msgid "Entries will show up here once you start the timer"
+msgstr "Le voci appariranno qui una volta avviato il timer"
 
 #: src/ui/log/log-window.ui:166
 #, fuzzy
@@ -1388,8 +1388,8 @@ msgstr "Evento"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
 #, fuzzy
-msgid "Execute command after an event."
-msgstr "Esegui comando dopo un evento."
+msgid "Execute command after an event"
+msgstr "Esegui comando dopo un evento"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1399,10 +1399,10 @@ msgstr "Condizione"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
 #, fuzzy
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
 "Assicura l'esecuzione di un secondo comando quando la condizione non è più "
-"soddisfatta."
+"soddisfatta"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 #, fuzzy
@@ -1468,8 +1468,8 @@ msgstr "Passa dati di input"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 #, fuzzy
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "Invece di passare variabili puoi elaborare un oggetto JSON."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "Invece di passare variabili puoi elaborare un oggetto JSON"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 #, fuzzy
@@ -1478,8 +1478,8 @@ msgstr "Attendi completamento"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
 #, fuzzy
-msgid "Block execution of other commands until the command completes."
-msgstr "Blocca l'esecuzione di altri comandi fino al termine del comando."
+msgid "Block execution of other commands until the command completes"
+msgstr "Blocca l'esecuzione di altri comandi fino al termine del comando"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 #, fuzzy
@@ -1665,7 +1665,7 @@ msgid "Learn More"
 msgstr "Scopri di più"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1673,7 +1673,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1777,9 +1777,9 @@ msgstr "Notifica quando il Pomodoro o la pausa stanno per finire."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
-msgid "A full-screen notification intended to enforce taking a break."
+msgid "A full-screen notification intended to enforce taking a break"
 msgstr ""
-"Una notifica a schermo intero pensata per incoraggiare a fare una pausa."
+"Una notifica a schermo intero pensata per incoraggiare a fare una pausa"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 #, fuzzy
@@ -1788,8 +1788,8 @@ msgstr "Ritardo blocco"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
 #, fuzzy
-msgid "Period of inactivity to lock the screen."
-msgstr "Periodo di inattività prima di bloccare lo schermo."
+msgid "Period of inactivity to lock the screen"
+msgstr "Periodo di inattività prima di bloccare lo schermo"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 #, fuzzy
@@ -1798,8 +1798,8 @@ msgstr "Ritardo riapertura"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "Periodo di inattività per riaprire l'overlay dopo essere stato chiuso."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "Periodo di inattività per riaprire l'overlay dopo essere stato chiuso"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 #, fuzzy
@@ -1937,13 +1937,13 @@ msgstr "Conferma inizio Pomodoro"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, fuzzy, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "Una singola sessione richiederà <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "Una singola sessione richiederà <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, fuzzy, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "Il <b>%u%%</b> del tempo sarà allocato per le pause."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "Il <b>%u%%</b> del tempo sarà allocato per le pause"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 #, fuzzy

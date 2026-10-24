@@ -490,13 +490,13 @@ msgstr "기타"
 
 #: src/core/event.vala:269
 #, fuzzy
-msgid "Started the timer."
-msgstr "타이머를 시작했습니다."
+msgid "Started the timer"
+msgstr "타이머를 시작했습니다"
 
 #: src/core/event.vala:277
 #, fuzzy
-msgid "Stopped the timer manually."
-msgstr "타이머를 수동으로 중지했습니다."
+msgid "Stopped the timer manually"
+msgstr "타이머를 수동으로 중지했습니다"
 
 #: src/core/event.vala:285
 #, fuzzy
@@ -509,13 +509,13 @@ msgstr ""
 
 #: src/core/event.vala:293
 #, fuzzy
-msgid "The countdown has been manually resumed."
-msgstr "카운트다운이 수동으로 재개되었습니다."
+msgid "The countdown has been manually resumed"
+msgstr "카운트다운이 수동으로 재개되었습니다"
 
 #: src/core/event.vala:301
 #, fuzzy
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "카운트다운이 끝나기 전에 다음 시간 블록으로 이동했습니다."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "카운트다운이 끝나기 전에 다음 시간 블록으로 이동했습니다"
 
 #: src/core/event.vala:309
 #, fuzzy
@@ -524,8 +524,8 @@ msgstr "감기 동작이 사용되었습니다. 과거 기록에 일시 정지�
 
 #: src/core/event.vala:317
 #, fuzzy
-msgid "Manually cleared the session."
-msgstr "세션을 수동으로 지웠습니다."
+msgid "Manually cleared the session"
+msgstr "세션을 수동으로 지웠습니다"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -550,8 +550,8 @@ msgstr "변경됨"
 
 #: src/core/event.vala:334
 #, fuzzy
-msgid "Triggered on any change related to the countdown."
-msgstr "카운트다운과 관련된 변경 사항이 있을 때 트리거됩니다."
+msgid "Triggered on any change related to the countdown"
+msgstr "카운트다운과 관련된 변경 사항이 있을 때 트리거됩니다"
 
 #. Session
 #: src/core/event.vala:342
@@ -561,8 +561,8 @@ msgstr "진행 확인"
 
 #: src/core/event.vala:343
 #, fuzzy
-msgid "A manual confirmation is required to start next time-block."
-msgstr "다음 시간 블록을 시작하려면 수동 확인이 필요합니다."
+msgid "A manual confirmation is required to start next time-block"
+msgstr "다음 시간 블록을 시작하려면 수동 확인이 필요합니다"
 
 #: src/core/event.vala:350
 #, fuzzy
@@ -571,8 +571,8 @@ msgstr "진행됨"
 
 #: src/core/event.vala:351
 #, fuzzy
-msgid "Transitioned or skipped to a next time-block."
-msgstr "다음 시간 블록으로 전환되거나 건너뛰었습니다."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "다음 시간 블록으로 전환되거나 건너뛰었습니다"
 
 #: src/core/event.vala:358
 #, fuzzy
@@ -581,8 +581,8 @@ msgstr "상태 변경됨"
 
 #: src/core/event.vala:359
 #, fuzzy
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "다음 시간 블록으로 전환되거나 휴식 라벨이 변경될 때 발생합니다."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "다음 시간 블록으로 전환되거나 휴식 라벨이 변경될 때 발생합니다"
 
 #: src/core/event.vala:366
 #, fuzzy
@@ -592,8 +592,8 @@ msgstr "재일정됨"
 #. translators: Change of plan
 #: src/core/event.vala:367
 #, fuzzy
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "예정된 시간 블록이 변경되었을 때 트리거됩니다."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "예정된 시간 블록이 변경되었을 때 트리거됩니다"
 
 #: src/core/event.vala:374
 #, fuzzy
@@ -602,8 +602,8 @@ msgstr "만료됨"
 
 #: src/core/event.vala:375
 #, fuzzy
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "활동이 없어 세션이 초기화되기 직전에 트리거됩니다."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "활동이 없어 세션이 초기화되기 직전에 트리거됩니다"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -996,7 +996,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -1023,7 +1023,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -1035,7 +1035,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1073,7 +1073,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1088,8 +1088,8 @@ msgstr "로그가 비어 있음"
 
 #: src/ui/log/log-window.ui:39
 #, fuzzy
-msgid "Entries will show up here once you start the timer."
-msgstr "타이머를 시작하면 여기에 항목이 표시됩니다."
+msgid "Entries will show up here once you start the timer"
+msgstr "타이머를 시작하면 여기에 항목이 표시됩니다"
 
 #: src/ui/log/log-window.ui:166
 #, fuzzy
@@ -1363,8 +1363,8 @@ msgstr "이벤트"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
 #, fuzzy
-msgid "Execute command after an event."
-msgstr "이벤트 발생 후 명령을 실행합니다."
+msgid "Execute command after an event"
+msgstr "이벤트 발생 후 명령을 실행합니다"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1374,8 +1374,8 @@ msgstr "조건"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
 #, fuzzy
-msgid "Ensure execution of a second command once condition is no longer met."
-msgstr "조건이 더 이상 충족되지 않을 때 두 번째 명령이 실행되도록 합니다."
+msgid "Ensure execution of a second command once condition is no longer met"
+msgstr "조건이 더 이상 충족되지 않을 때 두 번째 명령이 실행되도록 합니다"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 #, fuzzy
@@ -1441,8 +1441,8 @@ msgstr "입력 데이터 전달"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 #, fuzzy
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "변수를 전달하는 대신 JSON 객체를 처리할 수 있습니다."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "변수를 전달하는 대신 JSON 객체를 처리할 수 있습니다"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 #, fuzzy
@@ -1451,8 +1451,8 @@ msgstr "완료까지 대기"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
 #, fuzzy
-msgid "Block execution of other commands until the command completes."
-msgstr "명령이 완료될 때까지 다른 명령의 실행을 차단합니다."
+msgid "Block execution of other commands until the command completes"
+msgstr "명령이 완료될 때까지 다른 명령의 실행을 차단합니다"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 #, fuzzy
@@ -1638,7 +1638,7 @@ msgid "Learn More"
 msgstr "더 알아보기"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1646,7 +1646,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1748,8 +1748,8 @@ msgstr "포모도로 또는 휴식이 끝나기 직전에 알립니다."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "강제적으로 휴식을 취하도록 하는 전체 화면 알림입니다."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "강제적으로 휴식을 취하도록 하는 전체 화면 알림입니다"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 #, fuzzy
@@ -1758,8 +1758,8 @@ msgstr "잠금 지연"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
 #, fuzzy
-msgid "Period of inactivity to lock the screen."
-msgstr "화면을 잠그기 전까지의 비활동 시간입니다."
+msgid "Period of inactivity to lock the screen"
+msgstr "화면을 잠그기 전까지의 비활동 시간입니다"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 #, fuzzy
@@ -1768,8 +1768,8 @@ msgstr "재개방 지연"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "오버레이를 닫은 후 다시 나타나기 전까지의 비활동 시간입니다."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "오버레이를 닫은 후 다시 나타나기 전까지의 비활동 시간입니다"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 #, fuzzy
@@ -1907,13 +1907,13 @@ msgstr "포모도로 시작 전 확인"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, fuzzy, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "단일 세션 소요 시간: <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "단일 세션 소요 시간: <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, fuzzy, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "전체 시간의 <b>%u%%</b>가 휴식에 할당됩니다."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "전체 시간의 <b>%u%%</b>가 휴식에 할당됩니다"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 #, fuzzy

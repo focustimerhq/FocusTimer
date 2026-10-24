@@ -490,13 +490,13 @@ msgstr "ఇతర"
 
 #: src/core/event.vala:269
 #, fuzzy
-msgid "Started the timer."
-msgstr "టైమర్ ప్రారంభించబడింది."
+msgid "Started the timer"
+msgstr "టైమర్ ప్రారంభించబడింది"
 
 #: src/core/event.vala:277
 #, fuzzy
-msgid "Stopped the timer manually."
-msgstr "టైమర్ మాన్యువల్‌గా ఆపబడింది."
+msgid "Stopped the timer manually"
+msgstr "టైమర్ మాన్యువల్‌గా ఆపబడింది"
 
 #: src/core/event.vala:285
 #, fuzzy
@@ -509,13 +509,13 @@ msgstr ""
 
 #: src/core/event.vala:293
 #, fuzzy
-msgid "The countdown has been manually resumed."
-msgstr "కౌంట్‌డౌన్ మాన్యువల్‌గా కొనసాగించబడింది."
+msgid "The countdown has been manually resumed"
+msgstr "కౌంట్‌డౌన్ మాన్యువల్‌గా కొనసాగించబడింది"
 
 #: src/core/event.vala:301
 #, fuzzy
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "కౌంట్‌డౌన్ ముగియకముందే తదుపరి సమయ విభాగానికి వెళ్లారు."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "కౌంట్‌డౌన్ ముగియకముందే తదుపరి సమయ విభాగానికి వెళ్లారు"
 
 #: src/core/event.vala:309
 #, fuzzy
@@ -524,8 +524,8 @@ msgstr "వెనక్కి తిప్పే చర్య ఉపయోగి
 
 #: src/core/event.vala:317
 #, fuzzy
-msgid "Manually cleared the session."
-msgstr "సెషన్ మాన్యువల్‌గా తొలగించబడింది."
+msgid "Manually cleared the session"
+msgstr "సెషన్ మాన్యువల్‌గా తొలగించబడింది"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -548,8 +548,8 @@ msgstr "మారింది"
 
 #: src/core/event.vala:334
 #, fuzzy
-msgid "Triggered on any change related to the countdown."
-msgstr "కౌంట్‌డౌన్‌కు సంబంధించిన ఏవైనా మార్పులపైన ట్రిగ్గర్ చేయబడుతుంది."
+msgid "Triggered on any change related to the countdown"
+msgstr "కౌంట్‌డౌన్‌కు సంబంధించిన ఏవైనా మార్పులపైన ట్రిగ్గర్ చేయబడుతుంది"
 
 #. Session
 #: src/core/event.vala:342
@@ -559,8 +559,8 @@ msgstr "పురోగతిని నిర్ధారించండి"
 
 #: src/core/event.vala:343
 #, fuzzy
-msgid "A manual confirmation is required to start next time-block."
-msgstr "తదుపరి సమయ విభాగాన్ని ప్రారంభించడానికి మాన్యువల్ నిర్ధారణ అవసరం."
+msgid "A manual confirmation is required to start next time-block"
+msgstr "తదుపరి సమయ విభాగాన్ని ప్రారంభించడానికి మాన్యువల్ నిర్ధారణ అవసరం"
 
 #: src/core/event.vala:350
 #, fuzzy
@@ -569,8 +569,8 @@ msgstr "ముందుకు వెళ్ళారు"
 
 #: src/core/event.vala:351
 #, fuzzy
-msgid "Transitioned or skipped to a next time-block."
-msgstr "తదుపరి సమయ విభాగానికి మారారు లేదా దాటవేశారు."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "తదుపరి సమయ విభాగానికి మారారు లేదా దాటవేశారు"
 
 #: src/core/event.vala:358
 #, fuzzy
@@ -579,8 +579,8 @@ msgstr "స్థితి మారింది"
 
 #: src/core/event.vala:359
 #, fuzzy
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "తదుపరి సమయ విభాగానికి మారినప్పుడు లేదా విరామం మళ్ళీ లేబుల్ చేయబడినప్పుడు."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "తదుపరి సమయ విభాగానికి మారినప్పుడు లేదా విరామం మళ్ళీ లేబుల్ చేయబడినప్పుడు"
 
 #: src/core/event.vala:366
 #, fuzzy
@@ -590,8 +590,8 @@ msgstr "మళ్ళీ షెడ్యూల్ చేయబడింది"
 #. translators: Change of plan
 #: src/core/event.vala:367
 #, fuzzy
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "షెడ్యూల్ చేయబడిన సమయ విభాగాలు మారినప్పుడు ట్రిగ్గర్ చేయబడుతుంది."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "షెడ్యూల్ చేయబడిన సమయ విభాగాలు మారినప్పుడు ట్రిగ్గర్ చేయబడుతుంది"
 
 #: src/core/event.vala:374
 #, fuzzy
@@ -600,8 +600,8 @@ msgstr "గడువు ముగిసింది"
 
 #: src/core/event.vala:375
 #, fuzzy
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "కార్యాచరణ లేకపోవడం వల్ల సెషన్ రీసెట్ కాబోతున్నప్పుడు ట్రిగ్గర్ చేయబడుతుంది."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "కార్యాచరణ లేకపోవడం వల్ల సెషన్ రీసెట్ కాబోతున్నప్పుడు ట్రిగ్గర్ చేయబడుతుంది"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -998,7 +998,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -1025,7 +1025,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -1037,7 +1037,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1075,7 +1075,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1090,8 +1090,8 @@ msgstr "ఖాళీ లాగ్"
 
 #: src/ui/log/log-window.ui:39
 #, fuzzy
-msgid "Entries will show up here once you start the timer."
-msgstr "మీరు టైమర్‌ను ప్రారంభించిన తర్వాత ఎంట్రీలు ఇక్కడ కనిపిస్తాయి."
+msgid "Entries will show up here once you start the timer"
+msgstr "మీరు టైమర్‌ను ప్రారంభించిన తర్వాత ఎంట్రీలు ఇక్కడ కనిపిస్తాయి"
 
 #: src/ui/log/log-window.ui:166
 #, fuzzy
@@ -1368,8 +1368,8 @@ msgstr "ఈవెంట్"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
 #, fuzzy
-msgid "Execute command after an event."
-msgstr "ఈవెంట్ తర్వాత ఆదేశాన్ని అమలు చేయండి."
+msgid "Execute command after an event"
+msgstr "ఈవెంట్ తర్వాత ఆదేశాన్ని అమలు చేయండి"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1379,8 +1379,8 @@ msgstr "షరతు"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
 #, fuzzy
-msgid "Ensure execution of a second command once condition is no longer met."
-msgstr "షరతు నెరవేరకపోతే రెండో ఆదేశాన్ని అమలు చేసేలా చూడు."
+msgid "Ensure execution of a second command once condition is no longer met"
+msgstr "షరతు నెరవేరకపోతే రెండో ఆదేశాన్ని అమలు చేసేలా చూడు"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 #, fuzzy
@@ -1446,8 +1446,8 @@ msgstr "ఇన్‌పుట్ డేటాను పంపండి"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 #, fuzzy
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "వేరియబుల్స్ పంపే బదులు మీరు JSON ఆబ్జెక్ట్‌ను ప్రాసెస్ చేయవచ్చు."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "వేరియబుల్స్ పంపే బదులు మీరు JSON ఆబ్జెక్ట్‌ను ప్రాసెస్ చేయవచ్చు"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 #, fuzzy
@@ -1456,8 +1456,8 @@ msgstr "పూర్తయ్యే వరకు వేచి ఉండు"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
 #, fuzzy
-msgid "Block execution of other commands until the command completes."
-msgstr "ఆదేశం పూర్తయ్యే వరకు ఇతర ఆదేశాలను అమలు చేయకుండా ఆపు."
+msgid "Block execution of other commands until the command completes"
+msgstr "ఆదేశం పూర్తయ్యే వరకు ఇతర ఆదేశాలను అమలు చేయకుండా ఆపు"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 #, fuzzy
@@ -1641,7 +1641,7 @@ msgid "Learn More"
 msgstr "మరింత తెలుసుకోండి"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1649,7 +1649,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1751,8 +1751,8 @@ msgstr "పోమోడోరో లేదా విరామం ముగియ
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "ఖచ్చితంగా విరామం తీసుకోవాలని సూచించే ఫుల్-స్క్రీన్ నోటిఫికేషన్."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "ఖచ్చితంగా విరామం తీసుకోవాలని సూచించే ఫుల్-స్క్రీన్ నోటిఫికేషన్"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 #, fuzzy
@@ -1761,8 +1761,8 @@ msgstr "లాక్ ఆలస్యం"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
 #, fuzzy
-msgid "Period of inactivity to lock the screen."
-msgstr "స్క్రీన్ లాక్ చేయడానికి కావాల్సిన నిశ్చల సమయం."
+msgid "Period of inactivity to lock the screen"
+msgstr "స్క్రీన్ లాక్ చేయడానికి కావాల్సిన నిశ్చల సమయం"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 #, fuzzy
@@ -1771,8 +1771,8 @@ msgstr "తిరిగి తెరిచే ఆలస్యం"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "ఓవర్లే తీసివేసిన తర్వాత తిరిగి తెరవడానికి కావాల్సిన నిశ్చల సమయం."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "ఓవర్లే తీసివేసిన తర్వాత తిరిగి తెరవడానికి కావాల్సిన నిశ్చల సమయం"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 #, fuzzy
@@ -1910,13 +1910,13 @@ msgstr "పోమోడోరో ప్రారంభించే ముంద�
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, fuzzy, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "ఒక సెషన్ <b>%s</b> సమయం తీసుకుంటుంది."
+msgid "A single session will take <b>%s</b>"
+msgstr "ఒక సెషన్ <b>%s</b> సమయం తీసుకుంటుంది"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, fuzzy, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "సమయంలో <b>%u%%</b> విరామాల కోసం కేటాయించబడుతుంది."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "సమయంలో <b>%u%%</b> విరామాల కోసం కేటాయించబడుతుంది"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 #, fuzzy

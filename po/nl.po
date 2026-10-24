@@ -478,12 +478,12 @@ msgstr "Overig"
 
 #: src/core/event.vala:269
 #, fuzzy
-msgid "Started the timer."
-msgstr "Timer gestart."
+msgid "Started the timer"
+msgstr "Timer gestart"
 
 #: src/core/event.vala:277
-msgid "Stopped the timer manually."
-msgstr "De timer is handmatig gestopt."
+msgid "Stopped the timer manually"
+msgstr "De timer is handmatig gestopt"
 
 #: src/core/event.vala:285
 msgid ""
@@ -494,20 +494,20 @@ msgstr ""
 "schermvergrendeling of systeem-slaapstand."
 
 #: src/core/event.vala:293
-msgid "The countdown has been manually resumed."
-msgstr "Het aftellen is handmatig hervat."
+msgid "The countdown has been manually resumed"
+msgstr "Het aftellen is handmatig hervat"
 
 #: src/core/event.vala:301
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "Naar het volgende tijdsblok gesprongen voordat het aftellen klaar was."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "Naar het volgende tijdsblok gesprongen voordat het aftellen klaar was"
 
 #: src/core/event.vala:309
 msgid "Rewind action has been used. It adds a pause in the past."
 msgstr "Terugspoelactie is gebruikt. Het voegt een pauze toe in het verleden."
 
 #: src/core/event.vala:317
-msgid "Manually cleared the session."
-msgstr "Sessie handmatig gewist."
+msgid "Manually cleared the session"
+msgstr "Sessie handmatig gewist"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -529,8 +529,8 @@ msgid "Changed"
 msgstr "Gewijzigd"
 
 #: src/core/event.vala:334
-msgid "Triggered on any change related to the countdown."
-msgstr "Geactiveerd bij elke wijziging gerelateerd aan het aftellen."
+msgid "Triggered on any change related to the countdown"
+msgstr "Geactiveerd bij elke wijziging gerelateerd aan het aftellen"
 
 #. Session
 #: src/core/event.vala:342
@@ -538,25 +538,25 @@ msgid "Confirm Advancement"
 msgstr "Bevestig voortgang"
 
 #: src/core/event.vala:343
-msgid "A manual confirmation is required to start next time-block."
+msgid "A manual confirmation is required to start next time-block"
 msgstr ""
-"Handmatige bevestiging is vereist om het volgende tijdsblok te starten."
+"Handmatige bevestiging is vereist om het volgende tijdsblok te starten"
 
 #: src/core/event.vala:350
 msgid "Advanced"
 msgstr "Gevorderd"
 
 #: src/core/event.vala:351
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Overgegaan naar of overgeslagen naar een volgend tijdsblok."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Overgegaan naar of overgeslagen naar een volgend tijdsblok"
 
 #: src/core/event.vala:358
 msgid "State Changed"
 msgstr "Status gewijzigd"
 
 #: src/core/event.vala:359
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "Overgegaan naar een volgend tijdsblok of herlabelen van een pauze."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "Overgegaan naar een volgend tijdsblok of herlabelen van een pauze"
 
 #: src/core/event.vala:366
 msgid "Rescheduled"
@@ -564,16 +564,16 @@ msgstr "Opnieuw gepland"
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Geactiveerd wanneer geplande tijdsblokken zijn gewijzigd."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Geactiveerd wanneer geplande tijdsblokken zijn gewijzigd"
 
 #: src/core/event.vala:374
 msgid "Expired"
 msgstr "Verstreken"
 
 #: src/core/event.vala:375
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "Geactiveerd wanneer de sessie wordt gereset wegens inactiviteit."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "Geactiveerd wanneer de sessie wordt gereset wegens inactiviteit"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -935,7 +935,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -962,7 +962,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -974,7 +974,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1011,7 +1011,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1023,8 +1023,8 @@ msgid "Empty Log"
 msgstr "Logboek legen"
 
 #: src/ui/log/log-window.ui:39
-msgid "Entries will show up here once you start the timer."
-msgstr "Items verschijnen hier zodra u de timer start."
+msgid "Entries will show up here once you start the timer"
+msgstr "Items verschijnen hier zodra u de timer start"
 
 #: src/ui/log/log-window.ui:166
 msgid "Context"
@@ -1287,8 +1287,8 @@ msgid "Event"
 msgstr "Gebeurtenis"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-msgid "Execute command after an event."
-msgstr "Voer opdracht uit na een gebeurtenis."
+msgid "Execute command after an event"
+msgstr "Voer opdracht uit na een gebeurtenis"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1296,10 +1296,10 @@ msgid "Condition"
 msgstr "Voorwaarde"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
 "Zorg voor uitvoering van een tweede opdracht zodra aan de voorwaarde niet "
-"meer wordt voldaan."
+"meer wordt voldaan"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 msgid "Events"
@@ -1354,16 +1354,16 @@ msgid "Pass Input Data"
 msgstr "Invoergegevens doorgeven"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "In plaats van variabelen kunt u een JSON-object verwerken."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "In plaats van variabelen kunt u een JSON-object verwerken"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
 msgstr "Wachten op voltooiing"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-msgid "Block execution of other commands until the command completes."
-msgstr "Andere opdrachten blokkeren totdat de opdracht is voltooid."
+msgid "Block execution of other commands until the command completes"
+msgstr "Andere opdrachten blokkeren totdat de opdracht is voltooid"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 #, fuzzy
@@ -1530,7 +1530,7 @@ msgid "Learn More"
 msgstr "Meer informatie"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1538,7 +1538,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1625,24 +1625,24 @@ msgid "Notify when Pomodoro or break is about to end."
 msgstr "Melden wanneer Pomodoro of pauze bijna voorbij is."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "Een schermvullende melding bedoeld om een pauze af te dwingen."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "Een schermvullende melding bedoeld om een pauze af te dwingen"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Lock Delay"
 msgstr "Vergrendelingsvertraging"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
-msgid "Period of inactivity to lock the screen."
-msgstr "Inactiviteitsduur om het scherm te vergrendelen."
+msgid "Period of inactivity to lock the screen"
+msgstr "Inactiviteitsduur om het scherm te vergrendelen"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Reopen Delay"
 msgstr "Heropenvertraging"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "Inactiviteitsduur om de overlay opnieuw te tonen na sluiten."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "Inactiviteitsduur om de overlay opnieuw te tonen na sluiten"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 msgid "Never"
@@ -1772,13 +1772,13 @@ msgstr "Starten van Pomodoro bevestigen"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "Een enkele sessie duurt <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "Een enkele sessie duurt <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "<b>%u%%</b> van de tijd wordt gereserveerd voor pauzes."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "<b>%u%%</b> van de tijd wordt gereserveerd voor pauzes"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 #, fuzzy

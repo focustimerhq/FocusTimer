@@ -466,11 +466,11 @@ msgid "Other"
 msgstr ""
 
 #: src/core/event.vala:269
-msgid "Started the timer."
+msgid "Started the timer"
 msgstr ""
 
 #: src/core/event.vala:277
-msgid "Stopped the timer manually."
+msgid "Stopped the timer manually"
 msgstr ""
 
 #: src/core/event.vala:285
@@ -480,11 +480,11 @@ msgid ""
 msgstr ""
 
 #: src/core/event.vala:293
-msgid "The countdown has been manually resumed."
+msgid "The countdown has been manually resumed"
 msgstr ""
 
 #: src/core/event.vala:301
-msgid "Jumped to a next time-block before the countdown has finished."
+msgid "Jumped to a next time-block before the countdown has finished"
 msgstr ""
 
 #: src/core/event.vala:309
@@ -492,7 +492,7 @@ msgid "Rewind action has been used. It adds a pause in the past."
 msgstr ""
 
 #: src/core/event.vala:317
-msgid "Manually cleared the session."
+msgid "Manually cleared the session"
 msgstr ""
 
 #. Countdown
@@ -513,7 +513,7 @@ msgid "Changed"
 msgstr ""
 
 #: src/core/event.vala:334
-msgid "Triggered on any change related to the countdown."
+msgid "Triggered on any change related to the countdown"
 msgstr ""
 
 #. Session
@@ -522,7 +522,7 @@ msgid "Confirm Advancement"
 msgstr ""
 
 #: src/core/event.vala:343
-msgid "A manual confirmation is required to start next time-block."
+msgid "A manual confirmation is required to start next time-block"
 msgstr ""
 
 #: src/core/event.vala:350
@@ -530,7 +530,7 @@ msgid "Advanced"
 msgstr ""
 
 #: src/core/event.vala:351
-msgid "Transitioned or skipped to a next time-block."
+msgid "Transitioned or skipped to a next time-block"
 msgstr ""
 
 #: src/core/event.vala:358
@@ -538,7 +538,7 @@ msgid "State Changed"
 msgstr ""
 
 #: src/core/event.vala:359
-msgid "Transitioned to a next time-block or when a break gets relabelled."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
 msgstr ""
 
 #: src/core/event.vala:366
@@ -547,7 +547,7 @@ msgstr ""
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-msgid "Triggered when scheduled time-blocks have changed."
+msgid "Triggered when scheduled time-blocks have changed"
 msgstr ""
 
 #: src/core/event.vala:374
@@ -555,7 +555,7 @@ msgid "Expired"
 msgstr ""
 
 #: src/core/event.vala:375
-msgid "Triggered when session is about to be reset due to inactivity."
+msgid "Triggered when session is about to be reset due to inactivity"
 msgstr ""
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
@@ -906,7 +906,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -933,7 +933,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -945,7 +945,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -981,7 +981,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -993,7 +993,7 @@ msgid "Empty Log"
 msgstr ""
 
 #: src/ui/log/log-window.ui:39
-msgid "Entries will show up here once you start the timer."
+msgid "Entries will show up here once you start the timer"
 msgstr ""
 
 #: src/ui/log/log-window.ui:166
@@ -1243,7 +1243,7 @@ msgid "Event"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-msgid "Execute command after an event."
+msgid "Execute command after an event"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
@@ -1252,7 +1252,7 @@ msgid "Condition"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
@@ -1306,7 +1306,7 @@ msgid "Pass Input Data"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-msgid "Instead of passing variables you can process a JSON object."
+msgid "Instead of passing variables you can process a JSON object"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
@@ -1314,7 +1314,7 @@ msgid "Wait For Completion"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-msgid "Block execution of other commands until the command completes."
+msgid "Block execution of other commands until the command completes"
 msgstr ""
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
@@ -1475,7 +1475,7 @@ msgid "Learn More"
 msgstr ""
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1483,7 +1483,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1565,7 +1565,7 @@ msgid "Notify when Pomodoro or break is about to end."
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
-msgid "A full-screen notification intended to enforce taking a break."
+msgid "A full-screen notification intended to enforce taking a break"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
@@ -1573,7 +1573,7 @@ msgid "Lock Delay"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
-msgid "Period of inactivity to lock the screen."
+msgid "Period of inactivity to lock the screen"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
@@ -1581,7 +1581,7 @@ msgid "Reopen Delay"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
@@ -1701,12 +1701,12 @@ msgstr ""
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
-msgid "A single session will take <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
 msgstr ""
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
 msgstr ""
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170

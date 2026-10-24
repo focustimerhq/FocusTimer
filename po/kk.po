@@ -493,13 +493,13 @@ msgstr "Басқа"
 
 #: src/core/event.vala:269
 #, fuzzy
-msgid "Started the timer."
-msgstr "Таймер іске қосылды."
+msgid "Started the timer"
+msgstr "Таймер іске қосылды"
 
 #: src/core/event.vala:277
 #, fuzzy
-msgid "Stopped the timer manually."
-msgstr "Таймер қолмен тоқтатылды."
+msgid "Stopped the timer manually"
+msgstr "Таймер қолмен тоқтатылды"
 
 #: src/core/event.vala:285
 #, fuzzy
@@ -512,13 +512,13 @@ msgstr ""
 
 #: src/core/event.vala:293
 #, fuzzy
-msgid "The countdown has been manually resumed."
-msgstr "Кері санақ қолмен жалғастырылды."
+msgid "The countdown has been manually resumed"
+msgstr "Кері санақ қолмен жалғастырылды"
 
 #: src/core/event.vala:301
 #, fuzzy
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "Кері санақ аяқталғанға дейін келесі уақыт блогына өтті."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "Кері санақ аяқталғанға дейін келесі уақыт блогына өтті"
 
 #: src/core/event.vala:309
 #, fuzzy
@@ -527,8 +527,8 @@ msgstr "Кері айналдыру әрекеті қолданылды. Ол ө
 
 #: src/core/event.vala:317
 #, fuzzy
-msgid "Manually cleared the session."
-msgstr "Сеанс қолмен тазартылды."
+msgid "Manually cleared the session"
+msgstr "Сеанс қолмен тазартылды"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -554,8 +554,8 @@ msgstr "Өзгертілді"
 
 #: src/core/event.vala:334
 #, fuzzy
-msgid "Triggered on any change related to the countdown."
-msgstr "Кері санаққа қатысты кез келген өзгерісте іске қосылады."
+msgid "Triggered on any change related to the countdown"
+msgstr "Кері санаққа қатысты кез келген өзгерісте іске қосылады"
 
 #. Session
 #: src/core/event.vala:342
@@ -565,8 +565,8 @@ msgstr "Келесіге өтуді растау"
 
 #: src/core/event.vala:343
 #, fuzzy
-msgid "A manual confirmation is required to start next time-block."
-msgstr "Келесі уақыт блогын бастау үшін қолмен растау қажет."
+msgid "A manual confirmation is required to start next time-block"
+msgstr "Келесі уақыт блогын бастау үшін қолмен растау қажет"
 
 #: src/core/event.vala:350
 #, fuzzy
@@ -575,8 +575,8 @@ msgstr "Өтілді"
 
 #: src/core/event.vala:351
 #, fuzzy
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Келесі уақыт блогына ауысты немесе оны өткізіп жіберді."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Келесі уақыт блогына ауысты немесе оны өткізіп жіберді"
 
 #: src/core/event.vala:358
 #, fuzzy
@@ -585,8 +585,8 @@ msgstr "Күй өзгерді"
 
 #: src/core/event.vala:359
 #, fuzzy
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "Келесі уақыт блогына ауысқанда немесе үзіліс белгісі өзгергенде."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "Келесі уақыт блогына ауысқанда немесе үзіліс белгісі өзгергенде"
 
 #: src/core/event.vala:366
 #, fuzzy
@@ -596,8 +596,8 @@ msgstr "Қайта жоспарланды"
 #. translators: Change of plan
 #: src/core/event.vala:367
 #, fuzzy
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Жоспарланған уақыт блоктары өзгерген кезде іске қосылады."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Жоспарланған уақыт блоктары өзгерген кезде іске қосылады"
 
 #: src/core/event.vala:374
 #, fuzzy
@@ -606,8 +606,8 @@ msgstr "Мерзімі бітті"
 
 #: src/core/event.vala:375
 #, fuzzy
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "Әрекетсіздікке байланысты сеанс тасталу алдында іске қосылады."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "Әрекетсіздікке байланысты сеанс тасталу алдында іске қосылады"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -1003,7 +1003,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -1030,7 +1030,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -1042,7 +1042,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1080,7 +1080,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1095,8 +1095,8 @@ msgstr "Бос журнал"
 
 #: src/ui/log/log-window.ui:39
 #, fuzzy
-msgid "Entries will show up here once you start the timer."
-msgstr "Таймерді іске қосқан кезде жазбалар осында пайда болады."
+msgid "Entries will show up here once you start the timer"
+msgstr "Таймерді іске қосқан кезде жазбалар осында пайда болады"
 
 #: src/ui/log/log-window.ui:166
 #, fuzzy
@@ -1372,8 +1372,8 @@ msgstr "Оқиға"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
 #, fuzzy
-msgid "Execute command after an event."
-msgstr "Оқиғадан кейін команданы орындау."
+msgid "Execute command after an event"
+msgstr "Оқиғадан кейін команданы орындау"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1383,9 +1383,9 @@ msgstr "Шарт"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
 #, fuzzy
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
-"Шарт орындалмаған жағдайда екінші команданың орындалуын қамтамасыз ету."
+"Шарт орындалмаған жағдайда екінші команданың орындалуын қамтамасыз ету"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 #, fuzzy
@@ -1451,8 +1451,8 @@ msgstr "Кіріс деректерін беру"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 #, fuzzy
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "Айнымалыларды берудің орнына JSON нысанын өңдеуге болады."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "Айнымалыларды берудің орнына JSON нысанын өңдеуге болады"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 #, fuzzy
@@ -1461,8 +1461,8 @@ msgstr "Аяқталуын күту"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
 #, fuzzy
-msgid "Block execution of other commands until the command completes."
-msgstr "Команда аяқталғанша басқа командалардың орындалуын блоктау."
+msgid "Block execution of other commands until the command completes"
+msgstr "Команда аяқталғанша басқа командалардың орындалуын блоктау"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 #, fuzzy
@@ -1650,7 +1650,7 @@ msgid "Learn More"
 msgstr "Көбірек білу"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1658,7 +1658,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1760,8 +1760,8 @@ msgstr "Помодоро немесе үзіліс аяқталуға жақын
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
 #, fuzzy
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "Үзіліс жасауға мәжбүрлейтін толық экранды хабарлама."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "Үзіліс жасауға мәжбүрлейтін толық экранды хабарлама"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 #, fuzzy
@@ -1770,8 +1770,8 @@ msgstr "Құлыптау кідірісі"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
 #, fuzzy
-msgid "Period of inactivity to lock the screen."
-msgstr "Экранды құлыптау үшін қажет әрекетсіздік кезеңі."
+msgid "Period of inactivity to lock the screen"
+msgstr "Экранды құлыптау үшін қажет әрекетсіздік кезеңі"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 #, fuzzy
@@ -1780,8 +1780,8 @@ msgstr "Қайта ашу кідірісі"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
 #, fuzzy
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "Жабылғаннан кейін қабатты қайта ашу үшін қажет әрекетсіздік кезеңі."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "Жабылғаннан кейін қабатты қайта ашу үшін қажет әрекетсіздік кезеңі"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 #, fuzzy
@@ -1919,13 +1919,13 @@ msgstr "Помодороның басталуын растау"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, fuzzy, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "Бір сеанс <b>%s</b> уақыт алады."
+msgid "A single session will take <b>%s</b>"
+msgstr "Бір сеанс <b>%s</b> уақыт алады"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, fuzzy, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "Уақыттың <b>%u%%</b> үзілістерге бөлінеді."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "Уақыттың <b>%u%%</b> үзілістерге бөлінеді"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 #, fuzzy

@@ -471,12 +471,12 @@ msgid "Other"
 msgstr "Annat"
 
 #: src/core/event.vala:269
-msgid "Started the timer."
-msgstr "Startade tidtagaren."
+msgid "Started the timer"
+msgstr "Startade tidtagaren"
 
 #: src/core/event.vala:277
-msgid "Stopped the timer manually."
-msgstr "Stoppade tidtagaren manuellt."
+msgid "Stopped the timer manually"
+msgstr "Stoppade tidtagaren manuellt"
 
 #: src/core/event.vala:285
 msgid ""
@@ -487,12 +487,12 @@ msgstr ""
 "systemet försätts i vänteläge."
 
 #: src/core/event.vala:293
-msgid "The countdown has been manually resumed."
-msgstr "Nedräkningen har manuellt återupptagits."
+msgid "The countdown has been manually resumed"
+msgstr "Nedräkningen har manuellt återupptagits"
 
 #: src/core/event.vala:301
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "Hoppade till ett nästa tidsblock innan nedräkningen hade slutförts."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "Hoppade till ett nästa tidsblock innan nedräkningen hade slutförts"
 
 #: src/core/event.vala:309
 msgid "Rewind action has been used. It adds a pause in the past."
@@ -500,8 +500,8 @@ msgstr ""
 "Spola tillbaka-åtgärden har används. Den lägger till en paus i det förflutna."
 
 #: src/core/event.vala:317
-msgid "Manually cleared the session."
-msgstr "Tömde manuellt sessionen."
+msgid "Manually cleared the session"
+msgstr "Tömde manuellt sessionen"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -523,8 +523,8 @@ msgid "Changed"
 msgstr "Ändrad"
 
 #: src/core/event.vala:334
-msgid "Triggered on any change related to the countdown."
-msgstr "Utlöses vid alla ändringar relaterade till nedräkningen."
+msgid "Triggered on any change related to the countdown"
+msgstr "Utlöses vid alla ändringar relaterade till nedräkningen"
 
 #. Session
 #: src/core/event.vala:342
@@ -532,24 +532,24 @@ msgid "Confirm Advancement"
 msgstr "Bekräfta avancemang"
 
 #: src/core/event.vala:343
-msgid "A manual confirmation is required to start next time-block."
-msgstr "Manuell bekräftelse krävs för att starta nästa tidsblock."
+msgid "A manual confirmation is required to start next time-block"
+msgstr "Manuell bekräftelse krävs för att starta nästa tidsblock"
 
 #: src/core/event.vala:350
 msgid "Advanced"
 msgstr "Avancerat"
 
 #: src/core/event.vala:351
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Övergick eller hoppade till ett nytt tidsblock."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Övergick eller hoppade till ett nytt tidsblock"
 
 #: src/core/event.vala:358
 msgid "State Changed"
 msgstr "Tillstånd ändrat"
 
 #: src/core/event.vala:359
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "Övergick till ett nästa tidsblock eller när en rast får en ny etikett."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "Övergick till ett nästa tidsblock eller när en rast får en ny etikett"
 
 #: src/core/event.vala:366
 msgid "Rescheduled"
@@ -557,17 +557,17 @@ msgstr "Schemaändrad"
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Utlöses när schemalagda tidsblock har ändrats."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Utlöses när schemalagda tidsblock har ändrats"
 
 #: src/core/event.vala:374
 msgid "Expired"
 msgstr "Utgången"
 
 #: src/core/event.vala:375
-msgid "Triggered when session is about to be reset due to inactivity."
+msgid "Triggered when session is about to be reset due to inactivity"
 msgstr ""
-"Utlöses när sessionen håller på att återställas på grund av inaktivitet."
+"Utlöses när sessionen håller på att återställas på grund av inaktivitet"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -923,7 +923,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -950,7 +950,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -962,7 +962,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -998,7 +998,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1010,8 +1010,8 @@ msgid "Empty Log"
 msgstr "Tom logg"
 
 #: src/ui/log/log-window.ui:39
-msgid "Entries will show up here once you start the timer."
-msgstr "Poster kommer visas här då du startar tidtagaren."
+msgid "Entries will show up here once you start the timer"
+msgstr "Poster kommer visas här då du startar tidtagaren"
 
 #: src/ui/log/log-window.ui:166
 msgid "Context"
@@ -1262,8 +1262,8 @@ msgid "Event"
 msgstr "Händelse"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-msgid "Execute command after an event."
-msgstr "Kör kommando efter en händelse."
+msgid "Execute command after an event"
+msgstr "Kör kommando efter en händelse"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1271,9 +1271,9 @@ msgid "Condition"
 msgstr "Villkor"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
-"Säkerställ körning av ett andra kommando då villkoret inte längre uppfylls."
+"Säkerställ körning av ett andra kommando då villkoret inte längre uppfylls"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 msgid "Events"
@@ -1326,16 +1326,16 @@ msgid "Pass Input Data"
 msgstr "Skicka inmatningsdata"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "I stället för att skicka variabler kan du bearbeta ett JSON-objekt."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "I stället för att skicka variabler kan du bearbeta ett JSON-objekt"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
 msgstr "Vänta på slutförande"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-msgid "Block execution of other commands until the command completes."
-msgstr "Blockera körning av andra kommandon till kommandot slutförs."
+msgid "Block execution of other commands until the command completes"
+msgstr "Blockera körning av andra kommandon till kommandot slutförs"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 msgid "_Delete Action"
@@ -1495,7 +1495,7 @@ msgid "Learn More"
 msgstr "Läs mer"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1503,7 +1503,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1587,26 +1587,26 @@ msgid "Notify when Pomodoro or break is about to end."
 msgstr "Avisera när pomodoro eller rast håller på att ta slut."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
-msgid "A full-screen notification intended to enforce taking a break."
+msgid "A full-screen notification intended to enforce taking a break"
 msgstr ""
-"En helskärmsavisering som är avsedd för att tvinga fram att raster tas."
+"En helskärmsavisering som är avsedd för att tvinga fram att raster tas"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Lock Delay"
 msgstr "Låsfördröjning"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
-msgid "Period of inactivity to lock the screen."
-msgstr "Inaktivitetsperiod innan skärmen kommer att låsas."
+msgid "Period of inactivity to lock the screen"
+msgstr "Inaktivitetsperiod innan skärmen kommer att låsas"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Reopen Delay"
 msgstr "Återöppningsfördröjning"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
 msgstr ""
-"Inaktivitetsperiod innan överlägget ska öppnas igen efter att det avvisats."
+"Inaktivitetsperiod innan överlägget ska öppnas igen efter att det avvisats"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 msgid "Never"
@@ -1725,13 +1725,13 @@ msgstr "Bekräfta start av pomodoro"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "En ensam session kommer ta <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "En ensam session kommer ta <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "<b>%u%%</b> av tiden kommer vara avsatt för raster."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "<b>%u%%</b> av tiden kommer vara avsatt för raster"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 msgid "Apply changes to ongoing Pomodoro?"

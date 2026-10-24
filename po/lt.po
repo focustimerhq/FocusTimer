@@ -475,12 +475,12 @@ msgid "Other"
 msgstr "Kita"
 
 #: src/core/event.vala:269
-msgid "Started the timer."
-msgstr "Laikmatis paleistas."
+msgid "Started the timer"
+msgstr "Laikmatis paleistas"
 
 #: src/core/event.vala:277
-msgid "Stopped the timer manually."
-msgstr "Laikmatis sustabdytas rankiniu būdu."
+msgid "Stopped the timer manually"
+msgstr "Laikmatis sustabdytas rankiniu būdu"
 
 #: src/core/event.vala:285
 msgid ""
@@ -491,20 +491,20 @@ msgstr ""
 "ekraną ar užmigdant sistemą."
 
 #: src/core/event.vala:293
-msgid "The countdown has been manually resumed."
-msgstr "Skaičiavimas buvo pratęstas rankiniu būdu."
+msgid "The countdown has been manually resumed"
+msgstr "Skaičiavimas buvo pratęstas rankiniu būdu"
 
 #: src/core/event.vala:301
-msgid "Jumped to a next time-block before the countdown has finished."
-msgstr "Pereita prie kito laiko bloko nepasibaigus skaičiavimui."
+msgid "Jumped to a next time-block before the countdown has finished"
+msgstr "Pereita prie kito laiko bloko nepasibaigus skaičiavimui"
 
 #: src/core/event.vala:309
 msgid "Rewind action has been used. It adds a pause in the past."
 msgstr "Panaudotas atsukimo veiksmas. Jis prideda pauzę praeityje."
 
 #: src/core/event.vala:317
-msgid "Manually cleared the session."
-msgstr "Sesija išvalyta rankiniu būdu."
+msgid "Manually cleared the session"
+msgstr "Sesija išvalyta rankiniu būdu"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -526,9 +526,9 @@ msgid "Changed"
 msgstr "Pasikeitė"
 
 #: src/core/event.vala:334
-msgid "Triggered on any change related to the countdown."
+msgid "Triggered on any change related to the countdown"
 msgstr ""
-"Aktyvuojama įvykus bet kokiam su atgaliniu skaičiavimu susijusiam pokyčiui."
+"Aktyvuojama įvykus bet kokiam su atgaliniu skaičiavimu susijusiam pokyčiui"
 
 #. Session
 #: src/core/event.vala:342
@@ -536,24 +536,24 @@ msgid "Confirm Advancement"
 msgstr "Patvirtinti eigą"
 
 #: src/core/event.vala:343
-msgid "A manual confirmation is required to start next time-block."
-msgstr "Norint pradėti kitą laiko bloką, reikalingas rankinis patvirtinimas."
+msgid "A manual confirmation is required to start next time-block"
+msgstr "Norint pradėti kitą laiko bloką, reikalingas rankinis patvirtinimas"
 
 #: src/core/event.vala:350
 msgid "Advanced"
 msgstr "Pažengta"
 
 #: src/core/event.vala:351
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Pereita arba praleista į kitą laiko bloką."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Pereita arba praleista į kitą laiko bloką"
 
 #: src/core/event.vala:358
 msgid "State Changed"
 msgstr "Būsena pasikeitė"
 
 #: src/core/event.vala:359
-msgid "Transitioned to a next time-block or when a break gets relabelled."
-msgstr "Pereita į kitą laiko bloką arba kai pertrauka pervardijama."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
+msgstr "Pereita į kitą laiko bloką arba kai pertrauka pervardijama"
 
 #: src/core/event.vala:366
 msgid "Rescheduled"
@@ -561,16 +561,16 @@ msgstr "Perplanuota"
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Aktyvuojama pasikeitus suplanuotiems laiko blokams."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Aktyvuojama pasikeitus suplanuotiems laiko blokams"
 
 #: src/core/event.vala:374
 msgid "Expired"
 msgstr "Baigėsi laikas"
 
 #: src/core/event.vala:375
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "Aktyvuojama, kai sesija turi būti atstatyta dėl neaktyvumo."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "Aktyvuojama, kai sesija turi būti atstatyta dėl neaktyvumo"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -929,7 +929,7 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
+msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:37
@@ -956,7 +956,7 @@ msgstr ""
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
@@ -968,7 +968,7 @@ msgid "Auto-Pause Media"
 msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
 msgstr ""
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
@@ -1004,7 +1004,7 @@ msgid "Show Tray Icon"
 msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
+msgid "Closing the window keeps the app running in the background"
 msgstr ""
 
 #: src/ui/log/log-window.ui:6
@@ -1016,8 +1016,8 @@ msgid "Empty Log"
 msgstr "Žurnalas tuščias"
 
 #: src/ui/log/log-window.ui:39
-msgid "Entries will show up here once you start the timer."
-msgstr "Įrašai atsiras čia, kai paleisite laikmatį."
+msgid "Entries will show up here once you start the timer"
+msgstr "Įrašai atsiras čia, kai paleisite laikmatį"
 
 #: src/ui/log/log-window.ui:166
 msgid "Context"
@@ -1271,8 +1271,8 @@ msgid "Event"
 msgstr "Įvykis"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-msgid "Execute command after an event."
-msgstr "Vykdyti komandą po įvykio."
+msgid "Execute command after an event"
+msgstr "Vykdyti komandą po įvykio"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1280,8 +1280,8 @@ msgid "Condition"
 msgstr "Sąlyga"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-msgid "Ensure execution of a second command once condition is no longer met."
-msgstr "Užtikrinti antros komandos vykdymą, kai sąlyga nebetenkinama."
+msgid "Ensure execution of a second command once condition is no longer met"
+msgstr "Užtikrinti antros komandos vykdymą, kai sąlyga nebetenkinama"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 msgid "Events"
@@ -1334,16 +1334,16 @@ msgid "Pass Input Data"
 msgstr "Perduoti įvesties duomenis"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-msgid "Instead of passing variables you can process a JSON object."
-msgstr "Vietoj kintamųjų perdavimo galite apdoroti JSON objektą."
+msgid "Instead of passing variables you can process a JSON object"
+msgstr "Vietoj kintamųjų perdavimo galite apdoroti JSON objektą"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
 msgstr "Laukti pabaigos"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-msgid "Block execution of other commands until the command completes."
-msgstr "Blokuoti kitų komandų vykdymą, kol ši komanda bus baigta."
+msgid "Block execution of other commands until the command completes"
+msgstr "Blokuoti kitų komandų vykdymą, kol ši komanda bus baigta"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 msgid "_Delete Action"
@@ -1503,7 +1503,7 @@ msgid "Learn More"
 msgstr "Sužinoti daugiau"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
+msgid "Run shell commands automatically on timer events or conditions"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
@@ -1511,7 +1511,7 @@ msgid "Autostart"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
+msgid "Automatically launch the app when you log in"
 msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
@@ -1595,24 +1595,24 @@ msgid "Notify when Pomodoro or break is about to end."
 msgstr "Pranešti, kai Pomodoro arba pertrauka tuoj baigsis."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "Viso ekrano pranešimas, skirtas priversti padaryti pertrauką."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "Viso ekrano pranešimas, skirtas priversti padaryti pertrauką"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Lock Delay"
 msgstr "Užrakinimo delsa"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
-msgid "Period of inactivity to lock the screen."
-msgstr "Neaktyvumo laikotarpis, po kurio užrakinamas ekranas."
+msgid "Period of inactivity to lock the screen"
+msgstr "Neaktyvumo laikotarpis, po kurio užrakinamas ekranas"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Reopen Delay"
 msgstr "Pakartotinio atidarymo delsa"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "Neaktyvumo laikotarpis, po kurio vėl rodoma užsklanda ją išjungus."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "Neaktyvumo laikotarpis, po kurio vėl rodoma užsklanda ją išjungus"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 msgid "Never"
@@ -1731,13 +1731,13 @@ msgstr "Patvirtinti Pomodoro pradžią"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "Vienos sesijos trukmė: <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "Vienos sesijos trukmė: <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "<b>%u%%</b> laiko bus skirta pertraukoms."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "<b>%u%%</b> laiko bus skirta pertraukoms"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 msgid "Apply changes to ongoing Pomodoro?"

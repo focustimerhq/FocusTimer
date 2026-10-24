@@ -475,12 +475,12 @@ msgid "Other"
 msgstr "Inne"
 
 #: src/core/event.vala:269
-msgid "Started the timer."
-msgstr "Uruchomiono minutnik."
+msgid "Started the timer"
+msgstr "Uruchomiono minutnik"
 
 #: src/core/event.vala:277
-msgid "Stopped the timer manually."
-msgstr "Minutnik został zatrzymany ręcznie."
+msgid "Stopped the timer manually"
+msgstr "Minutnik został zatrzymany ręcznie"
 
 #: src/core/event.vala:285
 msgid ""
@@ -491,13 +491,13 @@ msgstr ""
 "blokowania ekranu lub wstrzymywania systemu."
 
 #: src/core/event.vala:293
-msgid "The countdown has been manually resumed."
-msgstr "Odliczanie zostało wznowione ręcznie."
+msgid "The countdown has been manually resumed"
+msgstr "Odliczanie zostało wznowione ręcznie"
 
 #: src/core/event.vala:301
-msgid "Jumped to a next time-block before the countdown has finished."
+msgid "Jumped to a next time-block before the countdown has finished"
 msgstr ""
-"Przeskoczono do następnego bloku czasowego przed zakończeniem odliczania."
+"Przeskoczono do następnego bloku czasowego przed zakończeniem odliczania"
 
 #: src/core/event.vala:309
 msgid "Rewind action has been used. It adds a pause in the past."
@@ -505,8 +505,8 @@ msgstr ""
 "Użyto akcji przewijania, która działa przez dodanie przerwy w przeszłości."
 
 #: src/core/event.vala:317
-msgid "Manually cleared the session."
-msgstr "Porzucono sesję na życzenie."
+msgid "Manually cleared the session"
+msgstr "Porzucono sesję na życzenie"
 
 #. Countdown
 #: src/core/event.vala:325
@@ -528,8 +528,8 @@ msgid "Changed"
 msgstr "Zmieniono"
 
 #: src/core/event.vala:334
-msgid "Triggered on any change related to the countdown."
-msgstr "Wywoływane przy każdej zmianie dotyczącej odliczania czasu."
+msgid "Triggered on any change related to the countdown"
+msgstr "Wywoływane przy każdej zmianie dotyczącej odliczania czasu"
 
 #. Session
 #: src/core/event.vala:342
@@ -537,27 +537,27 @@ msgid "Confirm Advancement"
 msgstr "Potwierdź przejście"
 
 #: src/core/event.vala:343
-msgid "A manual confirmation is required to start next time-block."
+msgid "A manual confirmation is required to start next time-block"
 msgstr ""
-"Wymagane jest ręczne potwierdzenie, aby rozpocząć następny blok czasowy."
+"Wymagane jest ręczne potwierdzenie, aby rozpocząć następny blok czasowy"
 
 #: src/core/event.vala:350
 msgid "Advanced"
 msgstr "Przejście"
 
 #: src/core/event.vala:351
-msgid "Transitioned or skipped to a next time-block."
-msgstr "Przejście lub przeskoczenie do następnego bloku czasowego."
+msgid "Transitioned or skipped to a next time-block"
+msgstr "Przejście lub przeskoczenie do następnego bloku czasowego"
 
 #: src/core/event.vala:358
 msgid "State Changed"
 msgstr "Zmiana stanu"
 
 #: src/core/event.vala:359
-msgid "Transitioned to a next time-block or when a break gets relabelled."
+msgid "Transitioned to a next time-block or when a break gets relabelled"
 msgstr ""
 "Przejście do następnego bloku czasowego lub gdy przerwa zostaje "
-"przemianowana."
+"przemianowana"
 
 #: src/core/event.vala:366
 msgid "Rescheduled"
@@ -565,16 +565,16 @@ msgstr "Zmiana planu"
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-msgid "Triggered when scheduled time-blocks have changed."
-msgstr "Wywoływane, gdy zaplanowane bloki czasowe zostały zmienione."
+msgid "Triggered when scheduled time-blocks have changed"
+msgstr "Wywoływane, gdy zaplanowane bloki czasowe zostały zmienione"
 
 #: src/core/event.vala:374
 msgid "Expired"
 msgstr "Wygaśnięcie"
 
 #: src/core/event.vala:375
-msgid "Triggered when session is about to be reset due to inactivity."
-msgstr "Wywołane przy wygaśnięciu sesji spowodowane brakiem aktywności."
+msgid "Triggered when session is about to be reset due to inactivity"
+msgstr "Wywołane przy wygaśnięciu sesji spowodowane brakiem aktywności"
 
 #: src/core/notification-manager.vala:347 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -937,8 +937,8 @@ msgstr "Nie Przeszkadzać"
 
 #: src/plugins/gnome/preferences-window-extension.vala:172
 #: src/plugins/kde/preferences-window-extension.vala:86
-msgid "Hide non-critical notifications while using the timer."
-msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika."
+msgid "Hide non-critical notifications while using the timer"
+msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika"
 
 #: src/plugins/gnome/window-extension.vala:37
 msgid "Try the GNOME extension"
@@ -964,10 +964,10 @@ msgstr "Ustawienia"
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
-"Disturb and disable its notification history."
+"Disturb and disable its notification history"
 msgstr ""
 "Zezwól na powiadomienia w trybie „Nie przeszkadzać” i wyłącz ich historię, "
-"aby aplikacja działała niezawodnie."
+"aby aplikacja działała niezawodnie"
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
 msgid "Media Playback"
@@ -978,8 +978,8 @@ msgid "Auto-Pause Media"
 msgstr "Automatyczne Wstrzymywanie Multimediów"
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
-msgid "Pauses during breaks, resumes at the next Pomodoro."
-msgstr "Wstrzymaj odtwarzanie na czas przerwy, wznów przy następnym Pomodoro."
+msgid "Pauses during breaks, resumes at the next Pomodoro"
+msgstr "Wstrzymaj odtwarzanie na czas przerwy, wznów przy następnym Pomodoro"
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
 msgid "Unused"
@@ -1014,8 +1014,8 @@ msgid "Show Tray Icon"
 msgstr "Pokaż Ikonę w Zasobniku"
 
 #: src/plugins/sni/preferences-window-extension.vala:48
-msgid "Closing the window keeps the app running in the background."
-msgstr "Zamknięcie okna sprawia, że aplikacja nadal działa w tle."
+msgid "Closing the window keeps the app running in the background"
+msgstr "Zamknięcie okna sprawia, że aplikacja nadal działa w tle"
 
 #: src/ui/log/log-window.ui:6
 msgid "Log"
@@ -1026,8 +1026,8 @@ msgid "Empty Log"
 msgstr "Pusty dziennik"
 
 #: src/ui/log/log-window.ui:39
-msgid "Entries will show up here once you start the timer."
-msgstr "Wpisy pojawią się tutaj po uruchomieniu minutnika."
+msgid "Entries will show up here once you start the timer"
+msgstr "Wpisy pojawią się tutaj po uruchomieniu minutnika"
 
 #: src/ui/log/log-window.ui:166
 msgid "Context"
@@ -1280,8 +1280,8 @@ msgid "Event"
 msgstr "Zdarzenie"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-msgid "Execute command after an event."
-msgstr "Wykonaj polecenie po zdarzeniu."
+msgid "Execute command after an event"
+msgstr "Wykonaj polecenie po zdarzeniu"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
@@ -1289,10 +1289,10 @@ msgid "Condition"
 msgstr "Warunek"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-msgid "Ensure execution of a second command once condition is no longer met."
+msgid "Ensure execution of a second command once condition is no longer met"
 msgstr ""
 "Zapewnij, że zostanie wykonane drugie polecenie, gdy warunek przestanie być "
-"spełniony."
+"spełniony"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
 msgid "Events"
@@ -1345,17 +1345,17 @@ msgid "Pass Input Data"
 msgstr "Przekaż Dane na Wejście"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-msgid "Instead of passing variables you can process a JSON object."
+msgid "Instead of passing variables you can process a JSON object"
 msgstr ""
-"Zamiast przekazywać argumenty dla polecenia, możesz przkazać dane JSON."
+"Zamiast przekazywać argumenty dla polecenia, możesz przkazać dane JSON"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
 msgstr "Czekaj Na Zakońcenie"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-msgid "Block execution of other commands until the command completes."
-msgstr "Opóźnij wykonanie innych poleceń, aż to zostanie ukończone."
+msgid "Block execution of other commands until the command completes"
+msgstr "Opóźnij wykonanie innych poleceń, aż to zostanie ukończone"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
 msgid "_Delete Action"
@@ -1521,16 +1521,16 @@ msgid "Learn More"
 msgstr "Czytaj więcej"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
-msgid "Run shell commands automatically on timer events or conditions."
-msgstr "Odpalaj polecenia powłoki według zdarzeń lub warunków minutnika."
+msgid "Run shell commands automatically on timer events or conditions"
+msgstr "Odpalaj polecenia powłoki według zdarzeń lub warunków minutnika"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
 msgid "Autostart"
 msgstr "Automatyczne Uruchamianie"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
-msgid "Automatically launch the app when you log in."
-msgstr "Odpal aplikację przy starcie systemu."
+msgid "Automatically launch the app when you log in"
+msgstr "Odpal aplikację przy starcie systemu"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
 msgid ""
@@ -1614,24 +1614,24 @@ msgid "Notify when Pomodoro or break is about to end."
 msgstr "Powiadom gdy pomodoro lub przerwa za chwilę się skończy."
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:29
-msgid "A full-screen notification intended to enforce taking a break."
-msgstr "Powiadomienie pełno-ekranowe skłaniające do zrobienia przerwy."
+msgid "A full-screen notification intended to enforce taking a break"
+msgstr "Powiadomienie pełno-ekranowe skłaniające do zrobienia przerwy"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Lock Delay"
 msgstr "Opóżnienie Blokady"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:38
-msgid "Period of inactivity to lock the screen."
-msgstr "Czas nieaktywności do zablokowania ekranu."
+msgid "Period of inactivity to lock the screen"
+msgstr "Czas nieaktywności do zablokowania ekranu"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Reopen Delay"
 msgstr "Czas Do Ponowienia"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:44
-msgid "Period of inactivity to reopen the overlay after it gets dismissed."
-msgstr "Czas nieaktywności do ponownego pokazania nakładki."
+msgid "Period of inactivity to reopen the overlay after it gets dismissed"
+msgstr "Czas nieaktywności do ponownego pokazania nakładki"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:97
 msgid "Never"
@@ -1750,13 +1750,13 @@ msgstr "Potwierdź Rozpoczęcie Pomodoro"
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
-msgid "A single session will take <b>%s</b>."
-msgstr "Łączny czas pojedyńczej sesji: <b>%s</b>."
+msgid "A single session will take <b>%s</b>"
+msgstr "Łączny czas pojedyńczej sesji: <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
-msgid "<b>%u%%</b> of the time will be allocated for breaks."
-msgstr "<b>%u%%</b> czasu będzie przeznaczone na przerwy."
+msgid "<b>%u%%</b> of the time will be allocated for breaks"
+msgstr "<b>%u%%</b> czasu będzie przeznaczone na przerwy"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
 msgid "Apply changes to ongoing Pomodoro?"
