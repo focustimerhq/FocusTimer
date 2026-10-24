@@ -97,7 +97,7 @@ namespace Ft
         construct
         {
             this.session_manager = Ft.SessionManager.get_default ();
-            this.timer           = session_manager.timer;
+            this.timer = session_manager.timer;
             this.settings = Ft.get_settings ();
 
             var builder = new Gtk.Builder.from_resource ("/io/github/focustimerhq/FocusTimer/ui/main/timer/menus.ui");
@@ -226,6 +226,65 @@ namespace Ft
 
             this.drag_gesture.reset ();
             this.click_gesture.reset ();
+        }
+
+        private bool is_pointer_over_ring ()
+        {
+            double pointer_x, pointer_y;
+            double native_x, native_y;
+
+            var native = this.get_native ();
+            var surface = native?.get_surface ();
+            var pointer = surface?.get_display ().get_default_seat ()?.get_pointer ();
+
+            if (native == null || pointer == null) {
+                return false;
+            }
+
+            if (!surface.get_device_position (pointer, out pointer_x, out pointer_y, null)) {
+                return false;
+            }
+
+            native.get_surface_transform (out native_x, out native_y);
+
+            var native_point = Graphene.Point ();
+            native_point.init ((float) (pointer_x - native_x), (float) (pointer_y - native_y));
+
+            var point = Graphene.Point ();
+            if (!native.compute_point (this.timer_progressbar, native_point, out point)) {
+                return false;
+            }
+
+            var width = (float) this.timer_progressbar.get_width ();
+            var height = (float) this.timer_progressbar.get_height ();
+            if (width <= 0.0f || height <= 0.0f) {
+                return false;
+            }
+
+            var radius = float.min (width, height) / 2.0f;
+            point.x -= width / 2.0f;
+            point.y -= height / 2.0f;
+
+            return point.x * point.x + point.y * point.y <= radius * radius;
+        }
+
+        [GtkCallback]
+        private bool on_scroll (Gtk.EventControllerScroll controller,
+                                double                    dx,
+                                double                    dy)
+        {
+            var steps = (int) GLib.Math.trunc (-dy);
+            if (steps == 0) {
+                return false;
+            }
+
+            if (!this.is_pointer_over_ring ()) {
+                return false;
+            }
+
+            this.activate_action_variant ("timer.extend-by", new GLib.Variant.int32 (60 * steps));
+
+            return true;
         }
 
         /**

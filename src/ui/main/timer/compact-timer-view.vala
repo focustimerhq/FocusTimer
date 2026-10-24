@@ -123,6 +123,21 @@ namespace Ft
                     : this.state_menu;
         }
 
+        [GtkCallback]
+        private bool on_scroll (Gtk.EventControllerScroll controller,
+                                double                    dx,
+                                double                    dy)
+        {
+            var steps = (int) GLib.Math.trunc (-dy);
+            if (steps == 0) {
+                return false;
+            }
+
+            this.activate_action_variant ("timer.extend-by", new GLib.Variant.int32 (60 * steps));
+
+            return true;
+        }
+
         private void connect_signals ()
         {
             if (this.timer_state_changed_id == 0) {

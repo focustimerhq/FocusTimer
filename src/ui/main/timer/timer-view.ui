@@ -82,5 +82,11 @@
         <signal name="drag-update" handler="on_drag_update"/>
       </object>
     </child>
+    <child>
+      <object class="GtkEventControllerScroll">
+        <property name="flags">vertical|discrete</property>
+        <signal name="scroll" handler="on_scroll"/>
+      </object>
+    </child>
   </template>
 </interface>
