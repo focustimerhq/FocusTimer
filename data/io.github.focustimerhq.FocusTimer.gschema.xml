@@ -115,6 +115,7 @@
     </key>
     <key name="pomodoro-finished-sound-volume" type="d">
       <default>1.0</default>
+      <range min="0.0" max="1.0"/>
       <summary>Volume of Pomodoro finished sound</summary>
     </key>
     <key name="break-finished-sound" type="s">
@@ -123,6 +124,7 @@
     </key>
     <key name="break-finished-sound-volume" type="d">
       <default>1.0</default>
+      <range min="0.0" max="1.0"/>
       <summary>Volume of break finished sound</summary>
     </key>
     <key name="background-sound" type="s">
@@ -131,6 +133,7 @@
     </key>
     <key name="background-sound-volume" type="d">
       <default>0.5</default>
+      <range min="0.0" max="1.0"/>
       <summary>Volume of background sound</summary>
     </key>
 
