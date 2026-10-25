@@ -50,6 +50,12 @@
       <default>true</default>
       <summary>Pause Pomodoro when screen is locked</summary>
     </key>
+    <key name="expiry-timeout" type="u">
+      <default>3600</default>
+      <range min="1" max="86400"/>
+      <summary>Session expiry timeout</summary>
+      <description>Minimum time in seconds before an inactive session expires.</description>
+    </key>
 
     <!-- Notifications -->
     <key name="announce-about-to-end" type="b">

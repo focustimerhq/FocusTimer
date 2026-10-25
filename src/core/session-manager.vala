@@ -1416,8 +1416,12 @@ namespace Ft
             this.mark_timezone (this.timezone_monitor.timezone, timestamp);
 
             // Fetch the most recent session
+            var expiry_timeout = int64.max (
+                    2 * Ft.Interval.HOUR,
+                    this.settings.get_uint ("expiry-timeout") * Ft.Interval.SECOND);
+
             var end_time_value = GLib.Value (typeof (int64));
-            end_time_value.set_int64 (timestamp - 2 * Ft.Interval.HOUR);
+            end_time_value.set_int64 (timestamp - expiry_timeout);
             var session_filter = new Gom.Filter.gte (
                     typeof (Ft.SessionEntry),
                     "end-time",
@@ -1828,9 +1832,10 @@ namespace Ft
             var long_break_duration = session_template.has_uniform_breaks ()
                     ? session_template.short_break_duration
                     : session_template.long_break_duration;
+            var base_timeout = Ft.Timestamp.from_seconds_uint (
+                    this.settings.get_uint ("expiry-timeout"));
 
-            return int64.max (OVERDUE_TIMEOUT,
-                              int64.max (pomodoro_duration, 2 * long_break_duration));
+            return int64.max (base_timeout, int64.max (pomodoro_duration, 2 * long_break_duration));
         }
 
         /**
@@ -2464,6 +2469,10 @@ namespace Ft
 
                 case "pause-on-lockscreen":
                     this.update_auto_pause ();
+                    break;
+
+                case "expiry-timeout":
+                    this.bump_expiry_time ();
                     break;
 
                 case "pomodoro-advancement-mode":
