@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-24 17:15+0200\n"
-"PO-Revision-Date: 2026-09-20 11:07+0200\n"
+"PO-Revision-Date: 2026-10-25 12:03+0100\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -30,7 +30,7 @@ msgstr "Minutnik Koncentracji"
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:3
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:8
 msgid "Work better with regular breaks"
-msgstr ""
+msgstr "Pracuj wydajniej dzięki regularnym przerwom"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:11
@@ -43,6 +43,9 @@ msgid ""
 "focused work sessions with short breaks. By default, work for 25 minutes, "
 "then take a 5-minute break to stay focused and prevent burnout."
 msgstr ""
+"Minutnik pomaga pracować efektywniej, dzieląc czas na bloki skupionej pracy "
+"oraz krótkie przerwy. Cykl 25 minut pracy i 5 minut przerwy pomaga utrzymać "
+"koncentrację i zapobiega zmęczeniu."
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:13
 msgid "Key features:"
@@ -105,12 +108,12 @@ msgstr "Nakładka ekranowa"
 #: src/application.vala:211 src/application.vala:695
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 msgid "Start or Stop"
-msgstr "Rozpocznij lub zatrzymaj"
+msgstr "Rozpocznij lub Zatrzymaj"
 
 #: src/application.vala:214 src/application.vala:698
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 msgid "Start, Pause or Resume"
-msgstr "Rozpocznij, wstrzymaj lub wznów"
+msgstr "Rozpocznij, Wstrzymaj lub Wznów"
 
 #: src/application.vala:217 src/core/notification-manager.vala:425
 #: src/core/notification-manager.vala:518
@@ -119,7 +122,7 @@ msgstr "Rozpocznij, wstrzymaj lub wznów"
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
-msgstr "Rozpocznij pomodoro"
+msgstr "Rozpocznij Pomodoro"
 
 #: src/application.vala:220
 msgid "Start break"
@@ -217,11 +220,11 @@ msgstr "Błędy można zgłaszać pod adresem: %s"
 #: src/application.vala:712
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 msgid "Bring to Focus"
-msgstr "Przywołaj okno na wierzch"
+msgstr "Przywołaj Okno na Wierzch"
 
 #: src/application.vala:778
 msgid "Screen overlay is open"
-msgstr ""
+msgstr "Nakładka ekranowa jest otwarta"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
 #: src/application.vala:955 src/core/notification-manager.vala:137
@@ -353,7 +356,7 @@ msgstr "Wywoływane przy każdej zmianie dotyczącej odliczania czasu"
 #. Session
 #: src/core/event.vala:342
 msgid "Confirm Advancement"
-msgstr "Potwierdź przejście"
+msgstr "Potwierdź Przejście"
 
 #: src/core/event.vala:343
 msgid "A manual confirmation is required to start next time-block"
@@ -370,7 +373,7 @@ msgstr "Przejście lub przeskoczenie do następnego bloku czasowego"
 
 #: src/core/event.vala:358
 msgid "State Changed"
-msgstr "Zmiana stanu"
+msgstr "Zmiana Stanu"
 
 #: src/core/event.vala:359
 msgid "Transitioned to a next time-block or when a break gets relabelled"
@@ -431,7 +434,7 @@ msgstr "Pomodoro za chwilę się skończy"
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
-msgstr "Zrób przerwę"
+msgstr "Zrób Przerwę"
 
 #: src/core/notification-manager.vala:424
 msgid "Break is about to end"
@@ -654,12 +657,12 @@ msgstr "Gotowy aby wypróbować?"
 #: src/plugins/gnome/install-extension-dialog.ui:219
 #: src/plugins/gnome/install-extension-dialog.ui:252
 msgid "_Install Extension"
-msgstr "_Zainstaluj rozszerzenie"
+msgstr "_Zainstaluj Rozszerzenie"
 
 #: src/plugins/gnome/install-extension-dialog.ui:229
 #: src/plugins/gnome/install-extension-dialog.ui:245
 msgid "_Not Now"
-msgstr "_Nie teraz"
+msgstr "_Nie Teraz"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
 #: src/plugins/gnome/preferences-window-extension.vala:380
@@ -673,7 +676,7 @@ msgstr "Kopiuj do schowka"
 #: src/plugins/gnome/install-extension-dialog.ui:383
 #: src/plugins/gnome/install-extension-dialog.ui:416
 msgid "_Try Again"
-msgstr "_Spróbuj ponownie"
+msgstr "_Spróbuj Ponownie"
 
 #: src/plugins/gnome/install-extension-dialog.ui:393
 #: src/plugins/gnome/install-extension-dialog.ui:409
@@ -683,7 +686,7 @@ msgstr "_Przerwij"
 #: src/plugins/gnome/install-extension-dialog.vala:85
 #: src/plugins/gnome/preferences-window-extension.vala:368
 msgid "Time-out reached"
-msgstr "Osiągnięto limit czasu"
+msgstr "Przekroczono limit czasu"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
 #: src/plugins/gnome/preferences-window-extension.vala:372
@@ -697,7 +700,7 @@ msgstr "Nie udało się pobrać rozszerzenia"
 
 #: src/plugins/gnome/preferences-window-extension.vala:53
 msgid "Indicator"
-msgstr "Wskaźnik"
+msgstr "Ikona Statusu"
 
 #: src/plugins/gnome/preferences-window-extension.vala:60
 msgid "Icon"
@@ -828,7 +831,7 @@ msgstr "Zakończ"
 
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "System Tray"
-msgstr ""
+msgstr "Zasobnik Systemowy"
 
 #: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
@@ -844,7 +847,7 @@ msgstr "Dziennik"
 
 #: src/ui/log/log-window.ui:38
 msgid "Empty Log"
-msgstr "Pusty dziennik"
+msgstr "Pusty Dziennik"
 
 #: src/ui/log/log-window.ui:39
 msgid "Entries will show up here once you start the timer"
@@ -882,7 +885,7 @@ msgstr "Kamil Prusko"
 
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
-msgstr "Przekaż darowiznę"
+msgstr "Przekaż Darowiznę"
 
 #: src/ui/main/stats/stats-day-page.ui:105
 #: src/ui/main/stats/stats-day-page.vala:92
@@ -905,7 +908,7 @@ msgstr "Rozproszenia"
 #: src/ui/main/stats/stats-month-page.ui:56
 #: src/ui/main/stats/stats-week-page.ui:60
 msgid "Break Ratio"
-msgstr "Stosunek przerw"
+msgstr "Stosunek Przerw"
 
 #: src/ui/main/stats/stats-view.ui:8 src/ui/main/stats/stats-view.vala:59
 #: src/ui/main/stats/widgets/stats-date-popover.ui:22
@@ -1008,7 +1011,7 @@ msgstr "Długa przerwa za <b>%s</b>"
 
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:25
 msgid "Rewind one minute"
-msgstr "Przewiń jedną minutę"
+msgstr "Przewiń o jedną minutę"
 
 #: src/ui/main/window.ui:8
 msgid "_Compact Mode"
@@ -1016,15 +1019,15 @@ msgstr "Tryb _Kompaktowy"
 
 #: src/ui/main/window.ui:14
 msgid "Leave _Compact Mode"
-msgstr ""
+msgstr "Opuść Tryb _Kompaktowy"
 
 #: src/ui/main/window.ui:20
 msgid "_Mute"
-msgstr ""
+msgstr "_Wycisz"
 
 #: src/ui/main/window.ui:26
 msgid "_Unmute"
-msgstr ""
+msgstr "_Włącz Dźwięk w Tle"
 
 #: src/ui/main/window.ui:34
 msgid "_Preferences"
@@ -1032,7 +1035,7 @@ msgstr "_Preferencje"
 
 #: src/ui/main/window.ui:38
 msgid "_About"
-msgstr "_O programie"
+msgstr "_O Programie"
 
 #: src/ui/main/window.ui:44
 msgid "_Quit"
@@ -1040,7 +1043,7 @@ msgstr "Za_kończ"
 
 #: src/ui/main/window.ui:81
 msgid "Primary Menu"
-msgstr "Menu główne"
+msgstr "Menu Główne"
 
 #: src/ui/main/window.vala:356
 msgid "Keep timer running?"
@@ -1059,11 +1062,11 @@ msgstr "Uruchom w tle"
 
 #: src/ui/main/window.vala:467
 msgid "Background Sound Muted"
-msgstr ""
+msgstr "Dźwięk w Tle Wyciszony"
 
 #: src/ui/main/window.vala:479
 msgid "Background Sound Unmuted"
-msgstr ""
+msgstr "Dźwięk w Tle Włączony"
 
 #: src/ui/overlays/screen-overlay.ui:64
 msgid "It's time to take a break"
@@ -1076,23 +1079,23 @@ msgstr "Okno Główne"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:20
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:24
 msgid "Follow System"
-msgstr ""
+msgstr "Domyślny"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
 msgid "Light"
-msgstr ""
+msgstr "Jasny"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:26
 msgid "Dark"
-msgstr ""
+msgstr "Ciemny"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:34
 msgid "Open in Compact Mode"
-msgstr ""
+msgstr "Otwórz w Trybie Kompaktowym"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:12
 #: src/ui/preferences/automation/action/condition-widget.vala:117
@@ -1106,7 +1109,7 @@ msgstr "Wstrzymane"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:26
 msgid "Edit Custom Action"
-msgstr "Edytuj akcję"
+msgstr "Edytuj Akcję"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:39
 msgid "_Cancel"
@@ -1163,7 +1166,7 @@ msgstr "Filtr"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:191
 msgid "Shell Command"
-msgstr "Polecenie powłoki"
+msgstr "Polecenie Powłoki"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:199
 msgid "Commands"
@@ -1195,11 +1198,12 @@ msgstr "Przekaż Dane na Wejście"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
 msgid "Instead of passing variables you can process a JSON object"
-msgstr "Zamiast przekazywać argumenty dla polecenia, możesz przkazać dane JSON"
+msgstr ""
+"Zamiast przekazywać argumenty dla polecenia, możesz przekazać dane JSON"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
 msgid "Wait For Completion"
-msgstr "Czekaj Na Zakońcenie"
+msgstr "Czekaj na Zakończenie"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
 msgid "Block execution of other commands until the command completes"
@@ -1215,7 +1219,7 @@ msgstr "Nie wybrano żadnego zdarzenia."
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:248
 msgid "Add Custom Action"
-msgstr "Dodaj akcję…"
+msgstr "Dodaj Akcję"
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:249
 msgid "_Add"
@@ -1330,7 +1334,7 @@ msgid ""
 msgstr ""
 "Akcje wykonują polecenia powłoki, co wymaga dostępu spoza piaskownicy "
 "Flatpak. Udziel tego uprawnienia tylko wtedy, gdy rozumiesz wykonywane "
-"polecenia i ufasz aplikacji Minutnik Knocentracji – umożliwia ona bowiem "
+"polecenia i ufasz aplikacji Minutnik Koncentracji – umożliwia ona bowiem "
 "uruchamianie dowolnych poleceń."
 
 #: src/ui/preferences/automation/permissions-dialog.ui:52
@@ -1347,7 +1351,7 @@ msgstr "lub w konsoli:"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:127
 msgid "Restart Focus Timer for the change to take effect."
-msgstr "Uruchom ponownie Minutnik Knocentracji, aby zomaczyć zmiany."
+msgstr "Uruchom ponownie Minutnik Koncentracji, aby zobaczyć zmiany."
 
 #: src/ui/preferences/automation/permissions-dialog.vala:34
 msgid "Copied"
@@ -1363,7 +1367,7 @@ msgstr "Pokaż dziennik"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:28
 msgid "Learn More"
-msgstr "Czytaj więcej"
+msgstr "Czytaj Więcej"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
 msgid "Run shell commands automatically on timer events or conditions"
@@ -1382,7 +1386,7 @@ msgid ""
 "The app will start in the background. You'll be able to use the indicator "
 "and keyboard shortcuts."
 msgstr ""
-"Aplikacja uruchomi się w tle. Możesz używać wskaźnika i skrutów klawiszowych."
+"Aplikacja uruchomi się w tle. Możesz używać wskaźnika i skrótów klawiszowych."
 
 #: src/ui/preferences/keyboard-shortcuts/accelerator-row.vala:50
 msgid "Disabled"
@@ -1436,7 +1440,7 @@ msgstr "Podaj skrót dla pominięcia pomodoro lub przerwy"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:105
 msgid "Rewind One Minute"
-msgstr "Przewiń Jedną Minutę"
+msgstr "Przewiń o Jedną Minutę"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Enter new shortcut for rewinding"
@@ -1452,19 +1456,19 @@ msgstr "Zapowiedzi"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:20
 msgid "About to End Notification"
-msgstr ""
+msgstr "Powiadomienie o Końcu Odliczania"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:25
 msgid "Early Notice"
-msgstr ""
+msgstr "Czas Wyprzedzenia"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
 msgid "A full-screen notification intended to enforce taking a break"
-msgstr "Powiadomienie pełno-ekranowe skłaniające do zrobienia przerwy"
+msgstr "Powiadomienie pełnoekranowe skłaniające do zrobienia przerwy"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
 msgid "Lock Delay"
-msgstr "Opóżnienie Blokady"
+msgstr "Opóźnienie Blokady"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
 msgid "Period of inactivity to lock the screen"
@@ -1508,7 +1512,7 @@ msgstr "Automatyzacja"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
 msgid "Sounds Are Disabled"
-msgstr "Dźwięki Są Wyłączone"
+msgstr "Dźwięki są Wyłączone"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:36
 msgid "Alert Sounds"
@@ -1541,7 +1545,7 @@ msgstr "Tykanie Zegara"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
 msgid "Metronome"
-msgstr "Meteronom"
+msgstr "Metronom"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
 msgid "Brown Noise"
@@ -1582,7 +1586,7 @@ msgstr "Zachowanie"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:98
 msgid "Pause When Locking the Screen"
-msgstr ""
+msgstr "Wstrzymaj Podczas Blokady Ekranu"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:103
 msgid "Confirm Starting a Break"
@@ -1596,7 +1600,7 @@ msgstr "Potwierdź Rozpoczęcie Pomodoro"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
 #, c-format
 msgid "A single session will take <b>%s</b>"
-msgstr "Łączny czas pojedyńczej sesji: <b>%s</b>"
+msgstr "Łączny czas pojedynczej sesji: <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
 #, c-format
