@@ -50,8 +50,8 @@ namespace Gnome
             if (this.indicator_group == null)
             {
                 var indicator_group = new Adw.PreferencesGroup ();
-                indicator_group.title = _("Indicator");
-                panel.add_group ("indicator", indicator_group);
+                indicator_group.title = _("Tray Icon");
+                panel.add_group ("system-tray-icon", indicator_group);
 
                 var indicator_type_toggle_group = new Adw.ToggleGroup ();
                 indicator_type_toggle_group.homogeneous = true;

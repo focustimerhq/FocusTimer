@@ -38,8 +38,8 @@ namespace Sni
             if (this.indicator_group == null)
             {
                 var indicator_group = new Adw.PreferencesGroup ();
-                indicator_group.title = _("System Tray");
-                panel.add_group ("system-tray", indicator_group);
+                indicator_group.title = _("Tray Icon");
+                panel.add_group ("system-tray-icon", indicator_group);
 
                 var indicator_row = new Adw.SwitchRow ();
                 indicator_row.title = _("Show Tray Icon");

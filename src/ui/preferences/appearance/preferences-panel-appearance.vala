@@ -11,8 +11,7 @@ namespace Ft
     {
         private const string[] GROUP_ORDER = {
             "main-window",
-            "indicator",
-            "system-tray",
+            "system-tray-icon",
             "screen-overlay",
         };
 
