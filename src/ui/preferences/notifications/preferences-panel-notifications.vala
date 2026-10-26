@@ -10,7 +10,7 @@ namespace Ft
     public class PreferencesPanelNotifications : Ft.PreferencesPanel
     {
         private const uint[] LEAD_TIME_CHOICES = { 10U, 15U, 20U, 25U, 30U };
-        private const uint[] IDLE_DELAY_CHOICES = { 15U, 30U, 60U, 120U, 180U, 300U, 0U };
+        private const uint[] IDLE_DELAY_CHOICES = { 15U, 30U, 60U, 120U, 180U, 300U, 480U, 0U };
 
         [GtkChild]
         private unowned Adw.PreferencesPage page;
