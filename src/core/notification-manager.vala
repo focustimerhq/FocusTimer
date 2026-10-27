@@ -621,11 +621,16 @@ namespace Ft
                         current_state.user_data == previous_state.user_data &&
                         current_state.paused_time == previous_state.paused_time &&
                         current_state.offset != previous_state.offset;
+                var is_extending =
+                        current_state.user_data == previous_state.user_data &&
+                        current_state.paused_time == previous_state.paused_time &&
+                        current_state.duration != previous_state.duration;
 
                 if (current_time_block.state.is_break ())
                 {
                     if (remaining >= annoucement_lead_time &&
                         !is_rewinding &&
+                        !is_extending &&
                         allow_screen_overlay &&
                         this.can_open_screen_overlay ())
                     {

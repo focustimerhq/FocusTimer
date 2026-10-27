@@ -56,6 +56,7 @@ namespace Tests
             this.add_test ("withdraw_notifications__pause", this.test_withdraw_notifications__pause);
             this.add_test ("withdraw_notifications__stop", this.test_withdraw_notifications__stop);
             this.add_test ("request_screen_overlay", this.test_request_screen_overlay);
+            this.add_test ("request_screen_overlay__extend", this.test_request_screen_overlay__extend);
         }
 
         public override void setup ()
@@ -319,6 +320,44 @@ namespace Tests
             assert_true (this.run_main_loop (500));
             assert_cmpstrv (backend.log, {
                 @"send:timer:Short Break:4 minutes remaining"
+            });
+        }
+
+        public void test_request_screen_overlay__extend ()
+        {
+            var settings = Ft.get_settings ();
+            settings.set_boolean ("screen-overlay", true);
+
+            var backend = this.get_mock_backend ();
+            var open_requested = 0;
+
+            this.notification_manager.request_screen_overlay_open.connect (() => {
+                open_requested++;
+            });
+
+            this.session_manager.advance_to_state (Ft.State.POMODORO);
+            backend.clear ();
+
+            this.session_manager.advance_to_state (Ft.State.SHORT_BREAK);
+            assert_cmpint (open_requested, GLib.CompareOperator.EQ, 1);
+            assert_cmpstrv (backend.log, {});
+
+            // Dismiss the overlay, then change only the break duration.
+            this.notification_manager.emit_screen_overlay_opened ();
+            this.notification_manager.emit_screen_overlay_closed ();
+
+            backend.clear ();
+            this.timer.extend (Ft.Interval.MINUTE);
+            assert_cmpint (open_requested, GLib.CompareOperator.EQ, 1);
+            assert_cmpstrv (backend.log, {
+                "send:timer:Short Break:6 minutes remaining"
+            });
+
+            backend.clear ();
+            this.timer.extend (-Ft.Interval.MINUTE);
+            assert_cmpint (open_requested, GLib.CompareOperator.EQ, 1);
+            assert_cmpstrv (backend.log, {
+                "send:timer:Short Break:5 minutes remaining"
             });
         }
     }
