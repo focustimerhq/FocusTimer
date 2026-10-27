@@ -687,8 +687,7 @@ namespace Ft
             this.set_accels_for_action ("window.close", {"<Control>w"});
             this.set_accels_for_action ("win.compact-size", {"F9"});
             this.set_accels_for_action ("win.normal-size", {"F9"});
-            this.set_accels_for_action ("win.mute", {"<Control>m"});
-            this.set_accels_for_action ("win.unmute", {"<Control>m"});
+            this.set_accels_for_action ("win.toggle-sounds", {"<Control>m"});
 
             this.keyboard_manager = new Ft.KeyboardManager ();
             this.keyboard_manager.add_shortcut ("timer.start-stop",
@@ -814,10 +813,7 @@ namespace Ft
             this.indicator              = new Ft.Indicator ();
             this.screensaver            = new Ft.ScreenSaver ();
             this.action_manager         = new Ft.ActionManager ();
-
-            this.sound_manager = this.settings.get_boolean ("sounds")
-                    ? new Ft.SoundManager ()
-                    : null;
+            this.sound_manager          = new Ft.SoundManager ();
 
             this.setup_resources ();
             this.setup_database ();
@@ -1242,12 +1238,6 @@ namespace Ft
             {
                 case "color-scheme":
                     this.update_color_scheme ();
-                    break;
-
-                case "sounds":
-                    this.sound_manager = settings.get_boolean (key)
-                            ? new Ft.SoundManager ()
-                            : null;
                     break;
 
                 case "screen-overlay-lock-delay":

@@ -143,7 +143,8 @@ namespace Ft
         private Peas.ExtensionSet?      extensions = null;
         private Gtk.PopoverMenu?        primary_menu_popover = null;
         private GLib.SimpleAction?      compact_size_action = null;
-        private Adw.Toast?              action_toast = null;
+        private GLib.SimpleAction?      toggle_sounds_action = null;
+        private Adw.Toast?              last_toast = null;
         private GLib.Settings?          settings = null;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
@@ -174,7 +175,7 @@ namespace Ft
 
             this.update_title ();
             this.update_timer_indicator ();
-            this.update_mute_action ();
+            this.update_toggle_sounds_action ();
 
             this.extensions = new Peas.ExtensionSet.with_properties (
                     Peas.Engine.get_default (),
@@ -185,15 +186,6 @@ namespace Ft
                 (object) => {
                     this.setup_extension (object);
                 });
-        }
-
-        private Ft.SoundManager? get_sound_manager ()
-        {
-            if (this.settings == null || !this.settings.get_boolean ("sounds")) {
-                return null;
-            }
-
-            return new Ft.SoundManager ();
         }
 
         private void update_title ()
@@ -245,31 +237,10 @@ namespace Ft
             }
         }
 
-        private void update_mute_action ()
+        private void update_toggle_sounds_action ()
         {
-            var mute_action = this.lookup_action ("mute") as GLib.SimpleAction;
-            var unmute_action = this.lookup_action ("unmute") as GLib.SimpleAction;
-
-            if (mute_action == null || unmute_action == null || this.settings == null) {
-                return;
-            }
-
-            var sound_manager = this.get_sound_manager ();
-            var can_mute = this.settings.get_boolean ("sounds") &&
-                           this.settings.get_string ("background-sound") != "";
-
-            if (can_mute && sound_manager != null && sound_manager.muted) {
-                mute_action.set_enabled (false);
-                unmute_action.set_enabled (true);
-            }
-            else if (can_mute) {
-                unmute_action.set_enabled (false);
-                mute_action.set_enabled (true);
-            }
-            else {
-                mute_action.set_enabled (false);
-                unmute_action.set_enabled (false);
-            }
+            this.toggle_sounds_action.set_state (
+                    new GLib.Variant.boolean (this.settings.get_boolean ("sounds")));
         }
 
         public Ft.WindowView get_default_view ()
@@ -390,29 +361,6 @@ namespace Ft
             dialog.present (self);
         }
 
-        private void show_action_toast (string title)
-        {
-            if (this._size != Ft.WindowSize.NORMAL) {
-                return;
-            }
-
-            if (this.action_toast != null) {
-                this.action_toast.dismiss ();
-            }
-
-            var toast = new Adw.Toast (title);
-            toast.use_markup = false;
-            toast.timeout = TOAST_DISMISS_TIMEOUT;
-            toast.dismissed.connect (() => {
-                if (this.action_toast == toast) {
-                    this.action_toast = null;
-                }
-            });
-            this.action_toast = toast;
-
-            this.add_toast (toast);
-        }
-
         private void popup_primary_menu (Gtk.Widget relative_to,
                                          double     x,
                                          double     y)
@@ -456,28 +404,26 @@ namespace Ft
                     null);
         }
 
-        private void activate_mute (GLib.SimpleAction action,
-                                    GLib.Variant?     parameter)
+        private void on_toggle_sounds_action_change_state (GLib.SimpleAction action,
+                                                           GLib.Variant?     value)
         {
-            var sound_manager = this.get_sound_manager ();
-
-            if (sound_manager != null) {
-                sound_manager.muted = true;
-                this.update_mute_action ();
-                this.show_action_toast (_("Background Sound Muted"));
+            if (value == null) {
+                return;
             }
-        }
 
-        private void activate_unmute (GLib.SimpleAction action,
-                                      GLib.Variant?     parameter)
-        {
-            var sound_manager = this.get_sound_manager ();
+            var enabled = value.get_boolean ();
 
-            if (sound_manager != null) {
-                sound_manager.muted = false;
-                this.update_mute_action ();
-                this.show_action_toast (_("Background Sound Unmuted"));
+            this.settings.set_boolean ("sounds", enabled);
+            action.set_state (value);
+
+            if (this.last_toast != null) {
+                this.last_toast.dismiss ();
             }
+
+            var toast = new Adw.Toast (enabled ? _("Sounds turned on") : _("Sounds turned off"));
+            this.last_toast = toast;
+
+            this.add_toast (toast);
         }
 
         [GtkCallback]
@@ -578,8 +524,7 @@ namespace Ft
             switch (key)
             {
                 case "sounds":
-                case "background-sound":
-                    this.update_mute_action ();
+                    this.update_toggle_sounds_action ();
                     break;
             }
         }
@@ -614,18 +559,15 @@ namespace Ft
             toggle_compact_size_action.activate.connect (this.activate_toggle_compact_size);
             this.add_action (toggle_compact_size_action);
 
-            var mute_action = new GLib.SimpleAction ("mute", null);
-            mute_action.set_enabled (false);
-            mute_action.activate.connect (this.activate_mute);
-            this.add_action (mute_action);
-
-            var unmute_action = new GLib.SimpleAction ("unmute", null);
-            unmute_action.set_enabled (false);
-            unmute_action.activate.connect (this.activate_unmute);
-            this.add_action (unmute_action);
+            this.toggle_sounds_action = new GLib.SimpleAction.stateful (
+                    "toggle-sounds",
+                    null,
+                    new GLib.Variant.boolean (Ft.get_settings ().get_boolean ("sounds")));
+            this.toggle_sounds_action.change_state.connect (
+                    this.on_toggle_sounds_action_change_state);
+            this.add_action (this.toggle_sounds_action);
 
             this.update_size_actions ();
-            this.update_mute_action ();
         }
 
         public void parser_finished (Gtk.Builder builder)
@@ -656,7 +598,8 @@ namespace Ft
             this.background_manager = null;
             this.timer_action_group = null;
             this.compact_size_action = null;
-            this.action_toast = null;
+            this.toggle_sounds_action = null;
+            this.last_toast = null;
             this.settings = null;
 
             base.dispose ();

@@ -17,23 +17,6 @@ namespace Ft
         // Silence at the end of Pomodoro serves as a cue that it's about to end
         private const int64 ABOUT_TO_END_TIME = 10 * Ft.Interval.SECOND;
 
-        [CCode (notify = false)]
-        public bool muted {
-            get {
-                return this._muted;
-            }
-            set {
-                if (this._muted == value) {
-                    return;
-                }
-
-                this._muted = value;
-                this.update_background_sound (false);
-                this.notify_property ("muted");
-            }
-        }
-
-        private bool                _muted = false;
         private Ft.AlertSound?      pomodoro_finished_sound = null;
         private Ft.AlertSound?      break_finished_sound = null;
         private Ft.BackgroundSound? background_sound = null;
@@ -41,6 +24,7 @@ namespace Ft
         private GLib.Settings?      settings = null;
         private Ft.Timer?           timer = null;
         private ulong               timer_state_changed_id = 0;
+        private ulong               settings_changed_id = 0;
         private uint                fade_out_timeout_id = 0;
 
         construct
@@ -79,6 +63,7 @@ namespace Ft
                                 this.background_sound,
                                 "volume",
                                 GLib.SettingsBindFlags.DEFAULT);
+            this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
             this.update_background_sound ();
         }
@@ -99,12 +84,12 @@ namespace Ft
             }
         }
 
-        private void update_background_sound (bool animate = true)
+        private void update_background_sound ()
         {
             this.unschedule_fade_out ();
 
-            if (this._muted) {
-                this.background_sound.fade_out (0);
+            if (!this.settings.get_boolean ("sounds")) {
+                this.background_sound.fade_out (SHORT_FADE_DURATION);
                 return;
             }
 
@@ -125,23 +110,19 @@ namespace Ft
             if (current_state == Ft.State.POMODORO && this.timer.is_running ())
             {
                 var remaining = this.timer.calculate_remaining ();
-                var fade_duration = animate ? LONG_FADE_DURATION : 0;
+                var fade_duration = LONG_FADE_DURATION;
 
                 if (remaining > ABOUT_TO_END_TIME) {
                     this.background_sound.fade_in (fade_duration);
                     this.schedule_fade_out (remaining - ABOUT_TO_END_TIME);
                 }
                 else {
-                    if (animate) {
-                        fade_duration = int64.max (remaining - Ft.Interval.SECOND,
-                                                   SHORT_FADE_DURATION);
-                    }
-
+                    fade_duration = int64.max (remaining - Ft.Interval.SECOND, SHORT_FADE_DURATION);
                     this.background_sound.fade_out (fade_duration);
                 }
             }
             else {
-                this.background_sound.fade_out (animate ? SHORT_FADE_DURATION : 0);
+                this.background_sound.fade_out (SHORT_FADE_DURATION);
             }
         }
 
@@ -163,10 +144,26 @@ namespace Ft
             }
         }
 
+        private void on_settings_changed (GLib.Settings settings,
+                                          string        key)
+        {
+            if (key != "sounds") {
+                return;
+            }
+
+            if (!settings.get_boolean ("sounds")) {
+                this.pomodoro_finished_sound.stop ();
+                this.break_finished_sound.stop ();
+            }
+
+            this.update_background_sound ();
+        }
+
         private void on_timer_state_changed (Ft.TimerState current_state,
                                              Ft.TimerState previous_state)
         {
-            if (current_state.is_finished () &&
+            if (this.settings.get_boolean ("sounds") &&
+                current_state.is_finished () &&
                 !previous_state.is_finished () &&
                 previous_state.user_data != null)
             {
@@ -198,6 +195,11 @@ namespace Ft
 
         public override void dispose ()
         {
+            if (this.settings_changed_id != 0) {
+                this.settings.disconnect (this.settings_changed_id);
+                this.settings_changed_id = 0;
+            }
+
             this.unschedule_fade_out ();
 
             if (this.timer_state_changed_id != 0) {
