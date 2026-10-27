@@ -86,7 +86,7 @@
     </property>
     <child>
       <object class="GtkEventControllerKey">
-        <signal name="key-pressed" handler="on_gesture_key_pressed" swapped="no"/>
+        <signal name="key-pressed" handler="on_key_pressed" swapped="no"/>
       </object>
     </child>
     <child>
@@ -94,18 +94,20 @@
         <!-- Any mouse button or touch. The sequence stays unclaimed, so the
              lock and close buttons still receive clicks when the gesture is off. -->
         <property name="button">0</property>
-        <signal name="pressed" handler="on_gesture_pressed" swapped="no"/>
+        <signal name="pressed" handler="on_pressed" swapped="no"/>
       </object>
     </child>
     <child>
-      <object class="GtkEventControllerMotion">
-        <signal name="motion" handler="on_gesture_motion" swapped="no"/>
+      <object class="GtkEventControllerMotion" id="pointer_motion">
+        <signal name="enter" handler="on_enter" swapped="no"/>
+        <signal name="leave" handler="on_leave" swapped="no"/>
+        <signal name="motion" handler="on_motion" swapped="no"/>
       </object>
     </child>
     <child>
       <object class="GtkEventControllerScroll">
         <property name="flags">vertical|horizontal</property>
-        <signal name="scroll" handler="on_gesture_scroll" swapped="no"/>
+        <signal name="scroll" handler="on_scroll" swapped="no"/>
       </object>
     </child>
   </template>

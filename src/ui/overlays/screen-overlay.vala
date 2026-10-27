@@ -17,6 +17,7 @@ namespace Ft
          */
         private const uint IDLE_TIME_TO_ACKNOWLEDGE = 700;
         private const double MOTION_VELOCITY_TO_DISMISS = 3.0;
+        private const uint CURSOR_HIDE_DELAY = 5000;
 
         [CCode (notify = false)]
         public bool enable_dismiss_gesture {
@@ -44,6 +45,8 @@ namespace Ft
 
         [GtkChild]
         private unowned Gtk.Button lock_screen_button;
+        [GtkChild]
+        private unowned Gtk.EventControllerMotion pointer_motion;
 
         private bool                _enable_dismiss_gesture = true;
         private Ft.LockScreen?      lock_screen = null;
@@ -54,6 +57,11 @@ namespace Ft
         private double              last_motion_y = 0.0;
         private uint32              last_motion_time = 0;
         private bool                have_last_motion = false;
+        private uint                cursor_hide_timeout_id = 0;
+        private double              last_cursor_x = 0.0;
+        private double              last_cursor_y = 0.0;
+        private bool                have_last_cursor = false;
+        private bool                cursor_hidden = false;
 
         construct
         {
@@ -70,7 +78,7 @@ namespace Ft
                                 GLib.SettingsBindFlags.DEFAULT);
         }
 
-        private bool check_gesture_allowed (Gtk.EventController? controller)
+        private inline bool check_gesture_allowed (Gtk.EventController? controller)
         {
             if (!this.enable_dismiss_gesture || controller == null) {
                 return false;
@@ -170,11 +178,72 @@ namespace Ft
             this.add_css_class ("acknowledged");
         }
 
+        private void show_cursor ()
+        {
+            if (this.cursor_hidden) {
+                this.cursor_hidden = false;
+                this.set_cursor_from_name (null);
+            }
+        }
+
+        private void hide_cursor ()
+        {
+            if (this.cursor_hidden || !this.get_mapped ()) {
+                return;
+            }
+
+            if (!this.pointer_motion.contains_pointer) {
+                return;
+            }
+
+            this.cursor_hidden = true;
+            this.set_cursor_from_name ("none");
+        }
+
+        private void remove_cursor_hide_timeout ()
+        {
+            if (this.cursor_hide_timeout_id != 0) {
+                GLib.Source.remove (this.cursor_hide_timeout_id);
+                this.cursor_hide_timeout_id = 0;
+            }
+        }
+
+        private void schedule_cursor_hide ()
+        {
+            this.remove_cursor_hide_timeout ();
+
+            if (!this.get_mapped ()) {
+                return;
+            }
+
+            this.cursor_hide_timeout_id = GLib.Timeout.add (CURSOR_HIDE_DELAY, () => {
+                this.cursor_hide_timeout_id = 0;
+                this.hide_cursor ();
+
+                return GLib.Source.REMOVE;
+            });
+            GLib.Source.set_name_by_id (this.cursor_hide_timeout_id,
+                                        "Ft.ScreenOverlay.hide_cursor");
+        }
+
+        private void reveal_cursor ()
+        {
+            this.show_cursor ();
+            this.schedule_cursor_hide ();
+        }
+
+        private void restore_cursor ()
+        {
+            this.remove_cursor_hide_timeout ();
+            this.have_last_cursor = false;
+            this.show_cursor ();
+        }
+
         [GtkCallback]
-        private bool on_gesture_key_pressed (Gtk.EventControllerKey controller,
-                                             uint                   keyval,
-                                             uint                   keycode,
-                                             Gdk.ModifierType       state)
+        private bool on_key_pressed (Gtk.EventControllerKey controller,
+                                     uint                   keyval,
+                                     uint                   keycode,
+                                     Gdk.ModifierType       state)
         {
             if (!this.check_gesture_allowed (controller)) {
                 return false;
@@ -192,10 +261,10 @@ namespace Ft
         }
 
         [GtkCallback]
-        private void on_gesture_pressed (Gtk.GestureClick gesture,
-                                         int              n_press,
-                                         double           x,
-                                         double           y)
+        private void on_pressed (Gtk.GestureClick gesture,
+                                 int              n_press,
+                                 double           x,
+                                 double           y)
         {
             if (!this.check_gesture_allowed (gesture)) {
                 return;
@@ -210,10 +279,37 @@ namespace Ft
         }
 
         [GtkCallback]
-        private void on_gesture_motion (Gtk.EventControllerMotion controller,
-                                        double                    x,
-                                        double                    y)
+        private void on_enter (Gtk.EventControllerMotion controller,
+                               double                    x,
+                               double                    y)
         {
+            this.last_cursor_x = x;
+            this.last_cursor_y = y;
+            this.have_last_cursor = true;
+            this.reveal_cursor ();
+        }
+
+        [GtkCallback]
+        private void on_leave (Gtk.EventControllerMotion controller)
+        {
+            this.have_last_cursor = false;
+        }
+
+        [GtkCallback]
+        private void on_motion (Gtk.EventControllerMotion controller,
+                                double                    x,
+                                double                    y)
+        {
+            if (!this.have_last_cursor ||
+                x != this.last_cursor_x ||
+                y != this.last_cursor_y)
+            {
+                this.last_cursor_x = x;
+                this.last_cursor_y = y;
+                this.have_last_cursor = true;
+                this.reveal_cursor ();
+            }
+
             if (!this.check_gesture_allowed (controller)) {
                 return;
             }
@@ -250,9 +346,9 @@ namespace Ft
         }
 
         [GtkCallback]
-        private bool on_gesture_scroll (Gtk.EventControllerScroll controller,
-                                        double                    dx,
-                                        double                    dy)
+        private bool on_scroll (Gtk.EventControllerScroll controller,
+                                double                    dx,
+                                double                    dy)
         {
             if (!this.check_gesture_allowed (controller)) {
                 return false;
@@ -297,12 +393,14 @@ namespace Ft
             base.map ();
 
             this.reset_acknowledge_timeout ();
+            this.reveal_cursor ();
         }
 
         public override void unmap ()
         {
             this.remove_acknowledge_timeout ();
             this.remove_dismiss_idle ();
+            this.restore_cursor ();
 
             base.unmap ();
         }
@@ -311,6 +409,7 @@ namespace Ft
         {
             this.remove_acknowledge_timeout ();
             this.remove_dismiss_idle ();
+            this.restore_cursor ();
 
             this.lock_screen = null;
             this.settings = null;
