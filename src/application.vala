@@ -763,6 +763,8 @@ namespace Ft
         {
             var inhibit_idle = this.screen_overlay_manager != null &&
                                this.screen_overlay_manager.active &&
+                               this.session_manager != null &&
+                               !this.session_manager.lockscreen_active &&
                                this.settings != null &&
                                this.settings.get_uint ("screen-overlay-lock-delay") == 0U;
             var is_idle_inhibited = this.idle_inhibit_cookie != 0U;
@@ -828,6 +830,8 @@ namespace Ft
             this.settings.changed.connect (this.on_settings_changed);
             this.screen_overlay_manager.notify["active"].connect (
                     this.on_screen_overlay_notify_active);
+            this.session_manager.notify["lockscreen-active"].connect (
+                    this.on_session_manager_notify_lockscreen_active);
             this.event_bus.event.connect (this.on_event);
 
             this.session_manager.restore.begin (
@@ -1101,6 +1105,8 @@ namespace Ft
             this.keyboard_manager.shortcut_activated.disconnect (this.on_shortcut_activated);
             this.screen_overlay_manager.notify["active"].disconnect (
                     this.on_screen_overlay_notify_active);
+            this.session_manager.notify["lockscreen-active"].disconnect (
+                    this.on_session_manager_notify_lockscreen_active);
 
             base.shutdown ();
 
@@ -1287,6 +1293,12 @@ namespace Ft
 
         private void on_screen_overlay_notify_active (GLib.Object    object,
                                                       GLib.ParamSpec pspec)
+        {
+            this.update_idle_inhibitor ();
+        }
+
+        private void on_session_manager_notify_lockscreen_active (GLib.Object    object,
+                                                                  GLib.ParamSpec pspec)
         {
             this.update_idle_inhibitor ();
         }
