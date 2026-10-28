@@ -19,6 +19,12 @@
     </section>
     <section>
       <item>
+        <attribute name="label" translatable="yes">_Screen Overlay</attribute>
+        <attribute name="verb-icon">screen-overlay-open-symbolic</attribute>
+        <attribute name="action">win.screen-overlay</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
+      </item>
+      <item>
         <attribute name="label" translatable="yes">_Preferences</attribute>
         <attribute name="action">app.preferences</attribute>
       </item>

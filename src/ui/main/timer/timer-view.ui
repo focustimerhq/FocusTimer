@@ -19,7 +19,8 @@
         </child>
         <child>
           <object class="GtkButton" id="open_screen_overlay_button">
-            <property name="action-name">app.screen-overlay</property>
+            <property name="action-name">win.screen-overlay</property>
+            <property name="visible" bind-source="open_screen_overlay_button" bind-property="sensitive" bind-flags="sync-create"/>
             <property name="tooltip-text" translatable="yes">Open screen overlay</property>
             <style>
               <class name="flat"/>

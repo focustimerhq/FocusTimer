@@ -144,8 +144,11 @@ namespace Ft
         private Gtk.PopoverMenu?        primary_menu_popover = null;
         private GLib.SimpleAction?      compact_size_action = null;
         private GLib.SimpleAction?      toggle_sounds_action = null;
+        private GLib.SimpleAction?      screen_overlay_action = null;
         private Adw.Toast?              last_toast = null;
         private GLib.Settings?          settings = null;
+        private ulong                   timer_state_changed_id = 0;
+        private ulong                   current_state_notify_id = 0;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
 
@@ -156,9 +159,11 @@ namespace Ft
 
             this.session_manager = Ft.SessionManager.get_default ();
             this.timer           = session_manager.timer;
-            this.timer.state_changed.connect (() => {
-                this.update_timer_indicator ();
-            });
+            this.timer_state_changed_id = this.timer.state_changed.connect (
+                    this.on_timer_state_changed);
+            this.current_state_notify_id = this.session_manager.notify["current-state"].connect (
+                    this.on_session_manager_notify_current_state);
+            this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
             this.timer_action_group = new Ft.TimerActionGroup ();
             this.insert_action_group ("session-manager", new Ft.SessionManagerActionGroup ());
@@ -176,6 +181,7 @@ namespace Ft
             this.update_title ();
             this.update_timer_indicator ();
             this.update_toggle_sounds_action ();
+            this.update_screen_overlay_action ();
 
             this.extensions = new Peas.ExtensionSet.with_properties (
                     Peas.Engine.get_default (),
@@ -241,6 +247,17 @@ namespace Ft
         {
             this.toggle_sounds_action.set_state (
                     new GLib.Variant.boolean (this.settings.get_boolean ("sounds")));
+        }
+
+        private void update_screen_overlay_action ()
+        {
+            if (this.screen_overlay_action != null && this.session_manager != null)
+            {
+                this.screen_overlay_action.set_enabled (
+                        this.settings.get_boolean ("screen-overlay") &&
+                        this.session_manager.current_state.is_break () &&
+                        !this.timer.is_finished ());
+            }
         }
 
         public Ft.WindowView get_default_view ()
@@ -404,6 +421,12 @@ namespace Ft
                     null);
         }
 
+        private void activate_screen_overlay (GLib.SimpleAction action,
+                                              GLib.Variant?     parameter)
+        {
+            this.application.activate_action ("screen-overlay", null);
+        }
+
         private void on_toggle_sounds_action_change_state (GLib.SimpleAction action,
                                                            GLib.Variant?     value)
         {
@@ -518,6 +541,17 @@ namespace Ft
             this.update_size_actions ();
         }
 
+        private void on_timer_state_changed ()
+        {
+            this.update_timer_indicator ();
+            this.update_screen_overlay_action ();
+        }
+
+        private void on_session_manager_notify_current_state ()
+        {
+            this.update_screen_overlay_action ();
+        }
+
         private void on_settings_changed (GLib.Settings settings,
                                           string        key)
         {
@@ -525,6 +559,10 @@ namespace Ft
             {
                 case "sounds":
                     this.update_toggle_sounds_action ();
+                    break;
+
+                case "screen-overlay":
+                    this.update_screen_overlay_action ();
                     break;
             }
         }
@@ -567,6 +605,11 @@ namespace Ft
                     this.on_toggle_sounds_action_change_state);
             this.add_action (this.toggle_sounds_action);
 
+            this.screen_overlay_action = new GLib.SimpleAction ("screen-overlay", null);
+            this.screen_overlay_action.set_enabled (false);
+            this.screen_overlay_action.activate.connect (this.activate_screen_overlay);
+            this.add_action (this.screen_overlay_action);
+
             this.update_size_actions ();
         }
 
@@ -584,9 +627,14 @@ namespace Ft
 
         public override void dispose ()
         {
-            if (this.primary_menu_popover != null) {
-                this.primary_menu_popover.unparent ();
-                this.primary_menu_popover = null;
+            if (this.timer_state_changed_id != 0) {
+                this.timer.disconnect (this.timer_state_changed_id);
+                this.timer_state_changed_id = 0;
+            }
+
+            if (this.current_state_notify_id != 0) {
+                this.session_manager.disconnect (this.current_state_notify_id);
+                this.current_state_notify_id = 0;
             }
 
             if (this.settings_changed_id != 0) {
@@ -594,11 +642,17 @@ namespace Ft
                 this.settings_changed_id = 0;
             }
 
+            if (this.primary_menu_popover != null) {
+                this.primary_menu_popover.unparent ();
+                this.primary_menu_popover = null;
+            }
+
             this.extensions = null;
             this.background_manager = null;
             this.timer_action_group = null;
             this.compact_size_action = null;
             this.toggle_sounds_action = null;
+            this.screen_overlay_action = null;
             this.last_toast = null;
             this.settings = null;
 

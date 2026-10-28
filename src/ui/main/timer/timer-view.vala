@@ -46,8 +46,6 @@ namespace Ft
         [GtkChild]
         private unowned Gtk.MenuButton state_menubutton;
         [GtkChild]
-        private unowned Gtk.Button open_screen_overlay_button;
-        [GtkChild]
         private unowned Gtk.Box header_box;
         [GtkChild]
         private unowned Gtk.Box inner_box;
@@ -66,7 +64,6 @@ namespace Ft
 
         private Ft.SessionManager   session_manager;
         private Ft.Timer            timer;
-        private GLib.Settings?      settings = null;
         private GLib.MenuModel?     state_menu;
         private GLib.MenuModel?     uniform_state_menu;
         private ulong               timer_state_changed_id = 0;
@@ -74,7 +71,6 @@ namespace Ft
         private ulong               notify_current_time_block_id = 0;
         private ulong               notify_has_uniform_breaks_id = 0;
         private ulong               current_time_block_changed_id = 0;
-        private ulong               settings_changed_id = 0;
         private Adw.Toast?          session_expired_toast;
         private Ft.TimeBlock?       current_time_block;
 
@@ -98,7 +94,6 @@ namespace Ft
         {
             this.session_manager = Ft.SessionManager.get_default ();
             this.timer = session_manager.timer;
-            this.settings = Ft.get_settings ();
 
             var builder = new Gtk.Builder.from_resource ("/io/github/focustimerhq/FocusTimer/ui/main/timer/menus.ui");
             this.state_menu = (GLib.MenuModel) builder.get_object ("state_menu");
@@ -108,8 +103,6 @@ namespace Ft
                                                 this.session_progressbar,
                                                 "session",
                                                 GLib.BindingFlags.SYNC_CREATE);
-
-            this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
             this.session_expired_id = this.session_manager.session_expired.connect (this.on_session_expired);
             this.notify_current_time_block_id = this.session_manager.notify["current-time-block"].connect (
@@ -132,18 +125,9 @@ namespace Ft
 
         private void update_buttons ()
         {
-            var current_state = this.current_time_block != null
-                    ? this.current_time_block.state
-                    : Ft.State.STOPPED;
-
             this.state_menubutton.label = !this.timer.is_finished ()
                     ? this.get_state_label ()
                     : _("Finished!");
-
-            this.open_screen_overlay_button.visible =
-                    this.settings.get_boolean ("screen-overlay") &&
-                    current_state.is_break () &&
-                    !this.timer.is_finished ();
         }
 
         private void update_timer_label_placeholder ()
@@ -353,17 +337,6 @@ namespace Ft
             this.state_menubutton.menu_model = this.session_manager.has_uniform_breaks
                     ? this.uniform_state_menu
                     : this.state_menu;
-        }
-
-        private void on_settings_changed (GLib.Settings settings,
-                                          string        key)
-        {
-            switch (key)
-            {
-                case "screen-overlay":
-                    this.update_buttons ();
-                    break;
-            }
         }
 
         private void connect_signals ()
@@ -686,18 +659,12 @@ namespace Ft
                 this.notify_has_uniform_breaks_id = 0;
             }
 
-            if (this.settings_changed_id != 0) {
-                this.settings.disconnect (this.settings_changed_id);
-                this.settings_changed_id = 0;
-            }
-
             this.session_expired_toast = null;
             this.state_menu = null;
             this.uniform_state_menu = null;
             this.current_time_block = null;
             this.session_manager = null;
             this.timer = null;
-            this.settings = null;
 
             // HACK: Without this children do not get disposed properly
             this.dispose_template (typeof (Ft.TimerView));
