@@ -19,6 +19,7 @@ namespace Gnome
     public class ShellExtension : GLib.Object
     {
         public const string EXTENSION_UUID = "focus-timer@focustimerhq.github.io";
+        public const uint MIN_SHELL_VERSION = 48;
 
         [CCode (notify = false)]
         public bool available {
@@ -97,10 +98,27 @@ namespace Gnome
             return this.shell_integration_proxy;
         }
 
+        private bool is_shell_version_supported ()
+        {
+            if (this.shell_extensions_proxy == null) {
+                return false;
+            }
+
+            var major = 0;
+            var version = this.shell_extensions_proxy.shell_version.split (".", 2)[0];
+
+            if (!int.try_parse (version, out major)) {
+                return false;
+            }
+
+            return major >= (int) MIN_SHELL_VERSION;
+        }
+
         private void update_available ()
         {
             this.available = this.shell_extensions_proxy != null &&
                              this.shell_extensions_proxy.user_extensions_enabled &&
+                             this.is_shell_version_supported () &&
                              this.extension_info.state != Gnome.ExtensionState.UNKNOWN;
         }
 

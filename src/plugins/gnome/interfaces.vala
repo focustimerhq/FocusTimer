@@ -195,6 +195,7 @@ namespace Gnome
     [DBus (name = "org.gnome.Shell.Extensions")]
     public interface ShellExtensions : GLib.Object
     {
+        public abstract string shell_version { owned get; }
         public abstract bool user_extensions_enabled { get; set; }
 
         public abstract async bool enable_extension
