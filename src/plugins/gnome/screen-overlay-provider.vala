@@ -18,12 +18,21 @@ namespace Gnome
      */
     public class ScreenOverlayProvider : Ft.Provider, Ft.ScreenOverlayProvider
     {
+        [CCode (notify = false)]
         public bool active {
             get {
-                return false;  // TODO
+                return this.shell_extension != null &&
+                       this.shell_extension.screen_overlay_active;
+            }
+            private set {
+                if (this._screen_overlay_active != value) {
+                    this._screen_overlay_active = value;
+                    this.notify_property ("active");
+                }
             }
         }
 
+        private bool _screen_overlay_active = false;
         private Gnome.ShellExtension? shell_extension = null;
 
         private void update_available ()
@@ -32,10 +41,22 @@ namespace Gnome
                              this.shell_extension.enabled;
         }
 
+        private void update_active ()
+        {
+            this.active = this.shell_extension != null &&
+                          this.shell_extension.screen_overlay_active;
+        }
+
         private void on_notify_extension_enabled (GLib.Object    object,
                                                   GLib.ParamSpec pspec)
         {
             this.update_available ();
+        }
+
+        private void on_notify_screen_overlay_active (GLib.Object    object,
+                                                      GLib.ParamSpec pspec)
+        {
+            this.update_active ();
         }
 
         public void open ()
@@ -66,19 +87,24 @@ namespace Gnome
         {
             this.shell_extension = new Gnome.ShellExtension ();
             this.shell_extension.notify["enabled"].connect (this.on_notify_extension_enabled);
+            this.shell_extension.notify["screen-overlay-active"].connect (this.on_notify_screen_overlay_active);
 
             yield this.shell_extension.wait ();
 
             this.update_available ();
+            this.update_active ();
         }
 
         protected override async void uninitialize () throws GLib.Error
         {
-            if (this.shell_extension != null) {
+            if (this.shell_extension != null)
+            {
                 this.shell_extension.notify["enabled"].disconnect (this.on_notify_extension_enabled);
+                this.shell_extension.notify["screen-overlay-active"].disconnect (this.on_notify_screen_overlay_active);
                 this.shell_extension = null;
 
                 this.update_available ();
+                this.update_active ();
             }
         }
 

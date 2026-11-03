@@ -59,9 +59,23 @@ namespace Gnome
             }
         }
 
+        [CCode (notify = false)]
+        public bool screen_overlay_active {
+            get {
+                return this._screen_overlay_active;
+            }
+            private set {
+                if (this._screen_overlay_active != value) {
+                    this._screen_overlay_active = value;
+                    this.notify_property ("screen-overlay-active");
+                }
+            }
+        }
+
         private bool                            _available = false;
         private bool                            _enabled = false;
         private Gnome.ShellExtensionSettings?   _settings = null;
+        private bool                            _screen_overlay_active = false;
         private Gnome.ShellExtensions?          shell_extensions_proxy = null;
         private Gnome.ShellIntegration?         shell_integration_proxy = null;
         private Gnome.ExtensionInfo             extension_info;
@@ -211,8 +225,14 @@ namespace Gnome
                         GLib.DBusProxyFlags.DO_NOT_AUTO_START,
                         this.cancellable);
 
+                var shell_integration_proxy = (GLib.DBusProxy) this.shell_integration_proxy;
+                shell_integration_proxy.g_properties_changed.connect (
+                        this.on_shell_integration_properties_changed);
+
                 this._settings = new Gnome.ShellExtensionSettings (this.shell_integration_proxy);
                 this.notify_property ("settings");
+
+                this.screen_overlay_active = this.shell_integration_proxy.screen_overlay_active;
             }
             catch (GLib.Error error) {
                 GLib.warning ("Error while initializing Shell integration proxy: %s", error.message);
@@ -222,12 +242,19 @@ namespace Gnome
         private void on_shell_integration_name_vanished (GLib.DBusConnection? connection,
                                                          string               name)
         {
+            if (this.shell_integration_proxy != null) {
+                var shell_integration_proxy = (GLib.DBusProxy) this.shell_integration_proxy;
+                shell_integration_proxy.g_properties_changed.disconnect (
+                        this.on_shell_integration_properties_changed);
+            }
+
             if (this._settings != null) {
                 this._settings = null;
                 this.notify_property ("settings");
             }
 
             this.shell_integration_proxy = null;
+            this.screen_overlay_active = false;
         }
 
         private void on_extension_state_changed (string                               uuid,
@@ -241,6 +268,18 @@ namespace Gnome
             this.enabled = this.extension_info.enabled;
             this.update_available ();
             this.notify_property ("state");
+        }
+
+        private void on_shell_integration_properties_changed (GLib.Variant changed_properties,
+                                                              string[]     invalidated_properties)
+        {
+            var screen_overlay_active_value = changed_properties.lookup_value (
+                    "ScreenOverlayActive",
+                    GLib.VariantType.BOOLEAN);
+
+            if (screen_overlay_active_value != null) {
+                this.screen_overlay_active = screen_overlay_active_value.get_boolean ();
+            }
         }
 
         private async void query_extension_state ()
@@ -402,9 +441,16 @@ namespace Gnome
                 this.cancellable = null;
             }
 
+            if (this.shell_integration_proxy != null) {
+                var shell_integration_proxy = (GLib.DBusProxy) this.shell_integration_proxy;
+                shell_integration_proxy.g_properties_changed.disconnect (
+                        this.on_shell_integration_properties_changed);
+            }
+
             this._settings = null;
             this.shell_extensions_proxy = null;
             this.shell_integration_proxy = null;
+            this.screen_overlay_active = false;
 
             base.dispose ();
         }
