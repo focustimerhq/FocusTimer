@@ -12,8 +12,8 @@ namespace Ft
         /* Time between user input events before watching for dismiss gesture.
          * Value is a little higher than:
          *   - slow typing speed of 23 words per minute which translates
-         *     to 523 miliseconds between key presses
-         *   - moderate typing speed of 35 words per minute, 343 miliseconds.
+         *     to 523 milliseconds between key presses
+         *   - moderate typing speed of 35 words per minute, 343 milliseconds.
          */
         private const uint IDLE_TIME_TO_ACKNOWLEDGE = 700;
         private const double MOTION_VELOCITY_TO_DISMISS = 3.0;
@@ -48,23 +48,26 @@ namespace Ft
         [GtkChild]
         private unowned Gtk.EventControllerMotion pointer_motion;
 
-        private bool                _enable_dismiss_gesture = true;
-        private Ft.LockScreen?      lock_screen = null;
-        private GLib.Settings?      settings = null;
-        private uint                acknowledge_timeout_id = 0;
-        private uint                dismiss_idle_id = 0;
-        private double              last_motion_x = 0.0;
-        private double              last_motion_y = 0.0;
-        private uint32              last_motion_time = 0;
-        private bool                have_last_motion = false;
-        private uint                cursor_hide_timeout_id = 0;
-        private double              last_cursor_x = 0.0;
-        private double              last_cursor_y = 0.0;
-        private bool                have_last_cursor = false;
-        private bool                cursor_hidden = false;
+        private bool                        _enable_dismiss_gesture = true;
+        private Ft.ScreenOverlayManager?    screen_overlay_manager = null;
+        private Ft.LockScreen?              lock_screen = null;
+        private GLib.Settings?              settings = null;
+        private uint                        acknowledge_timeout_id = 0;
+        private uint                        dismiss_idle_id = 0;
+        private double                      last_motion_x = 0.0;
+        private double                      last_motion_y = 0.0;
+        private uint32                      last_motion_time = 0;
+        private bool                        have_last_motion = false;
+        private uint                        cursor_hide_timeout_id = 0;
+        private double                      last_cursor_x = 0.0;
+        private double                      last_cursor_y = 0.0;
+        private bool                        have_last_cursor = false;
+        private bool                        cursor_hidden = false;
 
         construct
         {
+            this.screen_overlay_manager = new Ft.ScreenOverlayManager ();
+
             this.lock_screen = new Ft.LockScreen ();
             this.lock_screen.bind_property ("enabled",
                                             this.lock_screen_button,
@@ -239,6 +242,15 @@ namespace Ft
             this.show_cursor ();
         }
 
+        private void mark_user_activity ()
+        {
+            if (!this.get_mapped ()) {
+                return;
+            }
+
+            this.screen_overlay_manager?.mark_user_activity ();
+        }
+
         [GtkCallback]
         private bool on_key_pressed (Gtk.EventControllerKey controller,
                                      uint                   keyval,
@@ -375,9 +387,35 @@ namespace Ft
         }
 
         [GtkCallback]
+        private bool on_event (Gtk.EventControllerLegacy controller,
+                               Gdk.Event                 event)
+        {
+            if (event.get_pointer_emulated ()) {
+                return false;
+            }
+
+            switch (event.get_event_type ())
+            {
+                case Gdk.EventType.MOTION_NOTIFY:
+                case Gdk.EventType.BUTTON_RELEASE:
+                case Gdk.EventType.KEY_RELEASE:
+                case Gdk.EventType.TOUCH_END:
+                    this.mark_user_activity ();
+                    break;
+
+                default:
+                    break;
+            }
+
+            return false;
+        }
+
+        [GtkCallback]
         private void on_lock_screen_button_clicked (Gtk.Button button)
         {
-            this.lock_screen.activate ();
+            if (this.lock_screen.enabled) {
+                this.lock_screen.activate ();
+            }
         }
 
         [GtkCallback]
@@ -411,6 +449,7 @@ namespace Ft
             this.remove_dismiss_idle ();
             this.restore_cursor ();
 
+            this.screen_overlay_manager = null;
             this.lock_screen = null;
             this.settings = null;
 

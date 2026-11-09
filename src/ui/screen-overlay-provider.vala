@@ -19,6 +19,12 @@ namespace Ft
             }
         }
 
+        public bool handles_lock_delay {
+            get {
+                return false;
+            }
+        }
+
         private bool _active = false;
         private GLib.Cancellable? cancellable = null;
 

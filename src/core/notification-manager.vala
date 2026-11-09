@@ -77,7 +77,6 @@ namespace Ft
         private Ft.NotificationBackendInterface? _backend = null;
         private GLib.Settings?          settings = null;
         private Ft.IdleMonitor?         idle_monitor = null;
-        private Ft.LockScreen?          lock_screen = null;
         private Ft.TimerState           previous_timer_state;
         private ulong                   timer_state_changed_id = 0;
         private ulong                   timer_tick_id = 0;
@@ -88,7 +87,6 @@ namespace Ft
         private uint                    screen_overlay_open_timeout_id = 0U;
         private uint                    update_timeout_id = 0U;
         private uint                    withdraw_timeout_id = 0U;
-        private uint                    lock_screen_idle_id = 0U;
         private uint                    reopen_screen_overlay_idle_id = 0U;
         private Ft.Notification?        notification = null;
         private Ft.NotificationType     notification_type = NotificationType.NULL;
@@ -98,7 +96,6 @@ namespace Ft
         {
             this.settings = Ft.get_settings ();
             this.idle_monitor = new Ft.IdleMonitor ();
-            this.lock_screen = new Ft.LockScreen ();
 
             this.settings_changed_id = this.settings.changed.connect (this.on_settings_changed);
 
@@ -180,15 +177,6 @@ namespace Ft
             return true;
         }
 
-        private void on_lock_screen_idle ()
-        {
-            if (!this.screen_overlay_active) {
-                return;
-            }
-
-            this.lock_screen.activate ();
-        }
-
         private void on_reopen_screen_overlay_idle ()
         {
             if (this.screen_overlay_active) {
@@ -211,27 +199,6 @@ namespace Ft
 
             // Request the overlay
             this.emit_request_screen_overlay_open ();
-        }
-
-        private void add_lock_screen_idle_watch ()
-        {
-            var lock_delay = Ft.Timestamp.from_milliseconds_uint (
-                    this.settings.get_uint ("screen-overlay-lock-delay") * 1000U);
-
-            if (this.lock_screen_idle_id == 0 && lock_delay > 0 && this.idle_monitor.enabled) {
-                this.lock_screen_idle_id = this.idle_monitor.add_idle_watch (lock_delay,
-                                                                             true,
-                                                                             this.on_lock_screen_idle,
-                                                                             GLib.get_monotonic_time ());
-            }
-        }
-
-        private void remove_lock_screen_idle_watch ()
-        {
-            if (this.lock_screen_idle_id != 0) {
-                this.idle_monitor.remove_watch (this.lock_screen_idle_id);
-                this.lock_screen_idle_id = 0;
-            }
         }
 
         private void add_reopen_screen_overlay_idle_watch ()
@@ -750,7 +717,6 @@ namespace Ft
                     // Open notification as a fallback
                     this.screen_overlay_open_timeout_id = 0;
 
-                    this.remove_lock_screen_idle_watch ();
                     this.update (false);
 
                     return GLib.Source.REMOVE;
@@ -792,7 +758,6 @@ namespace Ft
             {
                 this.withdraw_notifications ();
                 this.remove_reopen_screen_overlay_idle_watch ();
-                this.remove_lock_screen_idle_watch ();
 
                 GLib.SignalHandler.block (this._timer, this.timer_state_changed_id);
                 GLib.SignalHandler.block (this._session_manager, this.session_manager_confirm_advancement_id);
@@ -844,7 +809,6 @@ namespace Ft
             this.screen_overlay_active = true;
 
             this.remove_reopen_screen_overlay_idle_watch ();
-            this.add_lock_screen_idle_watch ();
 
             this.withdraw_notifications ();
         }
@@ -855,8 +819,6 @@ namespace Ft
         public signal void screen_overlay_closed ()
         {
             this.screen_overlay_active = false;
-
-            this.remove_lock_screen_idle_watch ();
 
             // Let the notification server acknowledge there is no full-screen window,
             // otherwise notification could get blocked.
@@ -912,7 +874,6 @@ namespace Ft
             }
 
             this.remove_reopen_screen_overlay_idle_watch ();
-            this.remove_lock_screen_idle_watch ();
         }
 
         public override void dispose ()
@@ -926,7 +887,6 @@ namespace Ft
             this.notification = null;
             this.notification_time_block = null;
             this.idle_monitor = null;
-            this.lock_screen = null;
 
             base.dispose ();
         }

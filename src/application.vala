@@ -763,9 +763,7 @@ namespace Ft
             var inhibit_idle = this.screen_overlay_manager != null &&
                                this.screen_overlay_manager.active &&
                                this.session_manager != null &&
-                               !this.session_manager.lockscreen_active &&
-                               this.settings != null &&
-                               this.settings.get_uint ("screen-overlay-lock-delay") == 0U;
+                               !this.session_manager.lockscreen_active;
             var is_idle_inhibited = this.idle_inhibit_cookie != 0U;
 
             if (inhibit_idle == is_idle_inhibited) {
@@ -1238,10 +1236,6 @@ namespace Ft
             {
                 case "color-scheme":
                     this.update_color_scheme ();
-                    break;
-
-                case "screen-overlay-lock-delay":
-                    this.update_idle_inhibitor ();
                     break;
             }
         }

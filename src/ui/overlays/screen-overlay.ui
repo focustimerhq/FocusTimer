@@ -110,5 +110,11 @@
         <signal name="scroll" handler="on_scroll" swapped="no"/>
       </object>
     </child>
+    <child>
+      <object class="GtkEventControllerLegacy">
+        <property name="propagation-phase">capture</property>
+        <signal name="event" handler="on_event" swapped="no"/>
+      </object>
+    </child>
   </template>
 </interface>

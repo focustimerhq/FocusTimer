@@ -18,22 +18,21 @@ namespace Gnome
      */
     public class ScreenOverlayProvider : Ft.Provider, Ft.ScreenOverlayProvider
     {
-        [CCode (notify = false)]
         public bool active {
             get {
                 return this.shell_extension != null &&
                        this.shell_extension.screen_overlay_active;
             }
-            private set {
-                if (this._screen_overlay_active != value) {
-                    this._screen_overlay_active = value;
-                    this.notify_property ("active");
-                }
+        }
+
+        public bool handles_lock_delay {
+            get {
+                return true;
             }
         }
 
-        private bool _screen_overlay_active = false;
-        private Gnome.ShellExtension? shell_extension = null;
+        private bool                    _active = false;
+        private Gnome.ShellExtension?   shell_extension = null;
 
         private void update_available ()
         {
@@ -43,8 +42,13 @@ namespace Gnome
 
         private void update_active ()
         {
-            this.active = this.shell_extension != null &&
-                          this.shell_extension.screen_overlay_active;
+            var active = this.shell_extension != null &&
+                         this.shell_extension.screen_overlay_active;
+
+            if (this._active != active) {
+                this._active = active;
+                this.notify_property ("active");
+            }
         }
 
         private void on_notify_extension_enabled (GLib.Object    object,

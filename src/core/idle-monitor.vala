@@ -151,7 +151,6 @@ namespace Ft
         }
 
         private GLib.HashTable<int64?, Watch> watches = null;
-        private int64                         last_activity_time = Ft.Timestamp.UNDEFINED;
 
         private void on_became_idle (uint32 id)
         {
@@ -169,8 +168,6 @@ namespace Ft
         private void on_became_active ()
         {
             var monotonic_time = GLib.get_monotonic_time ();
-
-            this.last_activity_time = monotonic_time;
 
             (unowned Watch)[] watches_to_trigger = new Watch[0];
 
@@ -280,10 +277,10 @@ namespace Ft
          * `reference_time` specifies whether idle-time should be detected from this point of time,
          * otherwise the callback will be called counting from the time of users last activity.
          */
-        public uint add_idle_watch (int64                   timeout,
-                                    bool                    ignore_inhibitors,
-                                    owned Ft.Callback       callback,
-                                    int64                   monotonic_time = Ft.Timestamp.UNDEFINED)
+        public uint add_idle_watch (int64             timeout,
+                                    bool              ignore_inhibitors,
+                                    owned Ft.Callback callback,
+                                    int64             monotonic_time = Ft.Timestamp.UNDEFINED)
         {
             if (timeout == 0) {
                 return 0;

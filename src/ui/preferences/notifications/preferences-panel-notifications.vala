@@ -82,11 +82,6 @@ namespace Ft
                                 null);
             this.idle_monitor.bind_property (
                                 "enabled",
-                                this.screen_overlay_lock_delay_comborow,
-                                "visible",
-                                GLib.BindingFlags.SYNC_CREATE);
-            this.idle_monitor.bind_property (
-                                "enabled",
                                 this.screen_overlay_reopen_delay_comborow,
                                 "visible",
                                 GLib.BindingFlags.SYNC_CREATE);
