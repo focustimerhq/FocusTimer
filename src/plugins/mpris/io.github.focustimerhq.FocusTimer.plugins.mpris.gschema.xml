@@ -4,5 +4,9 @@
       <default>false</default>
       <summary>Pause playback during break</summary>
     </key>
+    <key name="inhibit-background-sound" type="b">
+      <default>true</default>
+      <summary>Mute background sound while there's other media playing</summary>
+    </key>
   </schema>
 </schemalist>

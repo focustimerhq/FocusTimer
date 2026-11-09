@@ -91,6 +91,7 @@ namespace Mpris
                 return;
             }
 
+            var inhibit_background_sound = this.settings.get_boolean ("inhibit-background-sound");
             var playing_count = 0U;
 
             this.foreach_player (
@@ -100,12 +101,16 @@ namespace Mpris
                     }
                 });
 
-            if (playing_count > 0 && !this.background_sound_inhibited) {
+            if (playing_count > 0 &&
+                inhibit_background_sound &&
+                !this.background_sound_inhibited)
+            {
                 this.background_sound_inhibited = true;
                 this.sound_manager.inhibit_background_sound ();
             }
-
-            if (playing_count == 0 && this.background_sound_inhibited) {
+            else if (this.background_sound_inhibited && (
+                     playing_count == 0 || !inhibit_background_sound))
+            {
                 this.background_sound_inhibited = false;
                 this.sound_manager.uninhibit_background_sound ();
             }
@@ -365,6 +370,10 @@ namespace Mpris
                         this.disable ();
                     }
 
+                    break;
+
+                case "inhibit-background-sound":
+                    this.update_background_sound_inhibitor ();
                     break;
 
                 default:
