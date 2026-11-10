@@ -328,6 +328,8 @@ namespace Tests
             var settings = Ft.get_settings ();
             settings.set_boolean ("screen-overlay", true);
 
+            var timer_action_group = new Ft.TimerActionGroup.with_timer (this.timer);
+
             var backend = this.get_mock_backend ();
             var open_requested = 0;
 
@@ -347,14 +349,14 @@ namespace Tests
             this.notification_manager.emit_screen_overlay_closed ();
 
             backend.clear ();
-            this.timer.extend (Ft.Interval.MINUTE);
+            timer_action_group.activate_action ("extend", null);
             assert_cmpint (open_requested, GLib.CompareOperator.EQ, 1);
             assert_cmpstrv (backend.log, {
                 "send:timer:Short Break:6 minutes remaining"
             });
 
             backend.clear ();
-            this.timer.extend (-Ft.Interval.MINUTE);
+            timer_action_group.activate_action ("shorten", null);
             assert_cmpint (open_requested, GLib.CompareOperator.EQ, 1);
             assert_cmpstrv (backend.log, {
                 "send:timer:Short Break:5 minutes remaining"

@@ -591,7 +591,8 @@ namespace Ft
                 var is_extending =
                         current_state.user_data == previous_state.user_data &&
                         current_state.paused_time == previous_state.paused_time &&
-                        current_state.duration != previous_state.duration;
+                        current_state.duration != previous_state.duration &&
+                        Ft.Context.get_event_source () == "timer.extend";
 
                 if (current_time_block.state.is_break ())
                 {
