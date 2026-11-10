@@ -78,8 +78,8 @@ namespace Ft
     }
 
 
-    internal unowned Gtk.Widget? get_child_by_buildable_id (Gtk.Widget widget,
-                                                            string     buildable_id)
+    public unowned Gtk.Widget? get_child_by_buildable_id (Gtk.Widget widget,
+                                                          string     buildable_id)
     {
         unowned var child = widget.get_first_child ();
 

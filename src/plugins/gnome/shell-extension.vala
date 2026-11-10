@@ -59,6 +59,14 @@ namespace Gnome
             }
         }
 
+        public string version {
+            owned get {
+                return this.shell_integration_proxy != null
+                        ? this.shell_integration_proxy.version
+                        : "";
+            }
+        }
+
         [CCode (notify = false)]
         public bool screen_overlay_active {
             get {

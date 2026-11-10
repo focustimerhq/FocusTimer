@@ -6,6 +6,41 @@
 
 namespace Gnome
 {
+    private inline int parse_version_part (string part)
+    {
+        int value;
+
+        return int.try_parse (part, out value)
+                ? value
+                : 0;
+    }
+
+
+    private bool is_version_at_least (string current_version,
+                                      string required_version)
+    {
+        var current_parts = current_version.split (".");
+        var required_parts = required_version.split (".");
+        var length = int.max (current_parts.length, required_parts.length);
+
+        for (var index = 0; index < length; index++)
+        {
+            var current_part = index < current_parts.length
+                    ? parse_version_part (current_parts[index])
+                    : 0;
+            var required_part = index < required_parts.length
+                    ? parse_version_part (required_parts[index])
+                    : 0;
+
+            if (current_part != required_part) {
+                return current_part > required_part;
+            }
+        }
+
+        return true;
+    }
+
+
     public class PreferencesWindowExtension : Ft.PreferencesWindowExtension
     {
         private Gnome.ShellExtension?           shell_extension = null;
@@ -229,6 +264,16 @@ namespace Gnome
             this.desktop_group = null;
         }
 
+        private void setup_notifications_panel (Ft.PreferencesPanel panel)
+        {
+            unowned var announcement_lead_time_comborow = Ft.get_child_by_buildable_id (
+                    panel,
+                    "announcement_lead_time_comborow");
+            announcement_lead_time_comborow?.set_visible (
+                    this.shell_extension.version == "" ||
+                    is_version_at_least (this.shell_extension.version, "6"));
+        }
+
         private bool transform_state_to_is_installed (GLib.Binding   binding,
                                                       GLib.Value     source_value,
                                                       ref GLib.Value target_value)
@@ -320,6 +365,10 @@ namespace Gnome
 
                 case "integrations":
                     this.setup_integrations_panel (panel);
+                    break;
+
+                case "notifications":
+                    this.setup_notifications_panel (panel);
                     break;
 
                 default:
