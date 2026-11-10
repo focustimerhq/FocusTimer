@@ -541,6 +541,10 @@ namespace Ft
                                   Ft.TimerState previous_state,
                                   bool          allow_screen_overlay)
         {
+            if (this.inhibit_count > 0) {
+                return;
+            }
+
             if (this.session_manager.current_session == null) {
                 this.withdraw_notifications ();
                 return;
@@ -760,6 +764,16 @@ namespace Ft
                 this.withdraw_notifications ();
                 this.remove_reopen_screen_overlay_idle_watch ();
 
+                if (this.update_timeout_id != 0U) {
+                    GLib.Source.remove (this.update_timeout_id);
+                    this.update_timeout_id = 0U;
+                }
+
+                if (this.screen_overlay_open_timeout_id != 0U) {
+                    GLib.Source.remove (this.screen_overlay_open_timeout_id);
+                    this.screen_overlay_open_timeout_id = 0U;
+                }
+
                 GLib.SignalHandler.block (this._timer, this.timer_state_changed_id);
                 GLib.SignalHandler.block (this._session_manager, this.session_manager_confirm_advancement_id);
 
@@ -820,6 +834,10 @@ namespace Ft
         public signal void screen_overlay_closed ()
         {
             this.screen_overlay_active = false;
+
+            if (this.inhibit_count > 0) {
+                return;
+            }
 
             // Let the notification server acknowledge there is no full-screen window,
             // otherwise notification could get blocked.

@@ -57,6 +57,7 @@ namespace Tests
             this.add_test ("withdraw_notifications__stop", this.test_withdraw_notifications__stop);
             this.add_test ("request_screen_overlay", this.test_request_screen_overlay);
             this.add_test ("request_screen_overlay__extend", this.test_request_screen_overlay__extend);
+            this.add_test ("inhibit__overlay_closed", this.test_inhibit__overlay_closed);
         }
 
         public override void setup ()
@@ -361,6 +362,28 @@ namespace Tests
             assert_cmpstrv (backend.log, {
                 "send:timer:Short Break:5 minutes remaining"
             });
+        }
+
+        public void test_inhibit__overlay_closed ()
+        {
+            var settings = Ft.get_settings ();
+            settings.set_boolean ("screen-overlay", true);
+
+            this.notification_manager.inhibit ();
+
+            var backend = this.get_mock_backend ();
+            backend.clear ();
+
+            this.session_manager.advance_to_state (Ft.State.SHORT_BREAK);
+            assert_cmpstrv (backend.log, {});
+
+            this.notification_manager.emit_screen_overlay_opened ();
+            this.notification_manager.emit_screen_overlay_closed ();
+
+            assert_false (this.run_main_loop (200));
+            assert_cmpstrv (backend.log, {});
+
+            this.notification_manager.uninhibit (false);
         }
     }
 }
