@@ -31,7 +31,7 @@
             <child>
               <object class="AdwPreferencesGroup">
                 <property name="title" translatable="yes">Screen Overlay</property>
-                <property name="description" translatable="yes">A full-screen notification intended to enforce taking a break</property>
+                <property name="description" translatable="yes">Full-screen notification to help you step away from the computer</property>
                 <child>
                   <object class="AdwSwitchRow" id="screen_overlay_switchrow">
                     <property name="title" translatable="yes">Screen Overlay</property>
