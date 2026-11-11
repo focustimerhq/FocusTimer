@@ -99,7 +99,7 @@
       <summary>Blur effect</summary>
     </key>
     <key name="dismiss-gesture" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Dismiss screen overlay by gesture</summary>
       <description></description>
     </key>
