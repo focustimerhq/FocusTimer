@@ -71,7 +71,6 @@
     <file preprocess="xml-stripblanks">icons/scalable/actions/condition-exit-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/copy-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/custom-action-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/scalable/actions/dark-theme-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/do-not-touch-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/document-edit-symbolic.svg</file>
     <file preprocess="xml-stripblanks">icons/scalable/actions/event-symbolic.svg</file>
