@@ -44,7 +44,8 @@ namespace Gnome
     public class PreferencesWindowExtension : Ft.PreferencesWindowExtension
     {
         private Gnome.ShellExtension?           shell_extension = null;
-        private Gnome.ShellExtensionSettings?   settings = null;
+        private Gnome.ShellExtensionSettings?   shell_extension_settings = null;
+        private GLib.Settings?                  settings = null;
         private Ft.PreferencesPanel?            last_panel = null;
         private unowned Adw.PreferencesGroup?   indicator_group = null;
         private unowned Adw.PreferencesGroup?   screen_overlay_group = null;
@@ -56,6 +57,8 @@ namespace Gnome
 
         construct
         {
+            this.settings = Ft.get_settings ();
+
             this.shell_extension = new Gnome.ShellExtension ();
             this.shell_extension.notify["settings"].connect (this.on_notify_settings);
             this.shell_extension.notify["available"].connect (this.on_notify_available);
@@ -77,7 +80,7 @@ namespace Gnome
 
         private void setup_appearance_panel (Ft.PreferencesPanel panel)
         {
-            if (this.settings == null) {
+            if (this.shell_extension_settings == null) {
                 this.taredown_appearance_panel (panel);
                 return;
             }
@@ -94,10 +97,10 @@ namespace Gnome
                 indicator_type_toggle_group.valign = Gtk.Align.CENTER;
                 indicator_type_toggle_group.add (this.create_toggle ("icon", _("Icon")));
                 indicator_type_toggle_group.add (this.create_toggle ("text", _("Text")));
-                this.settings.bind_property (
-                               "indicator-type",
-                               indicator_type_toggle_group, "active-name",
-                               GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
+                this.shell_extension_settings.bind_property (
+                        "indicator-type",
+                        indicator_type_toggle_group, "active-name",
+                        GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
 
                 var indicator_type_row = new Adw.ActionRow ();
                 indicator_type_row.title = _("Display As");
@@ -112,22 +115,27 @@ namespace Gnome
             {
                 var screen_overlay_group = new Adw.PreferencesGroup ();
                 screen_overlay_group.title = _("Screen Overlay");
+                this.settings.bind (
+                        "screen-overlay",
+                        screen_overlay_group,
+                        "sensitive",
+                        GLib.SettingsBindFlags.DEFAULT);
                 panel.add_group ("screen-overlay", screen_overlay_group);
 
                 var blur_effect_row = new Adw.SwitchRow ();
                 blur_effect_row.title = _("Blur Effect");
-                this.settings.bind_property (
-                               "blur-effect",
-                               blur_effect_row, "active",
-                               GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
+                this.shell_extension_settings.bind_property (
+                        "blur-effect",
+                        blur_effect_row, "active",
+                        GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
                 screen_overlay_group.add (blur_effect_row);
 
                 var dismiss_gesture_row = new Adw.SwitchRow ();
                 dismiss_gesture_row.title = _("Dismiss Gesture");
-                this.settings.bind_property (
-                               "dismiss-gesture",
-                               dismiss_gesture_row, "active",
-                               GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
+                this.shell_extension_settings.bind_property (
+                        "dismiss-gesture",
+                        dismiss_gesture_row, "active",
+                        GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
                 screen_overlay_group.add (dismiss_gesture_row);
 
                 this.screen_overlay_group = screen_overlay_group;
@@ -236,16 +244,16 @@ namespace Gnome
             }
 
             if (this.shell_extension_toggle != null) {
-                this.shell_extension_toggle.state = this.settings != null;
+                this.shell_extension_toggle.state = this.shell_extension_settings != null;
             }
 
             if (this.manage_notifications_row != null) {
-                this.manage_notifications_row.sensitive = this.settings != null;
+                this.manage_notifications_row.sensitive = this.shell_extension_settings != null;
             }
 
-            if (this.manage_notifications_row != null && this.settings != null) {
+            if (this.manage_notifications_row != null && this.shell_extension_settings != null) {
                 this.manage_notifications_binding?.unbind ();
-                this.manage_notifications_binding = this.settings.bind_property (
+                this.manage_notifications_binding = this.shell_extension_settings.bind_property (
                         "manage-notifications",
                         this.manage_notifications_row, "active",
                         GLib.BindingFlags.SYNC_CREATE | GLib.BindingFlags.BIDIRECTIONAL);
@@ -443,8 +451,8 @@ namespace Gnome
         {
             var settings = this.shell_extension?.settings;
 
-            if (this.settings != settings) {
-                this.settings = settings;
+            if (this.shell_extension_settings != settings) {
+                this.shell_extension_settings = settings;
                 this.setup ();
             }
         }
@@ -488,6 +496,7 @@ namespace Gnome
                 this.shell_extension = null;
             }
 
+            this.shell_extension_settings = null;
             this.settings = null;
 
             base.dispose ();

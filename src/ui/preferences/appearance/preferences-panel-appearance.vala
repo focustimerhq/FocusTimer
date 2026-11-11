@@ -57,6 +57,10 @@ namespace Ft
                                 this.dismiss_gesture_switchrow,
                                 "active",
                                 GLib.SettingsBindFlags.DEFAULT);
+            this.settings.bind ("screen-overlay",
+                                this.screen_overlay_group,
+                                "sensitive",
+                                GLib.SettingsBindFlags.DEFAULT);
 
             this.screen_overlay_manager = new Ft.ScreenOverlayManager ();
             this.screen_overlay_manager.notify["provider"].connect (
