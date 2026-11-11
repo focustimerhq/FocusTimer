@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-11 09:26+0100\n"
-"PO-Revision-Date: 2026-10-25 12:03+0100\n"
+"PO-Revision-Date: 2026-11-11 09:36+0100\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -701,7 +701,7 @@ msgstr "Nie udało się pobrać rozszerzenia"
 #: src/plugins/gnome/preferences-window-extension.vala:88
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
-msgstr ""
+msgstr "Ikona w Zasobniku"
 
 #: src/plugins/gnome/preferences-window-extension.vala:95
 msgid "Icon"
@@ -1020,7 +1020,7 @@ msgstr "Opuść Tryb _Kompaktowy"
 
 #: src/ui/main/window.ui:22
 msgid "_Screen Overlay"
-msgstr ""
+msgstr "_Nakładka Ekranowa"
 
 #: src/ui/main/window.ui:28
 msgid "_Preferences"
@@ -1028,7 +1028,7 @@ msgstr "_Preferencje"
 
 #: src/ui/main/window.ui:32
 msgid "_About Focus Timer"
-msgstr ""
+msgstr "_O Minutniku Koncentracji"
 
 #: src/ui/main/window.ui:38
 msgid "_Quit"
@@ -1055,11 +1055,11 @@ msgstr "Uruchom w tle"
 
 #: src/ui/main/window.vala:446
 msgid "Sounds turned on"
-msgstr ""
+msgstr "Dźwięki włączone"
 
 #: src/ui/main/window.vala:446
 msgid "Sounds turned off"
-msgstr ""
+msgstr "Dźwięki wyłączone"
 
 #: src/ui/overlays/screen-overlay.ui:64
 msgid "It's time to take a break"
@@ -1457,7 +1457,7 @@ msgstr "Czas Wyprzedzenia"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
 msgid "Full-screen notification to help you step away from the computer"
-msgstr ""
+msgstr "Pełnoekranowe powiadomienie pomagające odejść od komputera"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
 msgid "Lock Delay"
