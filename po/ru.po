@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-24 17:19+0200\n"
+"POT-Creation-Date: 2026-11-11 09:26+0100\n"
 "PO-Revision-Date: 2023-03-26 11:41+0200\n"
 "Last-Translator: ViktorOn <https://github.com/viktoron>\n"
 "Language-Team: Russian\n"
@@ -80,7 +80,7 @@ msgid "GNOME Shell extension for deeper desktop integration"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
-#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:95
+#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:89
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
@@ -105,18 +105,18 @@ msgstr "Настройки"
 msgid "Screen overlay"
 msgstr "Покрытие экрана"
 
-#: src/application.vala:211 src/application.vala:695
+#: src/application.vala:211 src/application.vala:694
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 msgid "Start or Stop"
 msgstr "Старт или Стоп"
 
-#: src/application.vala:214 src/application.vala:698
+#: src/application.vala:214 src/application.vala:697
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 msgid "Start, Pause or Resume"
 msgstr "Старт, Пауза или Возобновить"
 
-#: src/application.vala:217 src/core/notification-manager.vala:425
-#: src/core/notification-manager.vala:518
+#: src/application.vala:217 src/core/notification-manager.vala:392
+#: src/core/notification-manager.vala:485
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
@@ -137,40 +137,40 @@ msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:229 src/application.vala:700 src/core/event.vala:268
+#: src/application.vala:229 src/application.vala:699 src/core/event.vala:268
 #: src/plugins/sni/indicator-provider.vala:251
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:75
 msgid "Start"
 msgstr "Старт"
 
-#: src/application.vala:232 src/application.vala:702 src/core/event.vala:276
+#: src/application.vala:232 src/application.vala:701 src/core/event.vala:276
 #: src/plugins/sni/indicator-provider.vala:263
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:81
 msgid "Stop"
 msgstr "Стоп"
 
-#: src/application.vala:235 src/application.vala:704 src/core/event.vala:284
+#: src/application.vala:235 src/application.vala:703 src/core/event.vala:284
 #: src/plugins/sni/indicator-provider.vala:254
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:87
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/application.vala:238 src/application.vala:706 src/core/event.vala:292
+#: src/application.vala:238 src/application.vala:705 src/core/event.vala:292
 #: src/plugins/sni/indicator-provider.vala:257
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:93
 msgid "Resume"
 msgstr "Возобновить"
 
-#: src/application.vala:241 src/application.vala:708 src/core/event.vala:300
+#: src/application.vala:241 src/application.vala:707 src/core/event.vala:300
 #: src/plugins/sni/indicator-provider.vala:266
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:99
 msgid "Skip"
 msgstr "Пропустить"
 
-#: src/application.vala:244 src/application.vala:710 src/core/event.vala:308
+#: src/application.vala:244 src/application.vala:709 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Перемотать назад"
 
@@ -217,23 +217,23 @@ msgstr ""
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:712
+#: src/application.vala:711
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 msgid "Bring to Focus"
 msgstr "Переместить в фокус"
 
-#: src/application.vala:778
+#: src/application.vala:777
 msgid "Screen overlay is open"
 msgstr ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:955 src/core/notification-manager.vala:137
+#: src/application.vala:953 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, c-format
 msgid "%s remaining"
 msgstr "Осталось %s"
 
-#: src/application.vala:1000
+#: src/application.vala:998
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -392,84 +392,84 @@ msgstr "Истекло"
 msgid "Triggered when session is about to be reset due to inactivity"
 msgstr "Срабатывает, когда сессия настроена на сброс из-за бездействия"
 
-#: src/core/notification-manager.vala:346 src/core/state.vala:78
+#: src/core/notification-manager.vala:313 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:205
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:203
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Помодоро"
 
-#: src/core/notification-manager.vala:350
+#: src/core/notification-manager.vala:317
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Сделать перерыв"
 
-#: src/core/notification-manager.vala:354
+#: src/core/notification-manager.vala:321
 msgid "Take a short break"
 msgstr "Сделать короткий перерыв"
 
-#: src/core/notification-manager.vala:358
+#: src/core/notification-manager.vala:325
 msgid "Take a long break"
 msgstr "Сделать длинный перерыв"
 
-#: src/core/notification-manager.vala:417
+#: src/core/notification-manager.vala:384
 msgid "Pomodoro is about to end"
 msgstr "Помодоро скоро завершится"
 
-#: src/core/notification-manager.vala:418
-#: src/core/notification-manager.vala:523
-#: src/core/notification-manager.vala:528
-#: src/core/notification-manager.vala:533
+#: src/core/notification-manager.vala:385
+#: src/core/notification-manager.vala:490
+#: src/core/notification-manager.vala:495
+#: src/core/notification-manager.vala:500
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "Сделать перерыв"
 
-#: src/core/notification-manager.vala:424
+#: src/core/notification-manager.vala:391
 msgid "Break is about to end"
 msgstr "Перерыв скоро закончится"
 
-#: src/core/notification-manager.vala:435
+#: src/core/notification-manager.vala:402
 msgid "+1 minute"
 msgstr "+1 минута"
 
-#: src/core/notification-manager.vala:457
+#: src/core/notification-manager.vala:424
 msgid "Get ready…"
 msgstr "Приготовьтесь…"
 
-#: src/core/notification-manager.vala:462
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:468
 msgid "Pomodoro is over!"
 msgstr "Помодоро завершен!"
 
-#: src/core/notification-manager.vala:468
-#: src/core/notification-manager.vala:507
+#: src/core/notification-manager.vala:435
+#: src/core/notification-manager.vala:474
 msgid "Break is over!"
 msgstr "Перерыв окончен!"
 
-#: src/core/notification-manager.vala:517
+#: src/core/notification-manager.vala:484
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Подтвердите запуск Помодоро…"
 
-#: src/core/notification-manager.vala:522
+#: src/core/notification-manager.vala:489
 msgid "Confirm the start of a break…"
 msgstr "Подтвердите начало перерыва…"
 
-#: src/core/notification-manager.vala:527
+#: src/core/notification-manager.vala:494
 msgid "Confirm the start of a short break…"
 msgstr "Подтвердите начало короткого перерыва…"
 
-#: src/core/notification-manager.vala:532
+#: src/core/notification-manager.vala:499
 msgid "Confirm the start of a long break…"
 msgstr "Подтвердите начало длинного перерыва…"
 
-#: src/core/notification-manager.vala:545
+#: src/core/notification-manager.vala:512
 msgid "Skip Break"
 msgstr "Пропустить перерыв"
 
@@ -602,7 +602,7 @@ msgid "Time when the countdown has started."
 msgstr "Время начала обратного отсчета."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:163
+#: src/plugins/gnome/preferences-window-extension.vala:198
 msgid "GNOME Shell Extension"
 msgstr "Расширение GNOME Shell"
 
@@ -658,7 +658,7 @@ msgid "_Not Now"
 msgstr "_Не сейчас"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:380
+#: src/plugins/gnome/preferences-window-extension.vala:429
 msgid "Something went wrong"
 msgstr "Что-то пошло не так"
 
@@ -677,37 +677,38 @@ msgid "_Abort"
 msgstr "_Прервать"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:368
+#: src/plugins/gnome/preferences-window-extension.vala:417
 msgid "Time-out reached"
 msgstr "Время ожидания истекло"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:372
+#: src/plugins/gnome/preferences-window-extension.vala:421
 msgid "Installing extensions is not allowed"
 msgstr "Установка расширений запрещена"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:376
+#: src/plugins/gnome/preferences-window-extension.vala:425
 msgid "Failed to download the extension"
 msgstr "Не удалось загрузить расширение"
 
-#: src/plugins/gnome/preferences-window-extension.vala:53
-msgid "Indicator"
+#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/sni/preferences-window-extension.vala:41
+msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:60
+#: src/plugins/gnome/preferences-window-extension.vala:95
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:61
+#: src/plugins/gnome/preferences-window-extension.vala:96
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:68
+#: src/plugins/gnome/preferences-window-extension.vala:103
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:79
+#: src/plugins/gnome/preferences-window-extension.vala:114
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -715,44 +716,44 @@ msgstr ""
 msgid "Screen Overlay"
 msgstr "Покрытие экрана (оверлей)"
 
-#: src/plugins/gnome/preferences-window-extension.vala:83
+#: src/plugins/gnome/preferences-window-extension.vala:118
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:91
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:121
+#: src/plugins/gnome/preferences-window-extension.vala:156
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Рабочий стол"
 
-#: src/plugins/gnome/preferences-window-extension.vala:124
+#: src/plugins/gnome/preferences-window-extension.vala:159
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:129
+#: src/plugins/gnome/preferences-window-extension.vala:164
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:132
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:150
+#: src/plugins/gnome/preferences-window-extension.vala:185
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:169
+#: src/plugins/gnome/preferences-window-extension.vala:204
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:170
+#: src/plugins/gnome/preferences-window-extension.vala:205
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
@@ -802,7 +803,7 @@ msgstr "Не используется"
 
 #: src/plugins/sni/indicator-provider.vala:35
 #: src/ui/main/timer/compact-timer-view.vala:73
-#: src/ui/main/timer/timer-view.vala:141
+#: src/ui/main/timer/timer-view.vala:130
 msgid "Finished!"
 msgstr "Завершено!"
 
@@ -812,17 +813,13 @@ msgid "%u of %u"
 msgstr ""
 
 #: src/plugins/sni/indicator-provider.vala:302
-#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:112
+#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:106
 msgid "Stats"
 msgstr "Статистика"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:361
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
 msgid "Quit"
 msgstr "Выход"
-
-#: src/plugins/sni/preferences-window-extension.vala:41
-msgid "System Tray"
-msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
@@ -992,11 +989,11 @@ msgstr "_Длинный перерыв"
 msgid "_Break"
 msgstr "_Перерыв"
 
-#: src/ui/main/timer/timer-view.ui:23
+#: src/ui/main/timer/timer-view.ui:24
 msgid "Open screen overlay"
 msgstr "Открыть полноэкранный оверлей"
 
-#: src/ui/main/timer/timer-view.vala:316
+#: src/ui/main/timer/timer-view.vala:300
 msgid "Session has expired"
 msgstr "Срок сессии истек"
 
@@ -1017,35 +1014,31 @@ msgstr ""
 msgid "Leave _Compact Mode"
 msgstr ""
 
-#: src/ui/main/window.ui:20
-msgid "_Mute"
+#: src/ui/main/window.ui:22
+msgid "_Screen Overlay"
 msgstr ""
 
-#: src/ui/main/window.ui:26
-msgid "_Unmute"
-msgstr ""
-
-#: src/ui/main/window.ui:34
+#: src/ui/main/window.ui:28
 msgid "_Preferences"
 msgstr "_Настройки"
 
-#: src/ui/main/window.ui:38
-msgid "_About"
-msgstr "_О приложении"
+#: src/ui/main/window.ui:32
+msgid "_About Focus Timer"
+msgstr ""
 
-#: src/ui/main/window.ui:44
+#: src/ui/main/window.ui:38
 msgid "_Quit"
 msgstr "_Выход"
 
-#: src/ui/main/window.ui:81
+#: src/ui/main/window.ui:75
 msgid "Primary Menu"
 msgstr "Основное меню"
 
-#: src/ui/main/window.vala:356
+#: src/ui/main/window.vala:344
 msgid "Keep timer running?"
 msgstr "Оставить таймер запущенным?"
 
-#: src/ui/main/window.vala:357
+#: src/ui/main/window.vala:345
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -1053,16 +1046,16 @@ msgstr ""
 "Вы можете оставить его работать в фоне — уведомления и горячие клавиши "
 "продолжат работать."
 
-#: src/ui/main/window.vala:364
+#: src/ui/main/window.vala:352
 msgid "Run in background"
 msgstr "Работа в фоне"
 
-#: src/ui/main/window.vala:467
-msgid "Background Sound Muted"
+#: src/ui/main/window.vala:446
+msgid "Sounds turned on"
 msgstr ""
 
-#: src/ui/main/window.vala:479
-msgid "Background Sound Unmuted"
+#: src/ui/main/window.vala:446
+msgid "Sounds turned off"
 msgstr ""
 
 #: src/ui/overlays/screen-overlay.ui:64
@@ -1450,8 +1443,8 @@ msgid "Early Notice"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
-msgid "A full-screen notification intended to enforce taking a break"
-msgstr "Полноэкранное уведомление, помогающее не пропускать перерыв"
+msgid "Full-screen notification to help you step away from the computer"
+msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
 msgid "Lock Delay"
@@ -1469,7 +1462,7 @@ msgstr "Задержка повторного открытия"
 msgid "Period of inactivity to reopen the overlay after it gets dismissed"
 msgstr "Период бездействия перед повторным открытием оверлея после закрытия"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.vala:113
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:108
 msgid "Never"
 msgstr "Никогда"
 
@@ -1497,24 +1490,20 @@ msgstr ""
 msgid "Automation"
 msgstr "Автоматизация"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
-msgid "Sounds Are Disabled"
-msgstr "Звуки отключены"
-
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:36
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:21
 msgid "Alert Sounds"
 msgstr "Звуки оповещений"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:39
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
 msgid "Pomodoro Finished Sound"
 msgstr "Звук завершения помодоро"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:64
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:49
 msgid "Break Finished Sound"
 msgstr "Звук завершения перерыва"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:91
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:94
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:76
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:79
 msgid "Background Sound"
 msgstr "Фоновый звук"
 
@@ -1538,7 +1527,7 @@ msgstr ""
 msgid "Brown Noise"
 msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:71
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Нет"
@@ -1610,6 +1599,15 @@ msgstr "Применить"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Боковая панель"
+
+#~ msgid "_About"
+#~ msgstr "_О приложении"
+
+#~ msgid "A full-screen notification intended to enforce taking a break"
+#~ msgstr "Полноэкранное уведомление, помогающее не пропускать перерыв"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Звуки отключены"
 
 #~ msgid ""
 #~ "A productivity timer that helps you work more effectively by breaking "

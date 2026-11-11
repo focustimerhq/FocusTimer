@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-24 17:15+0200\n"
+"POT-Creation-Date: 2026-11-11 09:26+0100\n"
 "PO-Revision-Date: 2025-12-23 20:58+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian\n"
@@ -77,7 +77,7 @@ msgid "GNOME Shell extension for deeper desktop integration"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
-#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:95
+#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:89
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
@@ -102,18 +102,18 @@ msgstr "Preferensi"
 msgid "Screen overlay"
 msgstr "Hamparan layar"
 
-#: src/application.vala:211 src/application.vala:695
+#: src/application.vala:211 src/application.vala:694
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 msgid "Start or Stop"
 msgstr "Mulai atau Berhenti"
 
-#: src/application.vala:214 src/application.vala:698
+#: src/application.vala:214 src/application.vala:697
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 msgid "Start, Pause or Resume"
 msgstr "Mulai, Jeda, atau Lanjut"
 
-#: src/application.vala:217 src/core/notification-manager.vala:425
-#: src/core/notification-manager.vala:518
+#: src/application.vala:217 src/core/notification-manager.vala:392
+#: src/core/notification-manager.vala:485
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
@@ -134,40 +134,40 @@ msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:229 src/application.vala:700 src/core/event.vala:268
+#: src/application.vala:229 src/application.vala:699 src/core/event.vala:268
 #: src/plugins/sni/indicator-provider.vala:251
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:75
 msgid "Start"
 msgstr "Mulai"
 
-#: src/application.vala:232 src/application.vala:702 src/core/event.vala:276
+#: src/application.vala:232 src/application.vala:701 src/core/event.vala:276
 #: src/plugins/sni/indicator-provider.vala:263
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:81
 msgid "Stop"
 msgstr "Berhenti"
 
-#: src/application.vala:235 src/application.vala:704 src/core/event.vala:284
+#: src/application.vala:235 src/application.vala:703 src/core/event.vala:284
 #: src/plugins/sni/indicator-provider.vala:254
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:87
 msgid "Pause"
 msgstr "Jeda"
 
-#: src/application.vala:238 src/application.vala:706 src/core/event.vala:292
+#: src/application.vala:238 src/application.vala:705 src/core/event.vala:292
 #: src/plugins/sni/indicator-provider.vala:257
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:93
 msgid "Resume"
 msgstr "Lanjut"
 
-#: src/application.vala:241 src/application.vala:708 src/core/event.vala:300
+#: src/application.vala:241 src/application.vala:707 src/core/event.vala:300
 #: src/plugins/sni/indicator-provider.vala:266
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:99
 msgid "Skip"
 msgstr "Lewati"
 
-#: src/application.vala:244 src/application.vala:710 src/core/event.vala:308
+#: src/application.vala:244 src/application.vala:709 src/core/event.vala:308
 msgid "Rewind"
 msgstr "Putar balik"
 
@@ -214,23 +214,23 @@ msgstr ""
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:712
+#: src/application.vala:711
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 msgid "Bring to Focus"
 msgstr "Bawa ke Fokus"
 
-#: src/application.vala:778
+#: src/application.vala:777
 msgid "Screen overlay is open"
 msgstr ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:955 src/core/notification-manager.vala:137
+#: src/application.vala:953 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, c-format
 msgid "%s remaining"
 msgstr "tersisa %s"
 
-#: src/application.vala:1000
+#: src/application.vala:998
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -390,84 +390,84 @@ msgstr "Kedaluwarsa"
 msgid "Triggered when session is about to be reset due to inactivity"
 msgstr "Dipicu ketika sesi akan disetel ulang karena tidak ada aktivitas"
 
-#: src/core/notification-manager.vala:346 src/core/state.vala:78
+#: src/core/notification-manager.vala:313 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
 #: src/ui/main/stats/stats-month-page.vala:43
 #: src/ui/main/stats/stats-week-page.ui:39
-#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:205
+#: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:203
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
 msgstr "Pomodoro"
 
-#: src/core/notification-manager.vala:350
+#: src/core/notification-manager.vala:317
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Take a break"
 msgstr "Waktunya rehat"
 
-#: src/core/notification-manager.vala:354
+#: src/core/notification-manager.vala:321
 msgid "Take a short break"
 msgstr "Rehat sejenak"
 
-#: src/core/notification-manager.vala:358
+#: src/core/notification-manager.vala:325
 msgid "Take a long break"
 msgstr "Rehat panjang"
 
-#: src/core/notification-manager.vala:417
+#: src/core/notification-manager.vala:384
 msgid "Pomodoro is about to end"
 msgstr "Pomodoro akan berakhir"
 
-#: src/core/notification-manager.vala:418
-#: src/core/notification-manager.vala:523
-#: src/core/notification-manager.vala:528
-#: src/core/notification-manager.vala:533
+#: src/core/notification-manager.vala:385
+#: src/core/notification-manager.vala:490
+#: src/core/notification-manager.vala:495
+#: src/core/notification-manager.vala:500
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/overlays/screen-overlay.ui:5
 msgid "Take a Break"
 msgstr "Waktunya Rehat"
 
-#: src/core/notification-manager.vala:424
+#: src/core/notification-manager.vala:391
 msgid "Break is about to end"
 msgstr "Rehat akan berakhir"
 
-#: src/core/notification-manager.vala:435
+#: src/core/notification-manager.vala:402
 msgid "+1 minute"
 msgstr "+1 menit"
 
-#: src/core/notification-manager.vala:457
+#: src/core/notification-manager.vala:424
 msgid "Get ready…"
 msgstr "Siap-siap…"
 
-#: src/core/notification-manager.vala:462
-#: src/core/notification-manager.vala:501
+#: src/core/notification-manager.vala:429
+#: src/core/notification-manager.vala:468
 msgid "Pomodoro is over!"
 msgstr "Pomodoro telah usai!"
 
-#: src/core/notification-manager.vala:468
-#: src/core/notification-manager.vala:507
+#: src/core/notification-manager.vala:435
+#: src/core/notification-manager.vala:474
 msgid "Break is over!"
 msgstr "Rehat telah usai!"
 
-#: src/core/notification-manager.vala:517
+#: src/core/notification-manager.vala:484
 msgid "Confirm the start of a Pomodoro…"
 msgstr "Konfirmasi awal Pomodoro…"
 
-#: src/core/notification-manager.vala:522
+#: src/core/notification-manager.vala:489
 msgid "Confirm the start of a break…"
 msgstr "Konfirmasi awal rehat…"
 
-#: src/core/notification-manager.vala:527
+#: src/core/notification-manager.vala:494
 msgid "Confirm the start of a short break…"
 msgstr "Konfirmasi awal rehat pendek…"
 
-#: src/core/notification-manager.vala:532
+#: src/core/notification-manager.vala:499
 msgid "Confirm the start of a long break…"
 msgstr "Konfirmasi awal rehat panjang…"
 
-#: src/core/notification-manager.vala:545
+#: src/core/notification-manager.vala:512
 msgid "Skip Break"
 msgstr "Lewati Rehat"
 
@@ -591,7 +591,7 @@ msgid "Time when the countdown has started."
 msgstr "Waktu saat hitung mundur dimulai."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:163
+#: src/plugins/gnome/preferences-window-extension.vala:198
 msgid "GNOME Shell Extension"
 msgstr "Ekstensi GNOME Shell"
 
@@ -649,7 +649,7 @@ msgid "_Not Now"
 msgstr "_Nanti Saja"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:380
+#: src/plugins/gnome/preferences-window-extension.vala:429
 msgid "Something went wrong"
 msgstr "Terjadi kesalahan"
 
@@ -668,37 +668,38 @@ msgid "_Abort"
 msgstr "Gugurk_an"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:368
+#: src/plugins/gnome/preferences-window-extension.vala:417
 msgid "Time-out reached"
 msgstr "Batas waktu tercapai"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:372
+#: src/plugins/gnome/preferences-window-extension.vala:421
 msgid "Installing extensions is not allowed"
 msgstr "Pemasangan ekstensi tidak diizinkan"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:376
+#: src/plugins/gnome/preferences-window-extension.vala:425
 msgid "Failed to download the extension"
 msgstr "Gagal mengunduh ekstensi"
 
-#: src/plugins/gnome/preferences-window-extension.vala:53
-msgid "Indicator"
+#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/sni/preferences-window-extension.vala:41
+msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:60
+#: src/plugins/gnome/preferences-window-extension.vala:95
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:61
+#: src/plugins/gnome/preferences-window-extension.vala:96
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:68
+#: src/plugins/gnome/preferences-window-extension.vala:103
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:79
+#: src/plugins/gnome/preferences-window-extension.vala:114
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -706,44 +707,44 @@ msgstr ""
 msgid "Screen Overlay"
 msgstr "Hamparan Layar"
 
-#: src/plugins/gnome/preferences-window-extension.vala:83
+#: src/plugins/gnome/preferences-window-extension.vala:118
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:91
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:121
+#: src/plugins/gnome/preferences-window-extension.vala:156
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Desktop"
 
-#: src/plugins/gnome/preferences-window-extension.vala:124
+#: src/plugins/gnome/preferences-window-extension.vala:159
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:129
+#: src/plugins/gnome/preferences-window-extension.vala:164
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:132
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:150
+#: src/plugins/gnome/preferences-window-extension.vala:185
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:169
+#: src/plugins/gnome/preferences-window-extension.vala:204
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:170
+#: src/plugins/gnome/preferences-window-extension.vala:205
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
@@ -793,7 +794,7 @@ msgstr "Tidak digunakan"
 
 #: src/plugins/sni/indicator-provider.vala:35
 #: src/ui/main/timer/compact-timer-view.vala:73
-#: src/ui/main/timer/timer-view.vala:141
+#: src/ui/main/timer/timer-view.vala:130
 msgid "Finished!"
 msgstr "Selesai!"
 
@@ -803,17 +804,13 @@ msgid "%u of %u"
 msgstr ""
 
 #: src/plugins/sni/indicator-provider.vala:302
-#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:112
+#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:106
 msgid "Stats"
 msgstr "Statistik"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:361
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
 msgid "Quit"
 msgstr "Keluar"
-
-#: src/plugins/sni/preferences-window-extension.vala:41
-msgid "System Tray"
-msgstr ""
 
 #: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
@@ -974,11 +971,11 @@ msgstr "Rehat Panjan_g"
 msgid "_Break"
 msgstr "_Rehat"
 
-#: src/ui/main/timer/timer-view.ui:23
+#: src/ui/main/timer/timer-view.ui:24
 msgid "Open screen overlay"
 msgstr "Buka hamparan layar"
 
-#: src/ui/main/timer/timer-view.vala:316
+#: src/ui/main/timer/timer-view.vala:300
 msgid "Session has expired"
 msgstr "Sesi telah kedaluwarsa"
 
@@ -999,35 +996,31 @@ msgstr ""
 msgid "Leave _Compact Mode"
 msgstr ""
 
-#: src/ui/main/window.ui:20
-msgid "_Mute"
+#: src/ui/main/window.ui:22
+msgid "_Screen Overlay"
 msgstr ""
 
-#: src/ui/main/window.ui:26
-msgid "_Unmute"
-msgstr ""
-
-#: src/ui/main/window.ui:34
+#: src/ui/main/window.ui:28
 msgid "_Preferences"
 msgstr "_Preferensi"
 
-#: src/ui/main/window.ui:38
-msgid "_About"
-msgstr "Tent_ang"
+#: src/ui/main/window.ui:32
+msgid "_About Focus Timer"
+msgstr ""
 
-#: src/ui/main/window.ui:44
+#: src/ui/main/window.ui:38
 msgid "_Quit"
 msgstr "_Keluar"
 
-#: src/ui/main/window.ui:81
+#: src/ui/main/window.ui:75
 msgid "Primary Menu"
 msgstr "Menu Utama"
 
-#: src/ui/main/window.vala:356
+#: src/ui/main/window.vala:344
 msgid "Keep timer running?"
 msgstr "Biarkan timer berjalan?"
 
-#: src/ui/main/window.vala:357
+#: src/ui/main/window.vala:345
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
@@ -1035,16 +1028,16 @@ msgstr ""
 "Anda dapat membiarkannya berjalan di latar belakang — notifikasi dan "
 "pintasan papan ketik akan tetap berfungsi."
 
-#: src/ui/main/window.vala:364
+#: src/ui/main/window.vala:352
 msgid "Run in background"
 msgstr "Jalankan di latar belakang"
 
-#: src/ui/main/window.vala:467
-msgid "Background Sound Muted"
+#: src/ui/main/window.vala:446
+msgid "Sounds turned on"
 msgstr ""
 
-#: src/ui/main/window.vala:479
-msgid "Background Sound Unmuted"
+#: src/ui/main/window.vala:446
+msgid "Sounds turned off"
 msgstr ""
 
 #: src/ui/overlays/screen-overlay.ui:64
@@ -1432,8 +1425,8 @@ msgid "Early Notice"
 msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
-msgid "A full-screen notification intended to enforce taking a break"
-msgstr "Notifikasi layar penuh yang ditujukan untuk memaksa pengambilan rehat"
+msgid "Full-screen notification to help you step away from the computer"
+msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
 msgid "Lock Delay"
@@ -1451,7 +1444,7 @@ msgstr "Tunda Buka Kembali"
 msgid "Period of inactivity to reopen the overlay after it gets dismissed"
 msgstr "Periode tanpa aktivitas untuk membuka kembali hamparan setelah ditutup"
 
-#: src/ui/preferences/notifications/preferences-panel-notifications.vala:113
+#: src/ui/preferences/notifications/preferences-panel-notifications.vala:108
 msgid "Never"
 msgstr "Tidak Pernah"
 
@@ -1479,24 +1472,20 @@ msgstr ""
 msgid "Automation"
 msgstr "Otomatisasi"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
-msgid "Sounds Are Disabled"
-msgstr "Suara Dinonaktifkan"
-
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:36
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:21
 msgid "Alert Sounds"
 msgstr "Suara Peringatan"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:39
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
 msgid "Pomodoro Finished Sound"
 msgstr "Suara Pomodoro Selesai"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:64
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:49
 msgid "Break Finished Sound"
 msgstr "Suara Rehat Selesai"
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:91
-#: src/ui/preferences/sounds/preferences-panel-sounds.ui:94
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:76
+#: src/ui/preferences/sounds/preferences-panel-sounds.ui:79
 msgid "Background Sound"
 msgstr "Suara Latar Belakang"
 
@@ -1520,7 +1509,7 @@ msgstr ""
 msgid "Brown Noise"
 msgstr ""
 
-#: src/ui/preferences/sounds/preferences-panel-sounds.vala:88
+#: src/ui/preferences/sounds/preferences-panel-sounds.vala:71
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
 msgid "None"
 msgstr "Nihil"
@@ -1592,6 +1581,16 @@ msgstr "Terapkan"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Bilah Sisi"
+
+#~ msgid "_About"
+#~ msgstr "Tent_ang"
+
+#~ msgid "A full-screen notification intended to enforce taking a break"
+#~ msgstr ""
+#~ "Notifikasi layar penuh yang ditujukan untuk memaksa pengambilan rehat"
+
+#~ msgid "Sounds Are Disabled"
+#~ msgstr "Suara Dinonaktifkan"
 
 #~ msgid ""
 #~ "A productivity timer that helps you work more effectively by breaking "
