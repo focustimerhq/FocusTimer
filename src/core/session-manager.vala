@@ -2200,6 +2200,12 @@ namespace Ft
         private void on_timer_state_changed (Ft.TimerState current_state,
                                              Ft.TimerState previous_state)
         {
+            // Any timer action clears up the confirmation state.
+            if (previous_state.is_finished ()) {
+                this.next_time_block = null;
+                this.next_session = null;
+            }
+
             // Remove activity watch upon first change.
             if (this.active_watch_id != 0 &&
                 (current_state.is_started () || current_state.user_data == null))

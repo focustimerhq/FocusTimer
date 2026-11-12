@@ -2343,7 +2343,8 @@ namespace Tests
 
             this.add_test ("timer_finished__continuous", this.test_timer_finished__continuous);
             this.add_test ("timer_finished__wait_for_activity", this.test_timer_finished__wait_for_activity);
-            this.add_test ("timer_finished__manual", this.test_timer_finished__manual);
+            this.add_test ("timer_finished__confirm", this.test_timer_finished__confirm);
+            this.add_test ("timer_finished__extend", this.test_timer_finished__extend);
 
             // this.add_test ("timer_suspended", this.test_timer_suspended);
         }
@@ -4153,9 +4154,9 @@ namespace Tests
         }
 
         /**
-         * Test for `AdvancementMode.MANUAL`
+         * Test for `AdvancementMode.CONFIRM`
          */
-        public void test_timer_finished__manual ()
+        public void test_timer_finished__confirm ()
         {
             var settings = Ft.get_settings ();
             settings.set_boolean ("confirm-starting-break", true);
@@ -4212,6 +4213,67 @@ namespace Tests
                 GLib.CompareOperator.EQ,
                 1U
             );
+        }
+
+        /**
+         * During confirmation user may extend the timer or skip.
+         * Ensure the confirmation state is cleared up after extending the timer.
+         */
+        public void test_timer_finished__extend ()
+        {
+            var settings = Ft.get_settings ();
+            settings.set_boolean ("confirm-starting-break", true);
+            settings.set_boolean ("confirm-starting-pomodoro", false);
+
+            var timer           = new Ft.Timer ();
+            var session_manager = new Ft.SessionManager.with_timer (timer);
+
+            var confirm_advancement_call_count = 0;
+            session_manager.confirm_advancement.connect (() => {
+                confirm_advancement_call_count++;
+            });
+
+            timer.start ();
+
+            var pomodoro = session_manager.current_time_block;
+            var initial_duration = pomodoro.duration;
+
+            Ft.Timestamp.freeze_to (pomodoro.end_time);
+            timer.finish (pomodoro.end_time);
+
+            assert_true (session_manager.current_time_block == pomodoro);
+            assert_true (pomodoro.get_status () == Ft.TimeBlockStatus.IN_PROGRESS);
+            assert_true (timer.state.is_finished ());
+            assert_cmpvariant (
+                new GLib.Variant.int64 (session_manager.get_next_time_block ().start_time),
+                new GLib.Variant.int64 (pomodoro.end_time)
+            );
+            assert_cmpuint (confirm_advancement_call_count, GLib.CompareOperator.EQ, 1U);
+
+            timer.extend (Ft.Interval.MINUTE);
+
+            assert_true (session_manager.current_time_block == pomodoro);
+            assert_true (timer.is_running ());
+            assert_cmpvariant (
+                new GLib.Variant.int64 (pomodoro.duration),
+                new GLib.Variant.int64 (initial_duration + Ft.Interval.MINUTE)
+            );
+
+            Ft.Timestamp.freeze_to (pomodoro.end_time);
+            timer.finish (pomodoro.end_time);
+
+            assert_true (session_manager.current_time_block == pomodoro);
+            assert_true (pomodoro.get_status () == Ft.TimeBlockStatus.IN_PROGRESS);
+            assert_true (timer.state.is_finished ());
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.state.finished_time),
+                new GLib.Variant.int64 (pomodoro.end_time)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (session_manager.get_next_time_block ().start_time),
+                new GLib.Variant.int64 (pomodoro.end_time)
+            );
+            assert_cmpuint (confirm_advancement_call_count, GLib.CompareOperator.EQ, 2U);
         }
     }
 
