@@ -58,6 +58,11 @@ namespace Tests
             this.add_test ("calculate_progress__with_ongoing_gap",
                            this.test_calculate_progress__with_ongoing_gap);
 
+            this.add_test ("has_reached_completion",
+                           this.test_has_reached_completion);
+            this.add_test ("has_reached_completion__with_ongoing_gap",
+                           this.test_has_reached_completion__with_ongoing_gap);
+
             // this.add_test ("state", this.test_state);
             // this.add_test ("start_time", this.test_start_time);
             // this.add_test ("end_time", this.test_end_time);
@@ -1000,6 +1005,51 @@ namespace Tests
             assert_cmpfloat_with_epsilon (time_block.calculate_progress (gap.start_time + Ft.Interval.MINUTE),
                                           0.25,
                                           0.0001);
+        }
+
+        public void test_has_reached_completion ()
+        {
+            var time_block = new Ft.TimeBlock (Ft.State.SHORT_BREAK);
+            var completion_time = 3 * Ft.Interval.MINUTE + 45 * Ft.Interval.SECOND;
+
+            time_block.set_time_range (0, 5 * Ft.Interval.MINUTE);
+
+            assert_false (time_block.has_reached_completion (0));
+            assert_false (time_block.has_reached_completion (completion_time));
+
+            time_block.set_completion_time (completion_time);
+
+            assert_false (time_block.has_reached_completion (0));
+            assert_false (time_block.has_reached_completion (completion_time - Ft.Interval.SECOND));
+            assert_true (time_block.has_reached_completion (completion_time));
+            assert_true (time_block.has_reached_completion (5 * Ft.Interval.MINUTE));
+        }
+
+        public void test_has_reached_completion__with_ongoing_gap ()
+        {
+            var time_block = new Ft.TimeBlock (Ft.State.SHORT_BREAK);
+            var completion_time = 4 * Ft.Interval.MINUTE;
+
+            time_block.set_time_range (0, 10 * Ft.Interval.MINUTE);
+            time_block.set_completion_time (completion_time);
+
+            var gap = new Ft.Gap ();
+            gap.set_time_range (2 * Ft.Interval.MINUTE, Ft.Timestamp.UNDEFINED);
+            time_block.add_gap (gap);
+
+            // Pause freezes the countdown before completion_time.
+            assert_false (time_block.has_reached_completion (gap.start_time));
+            assert_false (time_block.has_reached_completion (completion_time));
+            assert_false (time_block.has_reached_completion (9 * Ft.Interval.MINUTE));
+
+            gap.end_time = 3 * Ft.Interval.MINUTE;
+            gap = new Ft.Gap ();
+            gap.set_time_range (completion_time + Ft.Interval.MINUTE, Ft.Timestamp.UNDEFINED);
+            time_block.add_gap (gap);
+
+            // Pause after the countdown has already reached completion_time.
+            assert_true (time_block.has_reached_completion (gap.start_time));
+            assert_true (time_block.has_reached_completion (9 * Ft.Interval.MINUTE));
         }
 
         // public void test_changed_signal ()

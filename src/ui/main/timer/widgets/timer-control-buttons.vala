@@ -70,7 +70,9 @@ namespace Ft
         private Ft.SessionManager?            session_manager;
         private Ft.Timer?                     timer;
         private ulong                         timer_state_changed_id = 0;
+        private ulong                         timer_tick_id = 0;
         private ulong                         session_manager_notify_current_session_id = 0;
+        private bool                          is_completed = false;
         private GLib.List<Adw.TimedAnimation> animations;
 
 
@@ -228,6 +230,19 @@ namespace Ft
             }
         }
 
+        private string get_skip_tooltip (int64 timestamp = Ft.Timestamp.UNDEFINED)
+        {
+            var time_block = this.session_manager.current_time_block;
+
+            if (time_block != null && time_block.state.is_break ()) {
+                return time_block.has_reached_completion (timestamp)
+                        ? _("Start Pomodoro")
+                        : _("Skip break");
+            }
+
+            return _("Take a break");
+        }
+
         private void update_buttons (bool animate = true)
         {
             var current_time_block = this.session_manager.current_time_block;
@@ -321,12 +336,15 @@ namespace Ft
 
                 this.right_button.action_name = this.get_action_name (right_page.name);
                 this.right_button.tooltip_text = right_page.name == "skip"
-                        ? (is_break ? _("Start Pomodoro") : _("Take a break"))
+                        ? this.get_skip_tooltip ()
                         : right_page.title;
             }
 
             this.left_button.can_focus = is_started || can_reset;
             this.right_button.can_focus = is_started;
+
+            this.is_completed = current_time_block != null &&
+                                current_time_block.has_reached_completion ();
         }
 
         private void update_images ()
@@ -342,6 +360,18 @@ namespace Ft
                                              Ft.TimerState previous_state)
         {
             this.update_buttons ();
+        }
+
+        private void update_is_completed (int64 timestamp)
+        {
+            var time_block = this.session_manager.current_time_block;
+            var is_completed = time_block != null &&
+                               time_block.has_reached_completion (timestamp);
+
+            if (is_completed != this.is_completed) {
+                this.is_completed = is_completed;
+                this.update_buttons (false);
+            }
         }
 
         /**
@@ -361,6 +391,10 @@ namespace Ft
                 this.timer_state_changed_id = this.timer.state_changed.connect_after (this.on_timer_state_changed);
             }
 
+            if (this.timer_tick_id == 0) {
+                this.timer_tick_id = this.timer.tick.connect (this.update_is_completed);
+            }
+
             if (this.session_manager_notify_current_session_id == 0) {
                 this.session_manager_notify_current_session_id = this.session_manager.notify["current-session"].connect (this.on_session_manager_notify_current_session);
             }
@@ -371,6 +405,11 @@ namespace Ft
             if (this.timer_state_changed_id != 0) {
                 this.timer.disconnect (this.timer_state_changed_id);
                 this.timer_state_changed_id = 0;
+            }
+
+            if (this.timer_tick_id != 0) {
+                this.timer.disconnect (this.timer_tick_id);
+                this.timer_tick_id = 0;
             }
 
             if (this.session_manager_notify_current_session_id != 0) {

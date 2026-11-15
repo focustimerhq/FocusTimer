@@ -722,6 +722,25 @@ namespace Ft
             }
         }
 
+        public bool has_reached_completion (int64 timestamp = Ft.Timestamp.UNDEFINED)
+        {
+            var completion_time = this.meta.completion_time;
+
+            if (Ft.Timestamp.is_undefined (completion_time)) {
+                return false;
+            }
+
+            Ft.ensure_timestamp (ref timestamp);
+
+            var last_gap = this.get_last_gap ();
+
+            if (last_gap != null && Ft.Timestamp.is_undefined (last_gap.end_time)) {
+                timestamp = int64.min (last_gap.start_time, timestamp);
+            }
+
+            return timestamp >= completion_time;
+        }
+
 
         /*
          * Database

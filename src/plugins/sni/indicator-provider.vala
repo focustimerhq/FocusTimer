@@ -197,6 +197,7 @@ namespace Sni
         private uint                               update_icon_timeout_id = 0U;
         private uint                               update_idle_id = 0U;
         private string?                            tooltip_title = null;
+        private bool                               is_completed = false;
         private bool                               have_icon_theme;
         private bool                               have_passive_status;
         private bool                               have_attention_status;
@@ -248,7 +249,7 @@ namespace Sni
         {
             var is_rtl = Gtk.Widget.get_default_direction () == Gtk.TextDirection.RTL;
 
-            var start_item = new Sni.MenuItem ("start", _("Start"), "timer-start-symbolic", "timer.start");
+            var start_item = new Sni.MenuItem ("start", _("Start Pomodoro"), "timer-start-symbolic", "timer.start");
             start_item.visible = false;
 
             var pause_item = new Sni.MenuItem ("pause", _("Pause"), "timer-pause-symbolic", "timer.pause");
@@ -263,7 +264,7 @@ namespace Sni
             var stop_item = new Sni.MenuItem ("stop", _("Stop"), "timer-stop-symbolic", "timer.reset");
             stop_item.visible = false;
 
-            var skip_item = new Sni.MenuItem ("skip", _("Skip"), is_rtl ? "timer-skip-symbolic-rtl" : "timer-skip-symbolic", "session-manager.advance");
+            var skip_item = new Sni.MenuItem ("skip", "", is_rtl ? "timer-skip-symbolic-rtl" : "timer-skip-symbolic", "session-manager.advance");
             skip_item.visible = false;
 
             var reset_item = new Sni.MenuItem ("reset", _("Reset"), "timer-reset-symbolic", "session-manager.reset");
@@ -357,7 +358,20 @@ namespace Sni
             }
         }
 
-        private void update_menu_items ()
+        private string get_skip_label (int64 timestamp)
+        {
+            unowned var current_time_block = this.session_manager.current_time_block;
+
+            if (current_time_block != null && current_time_block.state.is_break ()) {
+                return current_time_block.has_reached_completion (timestamp)
+                        ? _("Start Pomodoro")
+                        : _("Skip Break");
+            }
+
+            return _("Take a Break");
+        }
+
+        private void update_menu_items (int64 timestamp = Ft.Timestamp.UNDEFINED)
         {
             var state = this.session_manager.current_state;
             var is_break = state.is_break ();
@@ -365,12 +379,15 @@ namespace Sni
             var is_paused = this.timer.is_paused ();
             var is_finished = this.timer.is_finished ();
 
+            unowned var current_time_block = this.session_manager.current_time_block;
+            this.is_completed = current_time_block != null &&
+                                current_time_block.has_reached_completion (timestamp);
+
             // Timer
             string primary_name = null;
             string secondary_name = null;
 
-            if (!is_started)
-            {
+            if (!is_started) {
                 primary_name = "start";
                 secondary_name = this.session_manager.can_reset () ? "reset" : null;
             }
@@ -399,10 +416,6 @@ namespace Sni
                     this.primary_item = this.menu_service.lookup_menu_item (primary_name);
                     this.primary_item.visible = true;
                 }
-
-                if (primary_name == "advance") {
-                    this.primary_item.label = is_break ? _("Start Pomodoro") : _("Take a Break");
-                }
             }
 
             if (this.secondary_item?.name != secondary_name)
@@ -415,6 +428,14 @@ namespace Sni
                     this.secondary_item = this.menu_service.lookup_menu_item (secondary_name);
                     this.secondary_item.visible = true;
                 }
+            }
+
+            if (primary_name == "advance") {
+                this.primary_item.label = is_break ? _("Start Pomodoro") : _("Take a Break");
+            }
+
+            if (secondary_name == "skip") {
+                this.secondary_item.label = this.get_skip_label (timestamp);
             }
 
             // State
@@ -444,6 +465,18 @@ namespace Sni
                     this.application_settings.get_boolean ("screen-overlay");
 
             menu_service.emit_updates ();
+        }
+
+        private void update_is_completed (int64 timestamp = Ft.Timestamp.UNDEFINED)
+        {
+            unowned var current_time_block = this.session_manager.current_time_block;
+            var is_completed = current_time_block != null &&
+                               current_time_block.has_reached_completion (timestamp);
+
+            if (is_completed != this.is_completed) {
+                this.is_completed = is_completed;
+                this.update_menu_items (timestamp);
+            }
         }
 
         /**
@@ -803,7 +836,7 @@ namespace Sni
             this.update_icon (timestamp);
             this.update_icon_timeout ();
             this.update_status ();
-            this.update_menu_items ();
+            this.update_menu_items (timestamp);
 
             this.invalidate_tooltip ();
             this.update_tooltip (timestamp);
@@ -873,6 +906,7 @@ namespace Sni
         private void connect_signals ()
         {
             this.timer.state_changed.connect (this.on_timer_state_changed);
+            this.timer.tick.connect (this.update_is_completed);
 
             if (this.have_tooltips) {
                 this.timer.tick.connect (this.update_tooltip);
@@ -891,6 +925,7 @@ namespace Sni
                 this.timer.state_changed.disconnect (this.on_timer_state_changed);
                 this.timer.tick.disconnect (this.update_tooltip);
                 this.timer.tick.disconnect (this.update_icon);
+                this.timer.tick.disconnect (this.update_is_completed);
             }
 
             if (this.session_manager != null) {
