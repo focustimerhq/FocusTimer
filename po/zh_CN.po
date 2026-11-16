@@ -4,79 +4,77 @@
 #
 # Authors:
 # Meng Zhuo <mengzhuo1203@gmail.com>, 2012.
+# Bo Li (bocai991), 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: focus-timer 1.0-alpha\n"
+"Project-Id-Version: focus-timer 1.1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-11 09:26+0100\n"
-"PO-Revision-Date: 2023-03-26 11:47+0200\n"
-"Last-Translator: wffger <wffger@163.com>\n"
+"PO-Revision-Date: 2026-11-16 15:48+0800\n"
+"Last-Translator: Bo Li (bocai991)\n"
 "Language-Team: Chinese\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: gettext\n"
 
 #. translators: Consider "Concentration Timer" as an alternative.
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:2
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:7 src/main.vala:36
 msgid "Focus Timer"
-msgstr ""
+msgstr "专注计时器"
 
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:3
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:8
 msgid "Work better with regular breaks"
-msgstr ""
+msgstr "定时休息，高效工作"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:11
 msgid "pomodoro;timer;productivity;time tracker;time management;"
-msgstr ""
+msgstr "番茄钟;计时器;效率;时间记录;时间管理;pomodoro;timer;"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:10
 msgid ""
 "A productivity timer that helps you work more effectively by alternating "
 "focused work sessions with short breaks. By default, work for 25 minutes, "
 "then take a 5-minute break to stay focused and prevent burnout."
-msgstr ""
+msgstr "通过交替安排专注工作和短暂休息，帮助您提高效率。默认专注 25 分钟后休息 5 分钟，让您保持专注，避免过度疲劳。"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:13
-#, fuzzy
 msgid "Key features:"
 msgstr "主要功能："
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:17
-#, fuzzy
 msgid "Customizable work session and break lengths"
-msgstr "可自定义工作会话和休息时长"
+msgstr "可自定义专注与休息时长"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:18
-#, fuzzy
 msgid "Screen overlay during breaks"
-msgstr "休息时的全屏覆盖层"
+msgstr "休息时显示全屏提醒"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:19
 msgid "System tray icon"
-msgstr ""
+msgstr "系统托盘图标"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
 msgid "Hotkeys (global shortcuts)"
-msgstr ""
+msgstr "全局快捷键"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:21
 msgid "Daily, weekly, and monthly statistics"
-msgstr ""
+msgstr "每日、每周和每月统计"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:22
 msgid "Extensible via custom shell commands, D-Bus, and CLI"
-msgstr ""
+msgstr "可通过自定义 Shell 命令、D-Bus 和命令行扩展功能"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:23
 msgid "GNOME Shell extension for deeper desktop integration"
-msgstr ""
+msgstr "通过 GNOME Shell 扩展与桌面进一步集成"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
 #: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:89
@@ -86,12 +84,10 @@ msgid "Timer"
 msgstr "计时器"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:71
-#, fuzzy
 msgid "Daily stats"
 msgstr "每日统计"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:75
-#, fuzzy
 msgid "Monthly stats"
 msgstr "每月统计"
 
@@ -100,22 +96,19 @@ msgstr "每月统计"
 #: src/plugins/sni/indicator-provider.vala:307
 #: src/ui/preferences/preferences-window.ui:6
 msgid "Preferences"
-msgstr "首选项"
+msgstr "设置"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:83
-#, fuzzy
 msgid "Screen overlay"
-msgstr "全屏覆盖层"
+msgstr "全屏休息提醒"
 
 #: src/application.vala:211 src/application.vala:694
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
-#, fuzzy
 msgid "Start or Stop"
 msgstr "开始或停止"
 
 #: src/application.vala:214 src/application.vala:697
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
-#, fuzzy
 msgid "Start, Pause or Resume"
 msgstr "开始、暂停或继续"
 
@@ -126,19 +119,19 @@ msgstr "开始、暂停或继续"
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:324
 msgid "Start Pomodoro"
-msgstr "启动番茄计时器"
+msgstr "开始番茄钟"
 
 #: src/application.vala:220
 msgid "Start break"
-msgstr ""
+msgstr "开始休息"
 
 #: src/application.vala:223
 msgid "Start short break"
-msgstr ""
+msgstr "开始短休息"
 
 #: src/application.vala:226
 msgid "Start long break"
-msgstr ""
+msgstr "开始长休息"
 
 #. Actions
 #: src/application.vala:229 src/application.vala:699 src/core/event.vala:268
@@ -175,13 +168,12 @@ msgid "Skip"
 msgstr "跳过"
 
 #: src/application.vala:244 src/application.vala:709 src/core/event.vala:308
-#, fuzzy
 msgid "Rewind"
-msgstr "快退"
+msgstr "回退计时"
 
 #: src/application.vala:245 src/application.vala:248
 msgid "SECONDS"
-msgstr ""
+msgstr "秒数"
 
 #: src/application.vala:247
 msgid "Extend current pomodoro or break"
@@ -190,17 +182,16 @@ msgstr "延长当前番茄钟或休息"
 #: src/application.vala:250 src/core/event.vala:316
 #: src/plugins/sni/indicator-provider.vala:269
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
-#, fuzzy
 msgid "Reset"
 msgstr "重置"
 
 #: src/application.vala:254
 msgid "Print timer status"
-msgstr ""
+msgstr "显示计时器状态"
 
 #: src/application.vala:258
 msgid "Show preferences"
-msgstr "显示首选项"
+msgstr "打开设置"
 
 #: src/application.vala:262
 msgid "Quit application"
@@ -208,221 +199,191 @@ msgstr "退出应用"
 
 #: src/application.vala:265
 msgid "Print version information and exit"
-msgstr "打印版本信息并退出"
+msgstr "显示版本信息并退出"
 
 #: src/application.vala:319
 msgid "Timer Options:"
-msgstr ""
+msgstr "计时器选项："
 
 #: src/application.vala:320
 msgid "Show options for controlling the timer"
-msgstr ""
+msgstr "显示计时器控制选项"
 
 #: src/application.vala:327
 #, c-format
 msgid "Bugs may be reported at: %s"
-msgstr ""
+msgstr "可在此反馈问题：%s"
 
 #: src/application.vala:711
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
-#, fuzzy
 msgid "Bring to Focus"
-msgstr "聚焦窗口"
+msgstr "显示主窗口"
 
 #: src/application.vala:777
 msgid "Screen overlay is open"
-msgstr ""
+msgstr "全屏休息提醒已打开"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
 #: src/application.vala:953 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
-#, fuzzy, c-format
+#, c-format
 msgid "%s remaining"
 msgstr "剩余 %s"
 
 #: src/application.vala:998
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
-msgstr ""
+msgstr "用法无效。每次只能传入一个计时器控制参数。"
 
 #: src/core/action-manager.vala:113
-#, fuzzy, c-format
+#, c-format
 msgid "Custom action \"%s\" has failed"
 msgstr "自定义动作“%s”失败"
 
 #: src/core/command.vala:379
-#, fuzzy
 msgid "Reached timeout"
 msgstr "已超时"
 
 #: src/core/command.vala:408
-#, fuzzy
 msgid "Failed to execute command"
 msgstr "无法执行命令"
 
 #: src/core/command.vala:491 src/core/command.vala:506
-#, fuzzy
 msgid "Command is empty"
 msgstr "命令为空"
 
 #: src/core/command.vala:510
-#, fuzzy
 msgid "Unclosed quotation mark"
 msgstr "引号未闭合"
 
 #: src/core/command.vala:515
-#, fuzzy
 msgid "Invalid command"
 msgstr "无效命令"
 
 #: src/core/command.vala:540 src/core/expression.vala:859
-#, fuzzy, c-format
+#, c-format
 msgid "Unknown variable \"%s\""
 msgstr "未知变量“%s”"
 
 #: src/core/command.vala:546 src/core/expression.vala:236
-#, fuzzy, c-format
+#, c-format
 msgid "Unknown format \"%s\""
 msgstr "未知格式“%s”"
 
 #: src/core/command.vala:619
-#, fuzzy, c-format
+#, c-format
 msgid "Program \"%s\" not found"
 msgstr "未找到程序“%s”"
 
 #: src/core/event.vala:180
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:72
 msgid "Actions"
-msgstr "动作集"
+msgstr "动作"
 
 #: src/core/event.vala:183
-#, fuzzy
 msgid "Countdown"
 msgstr "倒计时"
 
 #: src/core/event.vala:186
 #: src/ui/preferences/timer/preferences-panel-timer.ui:17
-#, fuzzy
 msgid "Session"
-msgstr "会话"
+msgstr "计时周期"
 
 #: src/core/event.vala:189
-#, fuzzy
 msgid "Other"
 msgstr "其他"
 
 #: src/core/event.vala:269
-#, fuzzy
 msgid "Started the timer"
 msgstr "已启动计时器"
 
 #: src/core/event.vala:277
-#, fuzzy
 msgid "Stopped the timer manually"
-msgstr "手动停止了计时器"
+msgstr "已手动停止计时器"
 
 #: src/core/event.vala:285
-#, fuzzy
 msgid ""
 "The countdown has been manually paused. Not triggered when locking the "
 "screen or when suspending the system."
 msgstr "倒计时已手动暂停。锁定屏幕或挂起系统时不会触发。"
 
 #: src/core/event.vala:293
-#, fuzzy
 msgid "The countdown has been manually resumed"
-msgstr "倒计时已手动恢复"
+msgstr "已手动继续倒计时"
 
 #: src/core/event.vala:301
-#, fuzzy
 msgid "Jumped to a next time-block before the countdown has finished"
-msgstr "在倒计时结束前跳转到了下一个时间块"
+msgstr "在倒计时结束前跳转到下一个计时阶段"
 
 #: src/core/event.vala:309
-#, fuzzy
 msgid "Rewind action has been used. It adds a pause in the past."
-msgstr "已使用快退动作。它在过去添加了一段暂停。"
+msgstr "已使用回退动作，将此前的一段时间标记为暂停。"
 
 #: src/core/event.vala:317
-#, fuzzy
 msgid "Manually cleared the session"
-msgstr "手动清除了会话"
+msgstr "已手动清空计时周期"
 
 #. Countdown
 #: src/core/event.vala:325
 #: src/ui/preferences/automation/action/action-edit-window.ui:20
 #: src/ui/preferences/automation/action/condition-widget.vala:120
-#, fuzzy
 msgid "Finished"
 msgstr "已完成"
 
 #: src/core/event.vala:326
-#, fuzzy
 msgid ""
 "The countdown has finished. If waiting for confirmation, the duration of the "
 "time-block still may be altered."
-msgstr "倒计时已结束。如果正在等待确认，时间块的持续时间仍可能被修改。"
+msgstr "倒计时已结束。等待确认期间，仍可调整当前计时阶段的时长。"
 
 #: src/core/event.vala:333
-#, fuzzy
 msgid "Changed"
 msgstr "已更改"
 
 #: src/core/event.vala:334
-#, fuzzy
 msgid "Triggered on any change related to the countdown"
-msgstr "在任何与倒计时相关的更改时触发"
+msgstr "倒计时发生任何变化时触发"
 
 #. Session
 #: src/core/event.vala:342
-#, fuzzy
 msgid "Confirm Advancement"
-msgstr "确认进度"
+msgstr "确认进入下一阶段"
 
 #: src/core/event.vala:343
-#, fuzzy
 msgid "A manual confirmation is required to start next time-block"
-msgstr "需要手动确认才能开始下一个时间块"
+msgstr "开始下一个计时阶段前需要手动确认"
 
 #: src/core/event.vala:350
-#, fuzzy
 msgid "Advanced"
-msgstr "已前进"
+msgstr "已进入下一阶段"
 
 #: src/core/event.vala:351
-#, fuzzy
 msgid "Transitioned or skipped to a next time-block"
-msgstr "已转换或跳过到下一个时间块"
+msgstr "已进入或跳转到下一个计时阶段"
 
 #: src/core/event.vala:358
-#, fuzzy
 msgid "State Changed"
-msgstr "状态已改变"
+msgstr "状态已更改"
 
 #: src/core/event.vala:359
-#, fuzzy
 msgid "Transitioned to a next time-block or when a break gets relabelled"
-msgstr "转换到下一个时间块或休息被重新标记时"
+msgstr "进入下一个计时阶段或更改休息类型时触发"
 
 #: src/core/event.vala:366
-#, fuzzy
 msgid "Rescheduled"
-msgstr "已重新调度"
+msgstr "已重新安排"
 
 #. translators: Change of plan
 #: src/core/event.vala:367
-#, fuzzy
 msgid "Triggered when scheduled time-blocks have changed"
-msgstr "在预定的时间块发生变化时触发"
+msgstr "计划中的计时阶段发生变化时触发"
 
 #: src/core/event.vala:374
-#, fuzzy
 msgid "Expired"
 msgstr "已过期"
 
 #: src/core/event.vala:375
-#, fuzzy
 msgid "Triggered when session is about to be reset due to inactivity"
-msgstr "在会话因不活动即将被重置时触发"
+msgstr "长时间无活动、即将重置计时周期时触发"
 
 #: src/core/notification-manager.vala:313 src/core/state.vala:78
 #: src/plugins/sni/indicator-provider.vala:272
@@ -434,7 +395,7 @@ msgstr "在会话因不活动即将被重置时触发"
 #: src/ui/main/stats/stats-week-page.vala:41 src/ui/main/window.vala:203
 #: src/ui/preferences/automation/action/condition-widget.ui:53
 msgid "Pomodoro"
-msgstr "番茄计时器"
+msgstr "番茄钟"
 
 #: src/core/notification-manager.vala:317
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:308
@@ -444,11 +405,11 @@ msgstr "休息一下吧"
 
 #: src/core/notification-manager.vala:321
 msgid "Take a short break"
-msgstr "休息一下"
+msgstr "开始短休息"
 
 #: src/core/notification-manager.vala:325
 msgid "Take a long break"
-msgstr "休息很久"
+msgstr "开始长休息"
 
 #: src/core/notification-manager.vala:384
 msgid "Pomodoro is about to end"
@@ -460,7 +421,6 @@ msgstr "番茄钟即将结束"
 #: src/core/notification-manager.vala:500
 #: src/plugins/sni/indicator-provider.vala:404
 #: src/ui/overlays/screen-overlay.ui:5
-#, fuzzy
 msgid "Take a Break"
 msgstr "休息一下"
 
@@ -469,7 +429,6 @@ msgid "Break is about to end"
 msgstr "休息即将结束"
 
 #: src/core/notification-manager.vala:402
-#, fuzzy
 msgid "+1 minute"
 msgstr "+1 分钟"
 
@@ -479,33 +438,27 @@ msgstr "做好准备…"
 
 #: src/core/notification-manager.vala:429
 #: src/core/notification-manager.vala:468
-#, fuzzy
 msgid "Pomodoro is over!"
 msgstr "番茄钟结束了！"
 
 #: src/core/notification-manager.vala:435
 #: src/core/notification-manager.vala:474
-#, fuzzy
 msgid "Break is over!"
 msgstr "休息结束了！"
 
 #: src/core/notification-manager.vala:484
-#, fuzzy
 msgid "Confirm the start of a Pomodoro…"
 msgstr "确认启动番茄钟…"
 
 #: src/core/notification-manager.vala:489
-#, fuzzy
 msgid "Confirm the start of a break…"
 msgstr "确认开始休息…"
 
 #: src/core/notification-manager.vala:494
-#, fuzzy
 msgid "Confirm the start of a short break…"
 msgstr "确认开始短休息…"
 
 #: src/core/notification-manager.vala:499
-#, fuzzy
 msgid "Confirm the start of a long break…"
 msgstr "确认开始长休息…"
 
@@ -514,23 +467,19 @@ msgid "Skip Break"
 msgstr "跳过休息"
 
 #: src/core/sound-player.vala:101
-#, fuzzy
 msgid "Failed to initialize playback"
 msgstr "播放初始化失败"
 
 #: src/core/sounds.vala:112
-#, fuzzy
 msgid "File not found"
 msgstr "未找到文件"
 
 #: src/core/sounds.vala:116
-#, fuzzy
 msgid "File type not supported"
 msgstr "文件类型不支持"
 
 #: src/core/state.vala:75
 #: src/ui/preferences/automation/action/condition-widget.ui:55
-#, fuzzy
 msgid "Stopped"
 msgstr "已停止"
 
@@ -549,248 +498,212 @@ msgstr "长休息"
 
 #. translators: Short form for number of hours
 #: src/core/timestamp.vala:117
-#, fuzzy, c-format
+#, c-format
 msgid "%uh"
 msgstr "%u小时"
 
 #. translators: Short form for number of minutes
 #: src/core/timestamp.vala:126
-#, fuzzy, c-format
+#, c-format
 msgid "%um"
 msgstr "%u分钟"
 
 #: src/core/utils.vala:72
-#, fuzzy, c-format
+#, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
 msgstr[0] "%u 小时"
 
 #: src/core/utils.vala:81
-#, fuzzy, c-format
+#, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
 msgstr[0] "%u 分钟"
 
 #: src/core/utils.vala:90
-#, fuzzy, c-format
+#, c-format
 msgid "%u second"
 msgid_plural "%u seconds"
 msgstr[0] "%u 秒"
 
 #: src/core/variables.vala:116
-#, fuzzy
 msgid "The exact time of the current event."
 msgstr "当前事件的精确时间。"
 
 #: src/core/variables.vala:121
-#, fuzzy
 msgid ""
 "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</tt>, "
 "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</tt>."
-msgstr ""
-"番茄周期的当前阶段。可选值：<tt>stopped</tt>（停止）、<tt>pomodoro</tt>（番"
-"茄）、<tt>break</tt>（休息）、<tt>short-break</tt>（短休息）、<tt>long-"
-"break</tt>（长休息）。"
+msgstr "番茄钟周期的当前阶段。可选值：<tt>stopped</tt>（停止）、<tt>pomodoro</tt>（番茄钟）、<tt>break</tt>（休息）、<tt>short-break</tt>（短休息）、<tt>long-break</tt>（长休息）。"
 
 #: src/core/variables.vala:126
-#, fuzzy
 msgid ""
 "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
 "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
-msgstr ""
-"当前时间块的状态。可选值：<tt>scheduled</tt>（已预定）、<tt>in-progress</tt>"
-"（进行中）、<tt>completed</tt>（已完成）、<tt>uncompleted</tt>（未完成）。"
+msgstr "当前计时阶段的状态。可选值：<tt>scheduled</tt>（已安排）、<tt>in-progress</tt>（进行中）、<tt>completed</tt>（已完成）、<tt>uncompleted</tt>（未完成）。"
 
 #: src/core/variables.vala:131
-#, fuzzy
 msgid "A flag indicating whether countdown has begun."
 msgstr "指示倒计时是否已开始的标志。"
 
 #: src/core/variables.vala:136
-#, fuzzy
 msgid "A flag indicating whether countdown is paused."
 msgstr "指示倒计时是否已暂停的标志。"
 
 #: src/core/variables.vala:141
-#, fuzzy
 msgid "A flag indicating whether countdown has finished."
 msgstr "指示倒计时是否已结束的标志。"
 
 #: src/core/variables.vala:146
-#, fuzzy
 msgid "A flag indicating whether the timer is actively counting down."
 msgstr "指示计时器是否正在计数的标志。"
 
 #: src/core/variables.vala:151
-#, fuzzy
 msgid "Duration of the current countdown."
 msgstr "当前倒计时的持续时间。"
 
 #. translators: Time difference between displayed value on the timer and real time. Think of it as a lost time.
 #: src/core/variables.vala:157
-#, fuzzy
 msgid "Discrepancy between elapsed time and the time passed."
 msgstr "计时器显示时间与实际流逝时间之间的差异。"
 
 #. translators: Time since the start of countdown
 #: src/core/variables.vala:163
-#, fuzzy
 msgid "The amount of time spent on the countdown."
 msgstr "倒计时已耗费的时间。"
 
 #. translators: Displayed timer value.
 #: src/core/variables.vala:169
-#, fuzzy
 msgid "The amount of time left before the countdown ends."
 msgstr "倒计时结束前的剩余时间。"
 
 #: src/core/variables.vala:174
-#, fuzzy
 msgid "Time when the countdown has started."
 msgstr "倒计时开始的时间。"
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
 #: src/plugins/gnome/preferences-window-extension.vala:198
-#, fuzzy
 msgid "GNOME Shell Extension"
 msgstr "GNOME Shell 扩展"
 
 #: src/plugins/gnome/install-extension-dialog.ui:57
-#, fuzzy
 msgid "Get the best experience!"
 msgstr "获得最佳体验！"
 
 #: src/plugins/gnome/install-extension-dialog.ui:68
-#, fuzzy
 msgid "Enable <b>GNOME Shell extension</b> for seamless desktop integration"
 msgstr "启用 <b>GNOME Shell 扩展</b> 以获得无缝桌面集成"
 
 #: src/plugins/gnome/install-extension-dialog.ui:95
-#, fuzzy
 msgid "Always within reach"
 msgstr "触手可及"
 
 #: src/plugins/gnome/install-extension-dialog.ui:106
-#, fuzzy
 msgid "Control timer directly from the top bar without opening the app"
 msgstr "无需打开应用即可直接从顶栏控制计时器"
 
 #: src/plugins/gnome/install-extension-dialog.ui:132
-#, fuzzy
 msgid "Less distractions"
 msgstr "减少干扰"
 
 #: src/plugins/gnome/install-extension-dialog.ui:143
 msgid ""
 "Let <b>Focus Timer</b> manage system notifications while the timer is running"
-msgstr ""
+msgstr "计时期间，让<b>专注计时器</b>管理系统通知"
 
 #: src/plugins/gnome/install-extension-dialog.ui:170
-#, fuzzy
 msgid "Refined break reminders"
-msgstr "精致的休息提醒"
+msgstr "更完善的休息提醒"
 
 #: src/plugins/gnome/install-extension-dialog.ui:181
-#, fuzzy
 msgid ""
 "Elegant full-screen overlay that make taking breaks a more pleasant "
 "experience"
-msgstr "优雅的全屏覆盖层，让休息体验更愉快"
+msgstr "通过简洁的全屏提醒，让休息体验更舒适"
 
 #. translators: "It" refers to installing GNOME Shell extension
 #: src/plugins/gnome/install-extension-dialog.ui:195
-#, fuzzy
 msgid "Ready to try it?"
 msgstr "准备好尝试了吗？"
 
 #: src/plugins/gnome/install-extension-dialog.ui:219
 #: src/plugins/gnome/install-extension-dialog.ui:252
-#, fuzzy
 msgid "_Install Extension"
 msgstr "安装扩展(_I)"
 
 #: src/plugins/gnome/install-extension-dialog.ui:229
 #: src/plugins/gnome/install-extension-dialog.ui:245
-#, fuzzy
 msgid "_Not Now"
 msgstr "以后再说(_N)"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
 #: src/plugins/gnome/preferences-window-extension.vala:429
-#, fuzzy
 msgid "Something went wrong"
 msgstr "出了点问题"
 
 #: src/plugins/gnome/install-extension-dialog.ui:364
-#, fuzzy
 msgid "Copy to clipboard"
 msgstr "复制到剪贴板"
 
 #: src/plugins/gnome/install-extension-dialog.ui:383
 #: src/plugins/gnome/install-extension-dialog.ui:416
-#, fuzzy
 msgid "_Try Again"
 msgstr "重试(_T)"
 
 #: src/plugins/gnome/install-extension-dialog.ui:393
 #: src/plugins/gnome/install-extension-dialog.ui:409
-#, fuzzy
 msgid "_Abort"
 msgstr "中止(_A)"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
 #: src/plugins/gnome/preferences-window-extension.vala:417
-#, fuzzy
 msgid "Time-out reached"
 msgstr "已超时"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
 #: src/plugins/gnome/preferences-window-extension.vala:421
-#, fuzzy
 msgid "Installing extensions is not allowed"
 msgstr "不允许安装扩展"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
 #: src/plugins/gnome/preferences-window-extension.vala:425
-#, fuzzy
 msgid "Failed to download the extension"
 msgstr "无法下载扩展"
 
 #: src/plugins/gnome/preferences-window-extension.vala:88
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
-msgstr ""
+msgstr "托盘图标"
 
 #: src/plugins/gnome/preferences-window-extension.vala:95
 msgid "Icon"
-msgstr ""
+msgstr "图标"
 
 #: src/plugins/gnome/preferences-window-extension.vala:96
 msgid "Text"
-msgstr ""
+msgstr "文字"
 
 #: src/plugins/gnome/preferences-window-extension.vala:103
 msgid "Display As"
-msgstr ""
+msgstr "显示方式"
 
 #: src/plugins/gnome/preferences-window-extension.vala:114
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
-#, fuzzy
 msgid "Screen Overlay"
-msgstr "全屏覆盖层"
+msgstr "全屏休息提醒"
 
 #: src/plugins/gnome/preferences-window-extension.vala:118
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
-msgstr ""
+msgstr "模糊效果"
 
 #: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
-msgstr ""
+msgstr "关闭提醒的手势"
 
 #: src/plugins/gnome/preferences-window-extension.vala:156
 #: src/plugins/kde/preferences-window-extension.vala:81
@@ -799,42 +712,42 @@ msgstr "桌面"
 
 #: src/plugins/gnome/preferences-window-extension.vala:159
 msgid "Install"
-msgstr ""
+msgstr "安装"
 
 #. translators: verb
 #: src/plugins/gnome/preferences-window-extension.vala:164
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Log out to finish the update"
-msgstr ""
+msgstr "注销登录以完成更新"
 
 #: src/plugins/gnome/preferences-window-extension.vala:185
 msgid "Outdated"
-msgstr ""
+msgstr "版本不兼容"
 
 #: src/plugins/gnome/preferences-window-extension.vala:204
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
-msgstr ""
+msgstr "勿扰模式"
 
 #: src/plugins/gnome/preferences-window-extension.vala:205
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
-msgstr ""
+msgstr "使用计时器时隐藏非重要通知"
 
 #: src/plugins/gnome/window-extension.vala:37
 msgid "Try the GNOME extension"
-msgstr ""
+msgstr "试用 GNOME 扩展"
 
 #: src/plugins/gnome/window-extension.vala:38
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #: src/plugins/gnome/window-extension.vala:74
 msgid "GNOME extension is disabled"
-msgstr ""
+msgstr "GNOME 扩展已禁用"
 
 #: src/plugins/gnome/window-extension.vala:75
 msgid "Enable"
@@ -843,42 +756,40 @@ msgstr "启用"
 #. translators: abbreviate it to just "Settings" if it gets too long
 #: src/plugins/kde/preferences-window-extension.vala:30
 msgid "Open Settings"
-msgstr ""
+msgstr "打开设置"
 
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
 "Disturb and disable its notification history"
-msgstr ""
+msgstr "为确保收到休息提醒，请允许本应用在勿扰模式下发送通知，并关闭本应用的通知历史记录"
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
 msgid "Media Playback"
-msgstr ""
+msgstr "媒体播放"
 
 #: src/plugins/mpris/preferences-window-extension.vala:36
 msgid "Auto-Pause Media"
-msgstr ""
+msgstr "自动暂停媒体播放"
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
 msgid "Pauses during breaks, resumes at the next Pomodoro"
-msgstr ""
+msgstr "休息时暂停播放，下一个番茄钟开始时继续"
 
 #: src/plugins/portal/global-shortcuts-provider.vala:372
-#, fuzzy
 msgid "Unused"
 msgstr "未使用"
 
 #: src/plugins/sni/indicator-provider.vala:35
 #: src/ui/main/timer/compact-timer-view.vala:73
 #: src/ui/main/timer/timer-view.vala:130
-#, fuzzy
 msgid "Finished!"
 msgstr "已完成！"
 
 #: src/plugins/sni/indicator-provider.vala:42
 #, c-format
 msgid "%u of %u"
-msgstr ""
+msgstr "第 %u 轮，共 %u 轮"
 
 #: src/plugins/sni/indicator-provider.vala:302
 #: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:106
@@ -891,29 +802,25 @@ msgstr "退出"
 
 #: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
-msgstr ""
+msgstr "显示托盘图标"
 
 #: src/plugins/sni/preferences-window-extension.vala:46
 msgid "Closing the window keeps the app running in the background"
-msgstr ""
+msgstr "关闭窗口后，应用仍会在后台运行"
 
 #: src/ui/log/log-window.ui:6
-#, fuzzy
 msgid "Log"
 msgstr "日志"
 
 #: src/ui/log/log-window.ui:38
-#, fuzzy
 msgid "Empty Log"
-msgstr "空日志"
+msgstr "暂无日志"
 
 #: src/ui/log/log-window.ui:39
-#, fuzzy
 msgid "Entries will show up here once you start the timer"
-msgstr "启动计时器后，条目将显示在此处"
+msgstr "启动计时器后，即可在这里查看记录"
 
 #: src/ui/log/log-window.ui:166
-#, fuzzy
 msgid "Context"
 msgstr "上下文"
 
@@ -923,35 +830,27 @@ msgid "Command"
 msgstr "命令"
 
 #: src/ui/log/log-window.ui:215
-#, fuzzy
 msgid "Output"
 msgstr "输出"
 
 #: src/ui/log/log-window.ui:239
-#, fuzzy
 msgid "Error"
 msgstr "错误"
 
 #: src/ui/log/log-window.ui:268
-#, fuzzy
 msgid "Exit Code:"
 msgstr "退出代码："
 
 #: src/ui/log/log-window.ui:279
-#, fuzzy
 msgid "Execution Time:"
 msgstr "执行时间："
 
 #. translators: Replace this string with your names, one name per line.
 #: src/ui/main/dialogs/about-dialog.vala:30
 msgid "translator-credits"
-msgstr ""
-"Meng Zhuo <mengzhuo1203@gmail.com>, 2012\n"
-"soiamsoNG <83182235@qq.com>, 2017\n"
-"wffger <wffger@163.com>, 2020"
+msgstr "Meng Zhuo <mengzhuo1203@gmail.com>, 2012\nsoiamsoNG <83182235@qq.com>, 2017\nwffger <wffger@163.com>, 2020\nBo Li (bocai991), 2026"
 
 #: src/ui/main/dialogs/about-dialog.vala:36
-#, fuzzy
 msgid "Donate"
 msgstr "捐赠"
 
@@ -961,30 +860,27 @@ msgstr "捐赠"
 #: src/ui/main/stats/stats-month-page.vala:48
 #: src/ui/main/stats/stats-week-page.ui:46
 #: src/ui/main/stats/stats-week-page.vala:46
-#, fuzzy
 msgid "Breaks"
-msgstr "休息次数"
+msgstr "休息"
 
 #: src/ui/main/stats/stats-day-page.ui:112
 #: src/ui/main/stats/stats-month-page.ui:49
 #: src/ui/main/stats/stats-month-page.vala:53
 #: src/ui/main/stats/stats-week-page.ui:53
 #: src/ui/main/stats/stats-week-page.vala:51
-#, fuzzy
 msgid "Interruptions"
-msgstr "干扰"
+msgstr "中断"
 
 #: src/ui/main/stats/stats-day-page.ui:119
 #: src/ui/main/stats/stats-month-page.ui:56
 #: src/ui/main/stats/stats-week-page.ui:60
-#, fuzzy
 msgid "Break Ratio"
 msgstr "休息比例"
 
 #: src/ui/main/stats/stats-view.ui:8 src/ui/main/stats/stats-view.vala:59
 #: src/ui/main/stats/widgets/stats-date-popover.ui:22
 msgid "Day"
-msgstr "天"
+msgstr "日"
 
 #: src/ui/main/stats/stats-view.ui:13 src/ui/main/stats/stats-view.vala:62
 #: src/ui/main/stats/widgets/stats-date-popover.ui:28
@@ -997,29 +893,27 @@ msgid "Month"
 msgstr "月"
 
 #: src/ui/main/stats/stats-view.ui:39
-#, fuzzy
 msgid "Nothing to see here yet"
 msgstr "暂无统计信息"
 
 #: src/ui/main/stats/stats-view.ui:40
-#, fuzzy
 msgid "Finish a few Pomodoros to fill this up!"
-msgstr "完成几个番茄钟来填充这里！"
+msgstr "完成几轮番茄钟后，即可在这里查看统计。"
 
 #: src/ui/main/stats/stats-view.vala:831
-#, fuzzy, c-format
+#, c-format
 msgid "Skipped %u day"
 msgid_plural "Skipped %u days"
 msgstr[0] "已跳过 %u 天"
 
 #: src/ui/main/stats/stats-view.vala:837
-#, fuzzy, c-format
+#, c-format
 msgid "Skipped %u week"
 msgid_plural "Skipped %u weeks"
 msgstr[0] "已跳过 %u 周"
 
 #: src/ui/main/stats/stats-view.vala:843
-#, fuzzy, c-format
+#, c-format
 msgid "Skipped %u month"
 msgid_plural "Skipped %u months"
 msgstr[0] "已跳过 %u 个月"
@@ -1037,19 +931,19 @@ msgid "This week"
 msgstr "本周"
 
 #: src/ui/main/stats/stats-view.vala:1087
-#, fuzzy, c-format
+#, c-format
 msgid "Week %u"
 msgstr "第 %u 周"
 
 #: src/ui/main/stats/stats-view.vala:1088
-#, fuzzy, c-format
+#, c-format
 msgid "Week %u of %u"
 msgstr "%2$u 年第 %1$u 周"
 
 #: src/ui/main/timer/compact-timer-view.ui:8 src/ui/main/timer/menus.ui:6
 #: src/ui/main/timer/menus.ui:22
 msgid "_Pomodoro"
-msgstr "番茄计时器(_P)"
+msgstr "番茄钟(_P)"
 
 #: src/ui/main/timer/compact-timer-view.ui:13 src/ui/main/timer/menus.ui:10
 msgid "_Short Break"
@@ -1060,83 +954,75 @@ msgid "_Long Break"
 msgstr "长休息(_L)"
 
 #: src/ui/main/timer/menus.ui:26
-#, fuzzy
 msgid "_Break"
 msgstr "休息(_B)"
 
 #: src/ui/main/timer/timer-view.ui:24
-#, fuzzy
 msgid "Open screen overlay"
-msgstr "打开全屏覆盖层"
+msgstr "打开全屏休息提醒"
 
 #: src/ui/main/timer/timer-view.vala:300
-#, fuzzy
 msgid "Session has expired"
-msgstr "会话已过期"
+msgstr "计时周期已过期"
 
 #: src/ui/main/timer/widgets/session-progress-bar.vala:1496
-#, fuzzy, c-format
+#, c-format
 msgid "Long break due in <b>%s</b>"
 msgstr "将在 <b>%s</b> 后进行长休息"
 
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:25
-#, fuzzy
 msgid "Rewind one minute"
-msgstr "快退一分钟"
+msgstr "回退一分钟"
 
 #: src/ui/main/window.ui:8
 msgid "_Compact Mode"
-msgstr ""
+msgstr "紧凑模式(_C)"
 
 #: src/ui/main/window.ui:14
 msgid "Leave _Compact Mode"
-msgstr ""
+msgstr "退出紧凑模式(_C)"
 
 #: src/ui/main/window.ui:22
 msgid "_Screen Overlay"
-msgstr ""
+msgstr "全屏休息提醒(_S)"
 
 #: src/ui/main/window.ui:28
 msgid "_Preferences"
-msgstr "首选项(_P)"
+msgstr "设置(_P)"
 
 #: src/ui/main/window.ui:32
 msgid "_About Focus Timer"
-msgstr ""
+msgstr "关于专注计时器(_A)"
 
 #: src/ui/main/window.ui:38
 msgid "_Quit"
 msgstr "退出(_Q)"
 
 #: src/ui/main/window.ui:75
-#, fuzzy
 msgid "Primary Menu"
 msgstr "主菜单"
 
 #: src/ui/main/window.vala:344
-#, fuzzy
 msgid "Keep timer running?"
-msgstr "保持计时器运行？"
+msgstr "让计时器继续运行吗？"
 
 #: src/ui/main/window.vala:345
-#, fuzzy
 msgid ""
 "You can keep it running in the background — notifications and keyboard "
 "shortcuts will still work."
-msgstr "您可以让它在后台运行 — 通知和键盘快捷键仍将生效。"
+msgstr "可以让应用在后台继续运行，通知和键盘快捷键仍然有效。"
 
 #: src/ui/main/window.vala:352
-#, fuzzy
 msgid "Run in background"
 msgstr "在后台运行"
 
 #: src/ui/main/window.vala:446
 msgid "Sounds turned on"
-msgstr ""
+msgstr "声音已开启"
 
 #: src/ui/main/window.vala:446
 msgid "Sounds turned off"
-msgstr ""
+msgstr "声音已关闭"
 
 #: src/ui/overlays/screen-overlay.ui:64
 msgid "It's time to take a break"
@@ -1144,33 +1030,31 @@ msgstr "是时候休息一下了"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:17
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:115
-#, fuzzy
 msgid "Main Window"
 msgstr "主窗口"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:20
 msgid "Style"
-msgstr ""
+msgstr "外观"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:24
 msgid "Follow System"
-msgstr ""
+msgstr "跟随系统"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
 msgid "Light"
-msgstr ""
+msgstr "浅色"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:26
 msgid "Dark"
-msgstr ""
+msgstr "深色"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:34
 msgid "Open in Compact Mode"
-msgstr ""
+msgstr "以紧凑模式打开"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:12
 #: src/ui/preferences/automation/action/condition-widget.vala:117
-#, fuzzy
 msgid "Started"
 msgstr "已启动"
 
@@ -1180,7 +1064,6 @@ msgid "Paused"
 msgstr "已暂停"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:26
-#, fuzzy
 msgid "Edit Custom Action"
 msgstr "编辑自定义动作"
 
@@ -1189,7 +1072,6 @@ msgid "_Cancel"
 msgstr "取消(_C)"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:46
-#, fuzzy
 msgid "_Save"
 msgstr "保存(_S)"
 
@@ -1198,130 +1080,105 @@ msgid "Name"
 msgstr "名称"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:76
-#, fuzzy
 msgid "Trigger"
 msgstr "触发器"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:80
-#, fuzzy
 msgid "Event"
 msgstr "事件"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:81
-#, fuzzy
 msgid "Execute command after an event"
 msgstr "事件发生后执行命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:96
 #: src/ui/preferences/automation/action/action-edit-window.ui:174
-#, fuzzy
 msgid "Condition"
 msgstr "条件"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:97
-#, fuzzy
 msgid "Ensure execution of a second command once condition is no longer met"
-msgstr "确保在条件不再满足时执行第二个命令"
+msgstr "条件不再满足时，确保执行第二条命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:114
-#, fuzzy
 msgid "Events"
 msgstr "事件"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:125
-#, fuzzy
 msgid "Add _Event"
 msgstr "添加事件(_E)"
 
 #. translators: Filter (verb)
 #: src/ui/preferences/automation/action/action-edit-window.ui:140
-#, fuzzy
 msgid "_Filter"
 msgstr "过滤(_F)"
 
 #. translators: Filter (noun)
 #: src/ui/preferences/automation/action/action-edit-window.ui:160
-#, fuzzy
 msgid "Filter"
 msgstr "过滤器"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:191
-#, fuzzy
 msgid "Shell Command"
 msgstr "Shell 命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:199
-#, fuzzy
 msgid "Commands"
 msgstr "命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:204
-#, fuzzy
 msgid "Condition Met Command"
 msgstr "满足条件时的命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:210
-#, fuzzy
 msgid "Condition Not Met Command"
 msgstr "未满足条件时的命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:221
-#, fuzzy
 msgid "Working Directory"
 msgstr "工作目录"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:236
-#, fuzzy
 msgid "Use Subshell"
 msgstr "使用子 Shell"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:237
-#, fuzzy
 msgid "Run the program from a subshell such as sh -c ''"
 msgstr "从子 Shell 运行程序，例如 sh -c ''"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:242
-#, fuzzy
 msgid "Pass Input Data"
 msgstr "传递输入数据"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:243
-#, fuzzy
 msgid "Instead of passing variables you can process a JSON object"
-msgstr "您可以处理 JSON 对象，而不是传递变量"
+msgstr "除了传递变量，也可以通过处理 JSON 对象获取信息"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:248
-#, fuzzy
 msgid "Wait For Completion"
 msgstr "等待完成"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:249
-#, fuzzy
 msgid "Block execution of other commands until the command completes"
-msgstr "阻塞其他命令的执行，直到此命令完成"
+msgstr "等待此命令执行完毕后，再执行其他命令"
 
 #: src/ui/preferences/automation/action/action-edit-window.ui:259
-#, fuzzy
 msgid "_Delete Action"
 msgstr "删除动作(_D)"
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:230
-#, fuzzy
 msgid "No events specified yet."
 msgstr "尚未指定事件。"
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:248
-#, fuzzy
 msgid "Add Custom Action"
 msgstr "添加自定义动作"
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:249
-#, fuzzy
 msgid "_Add"
 msgstr "添加(_A)"
 
 #: src/ui/preferences/automation/action/action-edit-window.vala:438
-#, fuzzy
 msgid "Select Working Directory"
 msgstr "选择工作目录"
 
@@ -1331,17 +1188,14 @@ msgid "_Select"
 msgstr "选择(_S)"
 
 #: src/ui/preferences/automation/action/action-listboxrow.vala:67
-#, fuzzy
 msgid "Untitled action"
 msgstr "未命名动作"
 
 #: src/ui/preferences/automation/action/condition-group-widget.ui:28
-#, fuzzy
 msgid "Add Condition"
 msgstr "添加条件"
 
 #: src/ui/preferences/automation/action/condition-group-widget.ui:45
-#, fuzzy
 msgid "Add Group"
 msgstr "添加组"
 
@@ -1354,58 +1208,47 @@ msgid "OR"
 msgstr "或"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:26
-#, fuzzy
 msgid "Is"
 msgstr "是"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:27
-#, fuzzy
 msgid "Is Not"
 msgstr "不是"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:39
-#, fuzzy
 msgid "Equals"
 msgstr "等于"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:40
-#, fuzzy
 msgid "Greater Than"
 msgstr "大于"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:41
-#, fuzzy
 msgid "Less Than"
 msgstr "小于"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:67
-#, fuzzy
 msgid "Yes"
 msgstr "是"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:68
-#, fuzzy
 msgid "No"
 msgstr "否"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:95
-#, fuzzy
 msgid "Minutes"
 msgstr "分钟"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:96
-#, fuzzy
 msgid "Seconds"
 msgstr "秒"
 
 #: src/ui/preferences/automation/action/condition-widget.ui:97
-#, fuzzy
 msgid "Hours"
 msgstr "小时"
 
 #. translators: No field selected when defining a condition.
 #: src/ui/preferences/automation/action/condition-widget.vala:115
-#, fuzzy
 msgid "Select Field…"
 msgstr "选择字段…"
 
@@ -1414,23 +1257,19 @@ msgid "State"
 msgstr "状态"
 
 #: src/ui/preferences/automation/action/condition-widget.vala:119
-#, fuzzy
 msgid "Running"
 msgstr "运行中"
 
 #: src/ui/preferences/automation/action/condition-widget.vala:121
-#, fuzzy
 msgid "Duration"
 msgstr "时长"
 
 #: src/ui/preferences/automation/action/variable-popover.ui:19
 #: src/ui/preferences/automation/action/variable-popover.ui:161
-#, fuzzy
 msgid "Insert Variable"
 msgstr "插入变量"
 
 #: src/ui/preferences/automation/action/variable-popover.ui:132
-#, fuzzy
 msgid "Format"
 msgstr "格式"
 
@@ -1438,181 +1277,156 @@ msgstr "格式"
 #: src/ui/preferences/automation/permissions-dialog.ui:30
 #: src/ui/preferences/automation/preferences-panel-automation.ui:27
 msgid "Extra permissions needed to run commands"
-msgstr ""
+msgstr "运行命令需要额外权限"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:41
 msgid ""
 "Custom Actions run shell commands, requiring access outside the Flatpak "
 "sandbox. Grant this only if you understand your commands and trust Focus "
 "Timer — it allows arbitrary command execution."
-msgstr ""
+msgstr "自定义动作会运行 Shell 命令，需要访问 Flatpak 沙箱之外的环境。此权限允许执行任意命令，请仅在您了解这些命令并信任专注计时器时授予。"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:52
 msgid ""
 "In <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
 "a>, under <b>Session Bus</b> section, add:"
-msgstr ""
+msgstr "在 <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</a> 的<b>会话总线</b>部分添加："
 
 #: src/ui/preferences/automation/permissions-dialog.ui:90
 msgid "or via terminal:"
-msgstr ""
+msgstr "或通过终端执行："
 
 #: src/ui/preferences/automation/permissions-dialog.ui:127
 msgid "Restart Focus Timer for the change to take effect."
-msgstr ""
+msgstr "重启专注计时器以使更改生效。"
 
 #: src/ui/preferences/automation/permissions-dialog.vala:34
 msgid "Copied"
-msgstr ""
+msgstr "已复制"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:13
-#, fuzzy
 msgid "_Log"
 msgstr "日志(_L)"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:15
-#, fuzzy
 msgid "Show execution log"
 msgstr "显示执行日志"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:28
-#, fuzzy
 msgid "Learn More"
 msgstr "了解更多"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:36
 msgid "Run shell commands automatically on timer events or conditions"
-msgstr ""
+msgstr "在计时器事件发生或条件满足时，自动运行 Shell 命令"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
 msgid "Autostart"
-msgstr ""
+msgstr "登录时自动启动"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
 msgid "Automatically launch the app when you log in"
-msgstr ""
+msgstr "登录系统时自动启动本应用"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:25
 msgid ""
 "The app will start in the background. You'll be able to use the indicator "
 "and keyboard shortcuts."
-msgstr ""
+msgstr "应用将在后台启动，您可以通过顶栏指示器和快捷键进行操作。"
 
 #: src/ui/preferences/keyboard-shortcuts/accelerator-row.vala:50
-#, fuzzy
 msgid "Disabled"
 msgstr "已禁用"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:21
-#, fuzzy
 msgid ""
 "Global shortcuts let you control the app even when it’s not on screen. They "
 "work as long as the app is running in the background."
-msgstr ""
-"全局快捷键让您即使在应用不在屏幕上时也能控制它。只要应用在后台运行，它们就会"
-"生效。"
+msgstr "只要应用在后台运行，即使没有显示窗口，您也可以通过全局快捷键进行控制。"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:24
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:40
-#, fuzzy
 msgid "Open app settings for editing global shortcuts"
 msgstr "打开应用设置以编辑全局快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:29
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:45
-#, fuzzy
 msgid "_Edit"
 msgstr "编辑(_E)"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:61
-#, fuzzy
 msgid "Enter new shortcut for starting or stopping the timer"
 msgstr "输入用于启动或停止计时器的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:67
-#, fuzzy
 msgid "Enter new shortcut to start/pause/resume the timer"
-msgstr "输入用于开始/暂停/恢复计时器的新快捷键"
+msgstr "输入用于开始、暂停或继续计时的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:76
-#, fuzzy
 msgid "Enter new shortcut for starting the timer"
 msgstr "输入用于启动计时器的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:82
-#, fuzzy
 msgid "Enter new shortcut for stopping the timer"
 msgstr "输入用于停止计时器的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:88
-#, fuzzy
 msgid "Enter new shortcut for pausing the timer"
 msgstr "输入用于暂停计时器的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:94
-#, fuzzy
 msgid "Enter new shortcut for resuming the timer"
-msgstr "输入用于恢复计时器的新快捷键"
+msgstr "输入用于继续计时的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:100
-#, fuzzy
 msgid "Enter new shortcut for skipping"
 msgstr "输入用于跳过的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:105
-#, fuzzy
 msgid "Rewind One Minute"
-msgstr "快退一分钟"
+msgstr "回退一分钟"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
-#, fuzzy
 msgid "Enter new shortcut for rewinding"
-msgstr "输入用于快退的新快捷键"
+msgstr "输入用于回退计时的新快捷键"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:119
-#, fuzzy
 msgid "Enter new shortcut for bringing window to focus"
-msgstr "输入用于将窗口聚焦的新快捷键"
+msgstr "输入用于显示主窗口的新快捷键"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:17
-#, fuzzy
 msgid "Announcements"
-msgstr "公告"
+msgstr "提前提醒"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:20
 msgid "About to End Notification"
-msgstr ""
+msgstr "即将结束提醒"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:25
 msgid "Early Notice"
-msgstr ""
+msgstr "提前提醒"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
 msgid "Full-screen notification to help you step away from the computer"
-msgstr ""
+msgstr "通过全屏提醒，帮助您离开电脑休息"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:42
-#, fuzzy
 msgid "Lock Delay"
 msgstr "锁定延迟"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:43
-#, fuzzy
 msgid "Period of inactivity to lock the screen"
-msgstr "锁定屏幕前的不活动时间"
+msgstr "无操作多长时间后锁定屏幕"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:48
-#, fuzzy
 msgid "Reopen Delay"
 msgstr "重新打开延迟"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:49
-#, fuzzy
 msgid "Period of inactivity to reopen the overlay after it gets dismissed"
-msgstr "覆盖层关闭后，重新打开前的不活动时间"
+msgstr "关闭全屏提醒后，无操作多长时间再次显示提醒"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.vala:108
-#, fuzzy
 msgid "Never"
 msgstr "从不"
 
@@ -1621,47 +1435,39 @@ msgid "Notifications"
 msgstr "通知"
 
 #: src/ui/preferences/preferences-window.vala:44
-#, fuzzy
 msgid "Sounds"
 msgstr "声音"
 
 #: src/ui/preferences/preferences-window.vala:51
-#, fuzzy
 msgid "Appearance"
 msgstr "外观"
 
 #: src/ui/preferences/preferences-window.vala:58
-#, fuzzy
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
 #: src/ui/preferences/preferences-window.vala:71
 msgid "Integrations"
-msgstr ""
+msgstr "系统集成"
 
 #: src/ui/preferences/preferences-window.vala:78
-#, fuzzy
 msgid "Automation"
 msgstr "自动化"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:21
-#, fuzzy
 msgid "Alert Sounds"
-msgstr "警报声音"
+msgstr "提示音"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:24
-#, fuzzy
 msgid "Pomodoro Finished Sound"
-msgstr "番茄钟完成后的声音"
+msgstr "番茄钟结束提示音"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:49
-#, fuzzy
 msgid "Break Finished Sound"
-msgstr "休息结束后的声音"
+msgstr "休息结束提示音"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:76
 #: src/ui/preferences/sounds/preferences-panel-sounds.ui:79
-#, fuzzy
 msgid "Background Sound"
 msgstr "背景声音"
 
@@ -1679,15 +1485,14 @@ msgstr "时钟滴答"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
 msgid "Metronome"
-msgstr ""
+msgstr "节拍器"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
 msgid "Brown Noise"
-msgstr ""
+msgstr "棕噪音"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:71
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
-#, fuzzy
 msgid "None"
 msgstr "无"
 
@@ -1700,67 +1505,57 @@ msgid "Select Custom Sound"
 msgstr "选择自定义声音"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:20
-#, fuzzy
 msgid "Pomodoro Duration"
 msgstr "番茄钟时长"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:32
-#, fuzzy
 msgid "Short Break Duration"
 msgstr "短休息时长"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:44
-#, fuzzy
 msgid "Long Break Duration"
 msgstr "长休息时长"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:56
-#, fuzzy
 msgid "Number of Cycles"
-msgstr "循环周期数"
+msgstr "长休息前的番茄钟轮数"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:95
-#, fuzzy
 msgid "Behavior"
 msgstr "行为"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:98
 msgid "Pause When Locking the Screen"
-msgstr ""
+msgstr "锁定屏幕时暂停计时"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:103
-#, fuzzy
 msgid "Confirm Starting a Break"
 msgstr "开始休息前需确认"
 
 #: src/ui/preferences/timer/preferences-panel-timer.ui:108
-#, fuzzy
 msgid "Confirm Starting a Pomodoro"
 msgstr "开始番茄钟前需确认"
 
 #. translators: time formatted as text: "5 minutes 30 seconds"
 #: src/ui/preferences/timer/preferences-panel-timer.vala:122
-#, fuzzy, c-format
+#, c-format
 msgid "A single session will take <b>%s</b>"
-msgstr "单个会话将耗时 <b>%s</b>"
+msgstr "一组完整的计时周期需要 <b>%s</b>"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:123
-#, fuzzy, c-format
+#, c-format
 msgid "<b>%u%%</b> of the time will be allocated for breaks"
-msgstr "<b>%u%%</b> 的时间将分配给休息"
+msgstr "其中 <b>%u%%</b> 的时间用于休息"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:170
-#, fuzzy
 msgid "Apply changes to ongoing Pomodoro?"
-msgstr "应用更改到正在进行的番茄钟？"
+msgstr "将更改应用到正在进行的番茄钟吗？"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:171
-#, fuzzy
 msgid "Apply changes to ongoing break?"
-msgstr "应用更改到正在进行的休息？"
+msgstr "将更改应用到正在进行的休息吗？"
 
 #: src/ui/preferences/timer/preferences-panel-timer.vala:173
-#, fuzzy
 msgid "Apply"
 msgstr "应用"
 
