@@ -204,6 +204,16 @@ namespace Tests
                            this.test_track_time_block__skip_unfinished);
             this.add_test ("track_time_block__update",
                            this.test_track_time_block__update);
+            this.add_test ("track_time_block__live_total",
+                           this.test_track_time_block__live_total);
+            this.add_test ("track_time_block__live_pause_resume",
+                           this.test_track_time_block__live_pause_resume);
+            this.add_test ("track_time_block__live_midnight",
+                           this.test_track_time_block__live_midnight);
+            this.add_test ("track_time_block__live_open_end",
+                           this.test_track_time_block__live_open_end);
+            this.add_test ("track_time_block__live_rewind_all",
+                           this.test_track_time_block__live_rewind_all);
 
             this.add_test ("track_gap",
                            this.test_track_gap);
@@ -763,6 +773,168 @@ namespace Tests
             try {
                 var results = this.repository.find_sync (typeof (Ft.StatsEntry), null);
                 assert_cmpuint (results.count, GLib.CompareOperator.EQ, 0U);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__live_total ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 7, 0, 0));
+            var session = new Ft.Session ();
+            var first = new Ft.TimeBlock.with_start_time (start, Ft.State.POMODORO);
+            first.end_time = start + 40 * Ft.Interval.MINUTE;
+            first.set_status (Ft.TimeBlockStatus.COMPLETED);
+            session.append (first);
+            var second = new Ft.TimeBlock.with_start_time (first.end_time, Ft.State.POMODORO);
+            second.end_time = second.start_time + 45 * Ft.Interval.MINUTE;
+            second.set_status (Ft.TimeBlockStatus.COMPLETED);
+            session.append (second);
+            var current = new Ft.TimeBlock.with_start_time (second.end_time, Ft.State.POMODORO);
+            current.end_time = current.start_time + 45 * Ft.Interval.MINUTE;
+            current.set_status (Ft.TimeBlockStatus.IN_PROGRESS);
+            session.append (current);
+
+            Ft.Timestamp.freeze_to (current.start_time + 20 * Ft.Interval.MINUTE);
+            this.stats_manager.track_time_block (first);
+            this.stats_manager.track_time_block (second);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+
+            // Refreshing the same running block replaces its snapshot, rather than adding it again.
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "pomodoro") == 105 * Ft.Interval.MINUTE);
+                assert_true (this.sum_aggregated ("2000-01-01", "pomodoro") == 105 * Ft.Interval.MINUTE);
+                assert_true (this.count_aggregated ("2000-01-01", "pomodoro") == 3);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+
+            Ft.Timestamp.freeze_to (current.end_time);
+            current.set_status (Ft.TimeBlockStatus.COMPLETED);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "pomodoro") == 130 * Ft.Interval.MINUTE);
+                assert_true (this.sum_aggregated ("2000-01-01", "pomodoro") == 130 * Ft.Interval.MINUTE);
+                assert_true (this.count_aggregated ("2000-01-01", "pomodoro") == 3);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__live_pause_resume ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 7, 0, 0));
+            var session = new Ft.Session ();
+            var current = new Ft.TimeBlock.with_start_time (start, Ft.State.SHORT_BREAK);
+            current.end_time = start + 45 * Ft.Interval.MINUTE;
+            current.set_status (Ft.TimeBlockStatus.IN_PROGRESS);
+            session.append (current);
+
+            Ft.Timestamp.freeze_to (start + 10 * Ft.Interval.MINUTE);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+
+            var gap = new Ft.Gap (Ft.GapFlags.INTERRUPTION);
+            gap.set_time_range (start + 10 * Ft.Interval.MINUTE, Ft.Timestamp.UNDEFINED);
+            current.add_gap (gap);
+            Ft.Timestamp.freeze_to (start + 20 * Ft.Interval.MINUTE);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "break") == 10 * Ft.Interval.MINUTE);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+
+            gap.end_time = start + 20 * Ft.Interval.MINUTE;
+            current.end_time += 10 * Ft.Interval.MINUTE;
+            Ft.Timestamp.freeze_to (start + 30 * Ft.Interval.MINUTE);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "break") == 20 * Ft.Interval.MINUTE);
+                assert_true (this.sum_aggregated ("2000-01-01", "break") == 20 * Ft.Interval.MINUTE);
+                assert_true (this.count_aggregated ("2000-01-01", "break") == 1);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__live_midnight ()
+        {
+            // Stats days turn over at 04:00, rather than at calendar midnight.
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 2, 3, 50, 0));
+            var session = new Ft.Session ();
+            var current = new Ft.TimeBlock.with_start_time (start, Ft.State.POMODORO);
+            current.end_time = start + 45 * Ft.Interval.MINUTE;
+            current.set_status (Ft.TimeBlockStatus.IN_PROGRESS);
+            session.append (current);
+            Ft.Timestamp.freeze_to (start + 20 * Ft.Interval.MINUTE);
+            this.stats_manager.track_time_block (current);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "pomodoro") == 10 * Ft.Interval.MINUTE);
+                assert_true (this.sum ("2000-01-02", "pomodoro") == 10 * Ft.Interval.MINUTE);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__live_open_end ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 7, 0, 0));
+            var session = new Ft.Session ();
+            var current = new Ft.TimeBlock.with_start_time (start, Ft.State.POMODORO);
+            current.end_time = Ft.Timestamp.UNDEFINED;
+            current.set_status (Ft.TimeBlockStatus.IN_PROGRESS);
+            session.append (current);
+
+            this.stats_manager.track_time_block (current, start + 10 * Ft.Interval.MINUTE);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "pomodoro") == 10 * Ft.Interval.MINUTE);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_track_time_block__live_rewind_all ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 7, 0, 0));
+            var session = new Ft.Session ();
+            var current = new Ft.TimeBlock.with_start_time (start, Ft.State.POMODORO);
+            current.end_time = start + 25 * Ft.Interval.MINUTE;
+            current.set_status (Ft.TimeBlockStatus.IN_PROGRESS);
+            session.append (current);
+            var now = start + 10 * Ft.Interval.MINUTE;
+
+            this.stats_manager.track_time_block (current, now);
+            this.run_flush ();
+            var gap = new Ft.Gap (Ft.GapFlags.INTERRUPTION);
+            gap.set_time_range (start, now);
+            current.add_gap (gap);
+            this.stats_manager.track_time_block (current, now);
+            this.run_flush ();
+            try {
+                assert_true (this.sum ("2000-01-01", "pomodoro") == 0);
+                assert_true (this.count ("2000-01-01", "pomodoro") == 0);
+                assert_true (this.count_aggregated ("2000-01-01", "pomodoro") == 0);
             }
             catch (GLib.Error error) {
                 assert_no_error (error);
@@ -1620,6 +1792,10 @@ namespace Tests
                            this.test_save__interruption);
             this.add_test ("save__pomodoro_with_interruptions",
                            this.test_save__pomodoro_with_interruptions);
+            this.add_test ("live__40_45_20",
+                           this.test_live__40_45_20);
+            this.add_test ("live__refresh_during_initial_save",
+                           this.test_live__refresh_during_initial_save);
         }
 
         public override void setup ()
@@ -1657,6 +1833,76 @@ namespace Tests
                     this.quit_main_loop ();
                 });
             assert_true (this.run_main_loop ());
+        }
+
+        public void test_live__refresh_during_initial_save ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 12, 0, 0));
+            Ft.Timestamp.freeze_to (start);
+            this.session_manager.advance_to_state (Ft.State.POMODORO);
+            Ft.Timestamp.freeze_to (start + 5 * Ft.Interval.MINUTE);
+
+            this.session_manager.save.begin ((obj, res) => {
+                assert_true (this.session_manager.save.end (res));
+                this.quit_main_loop ();
+            });
+            // The time-block entry exists, but has no persistent ID until saving finishes.
+            this.stats_manager.refresh ();
+            assert_true (this.run_main_loop ());
+            this.stats_manager.flush.begin ((obj, res) => {
+                this.stats_manager.flush.end (res);
+                this.quit_main_loop ();
+            });
+            assert_true (this.run_main_loop ());
+            try {
+                assert_true ((this.sum ("2000-01-01", "pomodoro") - 5 * Ft.Interval.MINUTE).abs () < 1000);
+                assert_true (this.count_aggregated ("2000-01-01", "pomodoro") == 1);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
+        }
+
+        public void test_live__40_45_20 ()
+        {
+            var start = Ft.Timestamp.from_datetime (
+                    new GLib.DateTime (this.new_york_timezone, 2000, 1, 1, 12, 0, 0));
+            Ft.get_settings ().set_uint ("pomodoro-duration", 2400);
+            Ft.Timestamp.freeze_to (start);
+            this.session_manager.advance_to_state (Ft.State.POMODORO);
+            this.run_save ();
+
+            Ft.Timestamp.freeze_to (start + 40 * Ft.Interval.MINUTE);
+            this.timer.iterate ();
+            Ft.get_settings ().set_uint ("pomodoro-duration", 2700);
+            Ft.Timestamp.freeze_to (start + 40 * Ft.Interval.MINUTE + Ft.Interval.SECOND);
+            this.session_manager.advance_to_state (Ft.State.POMODORO);
+            this.run_save ();
+
+            Ft.Timestamp.freeze_to (start + 85 * Ft.Interval.MINUTE + Ft.Interval.SECOND);
+            this.timer.iterate ();
+            Ft.Timestamp.freeze_to (start + 85 * Ft.Interval.MINUTE + 2 * Ft.Interval.SECOND);
+            this.session_manager.advance_to_state (Ft.State.POMODORO);
+            this.run_save ();
+
+            // No pause, restart, or session save: timer ticks must update the third round.
+            Ft.Timestamp.freeze_to (start + 105 * Ft.Interval.MINUTE + 2 * Ft.Interval.SECOND);
+            this.timer.iterate ();
+            this.stats_manager.flush.begin (
+                (obj, res) => {
+                    this.stats_manager.flush.end (res);
+                    this.quit_main_loop ();
+                });
+            assert_true (this.run_main_loop ());
+            try {
+                assert_true ((this.sum ("2000-01-01", "pomodoro") - 105 * Ft.Interval.MINUTE).abs () < 1000);
+                assert_true ((this.sum_aggregated ("2000-01-01", "pomodoro") - 105 * Ft.Interval.MINUTE).abs () < 1000);
+                assert_true (this.count_aggregated ("2000-01-01", "pomodoro") == 3);
+            }
+            catch (GLib.Error error) {
+                assert_no_error (error);
+            }
         }
 
         public void test_save__pomodoro ()
