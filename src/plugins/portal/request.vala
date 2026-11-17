@@ -49,8 +49,21 @@ namespace Portal
     }
 
 
-    public bool destroy_request (string handle_token)
+    public bool destroy_request (string handle_token,
+                                  bool   cancel = false)
     {
+        var request = requests != null ? requests.lookup (handle_token) : null;
+        if (cancel && request != null) {
+            request.close.begin ((obj, res) => {
+                try {
+                    request.close.end (res);
+                }
+                catch (GLib.Error error) {
+                    GLib.debug ("Failed to close portal request: %s", error.message);
+                }
+            });
+        }
+
         return requests != null
             ? requests.remove (handle_token)
             : false;
