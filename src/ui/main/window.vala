@@ -151,6 +151,7 @@ namespace Ft
         private ulong                   current_state_notify_id = 0;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
+        private bool                    closing_to_background = false;
 
         construct
         {
@@ -268,16 +269,41 @@ namespace Ft
 
         private async void close_to_background_internal ()
         {
+            if (this.closing_to_background) {
+                return;
+            }
+
+            this.closing_to_background = true;
+            var toast = new Adw.Toast (_("Requesting background access…"));
+            toast.timeout = 0;
+            this.add_toast (toast);
             var window_id = yield Ft.get_window_identifier (this);
 
             Ft.Window.background_hold_id = yield this.background_manager.hold (window_id);
+            toast.dismiss ();
 
             if (Ft.Window.background_hold_id != 0U) {
                 this.close ();
             }
             else {
-                this.minimize ();  // fallback
+                var dialog = new Adw.AlertDialog (
+                    _("Could Not Run in Background"),
+                    _("Allow background activity in your system’s application settings, then try again. " +
+                      "You can also keep the timer running in a minimized window.")
+                );
+                dialog.add_response ("cancel", _("Cancel"));
+                dialog.add_response ("minimize", _("Minimize and Keep Running"));
+                dialog.set_response_appearance ("minimize", Adw.ResponseAppearance.SUGGESTED);
+                dialog.set_default_response ("minimize");
+                dialog.set_close_response ("cancel");
+
+                var response = yield dialog.choose (this, null);
+                if (response == "minimize") {
+                    this.minimize ();
+                }
             }
+
+            this.closing_to_background = false;
         }
 
         public void close_to_background ()
@@ -509,6 +535,10 @@ namespace Ft
         [GtkCallback]
         private bool on_close_request ()
         {
+            if (this.closing_to_background && Ft.Window.background_hold_id == 0U) {
+                return true;
+            }
+
             if (this.background_manager.active) {
                 return false;
             }

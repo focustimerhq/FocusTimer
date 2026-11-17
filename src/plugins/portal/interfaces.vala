@@ -18,7 +18,7 @@ namespace Portal
     [DBus (name = "org.freedesktop.portal.Request")]
     public interface Request : GLib.Object
     {
-        public abstract void close () throws GLib.DBusError, GLib.IOError;
+        public abstract async void close () throws GLib.DBusError, GLib.IOError;
 
         public signal void response (uint32                                    response,
                                      [DBus (signature = "a{sv}")] GLib.Variant results);

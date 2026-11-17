@@ -17,6 +17,7 @@ test_names = [
   'expression-parser',
   'provider-set',
   'provided-object',
+  'background-manager',
   'cycle',
   'time-block',
   'timer',
@@ -50,18 +51,52 @@ foreach test_name : test_names
     compiled_schemas,
     resources,
   ]
+  test_executable = executable(
+    f'test-@test_name@',
+    test_sources,
+    dependencies: libft_core_dep,
+    link_with: libtests_common,
+    c_args: [
+      '-UG_DISABLE_ASSERT',
+    ],
+  )
+  if test_name == 'background-manager'
+    background_manager_test = test_executable
+  endif
   test(
     test_name,
-    executable(
-      f'test-@test_name@',
-      test_sources,
-      dependencies: libft_core_dep,
-      link_with: libtests_common,
-      c_args: [
-        '-UG_DISABLE_ASSERT',
-      ],
-    ),
+    test_executable,
     env: test_env,
     suite: 'tests',
   )
 endforeach
+
+# Check that a sandboxed app cannot use the native no-portal fallback.
+flatpak_test_env = test_env
+flatpak_test_env.set('FOCUS_TIMER_TEST_FLATPAK', '1')
+test(
+  'background-manager-flatpak',
+  background_manager_test,
+  env: flatpak_test_env,
+  suite: 'tests',
+)
+
+# Exercise the portal against a private D-Bus service, without changing desktop permissions.
+test(
+  'background-portal',
+  executable(
+    'test-background-portal',
+    'test-background-portal.vala',
+    files(
+      meson.project_source_root() / 'src/plugins/portal/interfaces.vala',
+      meson.project_source_root() / 'src/plugins/portal/request.vala',
+      meson.project_source_root() / 'src/plugins/portal/background-provider.vala',
+    ),
+    dependencies: libft_core_dep,
+    link_with: libtests_common,
+    include_directories: config_h_dir,
+  ),
+  env: test_env,
+  suite: 'tests',
+  timeout: 90,
+)
