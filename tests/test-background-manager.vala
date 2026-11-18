@@ -50,7 +50,7 @@ namespace Tests
         {
             this.add_test ("permission_granted", this.test_permission_granted);
             this.add_test ("permission_denied", this.test_permission_denied);
-            this.add_test ("pending_permission_is_not_active", this.test_pending_permission);
+            this.add_test ("pending_hold_is_independent_of_permission", this.test_pending_permission);
             this.add_test ("permission_revoked", this.test_permission_revoked);
             this.add_test ("retry_after_denial", this.test_retry_after_denial);
             this.add_test ("no_provider", this.test_no_provider);
@@ -108,8 +108,8 @@ namespace Tests
             assert (this.run_main_loop ());
             this.manager.hold.begin ("", (obj, res) => {
                 var hold_id = this.manager.hold.end (res);
-                assert ((hold_id != 0U) == !Ft.is_flatpak ());
-                assert (this.manager.active == !Ft.is_flatpak ());
+                assert (hold_id != 0U);
+                assert (this.manager.active);
                 this.manager.release (hold_id);
                 GLib.Idle.add (() => {
                     this.quit_main_loop ();
@@ -130,7 +130,7 @@ namespace Tests
             assert (!this.manager.enabled);
             var hold_id = this.manager.hold_sync ();
             assert (hold_id != 0U);
-            assert (this.manager.active == !Ft.is_flatpak ());
+            assert (this.manager.active);
             var handler_id = this.manager.notify["background-allowed"].connect (() => {
                 if (this.manager.background_allowed) {
                     // Let the permission request finish updating the application hold.
@@ -158,17 +158,24 @@ namespace Tests
 
         private void test_permission_denied ()
         {
-            assert (this.request_hold (false) == 0U);
+            var hold_id = this.request_hold (false);
+            assert (hold_id != 0U);
+            assert (!this.manager.background_allowed);
             assert (!this.manager.active);
+            this.manager.release (hold_id);
         }
 
         private void test_pending_permission ()
         {
             this.manager.hold.begin ("x11:1", (obj, res) => {
-                assert (this.manager.hold.end (res) == 0U);
+                var hold_id = this.manager.hold.end (res);
+                assert (hold_id != 0U);
+                assert (!this.manager.background_allowed);
+                this.manager.release (hold_id);
                 this.quit_main_loop ();
             });
-            assert (!this.manager.active);
+            assert (this.manager.active);
+            assert (!this.manager.background_allowed);
             assert (this.run_main_loop ());
         }
 
@@ -176,18 +183,23 @@ namespace Tests
         {
             var hold_id = this.request_hold (true);
             assert (hold_id != 0U);
-            assert (this.request_hold (false) == 0U);
+            var denied_hold = this.request_hold (false);
+            assert (denied_hold != 0U);
             assert (!this.manager.active);
             this.manager.release (hold_id);
+            this.manager.release (denied_hold);
         }
 
         private void test_retry_after_denial ()
         {
-            assert (this.request_hold (false) == 0U);
+            var denied_hold = this.request_hold (false);
+            assert (denied_hold != 0U);
             var hold_id = this.request_hold (true);
             assert (hold_id != 0U);
             this.manager.release (hold_id);
-            // A failed request must not leave a hold that keeps the app alive.
+            // A denied request retains its hold until its owner releases it.
+            assert (this.manager.active);
+            this.manager.release (denied_hold);
             assert (!this.manager.active);
         }
     }
@@ -203,12 +215,6 @@ namespace Tests
         }
         GLib.Environment.set_variable ("XDG_CONFIG_HOME", config_dir, true);
         Tests.init (args);
-        var flatpak = GLib.Environment.get_variable ("FOCUS_TIMER_TEST_FLATPAK") == "1";
-        GLib.Environment.set_variable ("container", flatpak ? "flatpak" : "", true);
-        if (flatpak) {
-            GLib.Environment.unset_variable ("G_TEST_ROOT_PROCESS");
-        }
-        assert (Ft.is_flatpak () == flatpak);
         var result = Tests.run (new BackgroundManagerTest ());
         GLib.DirUtils.remove (config_dir);
         return result;

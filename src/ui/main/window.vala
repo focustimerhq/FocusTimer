@@ -151,7 +151,6 @@ namespace Ft
         private ulong                   current_state_notify_id = 0;
         private ulong                   settings_changed_id = 0;
         private static uint             background_hold_id = 0U;
-        private bool                    closing_to_background = false;
 
         construct
         {
@@ -269,41 +268,18 @@ namespace Ft
 
         private async void close_to_background_internal ()
         {
-            if (this.closing_to_background) {
-                return;
-            }
-
-            this.closing_to_background = true;
-            var toast = new Adw.Toast (_("Requesting background access…"));
-            toast.timeout = 0;
-            this.add_toast (toast);
             var window_id = yield Ft.get_window_identifier (this);
 
             Ft.Window.background_hold_id = yield this.background_manager.hold (window_id);
-            toast.dismiss ();
 
-            if (Ft.Window.background_hold_id != 0U) {
+            if (Ft.Window.background_hold_id != 0U && this.background_manager.background_allowed) {
                 this.close ();
             }
             else {
-                var dialog = new Adw.AlertDialog (
-                    _("Could Not Run in Background"),
-                    _("Allow background activity in your system’s application settings, then try again. " +
-                      "You can also keep the timer running in a minimized window.")
-                );
-                dialog.add_response ("cancel", _("Cancel"));
-                dialog.add_response ("minimize", _("Minimize and Keep Running"));
-                dialog.set_response_appearance ("minimize", Adw.ResponseAppearance.SUGGESTED);
-                dialog.set_default_response ("minimize");
-                dialog.set_close_response ("cancel");
-
-                var response = yield dialog.choose (this, null);
-                if (response == "minimize") {
-                    this.minimize ();
-                }
+                this.background_manager.release (Ft.Window.background_hold_id);
+                Ft.Window.background_hold_id = 0U;
+                this.show_close_confirmation_dialog ();
             }
-
-            this.closing_to_background = false;
         }
 
         public void close_to_background ()
@@ -366,19 +342,25 @@ namespace Ft
         {
             unowned var self = this;
 
+            var background_allowed = this.background_manager.background_allowed;
             var dialog = new Adw.AlertDialog (
-                _("Keep timer running?"),
-                _("You can keep it running in the background — notifications and keyboard shortcuts will still work.")
+                background_allowed ? _("Keep timer running?") : _("Timer is running"),
+                background_allowed
+                    ? _("You can keep it running in the background — notifications and keyboard shortcuts will still work.")
+                    : _("Are you sure you want to quit?")
             );
             dialog.prefer_wide_layout = true;
 
             dialog.add_response ("quit", _("Quit"));
             dialog.set_response_appearance ("quit", Adw.ResponseAppearance.DEFAULT);
 
-            dialog.add_response ("run-in-background", _("Run in background"));
-            dialog.set_response_appearance ("run-in-background", Adw.ResponseAppearance.SUGGESTED);
+            dialog.add_response ("cancel", _("Cancel"));
+            if (background_allowed) {
+                dialog.add_response ("run-in-background", _("Run in background"));
+                dialog.set_response_appearance ("run-in-background", Adw.ResponseAppearance.SUGGESTED);
+            }
 
-            dialog.set_default_response ("run-in-background");
+            dialog.set_default_response (background_allowed ? "run-in-background" : "cancel");
             dialog.set_close_response ("cancel");
             dialog.response.connect (
                 (response) => {
@@ -535,11 +517,7 @@ namespace Ft
         [GtkCallback]
         private bool on_close_request ()
         {
-            if (this.closing_to_background && Ft.Window.background_hold_id == 0U) {
-                return true;
-            }
-
-            if (this.background_manager.active) {
+            if (this.background_manager.active && this.background_manager.background_allowed) {
                 return false;
             }
 

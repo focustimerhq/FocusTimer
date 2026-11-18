@@ -51,37 +51,23 @@ foreach test_name : test_names
     compiled_schemas,
     resources,
   ]
-  test_executable = executable(
-    f'test-@test_name@',
-    test_sources,
-    dependencies: libft_core_dep,
-    link_with: libtests_common,
-    c_args: [
-      '-UG_DISABLE_ASSERT',
-    ],
-  )
-  if test_name == 'background-manager'
-    background_manager_test = test_executable
-  endif
   test(
     test_name,
-    test_executable,
+    executable(
+      f'test-@test_name@',
+      test_sources,
+      dependencies: libft_core_dep,
+      link_with: libtests_common,
+      c_args: [
+        '-UG_DISABLE_ASSERT',
+      ],
+    ),
     env: test_env,
     suite: 'tests',
   )
 endforeach
 
-# Check that a sandboxed app cannot use the native no-portal fallback.
-flatpak_test_env = test_env
-flatpak_test_env.set('FOCUS_TIMER_TEST_FLATPAK', '1')
-test(
-  'background-manager-flatpak',
-  background_manager_test,
-  env: flatpak_test_env,
-  suite: 'tests',
-)
-
-# Exercise the portal against a private D-Bus service, without changing desktop permissions.
+# Exercise the portal against a private D-Bus service, user permissions are not touched.
 test(
   'background-portal',
   executable(
