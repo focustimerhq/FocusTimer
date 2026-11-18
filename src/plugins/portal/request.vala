@@ -27,8 +27,7 @@ namespace Portal
 
         next_request_id++;
 
-        var request_proxy = yield GLib.Bus.get_proxy<Portal.Request> (
-                GLib.BusType.SESSION,
+        var request_proxy = yield connection.get_proxy<Portal.Request> (
                 "org.freedesktop.portal.Desktop",
                 @"/org/freedesktop/portal/desktop/request/$(sender_escaped)/$(handle_token)");
         request_proxy.response.connect (
@@ -46,6 +45,27 @@ namespace Portal
         requests.insert (handle_token, request_proxy);
 
         return handle_token;
+    }
+
+
+    public bool close_request (string handle_token)
+    {
+        var request = requests != null ? requests.lookup (handle_token) : null;
+
+        if (request == null) {
+            return false;
+        }
+
+        request.close.begin ((obj, res) => {
+            try {
+                request.close.end (res);
+            }
+            catch (GLib.Error error) {
+                GLib.debug ("Failed to close portal request: %s", error.message);
+            }
+        });
+
+        return Portal.destroy_request (handle_token);
     }
 
 

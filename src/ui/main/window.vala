@@ -272,11 +272,13 @@ namespace Ft
 
             Ft.Window.background_hold_id = yield this.background_manager.hold (window_id);
 
-            if (Ft.Window.background_hold_id != 0U) {
+            if (Ft.Window.background_hold_id != 0U && this.background_manager.background_allowed) {
                 this.close ();
             }
             else {
-                this.minimize ();  // fallback
+                this.background_manager.release (Ft.Window.background_hold_id);
+                Ft.Window.background_hold_id = 0U;
+                this.show_close_confirmation_dialog ();
             }
         }
 
@@ -340,19 +342,25 @@ namespace Ft
         {
             unowned var self = this;
 
+            var background_allowed = this.background_manager.background_allowed;
             var dialog = new Adw.AlertDialog (
-                _("Keep timer running?"),
-                _("You can keep it running in the background — notifications and keyboard shortcuts will still work.")
+                background_allowed ? _("Keep timer running?") : _("Timer is running"),
+                background_allowed
+                    ? _("You can keep it running in the background — notifications and keyboard shortcuts will still work.")
+                    : _("Are you sure you want to quit?")
             );
             dialog.prefer_wide_layout = true;
 
             dialog.add_response ("quit", _("Quit"));
             dialog.set_response_appearance ("quit", Adw.ResponseAppearance.DEFAULT);
 
-            dialog.add_response ("run-in-background", _("Run in background"));
-            dialog.set_response_appearance ("run-in-background", Adw.ResponseAppearance.SUGGESTED);
+            dialog.add_response ("cancel", _("Cancel"));
+            if (background_allowed) {
+                dialog.add_response ("run-in-background", _("Run in background"));
+                dialog.set_response_appearance ("run-in-background", Adw.ResponseAppearance.SUGGESTED);
+            }
 
-            dialog.set_default_response ("run-in-background");
+            dialog.set_default_response (background_allowed ? "run-in-background" : "cancel");
             dialog.set_close_response ("cancel");
             dialog.response.connect (
                 (response) => {
@@ -509,7 +517,7 @@ namespace Ft
         [GtkCallback]
         private bool on_close_request ()
         {
-            if (this.background_manager.active) {
+            if (this.background_manager.active && this.background_manager.background_allowed) {
                 return false;
             }
 

@@ -17,6 +17,7 @@ test_names = [
   'expression-parser',
   'provider-set',
   'provided-object',
+  'background-manager',
   'cycle',
   'time-block',
   'timer',
@@ -65,3 +66,23 @@ foreach test_name : test_names
     suite: 'tests',
   )
 endforeach
+
+# Exercise the portal against a private D-Bus service, user permissions are not touched.
+test(
+  'background-portal',
+  executable(
+    'test-background-portal',
+    'test-background-portal.vala',
+    files(
+      meson.project_source_root() / 'src/plugins/portal/interfaces.vala',
+      meson.project_source_root() / 'src/plugins/portal/request.vala',
+      meson.project_source_root() / 'src/plugins/portal/background-provider.vala',
+    ),
+    dependencies: libft_core_dep,
+    link_with: libtests_common,
+    include_directories: config_h_dir,
+  ),
+  env: test_env,
+  suite: 'tests',
+  timeout: 90,
+)

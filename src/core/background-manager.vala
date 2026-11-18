@@ -158,6 +158,13 @@ Exec=focus-timer --gapplication-service
         private bool                             _background_allowed = false;
         private bool                             _autostart_allowed = false;
 
+        public BackgroundManager.with_provider (Ft.BackgroundProvider? provider)
+        {
+            if (provider != null) {
+                this.providers.add (provider, Ft.Priority.HIGH);
+            }
+        }
+
         private async void request_background (string parent_window)
         {
             if (this.provider == null || !this.provider.enabled) {

@@ -18,7 +18,8 @@ namespace Portal
     [DBus (name = "org.freedesktop.portal.Request")]
     public interface Request : GLib.Object
     {
-        public abstract void close () throws GLib.DBusError, GLib.IOError;
+        [DBus (timeout = 5000)]
+        public abstract async void close () throws GLib.DBusError, GLib.IOError;
 
         public signal void response (uint32                                    response,
                                      [DBus (signature = "a{sv}")] GLib.Variant results);
@@ -31,6 +32,8 @@ namespace Portal
         [DBus (name = "version")]
         public abstract uint32 version { get; }
 
+        // The method returns a request handle; it is not a no-reply call.
+        [DBus (timeout = 10000)]
         public abstract async GLib.ObjectPath request_background (
                 string                                    parent_window,
                 [DBus (signature = "a{sv}")] GLib.Variant options) throws GLib.DBusError, GLib.IOError;

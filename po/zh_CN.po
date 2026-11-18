@@ -2056,3 +2056,15 @@ msgstr "侧边栏"
 
 #~ msgid "Upgrade"
 #~ msgstr "升级"
+
+#: src/ui/main/window.vala
+msgid "Timer is running"
+msgstr "计时器正在运行"
+
+#: src/ui/main/window.vala
+msgid "Are you sure you want to quit?"
+msgstr "确定要退出吗？"
+
+#: src/ui/main/window.vala
+msgid "Cancel"
+msgstr "取消"

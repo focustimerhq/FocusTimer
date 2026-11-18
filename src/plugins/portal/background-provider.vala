@@ -18,6 +18,12 @@ namespace Portal
 
         private const string[] COMMANDLINE = {"focus-timer", "--gapplication-service"};
 
+        /**
+         * A request that failed or got cancelled may never emit `Request::Response`.
+         * Do not keep the caller waiting for a response that will not come.
+         */
+        public uint response_timeout { get; set; default = 60U; }
+
         public Ft.Priority priority {
             get {
                 return Ft.Priority.HIGH;
@@ -48,7 +54,10 @@ namespace Portal
                                        string              name,
                                        string              name_owner)
         {
-            this.available = true;
+            this.available = has_dbus_interface (connection,
+                                                 name,
+                                                 "/org/freedesktop/portal/desktop",
+                                                 "org.freedesktop.portal.Background");
             this.connection = connection;
         }
 
@@ -108,17 +117,6 @@ namespace Portal
                 this.cancellable.cancel ();
             }
 
-            // XXX: the request does not get withdrawn
-            // if (this._autostart_allowed) {
-            //     this._autostart_allowed = false;
-            //     this.notify_property ("autostart-allowed");
-            // }
-            //
-            // if (this._background_allowed) {
-            //     this._background_allowed = false;
-            //     this.notify_property ("background-allowed");
-            // }
-
             this.proxy = null;
             this.requests = null;
         }
@@ -133,78 +131,135 @@ namespace Portal
             this.cancellable = null;
         }
 
+        private void update_permissions (bool background_allowed,
+                                          bool autostart_allowed)
+        {
+            if (this._background_allowed != background_allowed) {
+                this._background_allowed = background_allowed;
+                this.notify_property ("background-allowed");
+            }
+            if (this._autostart_allowed != autostart_allowed) {
+                this._autostart_allowed = autostart_allowed;
+                this.notify_property ("autostart-allowed");
+            }
+        }
+
         public async void request_background (bool   autostart,
                                               string parent_window)
         {
-            string handle_token;
+            var proxy = this.proxy;
+            var cancellable = this.cancellable;
 
-            if (this.proxy == null) {
+            if (proxy == null || (cancellable != null && cancellable.is_cancelled ())) {
                 return;
             }
+
+            string? handle_token = null;
+            ulong cancelled_id = 0;
+            uint timeout_id = 0U;
+            var completed = false;
+            var waiting = false;
+            var received_response = false;
+            GLib.SourceFunc complete = () => {
+                if (!completed) {
+                    completed = true;
+                    if (waiting) {
+                        this.request_background.callback ();
+                    }
+                }
+                return GLib.Source.REMOVE;
+            };
 
             try {
                 handle_token = yield Portal.create_request (
                     this.connection,
                     (response, results) => {
-                        var background_variant = results.lookup_value ("background", null);
-                        var autostart_variant = results.lookup_value ("autostart", null);
-                        var background_allowed = background_variant != null
-                                ? background_variant.get_boolean ()
-                                : this._background_allowed;
-                        var autostart_allowed = autostart_variant != null
-                                ? autostart_variant.get_boolean ()
-                                : this._autostart_allowed;
-
-                        if (autostart_allowed != autostart) {
-                            GLib.warning ("Failed to set `autostart = %s`",
-                                          autostart.to_string ());
+                        // A response is authoritative; cancellation and transport errors
+                        // do not revoke permissions already granted by the portal.
+                        received_response = true;
+                        if (response == 0U) {
+                            var background = results.lookup_value ("background", GLib.VariantType.BOOLEAN);
+                            var autostart_result = results.lookup_value ("autostart", GLib.VariantType.BOOLEAN);
+                            this.update_permissions (
+                                background != null ? background.get_boolean () : this._background_allowed,
+                                autostart_result != null ? autostart_result.get_boolean () : this._autostart_allowed);
                         }
-
-                        if (this._background_allowed != background_allowed) {
-                            this._background_allowed = background_allowed;
-                            this.notify_property ("background-allowed");
+                        if (!completed) {
+                            complete ();
                         }
-
-                        if (this._autostart_allowed != autostart_allowed) {
-                            this._autostart_allowed = autostart_allowed;
-                            this.notify_property ("autostart-allowed");
-                        }
-
-                        this.request_background.callback ();
                     });
+
+                if (cancellable != null) {
+                    cancelled_id = cancellable.cancelled.connect (() => {
+                        GLib.Idle.add (() => {
+                            if (!completed) {
+                                complete ();
+                            }
+                            return GLib.Source.REMOVE;
+                        });
+                    });
+                }
+
+                if (cancellable != null && cancellable.is_cancelled ()) {
+                    complete ();
+                }
+                else {
+                    var options = new GLib.VariantDict ();
+                    options.insert_value ("handle_token", new GLib.Variant.string (handle_token));
+                    options.insert_value ("autostart", new GLib.Variant.boolean (autostart));
+                    options.insert_value ("commandline", new GLib.Variant.strv (COMMANDLINE));
+
+                    // GDBus supplies the method-call timeout. The portal's separate
+                    // Response signal may wait for user interaction for longer.
+                    proxy.request_background.begin (parent_window, options.end (), (obj, res) => {
+                        try {
+                            proxy.request_background.end (res);
+                            if (!completed) {
+                                // This timer only covers a missing Response after the
+                                // method returned. The interface bounds the method call.
+                                timeout_id = GLib.Timeout.add_seconds (this.response_timeout, () => {
+                                    timeout_id = 0U;
+                                    GLib.warning ("Timed out waiting for background response");
+                                    return complete ();
+                                });
+                            }
+                        }
+                        catch (GLib.Error error) {
+                            GLib.warning ("Error while requesting background: %s", error.message);
+                            if (!completed) {
+                                complete ();
+                            }
+                        }
+                    });
+                }
+
+                if (!completed) {
+                    waiting = true;
+                    yield;
+                    waiting = false;
+                }
             }
             catch (GLib.Error error) {
                 GLib.warning ("Error while requesting background: %s", error.message);
-                return;
             }
-
-            if (this.proxy == null) {
-                Portal.destroy_request (handle_token);
-                return;
+            finally {
+                completed = true;
+                if (timeout_id != 0U) {
+                    GLib.Source.remove (timeout_id);
+                }
+                if (cancelled_id != 0) {
+                    GLib.SignalHandler.disconnect (cancellable, cancelled_id);
+                }
+                if (handle_token != null) {
+                    if (received_response) {
+                        Portal.destroy_request (handle_token);
+                    }
+                    else {
+                        Portal.close_request (handle_token);
+                    }
+                }
+                complete = null;
             }
-
-            var options = new GLib.VariantDict ();
-            options.insert_value ("handle_token", new GLib.Variant.string (handle_token));
-            options.insert_value ("autostart", new GLib.Variant.boolean (autostart));
-            options.insert_value ("commandline", new GLib.Variant.strv (COMMANDLINE));
-
-            this.proxy.request_background.begin (
-                parent_window,
-                options.end (),
-                (obj, res) => {
-                    if (this.proxy == null) {
-                        return;
-                    }
-
-                    try {
-                        this.proxy.request_background.end (res);
-                    }
-                    catch (GLib.Error error) {
-                        GLib.warning ("Error while requesting background: %s", error.message);
-                    }
-                });
-
-            yield;  // wait for response
         }
     }
 }
