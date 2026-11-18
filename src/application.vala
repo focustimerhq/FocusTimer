@@ -1124,6 +1124,7 @@ namespace Ft
 
             // Wait until all async jobs are completed
             var main_context = GLib.MainContext.@default ();
+            var stats_manager = this.stats_manager;
             var remaining = 2;
 
             this.job_queue.wait.begin (
@@ -1135,7 +1136,20 @@ namespace Ft
             this.session_manager.save.begin (
                 (obj, res) => {
                     this.session_manager.save.end (res);
-                    remaining--;
+
+                    // Saving a session emits `time-block-saved`, from which stats
+                    // entries are derived asynchronously. Wait for them, so the
+                    // last round is not lost when the database is closed.
+                    if (stats_manager != null) {
+                        stats_manager.flush.begin (
+                            (stats_obj, stats_res) => {
+                                stats_manager.flush.end (stats_res);
+                                remaining--;
+                            });
+                    }
+                    else {
+                        remaining--;
+                    }
                 });
 
             while (remaining > 0 && main_context.iteration (true));
