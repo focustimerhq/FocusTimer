@@ -134,8 +134,7 @@ Exec=focus-timer --gapplication-service
     {
         public bool active {
             get {
-                return this.has_application_hold &&
-                       (this._background_allowed || (!this.enabled && !Ft.is_flatpak ()));
+                return this.has_application_hold;
             }
         }
 
@@ -159,10 +158,6 @@ Exec=focus-timer --gapplication-service
         private bool                             _background_allowed = false;
         private bool                             _autostart_allowed = false;
 
-        public BackgroundManager ()
-        {
-        }
-
         public BackgroundManager.with_provider (Ft.BackgroundProvider? provider)
         {
             if (provider != null) {
@@ -173,7 +168,6 @@ Exec=focus-timer --gapplication-service
         private async void request_background (string parent_window)
         {
             if (this.provider == null || !this.provider.enabled) {
-                this.update_application_hold ();
                 return;
             }
 
@@ -206,9 +200,7 @@ Exec=focus-timer --gapplication-service
         {
             var is_provider_enabled = this.provider != null && this.provider.enabled;
 
-            var can_run_background = this._background_allowed || (!is_provider_enabled && !Ft.is_flatpak ());
-
-            if (this.holds.length > 0U && can_run_background) {
+            if (this.holds.length > 0U && (this._background_allowed || !is_provider_enabled)) {
                 this.hold_application ();
             }
             else {
@@ -225,13 +217,6 @@ Exec=focus-timer --gapplication-service
             this.hold_application ();
 
             yield this.request_background (parent_window);
-
-            // A request ID only represents a usable hold after permission was granted.
-            // Returning it on denial makes the window try to close and ask again.
-            if (!this.active) {
-                this.release (hold_id);
-                return 0U;
-            }
 
             return hold_id;
         }

@@ -405,7 +405,6 @@ namespace Ft
                 window.view = view;
             }
 
-            window.unminimize ();
             window.present ();
 
             if (!window.is_active && !window_created) {
@@ -818,8 +817,11 @@ namespace Ft
 
             if (GLib.ApplicationFlags.IS_SERVICE in this.flags)
             {
-                // Keep the service's request registered while providers initialize.
-                this.service_hold_id = this.background_manager.hold_sync ();
+                this.background_manager.hold.begin (
+                    "",
+                    (obj, res) => {
+                        this.service_hold_id = this.background_manager.hold.end (res);
+                    });
             }
 
             while (!restored) {

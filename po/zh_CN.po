@@ -1016,27 +1016,6 @@ msgstr "可以让应用在后台继续运行，通知和键盘快捷键仍然有
 msgid "Run in background"
 msgstr "在后台运行"
 
-#: src/ui/main/window.vala
-msgid "Could Not Run in Background"
-msgstr "无法在后台运行"
-
-#: src/ui/main/window.vala
-msgid "Requesting background access…"
-msgstr "正在请求后台运行权限…"
-
-#: src/ui/main/window.vala
-msgid "Allow background activity in your system’s application settings, then try again. You can also keep the timer running in a minimized window."
-msgstr "请在系统的应用设置中允许后台运行，然后重试。您也可以将窗口最小化，让计时器继续运行。"
-
-#: src/ui/main/window.vala
-msgid "Cancel"
-msgstr "取消"
-
-#: src/ui/main/window.vala
-msgid "Minimize and Keep Running"
-msgstr "最小化并继续计时"
-
-
 #: src/ui/main/window.vala:446
 msgid "Sounds turned on"
 msgstr "声音已开启"
@@ -2077,3 +2056,15 @@ msgstr "侧边栏"
 
 #~ msgid "Upgrade"
 #~ msgstr "升级"
+
+#: src/ui/main/window.vala
+msgid "Timer is running"
+msgstr "计时器正在运行"
+
+#: src/ui/main/window.vala
+msgid "Are you sure you want to quit?"
+msgstr "确定要退出吗？"
+
+#: src/ui/main/window.vala
+msgid "Cancel"
+msgstr "取消"

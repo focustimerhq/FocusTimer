@@ -1198,9 +1198,6 @@ namespace Ft
 
         public override void map ()
         {
-            var stats_manager = new Ft.StatsManager ();
-            stats_manager.refresh ();
-
             this.model.update_date_range ();
 
             base.map ();

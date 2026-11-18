@@ -18,7 +18,6 @@ namespace Ft
     public sealed class StatsManager : GLib.Object
     {
         public const int64 MIDNIGHT_OFFSET = 4 * Ft.Interval.HOUR;  // 4 AM
-        private const int64 REFRESH_INTERVAL = 15 * Ft.Interval.SECOND;
 
         private struct Segment
         {
@@ -49,7 +48,6 @@ namespace Ft
                 this._session_manager = value;
                 this._session_manager.time_block_saved.connect (this.on_time_block_saved);
                 this._session_manager.gap_saved.connect (this.on_gap_saved);
-                this._session_manager.timer.tick.connect (this.on_timer_tick);
             }
         }
 
@@ -58,7 +56,6 @@ namespace Ft
         private Ft.AsyncQueue<Item?>    queue = null;
         private bool                    is_processing = false;
         private Ft.AsyncCallback[]      flush_callbacks;
-        private int64                   last_refresh_time = Ft.Timestamp.UNDEFINED;
 
         construct
         {
@@ -294,8 +291,7 @@ namespace Ft
 
             var entries = yield this.fetch_entries (repository,
                                                     category,
-                                                    segments.length > 0
-                                                        ? segments[0].timestamp : Ft.Timestamp.UNDEFINED,
+                                                    segments[0].timestamp,
                                                     source_id);
             var entry_index = 0;
 
@@ -424,8 +420,7 @@ namespace Ft
                                      int64           source_id,
                                      owned Segment[] segments)
         {
-            // Empty snapshots must remove any previously tracked time for this source.
-            if (segments.length == 0 && source_id == 0) {
+            if (segments.length == 0) {
                 return;
             }
 
@@ -513,14 +508,12 @@ namespace Ft
             return result;
         }
 
-        public void track_time_block (Ft.TimeBlock time_block,
-                                      int64        now = Ft.Timestamp.UNDEFINED)
+        public void track_time_block (Ft.TimeBlock time_block)
         {
             this.try_save_time_block (time_block);
 
             unowned var time_block_entry = time_block.entry;
             var         timestamp        = time_block.start_time;
-            var         end_time         = time_block.end_time;
             var         category         = this.transform_state (time_block.state);
             Segment[]   segments         = {};
 
@@ -545,70 +538,35 @@ namespace Ft
                 return;
             }
 
-            if (time_block.get_status () == Ft.TimeBlockStatus.IN_PROGRESS)
-            {
-                Ft.ensure_timestamp (ref now);
-
-                // The scheduled end is in the future. Only count time already elapsed.
-                end_time = Ft.Timestamp.is_defined (end_time)
-                        ? int64.min (end_time, now) : now;
-            }
-
             time_block.foreach_gap (
                 (gap) => {
-                    var gap_start = Ft.Timestamp.is_defined (end_time)
-                            ? int64.min (gap.start_time, end_time) : gap.start_time;
-
-                    if (gap_start > timestamp) {
+                    if (gap.start_time > timestamp) {
                         segments += Segment () {
                             timestamp = timestamp,
-                            duration  = gap_start - timestamp,
+                            duration  = gap.start_time - timestamp,
                             datetime  = this.transform_timestamp (timestamp)
                         };
                     }
 
-                    // An open gap means the timer is still paused.
-                    timestamp = Ft.Timestamp.is_defined (gap.end_time)
-                            ? gap.end_time : end_time;
+                    timestamp = gap.end_time;
                 });
 
-            if (Ft.Timestamp.is_defined (end_time) && end_time > timestamp &&
-                (time_block.get_status () != Ft.TimeBlockStatus.IN_PROGRESS ||
-                 end_time - timestamp >= Ft.Interval.SECOND))
+            if (Ft.Timestamp.is_defined (time_block.end_time) &&
+                time_block.end_time > timestamp &&
+                time_block.get_status () != Ft.TimeBlockStatus.IN_PROGRESS)
             {
                 segments += Segment () {
                     timestamp = timestamp,
-                    duration  = end_time - timestamp,
+                    duration  = time_block.end_time - timestamp,
                     datetime  = this.transform_timestamp (timestamp)
                 };
             }
 
             segments = this.intersect_segments (
                     segments,
-                    this.split (time_block.start_time,
-                                Ft.Timestamp.subtract (end_time, time_block.start_time)));
+                    this.split (time_block.start_time, time_block.duration));
 
             this.track_internal (category, time_block_entry.id, segments);
-        }
-
-        public void refresh (int64 now = Ft.Timestamp.UNDEFINED)
-        {
-            var time_block = this._session_manager.current_time_block;
-
-            if (time_block != null && time_block.entry != null && time_block.entry.id != 0) {
-                this.track_time_block (time_block, now);
-            }
-        }
-
-        private void on_timer_tick (int64 timestamp)
-        {
-            if (Ft.Timestamp.is_undefined (this.last_refresh_time) ||
-                timestamp < this.last_refresh_time ||
-                timestamp - this.last_refresh_time >= REFRESH_INTERVAL)
-            {
-                this.last_refresh_time = timestamp;
-                this.refresh (timestamp);
-            }
         }
 
         public void track_gap (Ft.Gap gap)
@@ -706,7 +664,6 @@ namespace Ft
             {
                 this._session_manager.time_block_saved.disconnect (this.on_time_block_saved);
                 this._session_manager.gap_saved.disconnect (this.on_gap_saved);
-                this._session_manager.timer.tick.disconnect (this.on_timer_tick);
                 this._session_manager = null;
             }
 
