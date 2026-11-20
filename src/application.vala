@@ -844,13 +844,8 @@ namespace Ft
                     main_context.wakeup ();
                 });
 
-            if (GLib.ApplicationFlags.IS_SERVICE in this.flags)
-            {
-                this.background_manager.hold.begin (
-                    "",
-                    (obj, res) => {
-                        this.service_hold_id = this.background_manager.hold.end (res);
-                    });
+            if (GLib.ApplicationFlags.IS_SERVICE in this.flags) {
+                this.service_hold_id = this.background_manager.hold ();
             }
 
             while (!restored) {

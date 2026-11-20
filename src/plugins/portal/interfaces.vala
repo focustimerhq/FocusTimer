@@ -18,7 +18,6 @@ namespace Portal
     [DBus (name = "org.freedesktop.portal.Request")]
     public interface Request : GLib.Object
     {
-        [DBus (timeout = 5000)]
         public abstract async void close () throws GLib.DBusError, GLib.IOError;
 
         public signal void response (uint32                                    response,
@@ -32,8 +31,6 @@ namespace Portal
         [DBus (name = "version")]
         public abstract uint32 version { get; }
 
-        // The method returns a request handle; it is not a no-reply call.
-        [DBus (timeout = 10000)]
         public abstract async GLib.ObjectPath request_background (
                 string                                    parent_window,
                 [DBus (signature = "a{sv}")] GLib.Variant options) throws GLib.DBusError, GLib.IOError;
@@ -102,11 +99,11 @@ namespace Portal
     }
 
 
-    internal bool has_dbus_interface (GLib.DBusConnection connection,
-                                      string              bus_name,
-                                      string              object_path,
-                                      string              interface_name,
-                                      int                 timeout = -1)
+    public bool has_dbus_interface (GLib.DBusConnection connection,
+                                    string              bus_name,
+                                    string              object_path,
+                                    string              interface_name,
+                                    int                 timeout = -1)
     {
         try {
             var result = connection.call_sync (
@@ -139,8 +136,8 @@ namespace Portal
     }
 
 
-    internal bool has_dbus_method (GLib.DBusProxy proxy,
-                                   string         name)
+    public bool has_dbus_method (GLib.DBusProxy proxy,
+                                 string         name)
     {
         return proxy.g_interface_info?.lookup_method (name) != null;
     }

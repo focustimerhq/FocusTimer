@@ -50,7 +50,7 @@ namespace Gnome
             if (shell_extension_enabled)
             {
                 if (this.background_hold_id == 0U) {
-                    this.background_hold_id = this.background_manager.hold_sync ();
+                    this.background_hold_id = this.background_manager.hold ();
                 }
 
                 notification_manager.inhibit ();

@@ -13,8 +13,9 @@ namespace Ft
         public abstract bool background_allowed { get; }
         public abstract bool autostart_allowed  { get; }
 
-        public abstract async void request_background (bool   autostart,
-                                                       string parent_window);
+        public abstract async bool request_background (bool              autostart,
+                                                       string            parent_window,
+                                                       GLib.Cancellable? cancellable);
     }
 
 
@@ -93,8 +94,9 @@ Exec=focus-timer --gapplication-service
         {
         }
 
-        public async void request_background (bool   autostart,
-                                              string parent_window)
+        public async bool request_background (bool              autostart,
+                                              string            parent_window,
+                                              GLib.Cancellable? cancellable)
         {
             var autostart_file = this.get_autostart_file ();
             var autostart_contents = AUTOSTART_TEMPLATE.replace (
@@ -120,15 +122,25 @@ Exec=focus-timer --gapplication-service
             }
             catch (GLib.Error error) {
                 GLib.warning ("Failed to update autostart file: %s", error.message);
-                return;
+                return true;
             }
 
-            this._autostart_allowed = autostart;
-            this.notify_property ("autostart-allowed");
+            if (this._autostart_allowed != autostart) {
+                this._autostart_allowed = autostart;
+                this.notify_property ("autostart-allowed");
+            }
+
+            return true;
         }
     }
 
 
+    /**
+     * Wrapper around `Application.hold()` and `.release()` methods.
+     *
+     * Acquiring a hold indicates that the app can run in background. We may still not have the
+     * permission to do so, and the sandbox will close it when there are no windows.
+     */
     [SingleInstance]
     public class BackgroundManager : Ft.ProvidedObject<Ft.BackgroundProvider>
     {
@@ -150,34 +162,17 @@ Exec=focus-timer --gapplication-service
             }
         }
 
+        private bool                             _background_allowed = false;
+        private bool                             _autostart_allowed = false;
         private unowned GLib.Application?        application = null;
         private GLib.Settings?                   settings = null;
         private bool                             has_application_hold = false;
         private GLib.GenericSet<uint>            holds = null;
         private static uint                      next_hold_id = 1U;
-        private bool                             _background_allowed = false;
-        private bool                             _autostart_allowed = false;
 
-        public BackgroundManager.with_provider (Ft.BackgroundProvider? provider)
+        public BackgroundManager.with_provider (Ft.BackgroundProvider provider)
         {
-            if (provider != null) {
-                this.providers.add (provider, Ft.Priority.HIGH);
-            }
-        }
-
-        private async void request_background (string parent_window)
-        {
-            if (this.provider == null || !this.provider.enabled) {
-                return;
-            }
-
-            this.application.hold ();
-
-            yield this.provider.request_background (this.settings.get_boolean ("autostart"),
-                                                    parent_window);
-
-            this.update_application_hold ();
-            this.application.release ();
+            this.providers.add (provider, Ft.Priority.HIGH);
         }
 
         private void hold_application ()
@@ -198,9 +193,7 @@ Exec=focus-timer --gapplication-service
 
         private void update_application_hold ()
         {
-            var is_provider_enabled = this.provider != null && this.provider.enabled;
-
-            if (this.holds.length > 0U && (this._background_allowed || !is_provider_enabled)) {
+            if (this.holds.length > 0U) {
                 this.hold_application ();
             }
             else {
@@ -208,20 +201,10 @@ Exec=focus-timer --gapplication-service
             }
         }
 
-        public async uint hold (string parent_window = "")
-        {
-            var hold_id = Ft.BackgroundManager.next_hold_id;
-            BackgroundManager.next_hold_id++;
-
-            this.holds.add (hold_id);
-            this.hold_application ();
-
-            yield this.request_background (parent_window);
-
-            return hold_id;
-        }
-
-        public uint hold_sync (string parent_window = "")
+        /**
+         * Increment application hold count.
+         */
+        public uint hold ()
         {
             var hold_id = Ft.BackgroundManager.next_hold_id;
             Ft.BackgroundManager.next_hold_id++;
@@ -229,7 +212,9 @@ Exec=focus-timer --gapplication-service
             this.holds.add (hold_id);
             this.hold_application ();
 
-            this.request_background.begin (parent_window);
+            if (!this._background_allowed) {
+                this.request_background.begin ();
+            }
 
             return hold_id;
         }
@@ -241,6 +226,54 @@ Exec=focus-timer --gapplication-service
             if (removed) {
                 this.update_application_hold ();
             }
+        }
+
+        /**
+         * Request to run in background without incrementing application hold count.
+         * Secondary use is to check latest permissions.
+         */
+        public async bool request_background (string parent_window = "",
+                                              int    timeout = 60000)
+        {
+            if (this.provider == null || !this.provider.enabled) {
+                return false;
+            }
+
+            this.application.hold ();
+
+            var autostart = this.settings.get_boolean ("autostart");
+            var cancellable = new GLib.Cancellable ();
+            var timeout_id = 0U;
+
+            if (timeout > 1000)
+            {
+                timeout_id = GLib.Timeout.add_seconds (timeout / 1000, () => {
+                    timeout_id = 0U;
+                    cancellable.cancel ();
+
+                    return GLib.Source.REMOVE;
+                });
+            }
+            else if (timeout > 0)
+            {
+                timeout_id = GLib.Timeout.add (timeout, () => {
+                    timeout_id = 0U;
+                    cancellable.cancel ();
+
+                    return GLib.Source.REMOVE;
+                });
+            }
+
+            var success = yield this.provider.request_background (
+                    autostart, parent_window, cancellable);
+
+            if (timeout_id != 0U) {
+                GLib.Source.remove (timeout_id);
+            }
+
+            this.application.release ();
+
+            return success;
         }
 
         private void update_properties ()
@@ -280,20 +313,14 @@ Exec=focus-timer --gapplication-service
             provider.notify["autostart-allowed"].connect (this.on_notify_autostart_allowed);
             this.update_properties ();
 
-            if (this.holds.length > 0U || this.settings.get_boolean ("autostart")) {
-                this.request_background.begin ("");
-            }
+            this.request_background.begin ();
         }
 
         protected override void provider_disabled (Ft.BackgroundProvider provider)
         {
-            // TODO: use SetStatus to withdraw request?
-
             provider.notify["background-allowed"].disconnect (this.on_notify_background_allowed);
             provider.notify["autostart-allowed"].disconnect (this.on_notify_autostart_allowed);
             this.update_properties ();
-
-            this.release_application ();
         }
 
         private void on_notify_background_allowed (GLib.Object    object,
@@ -315,7 +342,7 @@ Exec=focus-timer --gapplication-service
             {
                 case "autostart":
                     if (settings.get_boolean (key) != this._autostart_allowed) {
-                        this.request_background.begin ("");
+                        this.request_background.begin ();
                     }
 
                     break;

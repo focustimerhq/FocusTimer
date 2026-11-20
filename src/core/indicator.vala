@@ -30,13 +30,13 @@ namespace Ft
                 this.provider.visible)
             {
                 if (this.background_hold_id == 0U) {
-                    this.background_hold_id = this.background_manager.hold_sync ();
+                    this.background_hold_id = this.background_manager.hold ();
                 }
             }
             else {
                 if (this.background_hold_id != 0U) {
                     this.background_manager.release (this.background_hold_id);
-                    this.background_hold_id = 0;
+                    this.background_hold_id = 0U;
                 }
             }
         }
