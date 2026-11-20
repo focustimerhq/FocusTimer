@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2025 focus-timer contributors
+ * Copyright (c) 2016-2026 focus-timer contributors
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -266,19 +266,23 @@ namespace Ft
             return Ft.WindowView.TIMER;
         }
 
-        private async void close_to_background_internal ()
+        private async void close_to_background_internal (int timeout = 5000)
         {
             var window_id = yield Ft.get_window_identifier (this);
 
-            Ft.Window.background_hold_id = yield this.background_manager.hold (window_id);
+            // Check if the permission is granted
+            var success = yield this.background_manager.request_background (window_id, timeout);
 
-            if (Ft.Window.background_hold_id != 0U && this.background_manager.background_allowed) {
+            if (success && this.background_manager.background_allowed)
+            {
+                if (Ft.Window.background_hold_id == 0U) {
+                    Ft.Window.background_hold_id = this.background_manager.hold ();
+                }
+
                 this.close ();
             }
             else {
-                this.background_manager.release (Ft.Window.background_hold_id);
-                Ft.Window.background_hold_id = 0U;
-                this.show_close_confirmation_dialog ();
+                this.show_run_in_background_dialog ();
             }
         }
 
@@ -342,25 +346,26 @@ namespace Ft
         {
             unowned var self = this;
 
-            var background_allowed = this.background_manager.background_allowed;
             var dialog = new Adw.AlertDialog (
-                background_allowed ? _("Keep timer running?") : _("Timer is running"),
-                background_allowed
-                    ? _("You can keep it running in the background — notifications and keyboard shortcuts will still work.")
-                    : _("Are you sure you want to quit?")
+                _("Keep Timer Running?"),
+                _("You can keep it running in the background. Notifications and keyboard shortcuts will still work.")
             );
             dialog.prefer_wide_layout = true;
 
             dialog.add_response ("quit", _("Quit"));
             dialog.set_response_appearance ("quit", Adw.ResponseAppearance.DEFAULT);
 
-            dialog.add_response ("cancel", _("Cancel"));
-            if (background_allowed) {
-                dialog.add_response ("run-in-background", _("Run in background"));
+            if (this.background_manager.background_allowed) {
+                dialog.add_response ("run-in-background", _("Run in Background"));
                 dialog.set_response_appearance ("run-in-background", Adw.ResponseAppearance.SUGGESTED);
+                dialog.set_default_response ("run-in-background");
+            }
+            else {
+                dialog.add_response ("minimize", _("Minimize Window"));
+                dialog.set_response_appearance ("minimize", Adw.ResponseAppearance.SUGGESTED);
+                dialog.set_default_response ("minimize");
             }
 
-            dialog.set_default_response (background_allowed ? "run-in-background" : "cancel");
             dialog.set_close_response ("cancel");
             dialog.response.connect (
                 (response) => {
@@ -370,6 +375,48 @@ namespace Ft
                             self.close_to_background ();
                             break;
 
+                        case "minimize":
+                            self.minimize ();
+                            break;
+
+                        case "quit":
+                            self.application.quit ();
+                            break;
+
+                        case "cancel":
+                            dialog.close ();
+                            break;
+
+                        default:
+                            assert_not_reached ();
+                    }
+                });
+
+            dialog.present (self);
+        }
+
+        private void show_run_in_background_dialog ()
+        {
+            unowned var self = this;
+
+            var dialog = new Adw.AlertDialog (
+                _("Can’t Run in Background"),
+                _("Focus Timer isn’t allowed to run in the background. To change this, check app’s permissions in system settings.")
+            );
+            dialog.prefer_wide_layout = true;
+
+            dialog.add_response ("cancel", _("Cancel"));
+            dialog.set_response_appearance ("cancel", Adw.ResponseAppearance.DEFAULT);
+
+            dialog.add_response ("quit", _("Quit"));
+            dialog.set_response_appearance ("quit", Adw.ResponseAppearance.SUGGESTED);
+
+            dialog.set_default_response ("quit");
+            dialog.set_close_response ("cancel");
+            dialog.response.connect (
+                (response) => {
+                    switch (response)
+                    {
                         case "quit":
                             self.application.quit ();
                             break;
@@ -517,13 +564,21 @@ namespace Ft
         [GtkCallback]
         private bool on_close_request ()
         {
-            if (this.background_manager.active && this.background_manager.background_allowed) {
+            if (this.background_manager.active &&
+                this.background_manager.background_allowed)
+            {
                 return false;
             }
 
-            if (this.timer.is_running ())
-            {
+            if (this.timer.is_running ()) {
                 this.show_close_confirmation_dialog ();
+
+                return true;
+            }
+            else if (this.background_manager.active &&
+                     !this.background_manager.background_allowed)
+            {
+                this.show_run_in_background_dialog ();
 
                 return true;
             }

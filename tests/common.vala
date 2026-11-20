@@ -228,6 +228,74 @@ namespace Tests
     }
 
 
+    public class DBus : GLib.Object
+    {
+        private GLib.TestDBus bus;
+        private uint          registration_id;
+
+        public GLib.DBusConnection connection {
+            get;
+            private set;
+        }
+
+        public DBus ()
+        {
+            this.bus = new GLib.TestDBus (GLib.TestDBusFlags.NONE);
+            this.bus.up ();
+
+            // Address the test bus directly. A cached session connection can
+            // still be the desktop bus and would own the name there.
+            try {
+                this.connection = new GLib.DBusConnection.for_address_sync (
+                        this.bus.get_bus_address (),
+                        GLib.DBusConnectionFlags.AUTHENTICATION_CLIENT |
+                        GLib.DBusConnectionFlags.MESSAGE_BUS_CONNECTION);
+            }
+            catch (GLib.Error error) {
+                GLib.error ("Private bus failed: %s", error.message);
+            }
+        }
+
+        ~DBus ()
+        {
+            if (this.registration_id != 0) {
+                this.connection.unregister_object (this.registration_id);
+                this.registration_id = 0;
+            }
+
+            this.bus.down ();
+        }
+
+        public void register_object<T> (string bus_name,
+                                        string object_path,
+                                        T      service)
+        {
+            try {
+                var reply = this.connection.call_sync (
+                        "org.freedesktop.DBus",
+                        "/org/freedesktop/DBus",
+                        "org.freedesktop.DBus",
+                        "RequestName",
+                        new GLib.Variant ("(su)", bus_name, 0U),
+                        new GLib.VariantType ("(u)"),
+                        GLib.DBusCallFlags.NONE,
+                        -1);
+                uint32 result;
+                reply.get ("(u)", out result);
+
+                if (result != 1U) {
+                    GLib.error ("Failed to own %s", bus_name);
+                }
+
+                this.registration_id = this.connection.register_object (object_path, service);
+            }
+            catch (GLib.Error error) {
+                GLib.error ("Private bus failed: %s", error.message);
+            }
+        }
+    }
+
+
     public static void init (string[] args)
     {
         GLib.Test.init (ref args);

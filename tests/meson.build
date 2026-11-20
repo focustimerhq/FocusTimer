@@ -67,12 +67,11 @@ foreach test_name : test_names
   )
 endforeach
 
-# Exercise the portal against a private D-Bus service, user permissions are not touched.
 test(
-  'background-portal',
+  'portal',
   executable(
-    'test-background-portal',
-    'test-background-portal.vala',
+    'test-portal',
+    'test-portal.vala',
     files(
       meson.project_source_root() / 'src/plugins/portal/interfaces.vala',
       meson.project_source_root() / 'src/plugins/portal/request.vala',
@@ -84,5 +83,4 @@ test(
   ),
   env: test_env,
   suite: 'tests',
-  timeout: 90,
 )

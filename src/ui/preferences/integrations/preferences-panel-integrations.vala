@@ -37,6 +37,11 @@ namespace Ft
 
             var background_manager = new Ft.BackgroundManager ();
             background_manager.bind_property (
+                    "background-allowed",
+                    this.autostart_group,
+                    "visible",
+                    GLib.BindingFlags.SYNC_CREATE);
+            background_manager.bind_property (
                     "autostart-allowed",
                     this.autostart_label,
                     "visible",
