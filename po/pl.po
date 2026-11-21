@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 09:26+0100\n"
+"POT-Creation-Date: 2026-11-21 17:07+0100\n"
 "PO-Revision-Date: 2026-11-11 09:36+0100\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
@@ -227,13 +227,13 @@ msgid "Screen overlay is open"
 msgstr "Nakładka ekranowa jest otwarta"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:953 src/core/notification-manager.vala:134
+#: src/application.vala:948 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, c-format
 msgid "%s remaining"
 msgstr "Pozostało %s"
 
-#: src/application.vala:998
+#: src/application.vala:993
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 "Nieprawidłowe użycie. Przekaż jedną flagę do sterowania minutnikiem na raz."
@@ -605,7 +605,7 @@ msgid "Time when the countdown has started."
 msgstr "Czas rozpoczęcia odliczania."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:198
+#: src/plugins/gnome/preferences-window-extension.vala:206
 msgid "GNOME Shell Extension"
 msgstr "Rozszerzenie GNOME Shell"
 
@@ -665,7 +665,7 @@ msgid "_Not Now"
 msgstr "_Nie Teraz"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:437
 msgid "Something went wrong"
 msgstr "Coś poszło nie tak"
 
@@ -684,38 +684,38 @@ msgid "_Abort"
 msgstr "_Przerwij"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:417
+#: src/plugins/gnome/preferences-window-extension.vala:425
 msgid "Time-out reached"
 msgstr "Przekroczono limit czasu"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:421
+#: src/plugins/gnome/preferences-window-extension.vala:429
 msgid "Installing extensions is not allowed"
 msgstr "Instalowanie rozszerzeń jest niedozwolone"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:433
 msgid "Failed to download the extension"
 msgstr "Nie udało się pobrać rozszerzenia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr "Ikona w Zasobniku"
 
-#: src/plugins/gnome/preferences-window-extension.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:98
 msgid "Icon"
 msgstr "Ikona"
 
-#: src/plugins/gnome/preferences-window-extension.vala:96
+#: src/plugins/gnome/preferences-window-extension.vala:99
 msgid "Text"
 msgstr "Tekst"
 
-#: src/plugins/gnome/preferences-window-extension.vala:103
+#: src/plugins/gnome/preferences-window-extension.vala:106
 msgid "Display As"
 msgstr "Wyświetl Jako"
 
-#: src/plugins/gnome/preferences-window-extension.vala:114
+#: src/plugins/gnome/preferences-window-extension.vala:117
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -723,44 +723,44 @@ msgstr "Wyświetl Jako"
 msgid "Screen Overlay"
 msgstr "Nakładka Ekranowa"
 
-#: src/plugins/gnome/preferences-window-extension.vala:118
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr "Efekt Rozmycia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:134
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr "Gest Odrzucenia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:156
+#: src/plugins/gnome/preferences-window-extension.vala:164
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: src/plugins/gnome/preferences-window-extension.vala:159
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Install"
 msgstr "Zainstaluj"
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:172
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:175
 msgid "Log out to finish the update"
 msgstr "Wyloguj się by zakończyć aktualizację"
 
-#: src/plugins/gnome/preferences-window-extension.vala:185
+#: src/plugins/gnome/preferences-window-extension.vala:193
 msgid "Outdated"
 msgstr "Brak Wsparcia"
 
-#: src/plugins/gnome/preferences-window-extension.vala:204
+#: src/plugins/gnome/preferences-window-extension.vala:212
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr "Nie Przeszkadzać"
 
-#: src/plugins/gnome/preferences-window-extension.vala:205
+#: src/plugins/gnome/preferences-window-extension.vala:213
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr "Ukryj niekrytyczne powiadomienia podczas korzystania z minutnika"
@@ -826,7 +826,8 @@ msgstr "%u z %u"
 msgid "Stats"
 msgstr "Statystyki"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "Zakończ"
 
@@ -1038,26 +1039,43 @@ msgstr "Za_kończ"
 msgid "Primary Menu"
 msgstr "Menu Główne"
 
-#: src/ui/main/window.vala:344
-msgid "Keep timer running?"
-msgstr "Czy minutnik ma nadal odliczać?"
+#: src/ui/main/window.vala:350
+msgid "Keep Timer Running?"
+msgstr ""
 
-#: src/ui/main/window.vala:345
+#: src/ui/main/window.vala:351
 msgid ""
-"You can keep it running in the background — notifications and keyboard "
+"You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
-"Może on działać w tle — powiadomienia i skróty klawiszowe nadal będą działać."
 
-#: src/ui/main/window.vala:352
-msgid "Run in background"
-msgstr "Uruchom w tle"
+#: src/ui/main/window.vala:359
+msgid "Run in Background"
+msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:364
+msgid "Minimize Window"
+msgstr ""
+
+#: src/ui/main/window.vala:403
+msgid "Can’t Run in Background"
+msgstr ""
+
+#: src/ui/main/window.vala:404
+msgid ""
+"Focus Timer isn’t allowed to run in the background. To change this, check "
+"app’s permissions in system settings."
+msgstr ""
+
+#: src/ui/main/window.vala:408
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/main/window.vala:501
 msgid "Sounds turned on"
 msgstr "Dźwięki włączone"
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:501
 msgid "Sounds turned off"
 msgstr "Dźwięki wyłączone"
 
@@ -1612,6 +1630,19 @@ msgstr "Zastosuj"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Panel boczny"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Czy minutnik ma nadal odliczać?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Może on działać w tle — powiadomienia i skróty klawiszowe nadal będą "
+#~ "działać."
+
+#~ msgid "Run in background"
+#~ msgstr "Uruchom w tle"
 
 #~ msgid "Indicator"
 #~ msgstr "Ikona Statusu"
