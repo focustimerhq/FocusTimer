@@ -11,10 +11,11 @@ namespace Gnome
         private Ft.BackgroundManager?   background_manager = null;
         private Ft.NotificationManager? notification_manager = null;
         private Gnome.Shell?            shell_proxy = null;
+        private uint                    shell_watcher_id = 0U;
+        private uint                    shell_hold_id = 0U;
         private Gnome.ShellExtension?   shell_extension = null;
         private bool                    shell_extension_enabled = false;
-        private uint                    shell_watcher_id = 0;
-        private uint                    background_hold_id = 0U;
+        private uint                    shell_extension_hold_id = 0U;
 
         construct
         {
@@ -49,16 +50,16 @@ namespace Gnome
 
             if (shell_extension_enabled)
             {
-                if (this.background_hold_id == 0U) {
-                    this.background_hold_id = this.background_manager.hold ();
+                if (this.shell_extension_hold_id == 0U) {
+                    this.shell_extension_hold_id = this.background_manager.hold ();
                 }
 
                 notification_manager.inhibit ();
             }
             else {
-                if (this.background_hold_id != 0U) {
-                    this.background_manager.release (this.background_hold_id);
-                    this.background_hold_id = 0U;
+                if (this.shell_extension_hold_id != 0U) {
+                    this.background_manager.release (this.shell_extension_hold_id);
+                    this.shell_extension_hold_id = 0U;
                 }
 
                 notification_manager.uninhibit ();
@@ -81,6 +82,14 @@ namespace Gnome
                         GLib.DBusProxyFlags.DO_NOT_AUTO_START |
                         GLib.DBusProxyFlags.DO_NOT_CONNECT_SIGNALS,
                         null);
+
+                // Increase hold as the app will become visible in "Background apps"
+                // in the system menu when all windows are closed.
+                if (this.shell_hold_id == 0U &&
+                    is_version_at_least (this.shell_proxy.shell_version, "44"))
+                {
+                    this.shell_hold_id = this.background_manager.hold ();
+                }
             }
             catch (GLib.Error error) {
                 GLib.warning ("Error while initializing shell proxy: %s", error.message);
@@ -90,6 +99,11 @@ namespace Gnome
         private void on_shell_name_vanished (GLib.DBusConnection? connection,
                                              string               name)
         {
+            if (this.shell_hold_id != 0U) {
+                this.background_manager.release (this.shell_hold_id);
+                this.shell_hold_id = 0U;
+            }
+
             this.shell_proxy = null;
         }
 
@@ -117,9 +131,14 @@ namespace Gnome
                 this.shell_watcher_id = 0;
             }
 
-            if (this.background_hold_id != 0U) {
-                this.background_manager.release (this.background_hold_id);
-                this.background_hold_id = 0U;
+            if (this.shell_extension_hold_id != 0U) {
+                this.background_manager.release (this.shell_extension_hold_id);
+                this.shell_extension_hold_id = 0U;
+            }
+
+            if (this.shell_hold_id != 0U) {
+                this.background_manager.release (this.shell_hold_id);
+                this.shell_hold_id = 0U;
             }
 
             if (this.notification_manager != null) {

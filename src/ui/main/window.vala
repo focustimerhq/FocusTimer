@@ -575,18 +575,18 @@ namespace Ft
 
                 return true;
             }
-            else if (this.background_manager.active &&
-                     !this.background_manager.background_allowed)
+
+            if (this.background_manager.active &&
+                !this.background_manager.background_allowed)
             {
                 this.show_run_in_background_dialog ();
 
                 return true;
             }
-            else {
-                this.application.quit ();
 
-                return false;
-            }
+            this.application.quit ();
+
+            return false;
         }
 
         private void on_notify_is_active (GLib.Object    object,

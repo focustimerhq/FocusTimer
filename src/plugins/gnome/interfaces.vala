@@ -32,6 +32,7 @@ namespace Gnome
     [DBus (name = "org.gnome.Shell")]
     public interface Shell : GLib.Object
     {
+        public abstract string shell_version { owned get; }
         public abstract bool overview_active { get; set; }
     }
 
