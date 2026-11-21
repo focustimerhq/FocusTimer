@@ -408,6 +408,11 @@ namespace Ft
 
             window.present ();
 
+            if (this.service_hold_id != 0U) {
+                this.background_manager.release (this.service_hold_id);
+                this.service_hold_id = 0U;
+            }
+
             if (!window.is_active && !window_created) {
                 this.dbus_service.emit_request_focus ();
             }

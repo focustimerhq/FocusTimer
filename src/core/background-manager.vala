@@ -146,7 +146,7 @@ Exec=focus-timer --gapplication-service
     {
         public bool active {
             get {
-                return this.has_application_hold;
+                return this._active;
             }
         }
 
@@ -162,13 +162,13 @@ Exec=focus-timer --gapplication-service
             }
         }
 
-        private bool                             _background_allowed = false;
-        private bool                             _autostart_allowed = false;
-        private unowned GLib.Application?        application = null;
-        private GLib.Settings?                   settings = null;
-        private bool                             has_application_hold = false;
-        private GLib.GenericSet<uint>            holds = null;
-        private static uint                      next_hold_id = 1U;
+        private bool                        _active = false;
+        private bool                        _background_allowed = false;
+        private bool                        _autostart_allowed = false;
+        private unowned GLib.Application?   application = null;
+        private GLib.Settings?              settings = null;
+        private GLib.GenericSet<uint>       holds = null;
+        private static uint                 next_hold_id = 1U;
 
         public BackgroundManager.with_provider (Ft.BackgroundProvider provider)
         {
@@ -177,17 +177,19 @@ Exec=focus-timer --gapplication-service
 
         private void hold_application ()
         {
-            if (!this.has_application_hold) {
+            if (!this._active) {
                 this.application.hold ();
-                this.has_application_hold = true;
+                this._active = true;
+                this.notify_property ("active");
             }
         }
 
         private void release_application ()
         {
-            if (this.has_application_hold) {
+            if (this._active) {
                 this.application.release ();
-                this.has_application_hold = false;
+                this._active = false;
+                this.notify_property ("active");
             }
         }
 
