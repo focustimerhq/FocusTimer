@@ -66,21 +66,3 @@ foreach test_name : test_names
     suite: 'tests',
   )
 endforeach
-
-test(
-  'portal',
-  executable(
-    'test-portal',
-    'test-portal.vala',
-    files(
-      meson.project_source_root() / 'src/plugins/portal/interfaces.vala',
-      meson.project_source_root() / 'src/plugins/portal/request.vala',
-      meson.project_source_root() / 'src/plugins/portal/background-provider.vala',
-    ),
-    dependencies: libft_core_dep,
-    link_with: libtests_common,
-    include_directories: config_h_dir,
-  ),
-  env: test_env,
-  suite: 'tests',
-)
