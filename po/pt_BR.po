@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 09:26+0100\n"
+"POT-Creation-Date: 2026-11-21 17:07+0100\n"
 "PO-Revision-Date: 2023-03-26 11:39+0200\n"
 "Last-Translator: Ronaldo Costa <ronaldocosta@oceanica.ufrj.br>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -236,13 +236,13 @@ msgid "Screen overlay is open"
 msgstr ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:953 src/core/notification-manager.vala:134
+#: src/application.vala:948 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "%s restante"
 
-#: src/application.vala:998
+#: src/application.vala:993
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -640,7 +640,7 @@ msgid "Time when the countdown has started."
 msgstr "Hora em que a contagem regressiva começou."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:198
+#: src/plugins/gnome/preferences-window-extension.vala:206
 msgid "GNOME Shell Extension"
 msgstr "Extensão do GNOME Shell"
 
@@ -698,7 +698,7 @@ msgid "_Not Now"
 msgstr "Agora _não"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:437
 #, fuzzy
 msgid "Something went wrong"
 msgstr "Algo deu errado"
@@ -719,39 +719,39 @@ msgid "_Abort"
 msgstr "_Abortar"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:417
+#: src/plugins/gnome/preferences-window-extension.vala:425
 msgid "Time-out reached"
 msgstr "Tempo limite atingido"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:421
+#: src/plugins/gnome/preferences-window-extension.vala:429
 msgid "Installing extensions is not allowed"
 msgstr "Instalação de extensões não é permitida"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:433
 #, fuzzy
 msgid "Failed to download the extension"
 msgstr "Falha ao baixar a extensão"
 
-#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:98
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:96
+#: src/plugins/gnome/preferences-window-extension.vala:99
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:103
+#: src/plugins/gnome/preferences-window-extension.vala:106
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:114
+#: src/plugins/gnome/preferences-window-extension.vala:117
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -759,44 +759,44 @@ msgstr ""
 msgid "Screen Overlay"
 msgstr "Sobreposição de Tela"
 
-#: src/plugins/gnome/preferences-window-extension.vala:118
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:134
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:156
+#: src/plugins/gnome/preferences-window-extension.vala:164
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:159
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:172
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:175
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:185
+#: src/plugins/gnome/preferences-window-extension.vala:193
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:204
+#: src/plugins/gnome/preferences-window-extension.vala:212
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:205
+#: src/plugins/gnome/preferences-window-extension.vala:213
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
@@ -861,7 +861,8 @@ msgstr ""
 msgid "Stats"
 msgstr "Estatísticas"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "Sair"
 
@@ -1078,28 +1079,43 @@ msgstr "S_air"
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
-#: src/ui/main/window.vala:344
-msgid "Keep timer running?"
-msgstr "Manter temporizador rodando?"
+#: src/ui/main/window.vala:350
+msgid "Keep Timer Running?"
+msgstr ""
 
-#: src/ui/main/window.vala:345
+#: src/ui/main/window.vala:351
 msgid ""
-"You can keep it running in the background — notifications and keyboard "
+"You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
-"Você pode mantê-lo rodando em segundo plano — notificações e atalhos "
-"continuarão funcionando."
 
-#: src/ui/main/window.vala:352
-#, fuzzy
-msgid "Run in background"
-msgstr "Rodar em segundo plano"
+#: src/ui/main/window.vala:359
+msgid "Run in Background"
+msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:364
+msgid "Minimize Window"
+msgstr ""
+
+#: src/ui/main/window.vala:403
+msgid "Can’t Run in Background"
+msgstr ""
+
+#: src/ui/main/window.vala:404
+msgid ""
+"Focus Timer isn’t allowed to run in the background. To change this, check "
+"app’s permissions in system settings."
+msgstr ""
+
+#: src/ui/main/window.vala:408
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/main/window.vala:501
 msgid "Sounds turned on"
 msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:501
 msgid "Sounds turned off"
 msgstr ""
 
@@ -1678,6 +1694,20 @@ msgstr "Aplicar"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Barra Lateral"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "Manter temporizador rodando?"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Você pode mantê-lo rodando em segundo plano — notificações e atalhos "
+#~ "continuarão funcionando."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Rodar em segundo plano"
 
 #~ msgid "_About"
 #~ msgstr "_Sobre"

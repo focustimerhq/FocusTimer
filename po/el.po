@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 09:26+0100\n"
+"POT-Creation-Date: 2026-11-21 17:07+0100\n"
 "PO-Revision-Date: 2023-03-24 15:40+0100\n"
 "Last-Translator: Giannis Katsanos <giannis.katsanos@gmail.com>\n"
 "Language-Team: Greek\n"
@@ -237,13 +237,13 @@ msgid "Screen overlay is open"
 msgstr ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:953 src/core/notification-manager.vala:134
+#: src/application.vala:948 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "απομένουν %s"
 
-#: src/application.vala:998
+#: src/application.vala:993
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -664,7 +664,7 @@ msgid "Time when the countdown has started."
 msgstr "Η ώρα που ξεκίνησε η αντίστροφη μέτρηση."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:198
+#: src/plugins/gnome/preferences-window-extension.vala:206
 #, fuzzy
 msgid "GNOME Shell Extension"
 msgstr "Επέκταση GNOME Shell"
@@ -730,7 +730,7 @@ msgid "_Not Now"
 msgstr "_Όχι τώρα"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:437
 #, fuzzy
 msgid "Something went wrong"
 msgstr "Κάτι πήγε στραβά"
@@ -753,41 +753,41 @@ msgid "_Abort"
 msgstr "_Ματαίωση"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:417
+#: src/plugins/gnome/preferences-window-extension.vala:425
 #, fuzzy
 msgid "Time-out reached"
 msgstr "Έληξε το χρονικό όριο"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:421
+#: src/plugins/gnome/preferences-window-extension.vala:429
 #, fuzzy
 msgid "Installing extensions is not allowed"
 msgstr "Η εγκατάσταση επεκτάσεων δεν επιτρέπεται"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:433
 #, fuzzy
 msgid "Failed to download the extension"
 msgstr "Αποτυχία λήψης της επέκτασης"
 
-#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:98
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:96
+#: src/plugins/gnome/preferences-window-extension.vala:99
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:103
+#: src/plugins/gnome/preferences-window-extension.vala:106
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:114
+#: src/plugins/gnome/preferences-window-extension.vala:117
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -795,44 +795,44 @@ msgstr ""
 msgid "Screen Overlay"
 msgstr "Επικάλυψη οθόνης"
 
-#: src/plugins/gnome/preferences-window-extension.vala:118
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:134
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:156
+#: src/plugins/gnome/preferences-window-extension.vala:164
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "Επιφάνεια εργασίας"
 
-#: src/plugins/gnome/preferences-window-extension.vala:159
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:172
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:175
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:185
+#: src/plugins/gnome/preferences-window-extension.vala:193
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:204
+#: src/plugins/gnome/preferences-window-extension.vala:212
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:205
+#: src/plugins/gnome/preferences-window-extension.vala:213
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
@@ -898,7 +898,8 @@ msgstr ""
 msgid "Stats"
 msgstr "Στατιστικά"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "Κλείσιμο"
 
@@ -1125,30 +1126,43 @@ msgstr "_Κλείσιμο"
 msgid "Primary Menu"
 msgstr "Κύριο μενού"
 
-#: src/ui/main/window.vala:344
-#, fuzzy
-msgid "Keep timer running?"
-msgstr "Να συνεχίσει το χρονόμετρο;"
+#: src/ui/main/window.vala:350
+msgid "Keep Timer Running?"
+msgstr ""
 
-#: src/ui/main/window.vala:345
-#, fuzzy
+#: src/ui/main/window.vala:351
 msgid ""
-"You can keep it running in the background — notifications and keyboard "
+"You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
-"Μπορείτε να το αφήσετε να τρέχει στο παρασκήνιο — οι ειδοποιήσεις και οι "
-"συντομεύσεις θα συνεχίσουν να λειτουργούν."
 
-#: src/ui/main/window.vala:352
-#, fuzzy
-msgid "Run in background"
-msgstr "Εκτέλεση στο παρασκήνιο"
+#: src/ui/main/window.vala:359
+msgid "Run in Background"
+msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:364
+msgid "Minimize Window"
+msgstr ""
+
+#: src/ui/main/window.vala:403
+msgid "Can’t Run in Background"
+msgstr ""
+
+#: src/ui/main/window.vala:404
+msgid ""
+"Focus Timer isn’t allowed to run in the background. To change this, check "
+"app’s permissions in system settings."
+msgstr ""
+
+#: src/ui/main/window.vala:408
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/main/window.vala:501
 msgid "Sounds turned on"
 msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:501
 msgid "Sounds turned off"
 msgstr ""
 
@@ -1781,6 +1795,22 @@ msgstr "Εφαρμογή"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "Πλευρική στήλη"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "Να συνεχίσει το χρονόμετρο;"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "Μπορείτε να το αφήσετε να τρέχει στο παρασκήνιο — οι ειδοποιήσεις και οι "
+#~ "συντομεύσεις θα συνεχίσουν να λειτουργούν."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "Εκτέλεση στο παρασκήνιο"
 
 #~ msgid "_About"
 #~ msgstr "_Σχετικά"

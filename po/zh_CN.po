@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 09:26+0100\n"
+"POT-Creation-Date: 2026-11-21 17:07+0100\n"
 "PO-Revision-Date: 2026-11-16 15:48+0800\n"
 "Last-Translator: Bo Li (bocai991)\n"
 "Language-Team: Chinese\n"
@@ -42,7 +42,9 @@ msgid ""
 "A productivity timer that helps you work more effectively by alternating "
 "focused work sessions with short breaks. By default, work for 25 minutes, "
 "then take a 5-minute break to stay focused and prevent burnout."
-msgstr "通过交替安排专注工作和短暂休息，帮助您提高效率。默认专注 25 分钟后休息 5 分钟，让您保持专注，避免过度疲劳。"
+msgstr ""
+"通过交替安排专注工作和短暂休息，帮助您提高效率。默认专注 25 分钟后休息 5 分"
+"钟，让您保持专注，避免过度疲劳。"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:13
 msgid "Key features:"
@@ -224,13 +226,13 @@ msgid "Screen overlay is open"
 msgstr "全屏休息提醒已打开"
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:953 src/core/notification-manager.vala:134
+#: src/application.vala:948 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, c-format
 msgid "%s remaining"
 msgstr "剩余 %s"
 
-#: src/application.vala:998
+#: src/application.vala:993
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr "用法无效。每次只能传入一个计时器控制参数。"
 
@@ -534,13 +536,18 @@ msgstr "当前事件的精确时间。"
 msgid ""
 "The current phase of the Pomodoro cycle. Possible values: <tt>stopped</tt>, "
 "<tt>pomodoro</tt>, <tt>break</tt>, <tt>short-break</tt>, <tt>long-break</tt>."
-msgstr "番茄钟周期的当前阶段。可选值：<tt>stopped</tt>（停止）、<tt>pomodoro</tt>（番茄钟）、<tt>break</tt>（休息）、<tt>short-break</tt>（短休息）、<tt>long-break</tt>（长休息）。"
+msgstr ""
+"番茄钟周期的当前阶段。可选值：<tt>stopped</tt>（停止）、<tt>pomodoro</tt>（番"
+"茄钟）、<tt>break</tt>（休息）、<tt>short-break</tt>（短休息）、<tt>long-"
+"break</tt>（长休息）。"
 
 #: src/core/variables.vala:126
 msgid ""
 "Status of the current time-block. Possible values: <tt>scheduled</tt>, "
 "<tt>in-progress</tt>, <tt>completed</tt>, <tt>uncompleted</tt>."
-msgstr "当前计时阶段的状态。可选值：<tt>scheduled</tt>（已安排）、<tt>in-progress</tt>（进行中）、<tt>completed</tt>（已完成）、<tt>uncompleted</tt>（未完成）。"
+msgstr ""
+"当前计时阶段的状态。可选值：<tt>scheduled</tt>（已安排）、<tt>in-progress</"
+"tt>（进行中）、<tt>completed</tt>（已完成）、<tt>uncompleted</tt>（未完成）。"
 
 #: src/core/variables.vala:131
 msgid "A flag indicating whether countdown has begun."
@@ -582,7 +589,7 @@ msgid "Time when the countdown has started."
 msgstr "倒计时开始的时间。"
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:198
+#: src/plugins/gnome/preferences-window-extension.vala:206
 msgid "GNOME Shell Extension"
 msgstr "GNOME Shell 扩展"
 
@@ -637,7 +644,7 @@ msgid "_Not Now"
 msgstr "以后再说(_N)"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:437
 msgid "Something went wrong"
 msgstr "出了点问题"
 
@@ -656,38 +663,38 @@ msgid "_Abort"
 msgstr "中止(_A)"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:417
+#: src/plugins/gnome/preferences-window-extension.vala:425
 msgid "Time-out reached"
 msgstr "已超时"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:421
+#: src/plugins/gnome/preferences-window-extension.vala:429
 msgid "Installing extensions is not allowed"
 msgstr "不允许安装扩展"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:433
 msgid "Failed to download the extension"
 msgstr "无法下载扩展"
 
-#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr "托盘图标"
 
-#: src/plugins/gnome/preferences-window-extension.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:98
 msgid "Icon"
 msgstr "图标"
 
-#: src/plugins/gnome/preferences-window-extension.vala:96
+#: src/plugins/gnome/preferences-window-extension.vala:99
 msgid "Text"
 msgstr "文字"
 
-#: src/plugins/gnome/preferences-window-extension.vala:103
+#: src/plugins/gnome/preferences-window-extension.vala:106
 msgid "Display As"
 msgstr "显示方式"
 
-#: src/plugins/gnome/preferences-window-extension.vala:114
+#: src/plugins/gnome/preferences-window-extension.vala:117
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -695,44 +702,44 @@ msgstr "显示方式"
 msgid "Screen Overlay"
 msgstr "全屏休息提醒"
 
-#: src/plugins/gnome/preferences-window-extension.vala:118
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr "模糊效果"
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:134
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr "关闭提醒的手势"
 
-#: src/plugins/gnome/preferences-window-extension.vala:156
+#: src/plugins/gnome/preferences-window-extension.vala:164
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "桌面"
 
-#: src/plugins/gnome/preferences-window-extension.vala:159
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Install"
 msgstr "安装"
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:172
 msgid "Update"
 msgstr "更新"
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:175
 msgid "Log out to finish the update"
 msgstr "注销登录以完成更新"
 
-#: src/plugins/gnome/preferences-window-extension.vala:185
+#: src/plugins/gnome/preferences-window-extension.vala:193
 msgid "Outdated"
 msgstr "版本不兼容"
 
-#: src/plugins/gnome/preferences-window-extension.vala:204
+#: src/plugins/gnome/preferences-window-extension.vala:212
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr "勿扰模式"
 
-#: src/plugins/gnome/preferences-window-extension.vala:205
+#: src/plugins/gnome/preferences-window-extension.vala:213
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr "使用计时器时隐藏非重要通知"
@@ -762,7 +769,9 @@ msgstr "打开设置"
 msgid ""
 "For reliable break reminders, allow this app's notifications during Do Not "
 "Disturb and disable its notification history"
-msgstr "为确保收到休息提醒，请允许本应用在勿扰模式下发送通知，并关闭本应用的通知历史记录"
+msgstr ""
+"为确保收到休息提醒，请允许本应用在勿扰模式下发送通知，并关闭本应用的通知历史"
+"记录"
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
 msgid "Media Playback"
@@ -796,7 +805,8 @@ msgstr "第 %u 轮，共 %u 轮"
 msgid "Stats"
 msgstr "统计"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "退出"
 
@@ -848,7 +858,11 @@ msgstr "执行时间："
 #. translators: Replace this string with your names, one name per line.
 #: src/ui/main/dialogs/about-dialog.vala:30
 msgid "translator-credits"
-msgstr "Meng Zhuo <mengzhuo1203@gmail.com>, 2012\nsoiamsoNG <83182235@qq.com>, 2017\nwffger <wffger@163.com>, 2020\nBo Li (bocai991), 2026"
+msgstr ""
+"Meng Zhuo <mengzhuo1203@gmail.com>, 2012\n"
+"soiamsoNG <83182235@qq.com>, 2017\n"
+"wffger <wffger@163.com>, 2020\n"
+"Bo Li (bocai991), 2026"
 
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
@@ -1002,25 +1016,43 @@ msgstr "退出(_Q)"
 msgid "Primary Menu"
 msgstr "主菜单"
 
-#: src/ui/main/window.vala:344
-msgid "Keep timer running?"
-msgstr "让计时器继续运行吗？"
+#: src/ui/main/window.vala:350
+msgid "Keep Timer Running?"
+msgstr ""
 
-#: src/ui/main/window.vala:345
+#: src/ui/main/window.vala:351
 msgid ""
-"You can keep it running in the background — notifications and keyboard "
+"You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
-msgstr "可以让应用在后台继续运行，通知和键盘快捷键仍然有效。"
+msgstr ""
 
-#: src/ui/main/window.vala:352
-msgid "Run in background"
-msgstr "在后台运行"
+#: src/ui/main/window.vala:359
+msgid "Run in Background"
+msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:364
+msgid "Minimize Window"
+msgstr ""
+
+#: src/ui/main/window.vala:403
+msgid "Can’t Run in Background"
+msgstr ""
+
+#: src/ui/main/window.vala:404
+msgid ""
+"Focus Timer isn’t allowed to run in the background. To change this, check "
+"app’s permissions in system settings."
+msgstr ""
+
+#: src/ui/main/window.vala:408
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/main/window.vala:501
 msgid "Sounds turned on"
 msgstr "声音已开启"
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:501
 msgid "Sounds turned off"
 msgstr "声音已关闭"
 
@@ -1284,13 +1316,17 @@ msgid ""
 "Custom Actions run shell commands, requiring access outside the Flatpak "
 "sandbox. Grant this only if you understand your commands and trust Focus "
 "Timer — it allows arbitrary command execution."
-msgstr "自定义动作会运行 Shell 命令，需要访问 Flatpak 沙箱之外的环境。此权限允许执行任意命令，请仅在您了解这些命令并信任专注计时器时授予。"
+msgstr ""
+"自定义动作会运行 Shell 命令，需要访问 Flatpak 沙箱之外的环境。此权限允许执行"
+"任意命令，请仅在您了解这些命令并信任专注计时器时授予。"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:52
 msgid ""
 "In <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
 "a>, under <b>Session Bus</b> section, add:"
-msgstr "在 <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</a> 的<b>会话总线</b>部分添加："
+msgstr ""
+"在 <a href=\"https://flathub.org/apps/com.github.tchx84.Flatseal\">Flatseal</"
+"a> 的<b>会话总线</b>部分添加："
 
 #: src/ui/preferences/automation/permissions-dialog.ui:90
 msgid "or via terminal:"
@@ -1563,6 +1599,17 @@ msgstr "应用"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "侧边栏"
+
+#~ msgid "Keep timer running?"
+#~ msgstr "让计时器继续运行吗？"
+
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr "可以让应用在后台继续运行，通知和键盘快捷键仍然有效。"
+
+#~ msgid "Run in background"
+#~ msgstr "在后台运行"
 
 #~ msgid "_About"
 #~ msgstr "关于(_A)"

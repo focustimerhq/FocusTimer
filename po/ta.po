@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-11 09:26+0100\n"
+"POT-Creation-Date: 2026-11-21 17:07+0100\n"
 "PO-Revision-Date: 2025-10-30 22:00+0530\n"
 "Last-Translator: Killersparrow1 <github.com/Killersparrow1>\n"
 "Language-Team: Tamil\n"
@@ -238,13 +238,13 @@ msgid "Screen overlay is open"
 msgstr ""
 
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:953 src/core/notification-manager.vala:134
+#: src/application.vala:948 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "இன்னும் %s உள்ளது"
 
-#: src/application.vala:998
+#: src/application.vala:993
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -656,7 +656,7 @@ msgid "Time when the countdown has started."
 msgstr "நேரங்காட்டி தொடங்கிய நேரம்."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:198
+#: src/plugins/gnome/preferences-window-extension.vala:206
 #, fuzzy
 msgid "GNOME Shell Extension"
 msgstr "GNOME Shell நீட்டிப்பு"
@@ -722,7 +722,7 @@ msgid "_Not Now"
 msgstr "இப்போது வேண்டாம் (_N)"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:437
 #, fuzzy
 msgid "Something went wrong"
 msgstr "ஏதோ தவறு நடந்துவிட்டது"
@@ -745,41 +745,41 @@ msgid "_Abort"
 msgstr "கைவிடு (_A)"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:417
+#: src/plugins/gnome/preferences-window-extension.vala:425
 #, fuzzy
 msgid "Time-out reached"
 msgstr "கால அளவு முடிந்தது"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:421
+#: src/plugins/gnome/preferences-window-extension.vala:429
 #, fuzzy
 msgid "Installing extensions is not allowed"
 msgstr "நீட்டிப்புகளை நிறுவ அனுமதி இல்லை"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:433
 #, fuzzy
 msgid "Failed to download the extension"
 msgstr "நீட்டிப்பைத் தரவிறக்க முடியவில்லை"
 
-#: src/plugins/gnome/preferences-window-extension.vala:88
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:95
+#: src/plugins/gnome/preferences-window-extension.vala:98
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:96
+#: src/plugins/gnome/preferences-window-extension.vala:99
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:103
+#: src/plugins/gnome/preferences-window-extension.vala:106
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:114
+#: src/plugins/gnome/preferences-window-extension.vala:117
 #: src/plugins/sni/indicator-provider.vala:298
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
@@ -788,44 +788,44 @@ msgstr ""
 msgid "Screen Overlay"
 msgstr "திரை மேலடுக்கு"
 
-#: src/plugins/gnome/preferences-window-extension.vala:118
+#: src/plugins/gnome/preferences-window-extension.vala:126
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:134
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:156
+#: src/plugins/gnome/preferences-window-extension.vala:164
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr "டெஸ்க்டாப்"
 
-#: src/plugins/gnome/preferences-window-extension.vala:159
+#: src/plugins/gnome/preferences-window-extension.vala:167
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:172
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:175
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:185
+#: src/plugins/gnome/preferences-window-extension.vala:193
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:204
+#: src/plugins/gnome/preferences-window-extension.vala:212
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:205
+#: src/plugins/gnome/preferences-window-extension.vala:213
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
@@ -891,7 +891,8 @@ msgstr ""
 msgid "Stats"
 msgstr "புள்ளிவிவரங்கள்"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:349
+#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "வெளியேறு"
 
@@ -1121,30 +1122,43 @@ msgstr "_வெளியேறு"
 msgid "Primary Menu"
 msgstr "முன்மை மெனு"
 
-#: src/ui/main/window.vala:344
-#, fuzzy
-msgid "Keep timer running?"
-msgstr "நேரங்காட்டி ஓடிக்கொண்டிருக்க வேண்டுமா?"
+#: src/ui/main/window.vala:350
+msgid "Keep Timer Running?"
+msgstr ""
 
-#: src/ui/main/window.vala:345
-#, fuzzy
+#: src/ui/main/window.vala:351
 msgid ""
-"You can keep it running in the background — notifications and keyboard "
+"You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
-"இதை நீங்கள் பின்னணியில் ஓட விடலாம் — அறிவிப்புகள் மற்றும் விசைப்பலகை குறுக்குவழிகள் "
-"தொடர்ந்து வேலை செய்யும்."
 
-#: src/ui/main/window.vala:352
-#, fuzzy
-msgid "Run in background"
-msgstr "பின்னணியில் இயக்கு"
+#: src/ui/main/window.vala:359
+msgid "Run in Background"
+msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:364
+msgid "Minimize Window"
+msgstr ""
+
+#: src/ui/main/window.vala:403
+msgid "Can’t Run in Background"
+msgstr ""
+
+#: src/ui/main/window.vala:404
+msgid ""
+"Focus Timer isn’t allowed to run in the background. To change this, check "
+"app’s permissions in system settings."
+msgstr ""
+
+#: src/ui/main/window.vala:408
+msgid "Cancel"
+msgstr ""
+
+#: src/ui/main/window.vala:501
 msgid "Sounds turned on"
 msgstr ""
 
-#: src/ui/main/window.vala:446
+#: src/ui/main/window.vala:501
 msgid "Sounds turned off"
 msgstr ""
 
@@ -1771,6 +1785,22 @@ msgstr "பயன்படுத்து"
 msgctxt "accessibility"
 msgid "Sidebar"
 msgstr "பக்கவாட்டுப் பட்டை"
+
+#, fuzzy
+#~ msgid "Keep timer running?"
+#~ msgstr "நேரங்காட்டி ஓடிக்கொண்டிருக்க வேண்டுமா?"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can keep it running in the background — notifications and keyboard "
+#~ "shortcuts will still work."
+#~ msgstr ""
+#~ "இதை நீங்கள் பின்னணியில் ஓட விடலாம் — அறிவிப்புகள் மற்றும் விசைப்பலகை குறுக்குவழிகள் "
+#~ "தொடர்ந்து வேலை செய்யும்."
+
+#, fuzzy
+#~ msgid "Run in background"
+#~ msgstr "பின்னணியில் இயக்கு"
 
 #~ msgid "_About"
 #~ msgstr "_பற்றி"
