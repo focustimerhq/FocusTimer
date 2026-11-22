@@ -45,8 +45,8 @@
     <name translate="no">Kamil Prusko</name>
   </developer>
   <branding>
-    <color type="primary" scheme_preference="light">#bedaf4</color>
-    <color type="primary" scheme_preference="dark">#a4c9ea</color>
+    <color type="primary" scheme_preference="light">#d4f0db</color>
+    <color type="primary" scheme_preference="dark">#80be92</color>
   </branding>
 
   <!-- License -->
