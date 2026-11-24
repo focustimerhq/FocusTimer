@@ -79,6 +79,8 @@ namespace Tests
             this.add_test ("advance_to_state__skip_advancement", this.test_advance_to_state__skip_advancement);
             this.add_test ("advance_to_state__completed_session", this.test_advance_to_state__completed_session);
             this.add_test ("advance_to_state__uncompleted_session", this.test_advance_to_state__uncompleted_session);
+            this.add_test ("advance_to_state__pomodoro_after_completed_long_break",
+                           this.test_advance_to_state__pomodoro_after_completed_long_break);
 
             this.add_test ("confirm_starting_break", this.test_confirm_starting_break);
             this.add_test ("confirm_starting_pomodoro", this.test_confirm_starting_pomodoro);
@@ -1922,6 +1924,61 @@ namespace Tests
                 "resolve-state",
                 "state-changed"
             });
+        }
+
+        /**
+         * Selecting a pomodoro shortly before a long break ends, after the long break qualifies as
+         * completed, should start the pomodoro in a new session.
+         */
+        public void test_advance_to_state__pomodoro_after_completed_long_break ()
+        {
+            var idle_monitor    = new Ft.IdleMonitor ();
+            assert_true (idle_monitor.provider is Ft.DummyIdleMonitorProvider);
+
+            var timer           = new Ft.Timer ();
+            var session_manager = new Ft.SessionManager.with_timer (timer);
+
+            session_manager.advance_to_state (Ft.State.POMODORO);
+
+            var session = session_manager.current_session;
+
+            while (session_manager.current_state != Ft.State.LONG_BREAK)
+            {
+                var finished_time = session_manager.current_time_block.end_time;
+                Ft.Timestamp.freeze_to (finished_time);
+                timer.finish (finished_time);
+
+                if (!timer.is_started ()) {
+                    idle_monitor.provider.became_active ();
+                }
+
+                assert_true (timer.is_running ());
+                assert_true (session_manager.current_session == session);
+            }
+
+            var long_break = session_manager.current_time_block;
+            var now = long_break.end_time - 10 * Ft.Interval.SECOND;
+            assert_true (now > long_break.get_completion_time ());
+
+            Ft.Timestamp.freeze_to (now);
+            Ft.Context.set_event_source ("session-manager.state:pomodoro");
+            session_manager.advance_to_state (Ft.State.POMODORO, now);
+
+            var pomodoro = session_manager.current_time_block;
+            assert_true (long_break.get_status () == Ft.TimeBlockStatus.COMPLETED);
+            assert_nonnull (pomodoro);
+            assert_true (pomodoro.state == Ft.State.POMODORO);
+            assert_nonnull (session_manager.current_session);
+            assert_true (session_manager.current_session != session);
+            assert_true (pomodoro.session == session_manager.current_session);
+            assert_cmpvariant (
+                new GLib.Variant.int64 (pomodoro.start_time),
+                new GLib.Variant.int64 (now)
+            );
+            assert_cmpvariant (
+                new GLib.Variant.int64 (timer.state.started_time),
+                new GLib.Variant.int64 (now)
+            );
         }
 
         public void test_confirm_starting_break ()

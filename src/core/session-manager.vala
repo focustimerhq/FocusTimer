@@ -675,8 +675,14 @@ namespace Ft
                 }
             }
 
-            if (session != null && session.is_completed ()) {
-                session = null;
+            if (session != null && session.is_completed ())
+            {
+                if (time_block != null && time_block.session == session) {
+                    GLib.debug ("Setting a time-block with a session that is already completed");
+                }
+                else {
+                    session = null;
+                }
             }
 
             // Leave previous session.
@@ -1777,7 +1783,7 @@ namespace Ft
 
             if (next_session == null &&
                 this._current_session != null &&
-                !this._current_session.is_completed ())
+                !this.is_current_session_completed (timestamp))
             {
                 next_session = this._current_session;
                 next_time_block = null;
