@@ -21,6 +21,7 @@ namespace Gnome
 
             this.shell_extension = new Gnome.ShellExtension ();
             this.shell_extension.notify["available"].connect (this.on_extension_notify_available);
+            this.shell_extension.notify["enabled"].connect (this.on_extension_notify_enabled);
 
             this.notify["window"].connect (this.on_notify_window);
         }
@@ -152,6 +153,12 @@ namespace Gnome
             this.update_extension_toast ();
         }
 
+        private void on_extension_notify_enabled (GLib.Object    object,
+                                                  GLib.ParamSpec pspec)
+        {
+            this.update_extension_toast ();
+        }
+
         public override void dispose ()
         {
             if (this.window != null) {
@@ -160,6 +167,7 @@ namespace Gnome
 
             if (this.shell_extension != null) {
                 this.shell_extension.notify["available"].disconnect (this.on_extension_notify_available);
+                this.shell_extension.notify["enabled"].disconnect (this.on_extension_notify_enabled);
                 this.shell_extension = null;
             }
 
