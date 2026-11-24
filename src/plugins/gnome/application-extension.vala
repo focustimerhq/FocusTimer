@@ -101,6 +101,10 @@ namespace Gnome
 
         private void on_screen_overlay_opened ()
         {
+            if (this.shell_extension.enabled) {
+                return;
+            }
+
             if (this.shell_proxy != null && this.shell_proxy.overview_active) {
                 this.shell_proxy.overview_active = false;
             }
