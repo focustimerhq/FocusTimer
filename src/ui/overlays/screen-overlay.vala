@@ -17,7 +17,7 @@ namespace Ft
          */
         private const uint IDLE_TIME_TO_ACKNOWLEDGE = 700;
         private const double MOTION_VELOCITY_TO_DISMISS = 3.0;
-        private const uint CURSOR_HIDE_DELAY = 5000;
+        private const uint CURSOR_HIDE_DELAY = 10000;
 
         [CCode (notify = false)]
         public bool enable_dismiss_gesture {
