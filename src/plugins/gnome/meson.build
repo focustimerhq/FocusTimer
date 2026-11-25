@@ -19,6 +19,7 @@ if get_option('plugin_gnome').enabled()
       'screen-saver-provider.vala',
       'shell-extension.vala',
       'shell-extension-settings.vala',
+      'utils.vala',
       'window-extension.vala',
     ) + gnome_plugin_resources,
     dependencies: [libft_ui_dep],
