@@ -86,6 +86,33 @@
 
   <!-- Releases -->
   <releases>
+    <release version="1.1.6" date="2026-11-27">
+      <description its:translate="no">
+        <p>New:</p>
+        <ul>
+          <li>Blur effect for the screen overlay (limited desktop support)</li>
+          <li>Close the screen overlay with a gesture</li>
+          <li>Scroll over the timer to shorten or extend the countdown</li>
+          <li>Choose how early you're warned before the countdown ends</li>
+          <li>Screensaver is inhibited while the screen overlay is open</li>
+          <li>Customize the session expiry timeout (hidden setting)</li>
+          <li>Play background sound alongside other media (hidden setting)</li>
+        </ul>
+        <p>Improved:</p>
+        <ul>
+          <li>Smoother fade in and out of the screen overlay (limited desktop support)</li>
+          <li>Clearer wording in the interface</li>
+          <li>Better handling of missing Background permission (thanks @bocai991)</li>
+          <li>Updated Simplified Chinese translation (thanks @bocai991)</li>
+        </ul>
+        <p>Fixed:</p>
+        <ul>
+          <li>Crash following the use of Skip Break</li>
+          <li>Ensure statistics are saved when you close the app (thanks @bocai991)</li>
+          <li>Sound on/off switch not working</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.1.5" date="2026-09-20">
       <description its:translate="no">
         <p>Overview of changes in focus-timer 1.1.5:</p>

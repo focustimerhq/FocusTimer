@@ -1,3 +1,29 @@
+2026-11-27  Kamil Prusko  <kamilprusko@gmail.com>
+	Release version 1.1.6
+
+	New:
+
+	* Blur effect for the screen overlay (limited desktop support)
+	* Close the screen overlay with a gesture
+	* Scroll over the timer to shorten or extend the countdown
+	* Choose how early you're warned before the countdown ends
+	* Screensaver is inhibited while the screen overlay is open
+	* Customize the session expiry timeout (hidden setting)
+	* Play background sound alongside other media (hidden setting)
+
+	Improved:
+
+	* Smoother fade in and out of the screen overlay (limited desktop support)
+	* Clearer wording in the interface
+	* Better handling of missing Background permission (thanks @bocai991)
+	* Updated Simplified Chinese translation (thanks @bocai991)
+
+	Fixed:
+
+	* Crash following the use of Skip Break
+	* Ensure statistics are saved when you close the app (thanks @bocai991)
+	* Sound on/off switch not working
+
 2026-09-20  Kamil Prusko  <kamilprusko@gmail.com>
 	Release version 1.1.5:
 
