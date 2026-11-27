@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-21 17:07+0100\n"
+"POT-Creation-Date: 2026-11-27 17:22+0100\n"
 "PO-Revision-Date: 2023-03-26 11:39+0200\n"
 "Last-Translator: Ronaldo Costa <ronaldocosta@oceanica.ufrj.br>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -81,7 +81,7 @@ msgid "GNOME Shell extension for deeper desktop integration"
 msgstr ""
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:67
-#: src/plugins/sni/indicator-provider.vala:305 src/ui/main/window.ui:89
+#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:89
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:57
 #: src/ui/preferences/preferences-window.vala:30
 msgid "Timer"
@@ -98,8 +98,8 @@ msgid "Monthly stats"
 msgstr "Estatísticas mensais"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:79
-#: src/plugins/sni/indicator-provider.vala:301
-#: src/plugins/sni/indicator-provider.vala:307
+#: src/plugins/sni/indicator-provider.vala:302
+#: src/plugins/sni/indicator-provider.vala:308
 #: src/ui/preferences/preferences-window.ui:6
 msgid "Preferences"
 msgstr "Preferências"
@@ -109,140 +109,136 @@ msgstr "Preferências"
 msgid "Screen overlay"
 msgstr "Sobreposição de tela"
 
-#: src/application.vala:211 src/application.vala:694
+#: src/application.vala:210 src/application.vala:698
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:60
 #, fuzzy
 msgid "Start or Stop"
 msgstr "Iniciar ou Parar"
 
-#: src/application.vala:214 src/application.vala:697
+#: src/application.vala:213 src/application.vala:701
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:66
 #, fuzzy
 msgid "Start, Pause or Resume"
 msgstr "Iniciar, Interromper ou Continuar"
 
-#: src/application.vala:217 src/core/notification-manager.vala:392
+#: src/application.vala:216 src/core/notification-manager.vala:392
 #: src/core/notification-manager.vala:485
-#: src/plugins/sni/indicator-provider.vala:404
+#: src/plugins/sni/indicator-provider.vala:252
+#: src/plugins/sni/indicator-provider.vala:367
+#: src/plugins/sni/indicator-provider.vala:434
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:69
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:239
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:323
 msgid "Start Pomodoro"
 msgstr "Iniciar Pomodoro"
 
-#: src/application.vala:220
+#: src/application.vala:219
 msgid "Start break"
 msgstr ""
 
-#: src/application.vala:223
+#: src/application.vala:222
 msgid "Start short break"
 msgstr ""
 
-#: src/application.vala:226
+#: src/application.vala:225
 msgid "Start long break"
 msgstr ""
 
 #. Actions
-#: src/application.vala:229 src/application.vala:699 src/core/event.vala:268
-#: src/plugins/sni/indicator-provider.vala:251
+#: src/application.vala:228 src/application.vala:703 src/core/event.vala:268
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:75
 msgid "Start"
 msgstr "Iniciar"
 
-#: src/application.vala:232 src/application.vala:701 src/core/event.vala:276
-#: src/plugins/sni/indicator-provider.vala:263
+#: src/application.vala:231 src/application.vala:705 src/core/event.vala:276
+#: src/plugins/sni/indicator-provider.vala:264
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:139
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:81
 msgid "Stop"
 msgstr "Parar"
 
-#: src/application.vala:235 src/application.vala:703 src/core/event.vala:284
-#: src/plugins/sni/indicator-provider.vala:254
+#: src/application.vala:234 src/application.vala:707 src/core/event.vala:284
+#: src/plugins/sni/indicator-provider.vala:255
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:83
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:87
 msgid "Pause"
 msgstr "Interromper"
 
-#: src/application.vala:238 src/application.vala:705 src/core/event.vala:292
-#: src/plugins/sni/indicator-provider.vala:257
+#: src/application.vala:237 src/application.vala:709 src/core/event.vala:292
+#: src/plugins/sni/indicator-provider.vala:258
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:97
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:93
 msgid "Resume"
 msgstr "Continuar"
 
-#: src/application.vala:241 src/application.vala:707 src/core/event.vala:300
-#: src/plugins/sni/indicator-provider.vala:266
+#: src/application.vala:240 src/application.vala:711 src/core/event.vala:300
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:99
 msgid "Skip"
 msgstr "Pular"
 
-#: src/application.vala:244 src/application.vala:709 src/core/event.vala:308
+#: src/application.vala:243 src/application.vala:713 src/core/event.vala:308
 #, fuzzy
 msgid "Rewind"
 msgstr "Voltar"
 
-#: src/application.vala:245 src/application.vala:248
+#: src/application.vala:244 src/application.vala:247
 msgid "SECONDS"
 msgstr ""
 
-#: src/application.vala:247
+#: src/application.vala:246
 msgid "Extend current pomodoro or break"
 msgstr "Estender o pomodoro ou pausa atual"
 
-#: src/application.vala:250 src/core/event.vala:316
-#: src/plugins/sni/indicator-provider.vala:269
+#: src/application.vala:249 src/core/event.vala:316
+#: src/plugins/sni/indicator-provider.vala:270
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:39
 #, fuzzy
 msgid "Reset"
 msgstr "Redefinir"
 
-#: src/application.vala:254
+#: src/application.vala:253
 msgid "Print timer status"
 msgstr ""
 
-#: src/application.vala:258
+#: src/application.vala:257
 msgid "Show preferences"
 msgstr "Exibir preferências"
 
-#: src/application.vala:262
+#: src/application.vala:261
 msgid "Quit application"
 msgstr "Encerrar o programa"
 
-#: src/application.vala:265
+#: src/application.vala:264
 msgid "Print version information and exit"
 msgstr "Exibir informação da versão e sair"
 
-#: src/application.vala:319
+#: src/application.vala:318
 msgid "Timer Options:"
 msgstr ""
 
-#: src/application.vala:320
+#: src/application.vala:319
 msgid "Show options for controlling the timer"
 msgstr ""
 
-#: src/application.vala:327
+#: src/application.vala:326
 #, c-format
 msgid "Bugs may be reported at: %s"
 msgstr ""
 
-#: src/application.vala:711
+#: src/application.vala:715
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:118
 #, fuzzy
 msgid "Bring to Focus"
 msgstr "Trazer para o Foco"
 
-#: src/application.vala:777
-msgid "Screen overlay is open"
-msgstr ""
-
 #. translators: time remaining eg. "3 minutes 50 seconds remaining"
-#: src/application.vala:948 src/core/notification-manager.vala:134
+#: src/application.vala:924 src/core/notification-manager.vala:134
 #: src/plugins/sni/indicator-provider.vala:25
 #, fuzzy, c-format
 msgid "%s remaining"
 msgstr "%s restante"
 
-#: src/application.vala:993
+#: src/application.vala:969
 msgid "Invalid use. Pass one flag for controlling the timer at a time."
 msgstr ""
 
@@ -431,7 +427,7 @@ msgid "Triggered when session is about to be reset due to inactivity"
 msgstr "Acionado quando a sessão está prestes a reiniciar por inatividade"
 
 #: src/core/notification-manager.vala:313 src/core/state.vala:78
-#: src/plugins/sni/indicator-provider.vala:272
+#: src/plugins/sni/indicator-provider.vala:273
 #: src/ui/main/stats/stats-day-page.ui:98
 #: src/ui/main/stats/stats-day-page.vala:87
 #: src/ui/main/stats/stats-month-page.ui:35
@@ -443,8 +439,8 @@ msgid "Pomodoro"
 msgstr "Pomodoro"
 
 #: src/core/notification-manager.vala:317
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:308
-#: src/ui/main/timer/widgets/timer-control-buttons.vala:324
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:243
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:323
 msgid "Take a break"
 msgstr "Faça uma pausa"
 
@@ -464,7 +460,8 @@ msgstr "O Pomodoro está prestes a acabar"
 #: src/core/notification-manager.vala:490
 #: src/core/notification-manager.vala:495
 #: src/core/notification-manager.vala:500
-#: src/plugins/sni/indicator-provider.vala:404
+#: src/plugins/sni/indicator-provider.vala:371
+#: src/plugins/sni/indicator-provider.vala:434
 #: src/ui/overlays/screen-overlay.ui:5
 #, fuzzy
 msgid "Take a Break"
@@ -513,6 +510,7 @@ msgid "Confirm the start of a long break…"
 msgstr "Confirme o início de uma pausa longa…"
 
 #: src/core/notification-manager.vala:512
+#: src/plugins/sni/indicator-provider.vala:368
 msgid "Skip Break"
 msgstr "Pular pausa"
 
@@ -534,16 +532,16 @@ msgstr "Tipo de arquivo não suportado"
 msgid "Stopped"
 msgstr "Parado"
 
-#: src/core/state.vala:81 src/plugins/sni/indicator-provider.vala:275
+#: src/core/state.vala:81 src/plugins/sni/indicator-provider.vala:276
 #: src/ui/preferences/automation/action/condition-widget.ui:54
 msgid "Break"
 msgstr "Pausa"
 
-#: src/core/state.vala:84 src/plugins/sni/indicator-provider.vala:273
+#: src/core/state.vala:84 src/plugins/sni/indicator-provider.vala:274
 msgid "Short Break"
 msgstr "Pausa Curta"
 
-#: src/core/state.vala:87 src/plugins/sni/indicator-provider.vala:274
+#: src/core/state.vala:87 src/plugins/sni/indicator-provider.vala:275
 msgid "Long Break"
 msgstr "Pausa Longa"
 
@@ -640,7 +638,7 @@ msgid "Time when the countdown has started."
 msgstr "Hora em que a contagem regressiva começou."
 
 #: src/plugins/gnome/install-extension-dialog.ui:6
-#: src/plugins/gnome/preferences-window-extension.vala:206
+#: src/plugins/gnome/preferences-window-extension.vala:171
 msgid "GNOME Shell Extension"
 msgstr "Extensão do GNOME Shell"
 
@@ -698,7 +696,7 @@ msgid "_Not Now"
 msgstr "Agora _não"
 
 #: src/plugins/gnome/install-extension-dialog.ui:317
-#: src/plugins/gnome/preferences-window-extension.vala:437
+#: src/plugins/gnome/preferences-window-extension.vala:402
 #, fuzzy
 msgid "Something went wrong"
 msgstr "Algo deu errado"
@@ -719,101 +717,106 @@ msgid "_Abort"
 msgstr "_Abortar"
 
 #: src/plugins/gnome/install-extension-dialog.vala:85
-#: src/plugins/gnome/preferences-window-extension.vala:425
+#: src/plugins/gnome/preferences-window-extension.vala:390
 msgid "Time-out reached"
 msgstr "Tempo limite atingido"
 
 #: src/plugins/gnome/install-extension-dialog.vala:90
-#: src/plugins/gnome/preferences-window-extension.vala:429
+#: src/plugins/gnome/preferences-window-extension.vala:394
 msgid "Installing extensions is not allowed"
 msgstr "Instalação de extensões não é permitida"
 
 #: src/plugins/gnome/install-extension-dialog.vala:95
-#: src/plugins/gnome/preferences-window-extension.vala:433
+#: src/plugins/gnome/preferences-window-extension.vala:398
 #, fuzzy
 msgid "Failed to download the extension"
 msgstr "Falha ao baixar a extensão"
 
-#: src/plugins/gnome/preferences-window-extension.vala:91
+#: src/plugins/gnome/preferences-window-extension.vala:56
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:98
+#: src/plugins/gnome/preferences-window-extension.vala:63
 msgid "Icon"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:99
+#: src/plugins/gnome/preferences-window-extension.vala:64
 msgid "Text"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:106
+#: src/plugins/gnome/preferences-window-extension.vala:71
 msgid "Display As"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:117
-#: src/plugins/sni/indicator-provider.vala:298
+#: src/plugins/gnome/preferences-window-extension.vala:82
+#: src/plugins/sni/indicator-provider.vala:299
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:41
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:33
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:37
 msgid "Screen Overlay"
 msgstr "Sobreposição de Tela"
 
-#: src/plugins/gnome/preferences-window-extension.vala:126
+#: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:134
+#: src/plugins/gnome/preferences-window-extension.vala:99
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:164
+#: src/plugins/gnome/preferences-window-extension.vala:129
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:167
+#: src/plugins/gnome/preferences-window-extension.vala:132
 msgid "Install"
 msgstr ""
 
 #. translators: verb
-#: src/plugins/gnome/preferences-window-extension.vala:172
+#: src/plugins/gnome/preferences-window-extension.vala:137
 msgid "Update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:175
+#: src/plugins/gnome/preferences-window-extension.vala:140
 msgid "Log out to finish the update"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:193
+#: src/plugins/gnome/preferences-window-extension.vala:158
 msgid "Outdated"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:212
+#: src/plugins/gnome/preferences-window-extension.vala:177
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
 msgstr ""
 
-#: src/plugins/gnome/preferences-window-extension.vala:213
+#: src/plugins/gnome/preferences-window-extension.vala:178
 #: src/plugins/kde/preferences-window-extension.vala:86
 msgid "Hide non-critical notifications while using the timer"
 msgstr ""
 
-#: src/plugins/gnome/window-extension.vala:37
-msgid "Try the GNOME extension"
+#: src/plugins/gnome/screen-overlay-provider.vala:81
+#: src/ui/screen-overlay-provider.vala:59
+msgid "Screen overlay is open"
 msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:38
+msgid "Try the GNOME extension"
+msgstr ""
+
+#: src/plugins/gnome/window-extension.vala:39
 msgid "Details"
 msgstr ""
 
-#: src/plugins/gnome/window-extension.vala:74
+#: src/plugins/gnome/window-extension.vala:75
 msgid "GNOME extension is disabled"
 msgstr ""
 
-#: src/plugins/gnome/window-extension.vala:75
+#: src/plugins/gnome/window-extension.vala:76
 msgid "Enable"
 msgstr ""
 
@@ -856,12 +859,12 @@ msgstr "Finalizado!"
 msgid "%u of %u"
 msgstr ""
 
-#: src/plugins/sni/indicator-provider.vala:302
-#: src/plugins/sni/indicator-provider.vala:306 src/ui/main/window.ui:106
+#: src/plugins/sni/indicator-provider.vala:303
+#: src/plugins/sni/indicator-provider.vala:307 src/ui/main/window.ui:106
 msgid "Stats"
 msgstr "Estatísticas"
 
-#: src/plugins/sni/indicator-provider.vala:311 src/ui/main/window.vala:355
+#: src/plugins/sni/indicator-provider.vala:312 src/ui/main/window.vala:355
 #: src/ui/main/window.vala:411
 msgid "Quit"
 msgstr "Sair"
@@ -1050,6 +1053,10 @@ msgstr "Pausa longa em <b>%s</b>"
 #, fuzzy
 msgid "Rewind one minute"
 msgstr "Voltar um minuto"
+
+#: src/ui/main/timer/widgets/timer-control-buttons.vala:240
+msgid "Skip break"
+msgstr ""
 
 #: src/ui/main/window.ui:8
 msgid "_Compact Mode"

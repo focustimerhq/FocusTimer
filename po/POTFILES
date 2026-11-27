@@ -78,6 +78,7 @@ src/plugins/gnome/screen-overlay-provider.vala
 src/plugins/gnome/screen-saver-provider.vala
 src/plugins/gnome/shell-extension-settings.vala
 src/plugins/gnome/shell-extension.vala
+src/plugins/gnome/utils.vala
 src/plugins/gnome/window-extension.vala
 src/plugins/kde/application-extension.vala
 src/plugins/kde/interfaces.vala
