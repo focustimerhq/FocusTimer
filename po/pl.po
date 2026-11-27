@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-27 17:22+0100\n"
-"PO-Revision-Date: 2026-11-11 09:36+0100\n"
+"PO-Revision-Date: 2026-11-27 17:38+0100\n"
 "Last-Translator: Kamil Prusko <kamilprusko@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
@@ -172,7 +172,7 @@ msgstr "Pomiń"
 
 #: src/application.vala:243 src/application.vala:713 src/core/event.vala:308
 msgid "Rewind"
-msgstr "Przewiń"
+msgstr "Cofnij"
 
 #: src/application.vala:244 src/application.vala:247
 msgid "SECONDS"
@@ -320,7 +320,7 @@ msgstr ""
 #: src/core/event.vala:309
 msgid "Rewind action has been used. It adds a pause in the past."
 msgstr ""
-"Użyto akcji przewijania, która działa przez dodanie przerwy w przeszłości."
+"Użyto akcji cofnięcia, która działa przez dodanie przerwy w przeszłości."
 
 #: src/core/event.vala:317
 msgid "Manually cleared the session"
@@ -1012,11 +1012,11 @@ msgstr "Długa przerwa za <b>%s</b>"
 
 #: src/ui/main/timer/widgets/timer-control-buttons.ui:25
 msgid "Rewind one minute"
-msgstr "Przewiń o jedną minutę"
+msgstr "Cofnij o jedną minutę"
 
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:240
 msgid "Skip break"
-msgstr ""
+msgstr "Pomiń przerwę"
 
 #: src/ui/main/window.ui:8
 msgid "_Compact Mode"
@@ -1048,35 +1048,39 @@ msgstr "Menu Główne"
 
 #: src/ui/main/window.vala:350
 msgid "Keep Timer Running?"
-msgstr ""
+msgstr "Pozostawić Minutnik Uruchomiony?"
 
 #: src/ui/main/window.vala:351
 msgid ""
 "You can keep it running in the background. Notifications and keyboard "
 "shortcuts will still work."
 msgstr ""
+"Możesz pozostawić go działającego w tle. Powiadomienia oraz skróty "
+"klawiszowe nadal będą działać."
 
 #: src/ui/main/window.vala:359
 msgid "Run in Background"
-msgstr ""
+msgstr "Działaj w Tle"
 
 #: src/ui/main/window.vala:364
 msgid "Minimize Window"
-msgstr ""
+msgstr "Zminimalizuj Okno"
 
 #: src/ui/main/window.vala:403
 msgid "Can’t Run in Background"
-msgstr ""
+msgstr "Nie Można Działać w Tle"
 
 #: src/ui/main/window.vala:404
 msgid ""
 "Focus Timer isn’t allowed to run in the background. To change this, check "
 "app’s permissions in system settings."
 msgstr ""
+"Minutnik Koncentracji nie ma uprawnień do działania w tle. Aby to zmienić, "
+"sprawdź uprawnienia aplikacji w ustawieniach systemowych."
 
 #: src/ui/main/window.vala:408
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: src/ui/main/window.vala:501
 msgid "Sounds turned on"
@@ -1458,11 +1462,11 @@ msgstr "Podaj skrót dla pominięcia pomodoro lub przerwy"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:105
 msgid "Rewind One Minute"
-msgstr "Przewiń o Jedną Minutę"
+msgstr "Cofnij o Jedną Minutę"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:106
 msgid "Enter new shortcut for rewinding"
-msgstr "Podaj skrót dla przewinięcia minutnika"
+msgstr "Podaj skrót dla cofania minutnika"
 
 #: src/ui/preferences/keyboard-shortcuts/preferences-panel-keyboard-shortcuts.ui:119
 msgid "Enter new shortcut for bringing window to focus"
