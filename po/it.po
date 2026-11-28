@@ -887,7 +887,7 @@ msgstr "Tempo di esecuzione:"
 msgid "translator-credits"
 msgstr ""
 "Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>\n"
-"Francesco Nuzzo"
+"Francesco Nuzzo <francesco.nuzzo.dev@gmail.com>"
 
 #: src/ui/main/dialogs/about-dialog.vala:36
 msgid "Donate"
