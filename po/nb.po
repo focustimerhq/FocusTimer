@@ -2321,10 +2321,6 @@ msgstr "Sidestolpe"
 #~ msgid "Upgrade"
 #~ msgstr "Oppgrader"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
