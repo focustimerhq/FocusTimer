@@ -2558,10 +2558,6 @@ msgstr "Barre latérale"
 #~ msgid "Timer toggle key"
 #~ msgstr "Raccourci d’activation du minuteur"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
