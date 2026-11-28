@@ -2304,10 +2304,6 @@ msgstr "사이드바"
 #~ msgid "Upgrade"
 #~ msgstr "업그레이드"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
