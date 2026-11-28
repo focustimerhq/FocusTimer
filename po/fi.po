@@ -2329,10 +2329,6 @@ msgstr "Sivupalkki"
 #~ msgid "Upgrade"
 #~ msgstr "Päivitä"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
