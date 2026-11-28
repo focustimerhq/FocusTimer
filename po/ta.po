@@ -2206,10 +2206,6 @@ msgstr "பக்கவாட்டுப் பட்டை"
 #~ msgid "A time management utility for GNOME."
 #~ msgstr "GNOME-க்கான நேர மேலாண்மை பயன்பாடு."
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
