@@ -2494,10 +2494,6 @@ msgstr "Barra lateral"
 #~ msgid "Timer toggle key"
 #~ msgstr "Tecla de conmutación del temporizador"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
