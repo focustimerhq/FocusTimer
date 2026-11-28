@@ -2264,10 +2264,6 @@ msgstr "సైడ్ బార్"
 #~ msgid "%.1f h"
 #~ msgstr "%.1f గం"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
