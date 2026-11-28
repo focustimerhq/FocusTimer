@@ -2486,10 +2486,6 @@ msgstr "Bočna traka"
 #~ msgid "Upgrade"
 #~ msgstr "Nadogradi"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
