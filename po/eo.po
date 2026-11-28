@@ -1911,10 +1911,6 @@ msgstr ""
 #~ msgid "Upgrade"
 #~ msgstr "Ĝisdati"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
