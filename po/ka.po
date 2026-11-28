@@ -5,14 +5,15 @@
 # Authors:
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2024-2026.
 # Kamil Prusko <kamilprusko@users.noreply.hosted.weblate.org>, 2026.
+# Temuri Doghonadze <norwayfun@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: focus-timer 1.0-alpha\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-27 17:22+0100\n"
-"PO-Revision-Date: 2026-11-28 09:09+0000\n"
-"Last-Translator: Kamil Prusko <kamilprusko@users.noreply.hosted.weblate.org>"
-"\n"
+"PO-Revision-Date: 2026-11-28 11:49+0000\n"
+"Last-Translator: Temuri Doghonadze "
+"<norwayfun@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/focus-timer/"
 "focus-timer/ka/>\n"
 "Language: ka\n"
@@ -37,6 +38,8 @@ msgstr ""
 #: data/io.github.focustimerhq.FocusTimer.desktop.in.in:11
 msgid "pomodoro;timer;productivity;time tracker;time management;"
 msgstr ""
+"pomodoro;timer;productivity;time tracker;time management;დროის "
+"მართვა;ტაიმერი;პროდუქტიულობა;"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:10
 msgid ""
@@ -59,11 +62,11 @@ msgstr "ეკრანზე განლაგება შესვენე�
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:19
 msgid "System tray icon"
-msgstr ""
+msgstr "ხატულა სისტ. საათთან"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:20
 msgid "Hotkeys (global shortcuts)"
-msgstr ""
+msgstr "გლობალური მალსახმობები"
 
 #: data/io.github.focustimerhq.FocusTimer.metainfo.xml.in:21
 msgid "Daily, weekly, and monthly statistics"
@@ -683,19 +686,19 @@ msgstr "გაფართოების გადმოწერა ჩავ�
 #: src/plugins/gnome/preferences-window-extension.vala:56
 #: src/plugins/sni/preferences-window-extension.vala:41
 msgid "Tray Icon"
-msgstr ""
+msgstr "ხატულა სისტემურ საათთან"
 
 #: src/plugins/gnome/preferences-window-extension.vala:63
 msgid "Icon"
-msgstr ""
+msgstr "ხატულა"
 
 #: src/plugins/gnome/preferences-window-extension.vala:64
 msgid "Text"
-msgstr ""
+msgstr "ტექსტი"
 
 #: src/plugins/gnome/preferences-window-extension.vala:71
 msgid "Display As"
-msgstr ""
+msgstr "ჩვენება, როგორც"
 
 #: src/plugins/gnome/preferences-window-extension.vala:82
 #: src/plugins/sni/indicator-provider.vala:299
@@ -708,26 +711,26 @@ msgstr "ეკრანზე განლაგება"
 #: src/plugins/gnome/preferences-window-extension.vala:91
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:44
 msgid "Blur Effect"
-msgstr ""
+msgstr "დაბინდვის ეფექტი"
 
 #: src/plugins/gnome/preferences-window-extension.vala:99
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:49
 msgid "Dismiss Gesture"
-msgstr ""
+msgstr "ჟესტის მოცილება"
 
 #: src/plugins/gnome/preferences-window-extension.vala:129
 #: src/plugins/kde/preferences-window-extension.vala:81
 msgid "Desktop"
-msgstr ""
+msgstr "სამუშაო მაგიდა"
 
 #: src/plugins/gnome/preferences-window-extension.vala:132
 msgid "Install"
-msgstr ""
+msgstr "დაყენება"
 
 #. translators: verb
 #: src/plugins/gnome/preferences-window-extension.vala:137
 msgid "Update"
-msgstr ""
+msgstr "განახლება"
 
 #: src/plugins/gnome/preferences-window-extension.vala:140
 msgid "Log out to finish the update"
@@ -735,12 +738,12 @@ msgstr ""
 
 #: src/plugins/gnome/preferences-window-extension.vala:158
 msgid "Outdated"
-msgstr ""
+msgstr "მოძველებულია"
 
 #: src/plugins/gnome/preferences-window-extension.vala:177
 #: src/plugins/kde/preferences-window-extension.vala:85
 msgid "Do Not Disturb"
-msgstr ""
+msgstr "არ შემაწუხოთ"
 
 #: src/plugins/gnome/preferences-window-extension.vala:178
 #: src/plugins/kde/preferences-window-extension.vala:86
@@ -758,7 +761,7 @@ msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:39
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #: src/plugins/gnome/window-extension.vala:75
 msgid "GNOME extension is disabled"
@@ -766,12 +769,12 @@ msgstr ""
 
 #: src/plugins/gnome/window-extension.vala:76
 msgid "Enable"
-msgstr ""
+msgstr "ჩართვა"
 
 #. translators: abbreviate it to just "Settings" if it gets too long
 #: src/plugins/kde/preferences-window-extension.vala:30
 msgid "Open Settings"
-msgstr ""
+msgstr "მორგება"
 
 #: src/plugins/kde/preferences-window-extension.vala:55
 msgid ""
@@ -781,11 +784,11 @@ msgstr ""
 
 #: src/plugins/mpris/preferences-window-extension.vala:32
 msgid "Media Playback"
-msgstr ""
+msgstr "მედიის დაკვრა"
 
 #: src/plugins/mpris/preferences-window-extension.vala:36
 msgid "Auto-Pause Media"
-msgstr ""
+msgstr "მედიის ავტოშეჩერება"
 
 #: src/plugins/mpris/preferences-window-extension.vala:37
 msgid "Pauses during breaks, resumes at the next Pomodoro"
@@ -804,7 +807,7 @@ msgstr "დასრულდა!"
 #: src/plugins/sni/indicator-provider.vala:42
 #, c-format
 msgid "%u of %u"
-msgstr ""
+msgstr "%u %u-დან"
 
 #: src/plugins/sni/indicator-provider.vala:303
 #: src/plugins/sni/indicator-provider.vala:307 src/ui/main/window.ui:106
@@ -818,7 +821,7 @@ msgstr "გასვლა"
 
 #: src/plugins/sni/preferences-window-extension.vala:45
 msgid "Show Tray Icon"
-msgstr ""
+msgstr "ხატულა სისტემურ საათთან"
 
 #: src/plugins/sni/preferences-window-extension.vala:46
 msgid "Closing the window keeps the app running in the background"
@@ -992,19 +995,19 @@ msgstr "გადახვევა ერთი წუთით"
 
 #: src/ui/main/timer/widgets/timer-control-buttons.vala:240
 msgid "Skip break"
-msgstr ""
+msgstr "შესვენების გამოტოვება"
 
 #: src/ui/main/window.ui:8
 msgid "_Compact Mode"
-msgstr ""
+msgstr "_კომპაქტური რეჟიმი"
 
 #: src/ui/main/window.ui:14
 msgid "Leave _Compact Mode"
-msgstr ""
+msgstr "გასვლა _კომპაქტური რეჟიმიდან"
 
 #: src/ui/main/window.ui:22
 msgid "_Screen Overlay"
-msgstr ""
+msgstr "ეკრანი_ს განლაგება"
 
 #: src/ui/main/window.ui:28
 msgid "_Preferences"
@@ -1012,7 +1015,7 @@ msgstr "_მორგება"
 
 #: src/ui/main/window.ui:32
 msgid "_About Focus Timer"
-msgstr ""
+msgstr "Focus Timer-ის შეს_ახებ"
 
 #: src/ui/main/window.ui:38
 msgid "_Quit"
@@ -1038,7 +1041,7 @@ msgstr ""
 
 #: src/ui/main/window.vala:364
 msgid "Minimize Window"
-msgstr ""
+msgstr "ფანჯრის ჩაკეცვა"
 
 #: src/ui/main/window.vala:403
 msgid "Can’t Run in Background"
@@ -1052,15 +1055,15 @@ msgstr ""
 
 #: src/ui/main/window.vala:408
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: src/ui/main/window.vala:501
 msgid "Sounds turned on"
-msgstr ""
+msgstr "ხმები ჩაირთო"
 
 #: src/ui/main/window.vala:501
 msgid "Sounds turned off"
-msgstr ""
+msgstr "ხმები გამოირთო"
 
 #: src/ui/overlays/screen-overlay.ui:64
 msgid "It's time to take a break"
@@ -1073,19 +1076,19 @@ msgstr "მთავარი ფანჯარა"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:20
 msgid "Style"
-msgstr ""
+msgstr "სტილი"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:24
 msgid "Follow System"
-msgstr ""
+msgstr "სისტემის მიყოლა"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:25
 msgid "Light"
-msgstr ""
+msgstr "ღია"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:26
 msgid "Dark"
-msgstr ""
+msgstr "მუქი"
 
 #: src/ui/preferences/appearance/preferences-panel-appearance.ui:34
 msgid "Open in Compact Mode"
@@ -1332,7 +1335,7 @@ msgstr ""
 
 #: src/ui/preferences/automation/permissions-dialog.ui:90
 msgid "or via terminal:"
-msgstr ""
+msgstr "ან ტერმინალით:"
 
 #: src/ui/preferences/automation/permissions-dialog.ui:127
 msgid "Restart Focus Timer for the change to take effect."
@@ -1340,7 +1343,7 @@ msgstr ""
 
 #: src/ui/preferences/automation/permissions-dialog.vala:34
 msgid "Copied"
-msgstr ""
+msgstr "დაკოპირდა"
 
 #: src/ui/preferences/automation/preferences-panel-automation.ui:13
 msgid "_Log"
@@ -1360,7 +1363,7 @@ msgstr ""
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:19
 msgid "Autostart"
-msgstr ""
+msgstr "ავტოგაშვება"
 
 #: src/ui/preferences/integrations/preferences-panel-integrations.ui:20
 msgid "Automatically launch the app when you log in"
@@ -1444,7 +1447,7 @@ msgstr ""
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:25
 msgid "Early Notice"
-msgstr ""
+msgstr "ადრეული შენიშვნა"
 
 #: src/ui/preferences/notifications/preferences-panel-notifications.ui:34
 msgid "Full-screen notification to help you step away from the computer"
@@ -1488,7 +1491,7 @@ msgstr "კლავიატურის მალსახმობები"
 
 #: src/ui/preferences/preferences-window.vala:71
 msgid "Integrations"
-msgstr ""
+msgstr "ინტეგრაციები"
 
 #: src/ui/preferences/preferences-window.vala:78
 msgid "Automation"
@@ -1525,11 +1528,11 @@ msgstr "საათის წიკწიკი"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:25
 msgid "Metronome"
-msgstr ""
+msgstr "მეტრონომი"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:26
 msgid "Brown Noise"
-msgstr ""
+msgstr "ყავისფერი ხმაური"
 
 #: src/ui/preferences/sounds/preferences-panel-sounds.vala:71
 #: src/ui/preferences/sounds/sound-chooser-window.ui:25
