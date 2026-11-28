@@ -2109,10 +2109,6 @@ msgstr "Šoninė juosta"
 #~ msgid "Remove Sound"
 #~ msgstr "Pašalinti garsą:"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
