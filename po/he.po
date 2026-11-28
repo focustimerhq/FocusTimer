@@ -2273,10 +2273,6 @@ msgstr ""
 #~ msgid "%.1f h"
 #~ msgstr "%.1f שע׳"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
