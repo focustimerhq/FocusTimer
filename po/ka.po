@@ -1803,10 +1803,6 @@ msgstr "გვერდითი პანელი"
 #~ msgid "Birds"
 #~ msgstr "ჩიტები"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
