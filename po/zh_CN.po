@@ -2113,10 +2113,6 @@ msgstr "侧边栏"
 #~ msgid "Upgrade"
 #~ msgstr "升级"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
