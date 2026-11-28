@@ -2366,10 +2366,6 @@ msgstr "Panel boczny"
 #~ msgid "Timer toggle key"
 #~ msgstr "Skrót klawiszowy"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
