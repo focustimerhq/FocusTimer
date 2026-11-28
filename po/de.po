@@ -2367,10 +2367,6 @@ msgstr "Seitenleiste"
 #~ msgid "You're missing out on a break"
 #~ msgstr "Du hast die Pause verpasst"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
