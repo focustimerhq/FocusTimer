@@ -1962,10 +1962,6 @@ msgstr "Barra Lateral"
 #~ msgid "This month"
 #~ msgstr "Este mês"
 
-msgctxt "Period for rest"
-msgid "Break"
-msgstr ""
-
 msgctxt "1"
 msgid "Pause"
 msgstr "Pause"
