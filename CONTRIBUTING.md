@@ -63,7 +63,8 @@ bt full
 
 We use Gettext, with `.pot` and `.po` files located in the [`po/` directory](po). Note that the app and the [GNOME Shell extension](https://github.com/focustimerhq/gnome-shell-extension-focus-timer) have separate translations.
 
-**To add or update a language:**
+### GitHub
+To add or update a language:
 1. Generate or update your language's `.po` file in `po/` (e.g., using `msginit`).
 2. Add your language to the [`po/LINGUAS`](po/LINGUAS) file.
 3. Submit a Pull Request.
@@ -72,6 +73,13 @@ LLM prompt to ease the process:
 > Fill-in missing translations and update fuzzy translations for the given file. Translations are for an desktop Pomodoro timer app. Take care to use consistent same translations for words: "break", "pause", "start", "stop", "rewind", "interruption". "pause" refers to the timer action, while "break" refers to taking a break from work, "interruption" refers to a distraction. Translations does not need to be exact, but must convey same meaning - make them sound natural. Mark modified entries as fuzzy. Output the updated .po file for download, do not truncate it.
 
 *Note: We keep `.po` files synced with the `.pot` template automatically, so you don't need to do this manually.*
+
+### Weblate
+
+To translate Focus Timer, you can also use [Weblate](https://hosted.weblate.org/projects/focus-timer/focus-timer/). Note that it only covers the app, without the extension. This is the current translation status:
+
+[![Translation status](https://hosted.weblate.org/widget/focus-timer/focus-timer/multi-auto.svg?sort=percent)](https://hosted.weblate.org/engage/focus-timer/)
+
 
 ## Development
 
